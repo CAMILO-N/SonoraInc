@@ -4,8 +4,10 @@
 {% block content %}
 <div class="flex justify-between items-center" style="margin-bottom:1.5rem">
   <h1 class="page-title" style="margin:0">🎵 Canciones</h1>
+  {% if request.session.is_admin %}
   <button onclick="document.getElementById('modal-nueva').style.display='flex'"
           class="btn btn-primary">+ Nueva canción</button>
+  {% endif %}
 </div>
 
 <!-- Buscador -->
@@ -37,6 +39,7 @@
           <td>{{ c.nombreGenero|default:"—" }}</td>
           <td>{{ c.tituloAlbum|default:"—" }}</td>
           <td>
+            {% if request.session.is_admin %}
             <div class="flex gap-1">
               <button onclick="abrirEditar({{ c.idCancion }},'{{ c.tituloCancion }}',{{ c.duracionCancion }},{{ c.Genero_idGenero }},{{ c.Album_idAlbum }})"
                       class="btn btn-secondary btn-sm">Editar</button>
@@ -49,6 +52,9 @@
                 </button>
               </form>
             </div>
+            {% else %}
+            <span class="text-muted" style="font-size:.8rem">—</span>
+            {% endif %}
           </td>
         </tr>
         {% empty %}

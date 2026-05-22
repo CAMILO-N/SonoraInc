@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block title %}Artistas seguidos — SonoraInc{% endblock %}
+
+{% block content %}
+
+<!-- Sub-navegacion del módulo interaccion -->
+<div style="display:flex;gap:.5rem;margin-bottom:1.75rem">
+  <a href="/interaccion/playlists/" class="btn btn-secondary btn-sm">Playlists</a>
+  <a href="/interaccion/likes/"     class="btn btn-secondary btn-sm">Me gusta</a>
+  <a href="/interaccion/artistas/"  class="btn btn-secondary btn-sm"
+     style="border-color:var(--accent);color:var(--accent)">Artistas seguidos</a>
+</div>
+
+<div style="margin-bottom:1.5rem">
+  <h1 class="page-title" style="margin:0">Artistas</h1>
+</div>
+
+<!-- Buscador -->
+<form method="get" style="margin-bottom:1.5rem;display:flex;gap:.75rem">
+  <input type="text" name="q" value="{{ busqueda }}"
+         placeholder="Buscar artista..." style="max-width:320px">
+  <button type="submit" class="btn btn-secondary">Buscar</button>
+  {% if busqueda %}
+  <a href="{% url 'interaccion:artistas_seguidos' %}" class="btn btn-secondary">✕ Limpiar</a>
+  {% endif %}
+</form>
+
+<!-- Tabla de artistas con acciones de seguimiento -->
+<div class="card">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Artista</th><th>País</th><th>Productora</th><th>Acciones</th></tr>
+      </thead>
+      <tbody>
+        {% for a in artistas %}
+        <tr>
+          <td class="text-muted">{{ a.idArtista }}</td>
+          <td><strong>{{ a.nombreArtista }}</strong></td>
+          <td>{{ a.paisOrigenArtista|default:"—" }}</td>
+          <td>{{ a.nombreProductora|default:"—" }}</td>
+          <td>
+            <div class="flex gap-1">
+              <!-- Seguir artista -->
+              <form method="post" action="{% url 'interaccion:artista_seguir' a.idArtista %}">
+                {% csrf_token %}
+                <input type="hidden" name="accion" value="seguir">
+                <button type="submit" class="btn btn-sm"
+                        style="background:#0d1e14;color:#f5e97a;border:1px solid var(--accent)">
+                  Seguir
+                </button>
+              </form>
+              <!-- Dejar de seguir -->
+              <form method="post" action="{% url 'interaccion:artista_seguir' a.idArtista %}">
+                {% csrf_token %}
+                <input type="hidden" name="accion" value="dejar">
+                <button type="submit" class="btn btn-sm btn-secondary">
+                  Dejar de seguir
+                </button>
+              </form>
+            </div>
+          </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="5" class="text-muted" style="text-align:center;padding:2rem">
+          No se encontraron artistas.
+        </td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,175 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — SonoraInc{% endblock %}
+
+{% block extra_css %}
+<style>
+  /* ── Grid de tarjetas de métricas ── */
+  .dash-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(480px,1fr));gap:1.5rem;margin-top:1.5rem}
+
+  /* ── Encabezado de cada sección del dashboard ── */
+  .section-title{font-size:.72rem;font-weight:700;text-transform:uppercase;
+                 letter-spacing:.1em;color:var(--muted);margin-bottom:.85rem;
+                 padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div style="margin-bottom:2rem">
+  <h1 class="page-title" style="margin:0">Dashboard</h1>
+  <p class="text-muted" style="font-size:.85rem;margin-top:.3rem">
+    Resumen de actividad — top 10 por sección
+  </p>
+</div>
+
+<div class="dash-grid">
+
+  <!-- Canciones más reproducidas -->
+  <div class="card">
+    <div class="section-title">Canciones más reproducidas</div>
+    {% if canciones_rep %}
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>{% for k, v in canciones_rep.0.items %}<th>{{ k }}</th>{% endfor %}</tr>
+        </thead>
+        <tbody>
+          {% for row in canciones_rep %}
+          <tr>{% for k, v in row.items %}<td>{{ v|default:"—" }}</td>{% endfor %}</tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p class="text-muted" style="text-align:center;padding:1.5rem 0">Sin datos.</p>
+    {% endif %}
+  </div>
+
+  <!-- Canciones con más likes -->
+  <div class="card">
+    <div class="section-title">Canciones con más likes</div>
+    {% if canciones_likes %}
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>{% for k, v in canciones_likes.0.items %}<th>{{ k }}</th>{% endfor %}</tr>
+        </thead>
+        <tbody>
+          {% for row in canciones_likes %}
+          <tr>{% for k, v in row.items %}<td>{{ v|default:"—" }}</td>{% endfor %}</tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p class="text-muted" style="text-align:center;padding:1.5rem 0">Sin datos.</p>
+    {% endif %}
+  </div>
+
+  <!-- Artistas más seguidos -->
+  <div class="card">
+    <div class="section-title">Artistas más seguidos</div>
+    {% if artistas_top %}
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>{% for k, v in artistas_top.0.items %}<th>{{ k }}</th>{% endfor %}</tr>
+        </thead>
+        <tbody>
+          {% for row in artistas_top %}
+          <tr>{% for k, v in row.items %}<td>{{ v|default:"—" }}</td>{% endfor %}</tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p class="text-muted" style="text-align:center;padding:1.5rem 0">Sin datos.</p>
+    {% endif %}
+  </div>
+
+  <!-- Actividad de usuarios -->
+  <div class="card">
+    <div class="section-title">Actividad de usuarios</div>
+    {% if actividad %}
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>{% for k, v in actividad.0.items %}<th>{{ k }}</th>{% endfor %}</tr>
+        </thead>
+        <tbody>
+          {% for row in actividad %}
+          <tr>{% for k, v in row.items %}<td>{{ v|default:"—" }}</td>{% endfor %}</tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p class="text-muted" style="text-align:center;padding:1.5rem 0">Sin datos.</p>
+    {% endif %}
+  </div>
+
+  <!-- Ingresos por suscripcion -->
+  <div class="card">
+    <div class="section-title">Ingresos por suscripción</div>
+    {% if ingresos %}
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>{% for k, v in ingresos.0.items %}<th>{{ k }}</th>{% endfor %}</tr>
+        </thead>
+        <tbody>
+          {% for row in ingresos %}
+          <tr>{% for k, v in row.items %}<td>{{ v|default:"—" }}</td>{% endfor %}</tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p class="text-muted" style="text-align:center;padding:1.5rem 0">Sin datos.</p>
+    {% endif %}
+  </div>
+
+  <!-- Regalias por cancion -->
+  <div class="card">
+    <div class="section-title">Regalias por canción</div>
+    {% if regalias %}
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>{% for k, v in regalias.0.items %}<th>{{ k }}</th>{% endfor %}</tr>
+        </thead>
+        <tbody>
+          {% for row in regalias %}
+          <tr>{% for k, v in row.items %}<td>{{ v|default:"—" }}</td>{% endfor %}</tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p class="text-muted" style="text-align:center;padding:1.5rem 0">Sin datos.</p>
+    {% endif %}
+  </div>
+
+  <!-- Canciones por genero (tarjeta ancha) -->
+  <div class="card" style="grid-column:1/-1">
+    <div class="section-title">Distribución por género</div>
+    {% if por_genero %}
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>{% for k, v in por_genero.0.items %}<th>{{ k }}</th>{% endfor %}</tr>
+        </thead>
+        <tbody>
+          {% for row in por_genero %}
+          <tr>{% for k, v in row.items %}<td>{{ v|default:"—" }}</td>{% endfor %}</tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p class="text-muted" style="text-align:center;padding:1.5rem 0">Sin datos.</p>
+    {% endif %}
+  </div>
+
+</div>
+{% endblock %}

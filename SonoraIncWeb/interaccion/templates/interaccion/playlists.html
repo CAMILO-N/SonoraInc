@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% block title %}Playlists — SonoraInc{% endblock %}
+
+{% block content %}
+
+<!-- Sub-navegacion del módulo interaccion -->
+<div style="display:flex;gap:.5rem;margin-bottom:1.75rem">
+  <a href="/interaccion/playlists/" class="btn btn-secondary btn-sm">Playlists</a>
+  <a href="/interaccion/likes/"     class="btn btn-secondary btn-sm">Me gusta</a>
+  <a href="/interaccion/artistas/"  class="btn btn-secondary btn-sm">Artistas seguidos</a>
+</div>
+
+<div class="flex justify-between items-center" style="margin-bottom:1.5rem">
+  <h1 class="page-title" style="margin:0">Playlists</h1>
+  <button onclick="document.getElementById('modal-nueva').style.display='flex'"
+          class="btn btn-primary">+ Nueva playlist</button>
+</div>
+
+<!-- Tabla de playlists -->
+<div class="card">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Nombre</th><th>Privacidad</th><th>Descripción</th><th>Fecha</th><th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for p in playlists %}
+        <tr>
+          <td class="text-muted">{{ p.idPlaylist }}</td>
+          <td>
+            <a href="{% url 'interaccion:playlist_canciones' p.idPlaylist %}"
+               style="color:var(--accent);text-decoration:none;font-weight:600">
+              {{ p.nombrePlaylist }}
+            </a>
+          </td>
+          <td>{{ p.privacidadPlaylist|default:"—" }}</td>
+          <td class="text-muted">{{ p.descripcionPlaylist|default:"—" }}</td>
+          <td class="text-muted">{{ p.fechaCreacionPlaylist|default:"—" }}</td>
+          <td>
+            <div class="flex gap-1">
+              <a href="{% url 'interaccion:playlist_canciones' p.idPlaylist %}"
+                 class="btn btn-secondary btn-sm">Ver canciones</a>
+              <button onclick="abrirEditar({{ p.idPlaylist }},'{{ p.nombrePlaylist }}','{{ p.privacidadPlaylist|default:'Publica' }}','{{ p.descripcionPlaylist|default:'' }}')"
+                      class="btn btn-secondary btn-sm">Editar</button>
+              <form method="post" action="{% url 'interaccion:playlist_eliminar' p.idPlaylist %}"
+                    onsubmit="return confirm('¿Eliminar esta playlist?')">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-sm"
+                        style="background:#2a1212;color:#f5a0a0;border:1px solid #e74c3c">
+                  Eliminar
+                </button>
+              </form>
+            </div>
+          </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="6" class="text-muted" style="text-align:center;padding:2rem">
+          No tienes playlists. Crea la primera.
+        </td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal Nueva Playlist -->
+<div id="modal-nueva" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;align-items:center;justify-content:center">
+  <div class="card" style="width:460px">
+    <div class="flex justify-between items-center" style="margin-bottom:1.25rem">
+      <h2 class="card-title" style="margin:0">Nueva playlist</h2>
+      <button onclick="document.getElementById('modal-nueva').style.display='none'"
+              style="background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer">✕</button>
+    </div>
+    <form method="post" action="{% url 'interaccion:playlist_nueva' %}">
+      {% csrf_token %}
+      <div class="form-group">
+        <label>Nombre *</label>
+        <input type="text" name="nombre" placeholder="Nombre de la playlist" required>
+      </div>
+      <div class="form-group">
+        <label>Privacidad *</label>
+        <select name="privacidad" required>
+          <option value="Publica">Pública</option>
+          <option value="Privada">Privada</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Descripción</label>
+        <textarea name="descripcion" rows="2" placeholder="Opcional..."></textarea>
+      </div>
+      <div class="flex gap-1 mt-2">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="button" onclick="document.getElementById('modal-nueva').style.display='none'"
+                class="btn btn-secondary">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Modal Editar Playlist -->
+<div id="modal-editar" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;align-items:center;justify-content:center">
+  <div class="card" style="width:460px">
+    <div class="flex justify-between items-center" style="margin-bottom:1.25rem">
+      <h2 class="card-title" style="margin:0">Editar playlist</h2>
+      <button onclick="document.getElementById('modal-editar').style.display='none'"
+              style="background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer">✕</button>
+    </div>
+    <form method="post" id="form-editar" action="">
+      {% csrf_token %}
+      <div class="form-group">
+        <label>Nombre *</label>
+        <input type="text" name="nombre" id="edit-nombre" required>
+      </div>
+      <div class="form-group">
+        <label>Privacidad *</label>
+        <select name="privacidad" id="edit-privacidad" required>
+          <option value="Publica">Pública</option>
+          <option value="Privada">Privada</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Descripción</label>
+        <textarea name="descripcion" id="edit-desc" rows="2"></textarea>
+      </div>
+      <div class="flex gap-1 mt-2">
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <button type="button" onclick="document.getElementById('modal-editar').style.display='none'"
+                class="btn btn-secondary">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function abrirEditar(id, nombre, privacidad, desc) {
+  document.getElementById('form-editar').action = '/interaccion/playlists/' + id + '/editar/';
+  document.getElementById('edit-nombre').value     = nombre;
+  document.getElementById('edit-privacidad').value = privacidad;
+  document.getElementById('edit-desc').value       = desc;
+  document.getElementById('modal-editar').style.display = 'flex';
+}
+</script>
+{% endblock %}

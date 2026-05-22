@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+{% block title %}Buscar — SonoraInc{% endblock %}
+
+{% block content %}
+
+<!-- Barra de búsqueda -->
+<form method="get" style="display:flex;gap:.75rem;margin-bottom:2rem">
+  <input type="text" name="q" value="{{ q }}"
+         placeholder="Buscar artistas, canciones, álbumes..."
+         style="max-width:480px;font-size:.95rem" autofocus>
+  <button type="submit" class="btn btn-primary">Buscar</button>
+  {% if q %}
+  <a href="/explorar/buscar/" class="btn btn-secondary">✕ Limpiar</a>
+  {% endif %}
+</form>
+
+{% if q %}
+
+  <!-- ── Artistas ── -->
+  <h2 style="font-size:1rem;font-weight:700;margin-bottom:1rem;color:var(--muted)">
+    ARTISTAS <span style="color:var(--accent)">({{ artistas|length }})</span>
+  </h2>
+  {% if artistas %}
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:1rem;margin-bottom:2.5rem">
+    {% for a in artistas %}
+    <a href="/explorar/artistas/{{ a.idArtista }}/"
+       style="background:var(--surface);border:1px solid var(--border);border-radius:10px;
+              padding:1rem;text-decoration:none;color:var(--text);display:block;transition:background .18s"
+       onmouseover="this.style.background='var(--surface2)'"
+       onmouseout="this.style.background='var(--surface)'">
+      <div style="width:100%;aspect-ratio:1;border-radius:8px;display:flex;align-items:center;
+                  justify-content:center;font-size:2rem;font-weight:900;color:#000;margin-bottom:.85rem"
+           class="bsq-thumb" data-idx="{{ forloop.counter0 }}">
+        {{ a.nombreArtista|first|upper }}
+      </div>
+      <div style="font-weight:600;font-size:.88rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.nombreArtista }}</div>
+      <div style="font-size:.75rem;color:var(--muted);margin-top:.2rem">{{ a.paisOrigenArtista|default:"—" }}</div>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="text-muted" style="margin-bottom:2rem">Sin resultados para artistas.</p>
+  {% endif %}
+
+  <!-- ── Álbumes ── -->
+  <h2 style="font-size:1rem;font-weight:700;margin-bottom:1rem;color:var(--muted)">
+    ÁLBUMES <span style="color:var(--accent)">({{ albumes|length }})</span>
+  </h2>
+  {% if albumes %}
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:1rem;margin-bottom:2.5rem">
+    {% for a in albumes %}
+    <a href="/explorar/albumes/{{ a.idAlbum }}/"
+       style="background:var(--surface);border:1px solid var(--border);border-radius:10px;
+              padding:1rem;text-decoration:none;color:var(--text);display:block;transition:background .18s"
+       onmouseover="this.style.background='var(--surface2)'"
+       onmouseout="this.style.background='var(--surface)'">
+      <div style="width:100%;aspect-ratio:1;border-radius:8px;display:flex;align-items:center;
+                  justify-content:center;font-size:2rem;font-weight:900;color:#000;margin-bottom:.85rem"
+           class="bsq-thumb" data-idx="{{ forloop.counter0 }}">
+        {{ a.tituloAlbum|first|upper }}
+      </div>
+      <div style="font-weight:600;font-size:.88rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.tituloAlbum }}</div>
+      <div style="font-size:.75rem;color:var(--muted);margin-top:.2rem">{{ a.fechaLanzamientoAlbum|default:"—" }}</div>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="text-muted" style="margin-bottom:2rem">Sin resultados para álbumes.</p>
+  {% endif %}
+
+  <!-- ── Canciones ── -->
+  <h2 style="font-size:1rem;font-weight:700;margin-bottom:1rem;color:var(--muted)">
+    CANCIONES <span style="color:var(--accent)">({{ canciones|length }})</span>
+  </h2>
+  {% if canciones %}
+  <div class="card">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Título</th><th>Duración</th><th>Género</th><th>Álbum</th><th>Acciones</th></tr>
+        </thead>
+        <tbody>
+          {% for c in canciones %}
+          <tr>
+            <td><strong>{{ c.tituloCancion }}</strong></td>
+            <td>{{ c.duracionCancion }}</td>
+            <td>{{ c.nombreGenero|default:"—" }}</td>
+            <td>
+              {% if c.Album_idAlbum %}
+              <a href="/explorar/albumes/{{ c.Album_idAlbum }}/"
+                 style="color:var(--accent);text-decoration:none">{{ c.tituloAlbum|default:"—" }}</a>
+              {% else %}—{% endif %}
+            </td>
+            <td>
+              <div class="flex gap-1">
+                <form method="post" action="/interaccion/likes/{{ c.idCancion }}/toggle/">
+                  {% csrf_token %}
+                  <input type="hidden" name="accion" value="dar">
+                  <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                  <button class="btn btn-sm" style="background:#0d1e14;color:#f5e97a;border:1px solid var(--accent)">
+                    Me gusta
+                  </button>
+                </form>
+                <button onclick="abrirAddPlaylist({{ c.idCancion }})"
+                        class="btn btn-sm btn-secondary">+ Playlist</button>
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% else %}
+  <p class="text-muted">Sin resultados para canciones.</p>
+  {% endif %}
+
+{% else %}
+<p class="text-muted" style="margin-top:3rem;text-align:center">
+  Escribe algo para buscar artistas, canciones o álbumes.
+</p>
+{% endif %}
+
+<!-- Modal agregar a playlist -->
+{% include "explorar/_modal_playlist.html" %}
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+(function() {
+  var palette = ['#e74c3c','#3498db','#2ecc71','#f39c12','#9b59b6','#1abc9c','#e67e22'];
+  document.querySelectorAll('.bsq-thumb').forEach(function(el) {
+    el.style.background = palette[parseInt(el.dataset.idx || 0) % palette.length];
+  });
+})();
+function abrirAddPlaylist(idCancion) {
+  document.getElementById('add-pl-cancion').value = idCancion;
+  actualizarAccion();
+  document.getElementById('modal-add-pl').style.display = 'flex';
+}
+function actualizarAccion() {
+  var sel = document.getElementById('add-pl-select');
+  if (sel && sel.value)
+    document.getElementById('form-add-pl').action = '/interaccion/playlists/' + sel.value + '/agregar/';
+}
+</script>
+{% endblock %}

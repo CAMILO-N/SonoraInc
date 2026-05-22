@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block title %}Pagos — SonoraInc{% endblock %}
+
+{% block content %}
+
+<!-- Sub-navegacion del módulo finanzas -->
+<div style="display:flex;gap:.5rem;margin-bottom:1.75rem">
+  <a href="/finanzas/suscripciones/" class="btn btn-secondary btn-sm">Suscripciones</a>
+  <a href="/finanzas/pagos/"         class="btn btn-secondary btn-sm"
+     style="border-color:var(--accent);color:var(--accent)">Pagos</a>
+  <a href="/finanzas/regalias/"      class="btn btn-secondary btn-sm">Regalias</a>
+</div>
+
+<div class="flex justify-between items-center" style="margin-bottom:1.5rem">
+  <h1 class="page-title" style="margin:0">Historial de pagos</h1>
+  <button onclick="document.getElementById('modal-nuevo').style.display='flex'"
+          class="btn btn-primary">+ Registrar pago</button>
+</div>
+
+<!-- Tabla de pagos (todos los de las suscripciones del usuario) -->
+<div class="card">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>ID Pago</th><th>Suscripción</th><th>Plan</th><th>Fecha</th><th>Monto</th><th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for p in pagos %}
+        <tr>
+          <td class="text-muted">{{ p.idPago }}</td>
+          <td class="text-muted">{{ p.Suscripcion_idSuscripcion|default:p._idSuscripcion|default:"—" }}</td>
+          <td>{{ p._tipoPlan|default:"—" }}</td>
+          <td>{{ p.fechaPago|default:p.fecha|default:"—" }}</td>
+          <td style="font-weight:600;color:var(--accent)">
+            ${{ p.montoPago|default:p.monto|default:"—" }}
+          </td>
+          <td>
+            <form method="post" action="{% url 'finanzas:pago_eliminar' p.idPago %}"
+                  onsubmit="return confirm('¿Eliminar este pago?')">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-sm"
+                      style="background:#2a1212;color:#f5a0a0;border:1px solid #e74c3c">
+                Eliminar
+              </button>
+            </form>
+          </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="6" class="text-muted" style="text-align:center;padding:2rem">
+          No hay pagos registrados.
+        </td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal Nuevo Pago -->
+<div id="modal-nuevo" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;align-items:center;justify-content:center">
+  <div class="card" style="width:440px">
+    <div class="flex justify-between items-center" style="margin-bottom:1.25rem">
+      <h2 class="card-title" style="margin:0">Registrar pago</h2>
+      <button onclick="document.getElementById('modal-nuevo').style.display='none'"
+              style="background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer">✕</button>
+    </div>
+    <form method="post" action="{% url 'finanzas:pago_nuevo' %}">
+      {% csrf_token %}
+      <div class="form-group">
+        <label>Suscripción *</label>
+        <select name="id_suscripcion" required>
+          <option value="">— Selecciona —</option>
+          {% for s in suscripciones %}
+          <option value="{{ s.idSuscripcion }}">
+            #{{ s.idSuscripcion }} —
+            {{ s.tipoPlanSuscripcion|default:s.tipoPlan|default:"" }}
+            ({{ s.estadoSuscripcion|default:s.estado|default:"" }})
+          </option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Fecha *</label>
+        <input type="date" name="fecha" required>
+      </div>
+      <div class="form-group">
+        <label>Monto ($) *</label>
+        <input type="number" name="monto" placeholder="ej: 9.99" step="0.01" min="0" required>
+      </div>
+      <div class="flex gap-1 mt-2">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="button" onclick="document.getElementById('modal-nuevo').style.display='none'"
+                class="btn btn-secondary">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

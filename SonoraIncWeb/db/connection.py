@@ -54,6 +54,11 @@ class DB:
         rows = self.exec(sp, *params)
         return rows[0] if rows else None
 
+    def query(self, sql: str, *params) -> list[dict]:
+        """Ejecuta SQL directo sobre vistas o tablas (no SPs)."""
+        self.cursor.execute(sql, *params)
+        return self._to_dicts()
+
     def exec_noreturn(self, sp: str, *params) -> dict | None:
         """Ejecuta SP de escritura (INSERT/UPDATE/DELETE)."""
         sql = f"EXEC {sp} {', '.join(['?'] * len(params))}" if params else f"EXEC {sp}"
