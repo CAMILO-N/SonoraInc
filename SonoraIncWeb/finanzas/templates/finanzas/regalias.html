@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}Regalias — SonoraInc{% endblock %}
+
+{% block content %}
+
+<!-- Sub-navegacion del módulo finanzas -->
+<div style="display:flex;gap:.5rem;margin-bottom:1.75rem">
+  <a href="/finanzas/suscripciones/" class="btn btn-secondary btn-sm">Suscripciones</a>
+  <a href="/finanzas/pagos/"         class="btn btn-secondary btn-sm">Pagos</a>
+  <a href="/finanzas/regalias/"      class="btn btn-secondary btn-sm"
+     style="border-color:var(--accent);color:var(--accent)">Regalias</a>
+</div>
+
+<div class="flex justify-between items-center" style="margin-bottom:1.5rem">
+  <h1 class="page-title" style="margin:0">Regalias</h1>
+  <button onclick="document.getElementById('modal-calcular').style.display='flex'"
+          class="btn btn-primary">Calcular regalias globales</button>
+</div>
+
+<!-- Tabla de regalias -->
+<div class="card">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>ID Regalia</th><th>Canción</th><th>Monto</th><th>Fecha de cálculo</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in regalias %}
+        <tr>
+          <td class="text-muted">{{ r.idRegalia }}</td>
+          <td><strong>{{ r.tituloCancion|default:"Canción #"|add:r.Cancion_idCancion|default:"—" }}</strong></td>
+          <td style="font-weight:600;color:var(--accent)">
+            ${{ r.montoRegalia|default:r.valorRegalia|default:r.monto|default:"—" }}
+          </td>
+          <td class="text-muted">
+            {{ r.fechaCalculoRegalia|default:r.fechaCalculo|default:r.fecha|default:"—" }}
+          </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="4" class="text-muted" style="text-align:center;padding:2rem">
+          No hay regalias registradas. Usa el botón para calcularlas.
+        </td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal Calcular Regalias -->
+<div id="modal-calcular" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;align-items:center;justify-content:center">
+  <div class="card" style="width:420px">
+    <div class="flex justify-between items-center" style="margin-bottom:1.25rem">
+      <h2 class="card-title" style="margin:0">Calcular regalias globales</h2>
+      <button onclick="document.getElementById('modal-calcular').style.display='none'"
+              style="background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer">✕</button>
+    </div>
+    <p class="text-muted" style="font-size:.85rem;margin-bottom:1.25rem">
+      Calcula las regalias para todas las canciones en base a sus reproducciones.
+    </p>
+    <form method="post" action="{% url 'finanzas:regalias_calcular' %}">
+      {% csrf_token %}
+      <div class="form-group">
+        <label>Valor por reproducción ($) *</label>
+        <input type="number" name="valor_rep" placeholder="ej: 0.001"
+               step="0.0001" min="0.0001" required>
+      </div>
+      <div class="form-group">
+        <label>Fecha de cálculo *</label>
+        <input type="date" name="fecha_calc" value="{{ hoy }}" required>
+      </div>
+      <div class="flex gap-1 mt-2">
+        <button type="submit" class="btn btn-primary">Calcular</button>
+        <button type="button" onclick="document.getElementById('modal-calcular').style.display='none'"
+                class="btn btn-secondary">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

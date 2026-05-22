@@ -1,0 +1,38 @@
+<!-- Modal reutilizable: agregar canción a una playlist -->
+<div id="modal-add-pl" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);
+     z-index:300;align-items:center;justify-content:center">
+  <div class="card" style="width:400px">
+    <div class="flex justify-between items-center" style="margin-bottom:1.25rem">
+      <h2 class="card-title" style="margin:0">Agregar a playlist</h2>
+      <button onclick="document.getElementById('modal-add-pl').style.display='none'"
+              style="background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer">✕</button>
+    </div>
+    <form method="post" id="form-add-pl" action="">
+      {% csrf_token %}
+      <input type="hidden" name="id_cancion" id="add-pl-cancion">
+      <!-- Devuelve a la misma página después de agregar -->
+      <input type="hidden" name="next" value="{{ request.get_full_path }}">
+      <div class="form-group">
+        <label>Selecciona una playlist *</label>
+        <select id="add-pl-select" onchange="actualizarAccion()" required>
+          <option value="">— Elige una playlist —</option>
+          {% for p in playlists %}
+          <option value="{{ p.idPlaylist }}">{{ p.nombrePlaylist }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      {% if not playlists %}
+      <p class="text-muted" style="font-size:.85rem">
+        No tienes playlists.
+        <a href="/interaccion/playlists/" style="color:var(--accent)">Crear una</a>
+      </p>
+      {% endif %}
+      <div class="flex gap-1 mt-2">
+        <button type="submit" class="btn btn-primary">Agregar</button>
+        <button type="button"
+                onclick="document.getElementById('modal-add-pl').style.display='none'"
+                class="btn btn-secondary">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>

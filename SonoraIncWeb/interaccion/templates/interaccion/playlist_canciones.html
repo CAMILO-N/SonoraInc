@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block title %}Canciones de playlist — SonoraInc{% endblock %}
+
+{% block content %}
+
+<!-- Navegacion de regreso -->
+<div style="margin-bottom:1.5rem">
+  <a href="{% url 'interaccion:playlists' %}" class="btn btn-secondary btn-sm">
+    &larr; Volver a playlists
+  </a>
+</div>
+
+<div class="flex justify-between items-center" style="margin-bottom:1.5rem">
+  <div>
+    <h1 class="page-title" style="margin:0">
+      {% if playlist %}{{ playlist.nombrePlaylist }}{% else %}Playlist #{{ playlist_id }}{% endif %}
+    </h1>
+    <p class="text-muted" style="font-size:.85rem;margin-top:.25rem">
+      {% if playlist %}{{ playlist.privacidadPlaylist|default:"" }} &mdash; {{ playlist.descripcionPlaylist|default:"Sin descripción" }}{% endif %}
+    </p>
+  </div>
+  <button onclick="document.getElementById('modal-agregar').style.display='flex'"
+          class="btn btn-primary">+ Agregar canción</button>
+</div>
+
+<!-- Tabla de canciones en la playlist -->
+<div class="card">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Canción</th><th>Duración</th><th>Género</th><th>Álbum</th><th>Acciones</th></tr>
+      </thead>
+      <tbody>
+        {% for c in canciones %}
+        <tr>
+          <td class="text-muted">{{ c.idCancion }}</td>
+          <td><strong>{{ c.tituloCancion }}</strong></td>
+          <td>{{ c.duracionCancion|default:"—" }}</td>
+          <td>{{ c.nombreGenero|default:"—" }}</td>
+          <td>{{ c.tituloAlbum|default:"—" }}</td>
+          <td>
+            <form method="post"
+                  action="{% url 'interaccion:playlist_eliminar_cancion' playlist_id c.idCancion %}"
+                  onsubmit="return confirm('¿Quitar esta canción de la playlist?')">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-sm"
+                      style="background:#2a1212;color:#f5a0a0;border:1px solid #e74c3c">
+                Quitar
+              </button>
+            </form>
+          </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="6" class="text-muted" style="text-align:center;padding:2rem">
+          Esta playlist no tiene canciones. Agrega la primera.
+        </td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal Agregar Cancion -->
+<div id="modal-agregar" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;align-items:center;justify-content:center">
+  <div class="card" style="width:440px">
+    <div class="flex justify-between items-center" style="margin-bottom:1.25rem">
+      <h2 class="card-title" style="margin:0">Agregar canción</h2>
+      <button onclick="document.getElementById('modal-agregar').style.display='none'"
+              style="background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer">✕</button>
+    </div>
+    <form method="post" action="{% url 'interaccion:playlist_agregar_cancion' playlist_id %}">
+      {% csrf_token %}
+      <div class="form-group">
+        <label>Canción *</label>
+        <select name="id_cancion" required>
+          <option value="">— Selecciona —</option>
+          {% for c in todas_canciones %}
+          <option value="{{ c.idCancion }}">{{ c.tituloCancion }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="flex gap-1 mt-2">
+        <button type="submit" class="btn btn-primary">Agregar</button>
+        <button type="button" onclick="document.getElementById('modal-agregar').style.display='none'"
+                class="btn btn-secondary">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

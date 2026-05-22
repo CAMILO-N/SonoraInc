@@ -69,9 +69,13 @@
 
 {% if request.session.usuario_id %}
 <nav>
-  <a href="/reportes/" class="nav-brand">Sonora<span>Inc</span></a>
+  <a href="/explorar/" class="nav-brand">Sonora<span>Inc</span></a>
   <div class="nav-links">
+    <a href="/explorar/">Inicio</a>
+    <a href="/explorar/buscar/">Buscar</a>
+    {% if request.session.is_admin %}
     <a href="/catalogo/canciones/">Catálogo</a>
+    {% endif %}
     <a href="/interaccion/playlists/">Playlists</a>
     <a href="/finanzas/suscripciones/">Finanzas</a>
     <a href="/reportes/">Reportes</a>

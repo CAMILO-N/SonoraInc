@@ -1,5 +1,6 @@
 import hashlib
 import pyodbc
+from datetime import date
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from db.connection import DB, parse_sql_error
@@ -37,8 +38,11 @@ def login_view(request):
             request.session['usuario_id']     = usuario['idUsuario']
             request.session['usuario_nombre'] = usuario['nombreUsuario']
             request.session['usuario_correo'] = usuario['correoUsuario']
+            # Admin: si la BD devuelve un campo de rol se usa; si no, idUsuario == 1
+            rol = str(usuario.get('rolUsuario') or usuario.get('rol') or '').lower()
+            request.session['is_admin'] = (rol == 'admin' or usuario['idUsuario'] == 1)
             messages.success(request, f"Bienvenido, {usuario['nombreUsuario']}.")
-            return redirect('usuarios:perfil')
+            return redirect('explorar:home')
 
         except pyodbc.Error as e:
             messages.error(request, parse_sql_error(e))
@@ -59,15 +63,17 @@ def registro_view(request):
         return redirect('usuarios:perfil')
 
     if request.method == 'POST':
-        nombre    = request.POST.get('nombre', '').strip()
-        apellido  = request.POST.get('apellido', '').strip()
-        correo    = request.POST.get('correo', '').strip()
-        password  = request.POST.get('password', '')
-        password2 = request.POST.get('password2', '')
-        fecha     = request.POST.get('fecha', '').strip()
+        nombre      = request.POST.get('nombre', '').strip()
+        seg_nombre  = request.POST.get('seg_nombre', '').strip() or None
+        apellido    = request.POST.get('apellido', '').strip()
+        seg_apellido= request.POST.get('seg_apellido', '').strip() or None
+        correo      = request.POST.get('correo', '').strip()
+        password    = request.POST.get('password', '')
+        password2   = request.POST.get('password2', '')
+        fecha       = str(date.today())   # fecha automática — no se le pide al usuario
 
         errores = []
-        if not all([nombre, apellido, correo, password, fecha]):
+        if not all([nombre, apellido, correo, password]):
             errores.append('Todos los campos son obligatorios.')
         if password != password2:
             errores.append('Las contraseñas no coinciden.')
@@ -84,7 +90,7 @@ def registro_view(request):
                 db.exec_noreturn(
                     'Procesos.sp_RegistrarUsuario',
                     nombre, apellido,
-                    None, None,           # segundoNombre, segundoApellido
+                    seg_nombre, seg_apellido,
                     correo, fecha,
                     _hash(password)
                 )

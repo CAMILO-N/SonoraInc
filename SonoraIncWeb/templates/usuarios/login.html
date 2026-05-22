@@ -33,6 +33,7 @@
   .form-link a{color:#f5c518;text-decoration:none}
   .form-link a:hover{text-decoration:underline}
   .alert-box{padding:.65rem .9rem;border-radius:8px;font-size:.85rem;border-left:3px solid #c0392b;background:#1e0e0e;color:#f5a0a0;margin-bottom:1.25rem}
+  .alert-box.success{border-color:#27ae60;background:#0d1e14;color:#6fcf97}
 </style>
 {% endblock %}
 
@@ -78,7 +79,7 @@
 
     {% if messages %}
       {% for msg in messages %}
-      <div class="alert-box">{{ msg }}</div>
+      <div class="alert-box {% if 'success' in msg.tags %}success{% endif %}">{{ msg }}</div>
       {% endfor %}
     {% endif %}
 
@@ -92,8 +93,17 @@
       </div>
       <div class="fg">
         <label>Contraseña</label>
-        <input type="password" name="password"
-               placeholder="••••••••" required>
+        <div style="position:relative">
+          <input type="password" name="password" id="pw-input"
+                 placeholder="••••••••" required style="padding-right:2.8rem">
+          <button type="button" id="pw-toggle"
+                  onclick="togglePw()"
+                  style="position:absolute;right:.75rem;top:50%;transform:translateY(-50%);
+                         background:none;border:none;cursor:pointer;color:#555;font-size:.85rem;
+                         padding:0;line-height:1">
+            Ver
+          </button>
+        </div>
       </div>
       <button type="submit" class="btn-login">Iniciar sesión</button>
     </form>
@@ -104,4 +114,17 @@
   </div>
 
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function togglePw() {
+  var input  = document.getElementById('pw-input');
+  var btn    = document.getElementById('pw-toggle');
+  var oculto = input.type === 'password';
+  input.type = oculto ? 'text' : 'password';
+  btn.textContent = oculto ? 'Ocultar' : 'Ver';
+  btn.style.color = oculto ? '#f5c518' : '#555';
+}
+</script>
 {% endblock %}

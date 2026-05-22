@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% block title %}Inicio — SonoraInc{% endblock %}
+
+{% block extra_css %}
+<style>
+  /* ── Shell de 2 columnas (sidebar + contenido) ── */
+  .app-shell{display:flex;height:calc(100vh - 58px);overflow:hidden}
+
+  /* ── Sidebar izquierdo (biblioteca) ── */
+  .sidebar{width:260px;min-width:220px;background:#000;overflow-y:auto;
+           padding:1.25rem 1rem;border-right:1px solid #1a1a1a;flex-shrink:0}
+  .sb-head{font-size:.72rem;font-weight:700;text-transform:uppercase;
+           letter-spacing:.1em;color:var(--muted);margin-bottom:.85rem;
+           padding:0 .5rem}
+  .sb-item{display:block;padding:.5rem .75rem;border-radius:6px;color:var(--text);
+           text-decoration:none;font-size:.88rem;transition:background .15s;
+           white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .sb-item:hover{background:#1a1a1a;color:#fff}
+  .sb-badge{font-size:.65rem;padding:.1rem .4rem;border-radius:3px;margin-left:.4rem;
+            background:#1a1a1a;color:var(--muted)}
+  .sb-divider{border:none;border-top:1px solid #1a1a1a;margin:.75rem 0}
+  .sb-new{display:block;margin-top:.75rem;padding:.5rem .75rem;border-radius:6px;
+          font-size:.85rem;color:var(--accent);text-decoration:none;
+          border:1px dashed #2a2a2a;text-align:center;transition:background .15s}
+  .sb-new:hover{background:#1a1a1a}
+
+  /* ── Área de contenido principal ── */
+  .main-area{flex:1;overflow-y:auto;padding:2rem 2.5rem}
+
+  /* ── Barra de búsqueda ── */
+  .search-home{display:flex;gap:.75rem;margin-bottom:2.5rem}
+  .search-home input{flex:1;max-width:440px;font-size:.95rem;padding:.65rem 1rem}
+  .search-home button{padding:.65rem 1.4rem}
+
+  /* ── Encabezado de sección ── */
+  .sec-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.1rem}
+  .sec-title{font-size:1.15rem;font-weight:700}
+  .sec-link{font-size:.78rem;color:var(--muted);text-decoration:none}
+  .sec-link:hover{color:var(--accent)}
+
+  /* ── Grid de cards ── */
+  .cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));
+              gap:1rem;margin-bottom:2.75rem}
+
+  /* ── Card individual ── */
+  .music-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;
+              padding:1rem;cursor:pointer;transition:background .18s,transform .15s;
+              text-decoration:none;color:var(--text);display:block}
+  .music-card:hover{background:var(--surface2);transform:translateY(-3px)}
+  .card-thumb{width:100%;aspect-ratio:1;border-radius:8px;display:flex;align-items:center;
+              justify-content:center;font-size:2rem;font-weight:900;color:#000;
+              margin-bottom:.85rem;letter-spacing:-1px}
+  .card-name{font-weight:600;font-size:.88rem;white-space:nowrap;
+             overflow:hidden;text-overflow:ellipsis}
+  .card-sub{font-size:.75rem;color:var(--muted);margin-top:.2rem;
+            white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+  /* ── Mensajes dentro del main ── */
+  .alerts-main{margin-bottom:1.5rem;display:flex;flex-direction:column;gap:.5rem}
+</style>
+{% endblock %}
+
+{% block full_page %}
+<div class="app-shell">
+
+  <!-- ── Sidebar: Tu biblioteca ── -->
+  <div class="sidebar">
+    <div class="sb-head">Tu biblioteca</div>
+
+    <a href="/explorar/buscar/" class="sb-item">Buscar</a>
+    <a href="/interaccion/likes/" class="sb-item">Me gusta</a>
+    <a href="/interaccion/artistas/" class="sb-item">Artistas seguidos</a>
+
+    <hr class="sb-divider">
+    <div class="sb-head" style="margin-top:.5rem">Playlists</div>
+
+    {% for p in playlists %}
+    <a href="/interaccion/playlists/{{ p.idPlaylist }}/canciones/"
+       class="sb-item" title="{{ p.nombrePlaylist }}">
+      {{ p.nombrePlaylist }}
+      {% if p.privacidadPlaylist == 'Privada' %}
+      <span class="sb-badge">Priv</span>
+      {% endif %}
+    </a>
+    {% empty %}
+    <p style="font-size:.8rem;color:var(--muted);padding:.5rem .75rem">
+      Sin playlists aún.
+    </p>
+    {% endfor %}
+
+    <a href="/interaccion/playlists/" class="sb-new">+ Nueva playlist</a>
+  </div>
+
+  <!-- ── Contenido principal ── -->
+  <div class="main-area">
+
+    {% if messages %}
+    <div class="alerts-main">
+      {% for msg in messages %}
+      <div class="alert alert-{{ msg.tags }}">{{ msg }}</div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Buscador -->
+    <form method="get" action="/explorar/buscar/" class="search-home">
+      <input type="text" name="q" placeholder="Buscar artistas, canciones, álbumes..." autofocus>
+      <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+
+    <!-- ── Artistas ── -->
+    <div class="sec-head">
+      <span class="sec-title">Artistas</span>
+      <a href="/explorar/buscar/?q=" class="sec-link">Ver todos</a>
+    </div>
+    <div class="cards-grid" id="artistas-grid">
+      {% for a in artistas %}
+      <a href="/explorar/artistas/{{ a.idArtista }}/" class="music-card">
+        <div class="card-thumb" data-idx="{{ forloop.counter0 }}">
+          {{ a.nombreArtista|first|upper }}
+        </div>
+        <div class="card-name">{{ a.nombreArtista }}</div>
+        <div class="card-sub">{{ a.paisOrigenArtista|default:"—" }}</div>
+      </a>
+      {% empty %}
+      <p class="text-muted">No hay artistas.</p>
+      {% endfor %}
+    </div>
+
+    <!-- ── Álbumes ── -->
+    <div class="sec-head">
+      <span class="sec-title">Álbumes</span>
+    </div>
+    <div class="cards-grid" id="albumes-grid">
+      {% for a in albumes %}
+      <a href="/explorar/albumes/{{ a.idAlbum }}/" class="music-card">
+        <div class="card-thumb" data-idx="{{ forloop.counter0 }}">
+          {{ a.tituloAlbum|first|upper }}
+        </div>
+        <div class="card-name">{{ a.tituloAlbum }}</div>
+        <div class="card-sub">{{ a.fechaLanzamientoAlbum|default:"—" }}</div>
+      </a>
+      {% empty %}
+      <p class="text-muted">No hay álbumes.</p>
+      {% endfor %}
+    </div>
+
+  </div><!-- /main-area -->
+</div><!-- /app-shell -->
+{% endblock %}
+
+{% block extra_js %}
+<script>
+/* Asigna colores variados a los avatares de las cards */
+(function() {
+  var palette = ['#e74c3c','#3498db','#2ecc71','#f39c12','#9b59b6',
+                 '#1abc9c','#e67e22','#c0392b','#16a085','#8e44ad','#d35400'];
+  document.querySelectorAll('.card-thumb').forEach(function(el) {
+    var idx = parseInt(el.getAttribute('data-idx') || 0);
+    el.style.background = palette[idx % palette.length];
+  });
+})();
+</script>
+{% endblock %}
