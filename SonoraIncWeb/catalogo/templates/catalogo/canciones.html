@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% block title %}Canciones — SonoraInc{% endblock %}
+
+{% block content %}
+<div class="flex justify-between items-center" style="margin-bottom:1.5rem">
+  <h1 class="page-title" style="margin:0">🎵 Canciones</h1>
+  <button onclick="document.getElementById('modal-nueva').style.display='flex'"
+          class="btn btn-primary">+ Nueva canción</button>
+</div>
+
+<!-- Buscador -->
+<form method="get" style="margin-bottom:1.5rem;display:flex;gap:.75rem">
+  <input type="text" name="q" value="{{ busqueda }}"
+         placeholder="Buscar canción..." style="max-width:320px">
+  <button type="submit" class="btn btn-secondary">Buscar</button>
+  {% if busqueda %}
+  <a href="{% url 'catalogo:canciones' %}" class="btn btn-secondary">✕ Limpiar</a>
+  {% endif %}
+</form>
+
+<!-- Tabla -->
+<div class="card">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Título</th><th>Duración (s)</th>
+          <th>Género</th><th>Álbum</th><th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for c in canciones %}
+        <tr>
+          <td class="text-muted">{{ c.idCancion }}</td>
+          <td><strong>{{ c.tituloCancion }}</strong></td>
+          <td>{{ c.duracionCancion }}</td>
+          <td>{{ c.nombreGenero|default:"—" }}</td>
+          <td>{{ c.tituloAlbum|default:"—" }}</td>
+          <td>
+            <div class="flex gap-1">
+              <button onclick="abrirEditar({{ c.idCancion }},'{{ c.tituloCancion }}',{{ c.duracionCancion }},{{ c.Genero_idGenero }},{{ c.Album_idAlbum }})"
+                      class="btn btn-secondary btn-sm">Editar</button>
+              <form method="post" action="{% url 'catalogo:cancion_eliminar' c.idCancion %}"
+                    onsubmit="return confirm('¿Eliminar esta canción?')">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-sm"
+                        style="background:#2a1212;color:#f5a0a0;border:1px solid #e74c3c">
+                  Eliminar
+                </button>
+              </form>
+            </div>
+          </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="6" class="text-muted" style="text-align:center;padding:2rem">
+          No se encontraron canciones.
+        </td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal Nueva Canción -->
+<div id="modal-nueva" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;align-items:center;justify-content:center">
+  <div class="card" style="width:460px;max-height:90vh;overflow-y:auto">
+    <div class="flex justify-between items-center" style="margin-bottom:1.25rem">
+      <h2 class="card-title" style="margin:0">Nueva canción</h2>
+      <button onclick="document.getElementById('modal-nueva').style.display='none'"
+              style="background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer">✕</button>
+    </div>
+    <form method="post" action="{% url 'catalogo:cancion_nueva' %}">
+      {% csrf_token %}
+      <div class="form-group">
+        <label>Título *</label>
+        <input type="text" name="titulo" placeholder="Nombre de la canción" required>
+      </div>
+      <div class="form-group">
+        <label>Duración (segundos) *</label>
+        <input type="number" name="duracion" placeholder="ej: 210" step="0.1" min="0" required>
+      </div>
+      <div class="form-group">
+        <label>Género *</label>
+        <select name="id_genero" required>
+          <option value="">— Selecciona —</option>
+          {% for g in generos %}
+          <option value="{{ g.idGenero }}">{{ g.nombreGenero }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Álbum *</label>
+        <select name="id_album" required>
+          <option value="">— Selecciona —</option>
+          {% for a in albumes %}
+          <option value="{{ a.idAlbum }}">{{ a.tituloAlbum }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="flex gap-1 mt-2">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="button" onclick="document.getElementById('modal-nueva').style.display='none'"
+                class="btn btn-secondary">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Modal Editar Canción -->
+<div id="modal-editar" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;align-items:center;justify-content:center">
+  <div class="card" style="width:460px;max-height:90vh;overflow-y:auto">
+    <div class="flex justify-between items-center" style="margin-bottom:1.25rem">
+      <h2 class="card-title" style="margin:0">Editar canción</h2>
+      <button onclick="document.getElementById('modal-editar').style.display='none'"
+              style="background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer">✕</button>
+    </div>
+    <form method="post" id="form-editar" action="">
+      {% csrf_token %}
+      <div class="form-group">
+        <label>Título *</label>
+        <input type="text" name="titulo" id="edit-titulo" required>
+      </div>
+      <div class="form-group">
+        <label>Duración (segundos) *</label>
+        <input type="number" name="duracion" id="edit-duracion" step="0.1" min="0" required>
+      </div>
+      <div class="form-group">
+        <label>Género *</label>
+        <select name="id_genero" id="edit-genero" required>
+          {% for g in generos %}
+          <option value="{{ g.idGenero }}">{{ g.nombreGenero }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Álbum *</label>
+        <select name="id_album" id="edit-album" required>
+          {% for a in albumes %}
+          <option value="{{ a.idAlbum }}">{{ a.tituloAlbum }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="flex gap-1 mt-2">
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <button type="button" onclick="document.getElementById('modal-editar').style.display='none'"
+                class="btn btn-secondary">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function abrirEditar(id, titulo, duracion, idGenero, idAlbum) {
+  document.getElementById('form-editar').action = '/catalogo/canciones/' + id + '/editar/';
+  document.getElementById('edit-titulo').value   = titulo;
+  document.getElementById('edit-duracion').value = duracion;
+  document.getElementById('edit-genero').value   = idGenero;
+  document.getElementById('edit-album').value    = idAlbum;
+  document.getElementById('modal-editar').style.display = 'flex';
+}
+</script>
+{% endblock %}
