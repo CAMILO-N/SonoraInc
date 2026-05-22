@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% block title %}Iniciar sesión — SonoraInc{% endblock %}
+
+{% block extra_css %}
+<style>
+  .login-wrap{display:flex;height:100vh}
+  .left{flex:1;background:#0a0a0a;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:3rem}
+  .corner-tl{position:absolute;top:32px;left:32px;width:70px;height:70px;border-top:2px solid #f5c518;border-left:2px solid #f5c518}
+  .corner-br{position:absolute;bottom:32px;right:32px;width:70px;height:70px;border-bottom:2px solid #f5c518;border-right:2px solid #f5c518}
+  .brand{font-size:2.8rem;font-weight:800;color:#fff;letter-spacing:-1.5px;margin-bottom:.4rem}
+  .brand span{color:#f5c518}
+  .tagline{font-size:.72rem;color:#444;text-transform:uppercase;letter-spacing:.14em;margin-bottom:3.5rem}
+  .wave{display:flex;align-items:flex-end;gap:4px;height:64px;margin-bottom:3.5rem}
+  .wb{width:6px;border-radius:3px 3px 0 0;background:#f5c518;animation:pulse 1.4s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:.1;transform:scaleY(.5)}50%{opacity:1;transform:scaleY(1)}}
+  .stats{display:flex;gap:2.5rem;align-items:center}
+  .stat{text-align:center}
+  .stat-n{font-size:1.5rem;font-weight:700;color:#f5c518}
+  .stat-l{font-size:.62rem;color:#444;text-transform:uppercase;letter-spacing:.08em;margin-top:.2rem}
+  .sdiv{width:1px;height:36px;background:#222}
+  .right{width:400px;min-width:360px;background:#111;border-left:1px solid #1e1e1e;display:flex;flex-direction:column;justify-content:center;padding:3rem 2.75rem}
+  .accent-line{width:36px;height:3px;background:#f5c518;border-radius:2px;margin-bottom:1.5rem}
+  .form-title{font-size:1.4rem;font-weight:700;color:#fff;margin-bottom:.3rem}
+  .form-sub{font-size:.85rem;color:#555;margin-bottom:2rem}
+  .fg{margin-bottom:1.1rem}
+  .fg label{display:block;font-size:.72rem;color:#555;margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.06em}
+  .fg input{width:100%;background:#1a1a1a;border:1px solid #2a2a2a;color:#e0e0e0;padding:.7rem .9rem;border-radius:8px;font-size:.9rem;transition:border-color .15s}
+  .fg input:focus{outline:none;border-color:#f5c518}
+  .btn-login{width:100%;background:#f5c518;color:#000;border:none;padding:.8rem;border-radius:8px;font-size:.95rem;font-weight:700;cursor:pointer;margin-top:.75rem;transition:background .15s,transform .1s}
+  .btn-login:hover{background:#e0b215}
+  .btn-login:active{transform:scale(.98)}
+  .form-link{text-align:center;margin-top:1.5rem;font-size:.82rem;color:#555}
+  .form-link a{color:#f5c518;text-decoration:none}
+  .form-link a:hover{text-decoration:underline}
+  .alert-box{padding:.65rem .9rem;border-radius:8px;font-size:.85rem;border-left:3px solid #c0392b;background:#1e0e0e;color:#f5a0a0;margin-bottom:1.25rem}
+</style>
+{% endblock %}
+
+{% block full_page %}
+<div class="login-wrap">
+
+  <!-- Izquierda -->
+  <div class="left">
+    <div class="corner-tl"></div>
+    <div class="corner-br"></div>
+    <div class="brand">Sonora<span>Inc</span></div>
+    <div class="tagline">Plataforma musical ecuatoriana</div>
+    <div class="wave">
+      <div class="wb" style="height:22px;animation-delay:0s"></div>
+      <div class="wb" style="height:40px;animation-delay:.1s"></div>
+      <div class="wb" style="height:56px;animation-delay:.2s"></div>
+      <div class="wb" style="height:28px;animation-delay:.3s"></div>
+      <div class="wb" style="height:64px;animation-delay:.4s"></div>
+      <div class="wb" style="height:46px;animation-delay:.5s"></div>
+      <div class="wb" style="height:18px;animation-delay:.6s"></div>
+      <div class="wb" style="height:54px;animation-delay:.7s"></div>
+      <div class="wb" style="height:32px;animation-delay:.8s"></div>
+      <div class="wb" style="height:50px;animation-delay:.9s"></div>
+      <div class="wb" style="height:24px;animation-delay:1s"></div>
+      <div class="wb" style="height:60px;animation-delay:1.1s"></div>
+      <div class="wb" style="height:16px;animation-delay:1.2s"></div>
+      <div class="wb" style="height:44px;animation-delay:1.3s"></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">120+</div><div class="stat-l">Artistas</div></div>
+      <div class="sdiv"></div>
+      <div class="stat"><div class="stat-n">1K+</div><div class="stat-l">Canciones</div></div>
+      <div class="sdiv"></div>
+      <div class="stat"><div class="stat-n">500+</div><div class="stat-l">Playlists</div></div>
+    </div>
+  </div>
+
+  <!-- Derecha -->
+  <div class="right">
+    <div class="accent-line"></div>
+    <div class="form-title">Bienvenido de vuelta</div>
+    <div class="form-sub">Inicia sesión para continuar</div>
+
+    {% if messages %}
+      {% for msg in messages %}
+      <div class="alert-box">{{ msg }}</div>
+      {% endfor %}
+    {% endif %}
+
+    <form method="post">
+      {% csrf_token %}
+      <div class="fg">
+        <label>Correo electrónico</label>
+        <input type="email" name="correo"
+               value="{{ request.POST.correo }}"
+               placeholder="tu@correo.com" required autofocus>
+      </div>
+      <div class="fg">
+        <label>Contraseña</label>
+        <input type="password" name="password"
+               placeholder="••••••••" required>
+      </div>
+      <button type="submit" class="btn-login">Iniciar sesión</button>
+    </form>
+
+    <div class="form-link">
+      ¿No tienes cuenta? <a href="{% url 'usuarios:registro' %}">Regístrate aquí</a>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

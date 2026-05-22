@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}Álbumes — SonoraInc{% endblock %}
+
+{% block content %}
+<div class="flex justify-between items-center" style="margin-bottom:1.5rem">
+  <h1 class="page-title" style="margin:0">💿 Álbumes</h1>
+  <button onclick="document.getElementById('modal-nuevo').style.display='flex'"
+          class="btn btn-primary">+ Nuevo álbum</button>
+</div>
+
+<div class="card">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Título</th><th>Lanzamiento</th><th>Acciones</th></tr>
+      </thead>
+      <tbody>
+        {% for a in albumes %}
+        <tr>
+          <td class="text-muted">{{ a.idAlbum }}</td>
+          <td><strong>{{ a.tituloAlbum }}</strong></td>
+          <td>{{ a.fechaLanzamientoAlbum }}</td>
+          <td>
+            <form method="post" action="{% url 'catalogo:album_eliminar' a.idAlbum %}"
+                  onsubmit="return confirm('¿Eliminar este álbum?')">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-sm"
+                      style="background:#2a1212;color:#f5a0a0;border:1px solid #e74c3c">
+                Eliminar
+              </button>
+            </form>
+          </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="4" class="text-muted" style="text-align:center;padding:2rem">
+          No hay álbumes registrados.
+        </td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal Nuevo -->
+<div id="modal-nuevo" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;align-items:center;justify-content:center">
+  <div class="card" style="width:420px">
+    <div class="flex justify-between items-center" style="margin-bottom:1.25rem">
+      <h2 class="card-title" style="margin:0">Nuevo álbum</h2>
+      <button onclick="document.getElementById('modal-nuevo').style.display='none'"
+              style="background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer">✕</button>
+    </div>
+    <form method="post" action="{% url 'catalogo:album_nuevo' %}">
+      {% csrf_token %}
+      <div class="form-group">
+        <label>Título *</label>
+        <input type="text" name="titulo" placeholder="Nombre del álbum" required>
+      </div>
+      <div class="form-group">
+        <label>Fecha de lanzamiento *</label>
+        <input type="date" name="fecha" required>
+      </div>
+      <div class="flex gap-1 mt-2">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="button" onclick="document.getElementById('modal-nuevo').style.display='none'"
+                class="btn btn-secondary">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
