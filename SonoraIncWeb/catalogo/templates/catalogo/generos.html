@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Géneros — SonoraInc{% endblock %}
+
+{% block content %}
+<h1 class="page-title">🎼 Géneros musicales</h1>
+
+<div class="card" style="max-width:500px">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Género</th></tr>
+      </thead>
+      <tbody>
+        {% for g in generos %}
+        <tr>
+          <td class="text-muted">{{ g.idGenero }}</td>
+          <td>{{ g.nombreGenero }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="2" class="text-muted" style="text-align:center;padding:2rem">
+          No hay géneros registrados.
+        </td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Mi perfil — SonoraInc{% endblock %}
+
+{% block content %}
+<h1 class="page-title">Mi perfil</h1>
+
+{% if usuario %}
+<div class="card" style="max-width:600px">
+  <table>
+    <tr><th>ID</th><td>{{ usuario.idUsuario }}</td></tr>
+    <tr><th>Nombre</th><td>{{ usuario.nombreUsuario }} {{ usuario.apellidoUsuario }}</td></tr>
+    <tr><th>Correo</th><td>{{ usuario.correoUsuario }}</td></tr>
+    <tr><th>Registro</th><td>{{ usuario.fechaRegistroUsuario }}</td></tr>
+  </table>
+  <div class="mt-3">
+    <a href="{% url 'usuarios:logout' %}" class="btn btn-secondary btn-sm">
+      Cerrar sesión
+    </a>
+  </div>
+</div>
+{% else %}
+<p class="text-muted">No se pudo cargar la información del perfil.</p>
+{% endif %}
+{% endblock %}

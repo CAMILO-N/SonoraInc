@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+{% block title %}Artistas — SonoraInc{% endblock %}
+
+{% block content %}
+<div class="flex justify-between items-center" style="margin-bottom:1.5rem">
+  <h1 class="page-title" style="margin:0">🎤 Artistas</h1>
+  <button onclick="document.getElementById('modal-nuevo').style.display='flex'"
+          class="btn btn-primary">+ Nuevo artista</button>
+</div>
+
+<!-- Buscador -->
+<form method="get" style="margin-bottom:1.5rem;display:flex;gap:.75rem">
+  <input type="text" name="q" value="{{ busqueda }}"
+         placeholder="Buscar artista..." style="max-width:320px">
+  <button type="submit" class="btn btn-secondary">Buscar</button>
+  {% if busqueda %}
+  <a href="{% url 'catalogo:artistas' %}" class="btn btn-secondary">✕ Limpiar</a>
+  {% endif %}
+</form>
+
+<div class="card">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Nombre</th><th>País</th><th>Productora</th><th>Acciones</th></tr>
+      </thead>
+      <tbody>
+        {% for a in artistas %}
+        <tr>
+          <td class="text-muted">{{ a.idArtista }}</td>
+          <td><strong>{{ a.nombreArtista }}</strong></td>
+          <td>{{ a.paisOrigenArtista }}</td>
+          <td>{{ a.nombreProductora|default:"—" }}</td>
+          <td>
+            <div class="flex gap-1">
+              <button onclick="abrirEditar({{ a.idArtista }},'{{ a.nombreArtista }}','{{ a.paisOrigenArtista }}','{{ a.descripcionArtista|default:'' }}',{{ a.Productora_idProductora }})"
+                      class="btn btn-secondary btn-sm">Editar</button>
+              <form method="post" action="{% url 'catalogo:artista_eliminar' a.idArtista %}"
+                    onsubmit="return confirm('¿Eliminar este artista?')">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-sm"
+                        style="background:#2a1212;color:#f5a0a0;border:1px solid #e74c3c">
+                  Eliminar
+                </button>
+              </form>
+            </div>
+          </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="5" class="text-muted" style="text-align:center;padding:2rem">
+          No se encontraron artistas.
+        </td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal Nuevo -->
+<div id="modal-nuevo" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;align-items:center;justify-content:center">
+  <div class="card" style="width:460px">
+    <div class="flex justify-between items-center" style="margin-bottom:1.25rem">
+      <h2 class="card-title" style="margin:0">Nuevo artista</h2>
+      <button onclick="document.getElementById('modal-nuevo').style.display='none'"
+              style="background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer">✕</button>
+    </div>
+    <form method="post" action="{% url 'catalogo:artista_nuevo' %}">
+      {% csrf_token %}
+      <div class="form-group">
+        <label>Nombre *</label>
+        <input type="text" name="nombre" placeholder="Nombre del artista" required>
+      </div>
+      <div class="form-group">
+        <label>País de origen *</label>
+        <input type="text" name="pais" placeholder="ej: Colombia" required>
+      </div>
+      <div class="form-group">
+        <label>Descripción</label>
+        <textarea name="descripcion" rows="2" placeholder="Opcional..."></textarea>
+      </div>
+      <div class="form-group">
+        <label>Productora *</label>
+        <select name="id_productora" required>
+          <option value="">— Selecciona —</option>
+          {% for p in productoras %}
+          <option value="{{ p.idProductora }}">{{ p.nombreProductora }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="flex gap-1 mt-2">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="button" onclick="document.getElementById('modal-nuevo').style.display='none'"
+                class="btn btn-secondary">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Modal Editar -->
+<div id="modal-editar" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;align-items:center;justify-content:center">
+  <div class="card" style="width:460px">
+    <div class="flex justify-between items-center" style="margin-bottom:1.25rem">
+      <h2 class="card-title" style="margin:0">Editar artista</h2>
+      <button onclick="document.getElementById('modal-editar').style.display='none'"
+              style="background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer">✕</button>
+    </div>
+    <form method="post" id="form-editar" action="">
+      {% csrf_token %}
+      <div class="form-group">
+        <label>Nombre *</label>
+        <input type="text" name="nombre" id="edit-nombre" required>
+      </div>
+      <div class="form-group">
+        <label>País *</label>
+        <input type="text" name="pais" id="edit-pais" required>
+      </div>
+      <div class="form-group">
+        <label>Descripción</label>
+        <textarea name="descripcion" id="edit-desc" rows="2"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Productora *</label>
+        <select name="id_productora" id="edit-productora" required>
+          {% for p in productoras %}
+          <option value="{{ p.idProductora }}">{{ p.nombreProductora }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="flex gap-1 mt-2">
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <button type="button" onclick="document.getElementById('modal-editar').style.display='none'"
+                class="btn btn-secondary">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function abrirEditar(id, nombre, pais, desc, idProductora) {
+  document.getElementById('form-editar').action = '/catalogo/artistas/' + id + '/editar/';
+  document.getElementById('edit-nombre').value     = nombre;
+  document.getElementById('edit-pais').value       = pais;
+  document.getElementById('edit-desc').value       = desc;
+  document.getElementById('edit-productora').value = idProductora;
+  document.getElementById('modal-editar').style.display = 'flex';
+}
+</script>
+{% endblock %}

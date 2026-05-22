@@ -1,0 +1,116 @@
+import hashlib
+import pyodbc
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from db.connection import DB, parse_sql_error
+
+
+def _hash(password: str) -> str:
+    """SHA2_256 en mayúsculas — igual que HASHBYTES en SQL Server."""
+    return hashlib.sha256(password.encode()).hexdigest().upper()
+
+
+# ── Login ─────────────────────────────────────────────────────────────────────
+def login_view(request):
+    if request.session.get('usuario_id'):
+        return redirect('usuarios:perfil')
+
+    if request.method == 'POST':
+        correo   = request.POST.get('correo', '').strip()
+        password = request.POST.get('password', '')
+
+        if not correo or not password:
+            messages.error(request, 'Completa todos los campos.')
+            return render(request, 'usuarios/login.html')
+
+        try:
+            with DB() as db:
+                usuario = db.exec_one(
+                    'Procesos.sp_IniciarSesion',
+                    correo,
+                    _hash(password)
+                )
+            if not usuario:
+                messages.error(request, 'Credenciales incorrectas.')
+                return render(request, 'usuarios/login.html')
+
+            request.session['usuario_id']     = usuario['idUsuario']
+            request.session['usuario_nombre'] = usuario['nombreUsuario']
+            request.session['usuario_correo'] = usuario['correoUsuario']
+            messages.success(request, f"Bienvenido, {usuario['nombreUsuario']}.")
+            return redirect('usuarios:perfil')
+
+        except pyodbc.Error as e:
+            messages.error(request, parse_sql_error(e))
+
+    return render(request, 'usuarios/login.html')
+
+
+# ── Logout ────────────────────────────────────────────────────────────────────
+def logout_view(request):
+    request.session.flush()
+    messages.success(request, 'Sesión cerrada.')
+    return redirect('usuarios:login')
+
+
+# ── Registro ──────────────────────────────────────────────────────────────────
+def registro_view(request):
+    if request.session.get('usuario_id'):
+        return redirect('usuarios:perfil')
+
+    if request.method == 'POST':
+        nombre    = request.POST.get('nombre', '').strip()
+        apellido  = request.POST.get('apellido', '').strip()
+        correo    = request.POST.get('correo', '').strip()
+        password  = request.POST.get('password', '')
+        password2 = request.POST.get('password2', '')
+        fecha     = request.POST.get('fecha', '').strip()
+
+        errores = []
+        if not all([nombre, apellido, correo, password, fecha]):
+            errores.append('Todos los campos son obligatorios.')
+        if password != password2:
+            errores.append('Las contraseñas no coinciden.')
+        if len(password) < 6:
+            errores.append('La contraseña debe tener mínimo 6 caracteres.')
+
+        if errores:
+            for e in errores:
+                messages.error(request, e)
+            return render(request, 'usuarios/registro.html', {'post': request.POST})
+
+        try:
+            with DB() as db:
+                db.exec_noreturn(
+                    'Procesos.sp_RegistrarUsuario',
+                    nombre, apellido,
+                    None, None,           # segundoNombre, segundoApellido
+                    correo, fecha,
+                    _hash(password)
+                )
+            messages.success(request, 'Cuenta creada. Ya puedes iniciar sesión.')
+            return redirect('usuarios:login')
+
+        except pyodbc.Error as e:
+            messages.error(request, parse_sql_error(e))
+            return render(request, 'usuarios/registro.html', {'post': request.POST})
+
+    return render(request, 'usuarios/registro.html')
+
+
+# ── Perfil ────────────────────────────────────────────────────────────────────
+def perfil_view(request):
+    if not request.session.get('usuario_id'):
+        return redirect('usuarios:login')
+
+    try:
+        with DB() as db:
+            usuario = db.exec_one(
+                'Procesos.sp_ConsultarUsuarios',
+                request.session['usuario_id']
+            )
+    except pyodbc.Error as e:
+        messages.error(request, parse_sql_error(e))
+        usuario = None
+
+    return render(request, 'usuarios/perfil.html', {'usuario': usuario})
