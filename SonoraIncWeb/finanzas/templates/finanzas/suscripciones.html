@@ -3,73 +3,61 @@
 
 {% block content %}
 
-<!-- Sub-navegacion del módulo finanzas -->
-<div style="display:flex;gap:.5rem;margin-bottom:1.75rem">
-  <a href="/finanzas/suscripciones/" class="btn btn-secondary btn-sm"
-     style="border-color:var(--accent);color:var(--accent)">Suscripciones</a>
-  <a href="/finanzas/pagos/"         class="btn btn-secondary btn-sm">Pagos</a>
-  <a href="/finanzas/regalias/"      class="btn btn-secondary btn-sm">Regalias</a>
-</div>
-
 <div class="flex justify-between items-center" style="margin-bottom:1.5rem">
-  <h1 class="page-title" style="margin:0">Suscripciones</h1>
-  <button onclick="document.getElementById('modal-nueva').style.display='flex'"
-          class="btn btn-primary">+ Nueva suscripción</button>
+  <h1 class="page-title" style="margin:0">Mi suscripción</h1>
+  <button onclick="document.getElementById('modal-activar').style.display='flex'"
+          class="btn btn-primary">Activar suscripción</button>
 </div>
 
-<!-- Tabla de suscripciones del usuario -->
+<!-- Tabla de suscripciones -->
 <div class="card">
   <div class="table-wrap">
     <table>
       <thead>
-        <tr>
-          <th>ID</th><th>Plan</th><th>Inicio</th><th>Fin</th><th>Estado</th><th>Acciones</th>
-        </tr>
+        <tr><th>Plan</th><th>Inicio</th><th>Fin</th><th>Estado</th><th>Acciones</th></tr>
       </thead>
       <tbody>
         {% for s in suscripciones %}
+        {% with plan=s.tipoPlanSuscripcion|default:s.tipoPlan|default:"—"
+                inicio=s.fechaInicioSuscripcion|default:s.fechaInicio|default:"—"
+                fin=s.fechaFinSuscripcion|default:s.fechaFin|default:"—"
+                estado=s.estadoSuscripcion|default:s.estado|default:"—" %}
         <tr>
-          <td class="text-muted">{{ s.idSuscripcion }}</td>
           <td>
             <span style="font-weight:600;
-              {% if s.tipoPlanSuscripcion == 'Premium' %}color:var(--accent){% endif %}">
-              {{ s.tipoPlanSuscripcion|default:s.tipoPlan|default:"—" }}
+              {% if plan == 'Premium' %}color:var(--accent){% endif %}">
+              {{ plan }}
             </span>
           </td>
-          <td>{{ s.fechaInicioSuscripcion|default:s.fechaInicio|default:"—" }}</td>
-          <td>{{ s.fechaFinSuscripcion|default:s.fechaFin|default:"—" }}</td>
+          <td class="text-muted">{{ inicio }}</td>
+          <td class="text-muted">{{ fin }}</td>
           <td>
             <span style="font-size:.78rem;padding:.2rem .6rem;border-radius:4px;
-              {% if s.estadoSuscripcion == 'Activa' or s.estado == 'Activa' %}
+              {% if estado == 'Activa' %}
                 background:#0d1e14;color:#f5e97a;border:1px solid var(--accent)
               {% else %}
                 background:#1e1e1e;color:var(--muted);border:1px solid var(--border)
               {% endif %}">
-              {{ s.estadoSuscripcion|default:s.estado|default:"—" }}
+              {{ estado }}
             </span>
           </td>
           <td>
-            <div class="flex gap-1">
-              <button onclick="abrirEditar(
-                  {{ s.idSuscripcion }},
-                  '{{ s.tipoPlanSuscripcion|default:s.tipoPlan|default:'' }}',
-                  '{{ s.fechaFinSuscripcion|default:s.fechaFin|default:'' }}',
-                  '{{ s.estadoSuscripcion|default:s.estado|default:'' }}')"
-                      class="btn btn-secondary btn-sm">Editar</button>
-              <form method="post" action="{% url 'finanzas:suscripcion_eliminar' s.idSuscripcion %}"
-                    onsubmit="return confirm('¿Eliminar esta suscripción?')">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-sm"
-                        style="background:#2a1212;color:#f5a0a0;border:1px solid #e74c3c">
-                  Eliminar
-                </button>
-              </form>
-            </div>
+            {% if estado == 'Activa' %}
+            <form method="post"
+                  action="{% url 'finanzas:suscripcion_cancelar' s.idSuscripcion %}"
+                  onsubmit="return confirm('¿Cancelar esta suscripción?')">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-sm btn-secondary">Cancelar</button>
+            </form>
+            {% else %}
+            <span class="text-muted" style="font-size:.82rem">{{ estado }}</span>
+            {% endif %}
           </td>
         </tr>
+        {% endwith %}
         {% empty %}
-        <tr><td colspan="6" class="text-muted" style="text-align:center;padding:2rem">
-          No hay suscripciones registradas.
+        <tr><td colspan="5" class="text-muted" style="text-align:center;padding:2rem">
+          No tienes ninguna suscripción activa.
         </td></tr>
         {% endfor %}
       </tbody>
@@ -77,95 +65,43 @@
   </div>
 </div>
 
-<!-- Modal Nueva Suscripcion -->
-<div id="modal-nueva" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;align-items:center;justify-content:center">
-  <div class="card" style="width:440px">
+<!-- Modal Activar Suscripcion -->
+<div id="modal-activar" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);
+     z-index:200;align-items:center;justify-content:center">
+  <div class="card" style="width:400px">
     <div class="flex justify-between items-center" style="margin-bottom:1.25rem">
-      <h2 class="card-title" style="margin:0">Nueva suscripción</h2>
-      <button onclick="document.getElementById('modal-nueva').style.display='none'"
+      <h2 class="card-title" style="margin:0">Activar suscripción</h2>
+      <button onclick="document.getElementById('modal-activar').style.display='none'"
               style="background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer">✕</button>
     </div>
     <form method="post" action="{% url 'finanzas:suscripcion_nueva' %}">
       {% csrf_token %}
       <div class="form-group">
-        <label>Plan *</label>
-        <select name="tipo_plan" required>
-          <option value="Basico">Básico</option>
-          <option value="Premium">Premium</option>
+        <label>Elige tu plan *</label>
+        <select name="tipo_plan" id="sel-plan" onchange="actualizarInfo()" required>
+          <option value="Basico">Básico — 30 días</option>
+          <option value="Premium">Premium — 30 días</option>
         </select>
       </div>
-      <div class="form-group">
-        <label>Fecha de inicio *</label>
-        <input type="date" name="fecha_inicio" required>
-      </div>
-      <div class="form-group">
-        <label>Fecha de fin *</label>
-        <input type="date" name="fecha_fin" required>
-      </div>
-      <div class="form-group">
-        <label>Estado</label>
-        <select name="estado">
-          <option value="Activa">Activa</option>
-          <option value="Vencida">Vencida</option>
-          <option value="Cancelada">Cancelada</option>
-        </select>
-      </div>
+      <p id="plan-info" style="font-size:.83rem;color:var(--muted);margin-bottom:1rem">
+        La suscripción se activa hoy y vence en 30 días.
+      </p>
       <div class="flex gap-1 mt-2">
-        <button type="submit" class="btn btn-primary">Guardar</button>
-        <button type="button" onclick="document.getElementById('modal-nueva').style.display='none'"
-                class="btn btn-secondary">Cancelar</button>
+        <button type="submit" class="btn btn-primary btn-full">Activar ahora</button>
       </div>
     </form>
   </div>
 </div>
 
-<!-- Modal Editar Suscripcion -->
-<div id="modal-editar" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;align-items:center;justify-content:center">
-  <div class="card" style="width:440px">
-    <div class="flex justify-between items-center" style="margin-bottom:1.25rem">
-      <h2 class="card-title" style="margin:0">Editar suscripción</h2>
-      <button onclick="document.getElementById('modal-editar').style.display='none'"
-              style="background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer">✕</button>
-    </div>
-    <form method="post" id="form-editar" action="">
-      {% csrf_token %}
-      <div class="form-group">
-        <label>Plan *</label>
-        <select name="tipo_plan" id="edit-plan" required>
-          <option value="Basico">Básico</option>
-          <option value="Premium">Premium</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Fecha de fin *</label>
-        <input type="date" name="fecha_fin" id="edit-fin" required>
-      </div>
-      <div class="form-group">
-        <label>Estado</label>
-        <select name="estado" id="edit-estado">
-          <option value="Activa">Activa</option>
-          <option value="Vencida">Vencida</option>
-          <option value="Cancelada">Cancelada</option>
-        </select>
-      </div>
-      <div class="flex gap-1 mt-2">
-        <button type="submit" class="btn btn-primary">Actualizar</button>
-        <button type="button" onclick="document.getElementById('modal-editar').style.display='none'"
-                class="btn btn-secondary">Cancelar</button>
-      </div>
-    </form>
-  </div>
-</div>
 {% endblock %}
 
 {% block extra_js %}
 <script>
-function abrirEditar(id, plan, fechaFin, estado) {
-  document.getElementById('form-editar').action = '/finanzas/suscripciones/' + id + '/editar/';
-  document.getElementById('edit-plan').value   = plan;
-  document.getElementById('edit-fin').value    = fechaFin;
-  document.getElementById('edit-estado').value = estado;
-  document.getElementById('modal-editar').style.display = 'flex';
+function actualizarInfo() {
+  var plan = document.getElementById('sel-plan').value;
+  var dias = plan === 'Premium' ? 30 : 30;
+  document.getElementById('plan-info').textContent =
+    'La suscripción se activa hoy y vence en ' + dias + ' días.';
 }
 </script>
 {% endblock %}
