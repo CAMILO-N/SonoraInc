@@ -23,17 +23,17 @@ def suscripciones(request):
     usuario_id = request.session['usuario_id']
     try:
         with DB() as db:
-            suscripciones = db.exec('Procesos.sp_ConsultarSuscripciones', usuario_id)
+            lista = db.exec('Procesos.sp_ConsultarSuscripciones', usuario_id)
     except pyodbc.Error as e:
         messages.error(request, parse_sql_error(e))
-        suscripciones = []
+        lista = []
 
     return render(request, 'finanzas/suscripciones.html', {
-        'suscripciones': suscripciones,
+        'suscripciones': lista,
     })
 
 
-_DURACION_PLAN = {'Basico': 30, 'Premium': 30}
+_DURACION_PLAN = {'Gratis': 30, 'Premium': 30}
 
 
 @login_required
