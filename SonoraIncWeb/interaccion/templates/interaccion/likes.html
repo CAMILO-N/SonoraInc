@@ -3,14 +3,6 @@
 
 {% block content %}
 
-<!-- Sub-navegacion del módulo interaccion -->
-<div style="display:flex;gap:.5rem;margin-bottom:1.75rem">
-  <a href="/interaccion/playlists/" class="btn btn-secondary btn-sm">Playlists</a>
-  <a href="/interaccion/likes/"     class="btn btn-secondary btn-sm"
-     style="border-color:var(--accent);color:var(--accent)">Me gusta</a>
-  <a href="/interaccion/artistas/"  class="btn btn-secondary btn-sm">Artistas seguidos</a>
-</div>
-
 <div class="flex justify-between items-center" style="margin-bottom:1.5rem">
   <h1 class="page-title" style="margin:0">Me gusta / Canciones</h1>
   <button onclick="document.getElementById('modal-rep').style.display='flex'"
@@ -98,10 +90,6 @@
       <div class="form-group">
         <label>Duración escuchada (segundos) *</label>
         <input type="number" name="duracion" placeholder="ej: 180" step="0.1" min="0" required>
-      </div>
-      <div class="form-group">
-        <label>Fecha</label>
-        <input type="date" name="fecha">
       </div>
       <div class="flex gap-1 mt-2">
         <button type="submit" class="btn btn-primary">Registrar</button>

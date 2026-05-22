@@ -33,18 +33,19 @@ def suscripciones(request):
     })
 
 
+_DURACION_PLAN = {'Basico': 30, 'Premium': 30}
+
+
 @login_required
 def suscripcion_nueva(request):
     if request.method == 'POST':
+        from datetime import timedelta
         usuario_id   = request.session['usuario_id']
-        tipo_plan    = request.POST.get('tipo_plan', '').strip()
-        fecha_inicio = request.POST.get('fecha_inicio', '').strip() or str(date.today())
-        fecha_fin    = request.POST.get('fecha_fin', '').strip()
-        estado       = request.POST.get('estado', 'Activa').strip()
-
-        if not all([tipo_plan, fecha_fin]):
-            messages.error(request, 'Plan y fecha de fin son obligatorios.')
-            return redirect('finanzas:suscripciones')
+        tipo_plan    = request.POST.get('tipo_plan', 'Basico').strip()
+        hoy          = date.today()
+        fecha_inicio = str(hoy)
+        fecha_fin    = str(hoy + timedelta(days=_DURACION_PLAN.get(tipo_plan, 30)))
+        estado       = 'Activa'
 
         try:
             with DB() as db:
@@ -52,7 +53,7 @@ def suscripcion_nueva(request):
                     'Procesos.sp_RegistrarSuscripcion',
                     usuario_id, tipo_plan, fecha_inicio, fecha_fin, estado
                 )
-            messages.success(request, f'Suscripción "{tipo_plan}" registrada correctamente.')
+            messages.success(request, f'Suscripción {tipo_plan} activada hasta {fecha_fin}.')
         except pyodbc.Error as e:
             messages.error(request, parse_sql_error(e))
 
@@ -60,32 +61,32 @@ def suscripcion_nueva(request):
 
 
 @login_required
-def suscripcion_editar(request, id):
+def suscripcion_cancelar(request, sub_id):
     if request.method == 'POST':
-        tipo_plan = request.POST.get('tipo_plan', '').strip()
-        fecha_fin = request.POST.get('fecha_fin', '').strip()
-        estado    = request.POST.get('estado', 'Activa').strip()
-
+        usuario_id = request.session['usuario_id']
         try:
             with DB() as db:
-                db.exec_noreturn(
-                    'Procesos.sp_ActualizarSuscripcion',
-                    id, tipo_plan, fecha_fin, estado
-                )
-            messages.success(request, 'Suscripción actualizada correctamente.')
+                subs = db.exec('Procesos.sp_ConsultarSuscripciones', usuario_id)
+                sub  = next((s for s in subs if s.get('idSuscripcion') == sub_id), None)
+                if sub:
+                    tipo = sub.get('tipoPlanSuscripcion') or sub.get('tipoPlan', 'Basico')
+                    fin  = str(sub.get('fechaFinSuscripcion') or sub.get('fechaFin', date.today()))
+                    db.exec_noreturn('Procesos.sp_ActualizarSuscripcion', sub_id, tipo, fin, 'Cancelada')
+                    messages.success(request, 'Suscripción cancelada.')
+                else:
+                    messages.error(request, 'Suscripción no encontrada.')
         except pyodbc.Error as e:
             messages.error(request, parse_sql_error(e))
-
     return redirect('finanzas:suscripciones')
 
 
 @login_required
-def suscripcion_eliminar(request, id):
+def suscripcion_eliminar(request, sub_id):
     if request.method == 'POST':
         try:
             with DB() as db:
-                db.exec_noreturn('Procesos.sp_EliminarSuscripcion', id)
-            messages.success(request, 'Suscripción eliminada correctamente.')
+                db.exec_noreturn('Procesos.sp_EliminarSuscripcion', sub_id)
+            messages.success(request, 'Suscripción eliminada.')
         except pyodbc.Error as e:
             messages.error(request, parse_sql_error(e))
     return redirect('finanzas:suscripciones')
@@ -100,24 +101,22 @@ def pagos(request):
     usuario_id = request.session['usuario_id']
     try:
         with DB() as db:
-            suscripciones = db.exec('Procesos.sp_ConsultarSuscripciones', usuario_id)
-            # Obtener pagos de todas las suscripciones del usuario
+            subs_lista  = db.exec('Procesos.sp_ConsultarSuscripciones', usuario_id)
             pagos_lista = []
-            for s in suscripciones:
+            for s in subs_lista:
                 ps = db.exec('Procesos.sp_ConsultarPagos', s['idSuscripcion'])
                 for p in ps:
-                    # Anotar a qué suscripcion pertenece este pago
-                    p['_tipoPlan'] = s.get('tipoPlanSuscripcion', s.get('tipoPlan', '—'))
+                    p['_tipoPlan']      = s.get('tipoPlanSuscripcion', s.get('tipoPlan', '—'))
                     p['_idSuscripcion'] = s['idSuscripcion']
                 pagos_lista.extend(ps)
     except pyodbc.Error as e:
         messages.error(request, parse_sql_error(e))
-        suscripciones = []
-        pagos_lista   = []
+        subs_lista  = []
+        pagos_lista = []
 
     return render(request, 'finanzas/pagos.html', {
-        'pagos':          pagos_lista,
-        'suscripciones':  suscripciones,
+        'pagos':         pagos_lista,
+        'suscripciones': subs_lista,
     })
 
 
@@ -146,11 +145,11 @@ def pago_nuevo(request):
 
 
 @login_required
-def pago_eliminar(request, id):
+def pago_eliminar(request, pago_id):
     if request.method == 'POST':
         try:
             with DB() as db:
-                db.exec_noreturn('Procesos.sp_EliminarPago', id)
+                db.exec_noreturn('Procesos.sp_EliminarPago', pago_id)
             messages.success(request, 'Pago eliminado correctamente.')
         except pyodbc.Error as e:
             messages.error(request, parse_sql_error(e))

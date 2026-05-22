@@ -76,24 +76,15 @@ def buscar(request):
 # ════════════════════════════════════════════════════════════════════════════════
 
 @login_required
-def artista_detail(request, id):
+def artista_detail(request, artista_id):
     usuario_id = request.session['usuario_id']
     try:
         with DB() as db:
             todos_artistas = db.exec('Procesos.sp_ConsultarArtistas')
-            artista        = next((a for a in todos_artistas if a['idArtista'] == id), None)
+            artista        = next((a for a in todos_artistas if a['idArtista'] == artista_id), None)
 
-            # Canciones del artista via tabla ArtistaCancion
-            canciones = db.query(
-                '''SELECT c.idCancion, c.tituloCancion, c.duracionCancion,
-                          g.nombreGenero, al.tituloAlbum, al.idAlbum
-                   FROM   Interaccion.ArtistaCancion ac
-                   JOIN   Catalogo.Cancion  c  ON ac.Cancion_idCancion   = c.idCancion
-                   LEFT JOIN Catalogo.Genero  g  ON c.Genero_idGenero    = g.idGenero
-                   LEFT JOIN Catalogo.Album   al ON c.Album_idAlbum      = al.idAlbum
-                   WHERE  ac.Artista_idArtista = ?''',
-                id
-            )
+            # Canciones del artista via SP (evita problema de permisos en tablas directas)
+            canciones = db.exec('Procesos.sp_ConsultarCancionesArtista', artista_id)
 
             playlists = db.exec('Procesos.sp_ConsultarPlaylists', usuario_id)
 
@@ -115,22 +106,16 @@ def artista_detail(request, id):
 # ════════════════════════════════════════════════════════════════════════════════
 
 @login_required
-def album_detail(request, id):
+def album_detail(request, album_id):
     usuario_id = request.session['usuario_id']
     try:
         with DB() as db:
             todos_albumes = db.exec('Procesos.sp_ConsultarAlbumes')
-            album         = next((a for a in todos_albumes if a['idAlbum'] == id), None)
+            album         = next((a for a in todos_albumes if a['idAlbum'] == album_id), None)
 
-            # Canciones del álbum directamente desde la tabla
-            canciones = db.query(
-                '''SELECT c.idCancion, c.tituloCancion, c.duracionCancion,
-                          g.nombreGenero
-                   FROM   Catalogo.Cancion c
-                   LEFT JOIN Catalogo.Genero g ON c.Genero_idGenero = g.idGenero
-                   WHERE  c.Album_idAlbum = ?''',
-                id
-            )
+            # Filtrar canciones del álbum desde el SP general (evita SELECT directo a tablas)
+            todas_canciones = db.exec('Procesos.sp_ConsultarCanciones')
+            canciones = [c for c in todas_canciones if c.get('Album_idAlbum') == album_id]
 
             playlists = db.exec('Procesos.sp_ConsultarPlaylists', usuario_id)
 
