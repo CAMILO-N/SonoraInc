@@ -24,19 +24,23 @@ def suscripciones(request):
         with DB() as db:
             db.exec_noreturn('Procesos.sp_ActualizarSuscripcionesVencidas')
             if is_admin:
-                lista = db.exec('Procesos.sp_ConsultarSuscripciones')
+                lista    = db.exec('Procesos.sp_ConsultarSuscripciones')
+                usuarios = db.exec('Procesos.sp_ConsultarUsuarios')
             else:
-                lista = db.exec('Procesos.sp_ConsultarSuscripciones', usuario_id)
+                lista    = db.exec('Procesos.sp_ConsultarSuscripciones', usuario_id)
+                usuarios = []
         activa = None if is_admin else next((s for s in lista if s.get('estadoSuscripcion') == 'Activa'), None)
     except pyodbc.Error as e:
         messages.error(request, parse_sql_error(e))
-        lista  = []
-        activa = None
+        lista    = []
+        activa   = None
+        usuarios = []
 
     return render(request, 'finanzas/suscripciones.html', {
         'suscripciones': lista,
         'activa':        activa,
         'is_admin':      is_admin,
+        'usuarios':      usuarios,
     })
 
 
@@ -47,20 +51,28 @@ _DURACION_PLAN = {'Gratis': 30, 'Premium': 30}
 def suscripcion_nueva(request):
     if request.method == 'POST':
         from datetime import timedelta
-        usuario_id   = request.session['usuario_id']
-        tipo_plan    = request.POST.get('tipo_plan', 'Basico').strip()
+        is_admin  = request.session.get('is_admin', False)
+        tipo_plan = request.POST.get('tipo_plan', 'Gratis').strip()
         hoy          = date.today()
         fecha_inicio = str(hoy)
         fecha_fin    = str(hoy + timedelta(days=_DURACION_PLAN.get(tipo_plan, 30)))
-        estado       = 'Activa'
+
+        if is_admin:
+            usuario_id = request.POST.get('usuario_id', '').strip()
+            if not usuario_id:
+                messages.error(request, 'Selecciona un usuario.')
+                return redirect('finanzas:suscripciones')
+            usuario_id = int(usuario_id)
+        else:
+            usuario_id = request.session['usuario_id']
 
         try:
             with DB() as db:
                 db.exec_noreturn(
                     'Procesos.sp_RegistrarSuscripcion',
-                    usuario_id, tipo_plan, fecha_inicio, fecha_fin, estado
+                    usuario_id, tipo_plan, fecha_inicio, fecha_fin, 'Activa'
                 )
-            messages.success(request, f'Suscripción {tipo_plan} activada hasta {fecha_fin}.')
+            messages.success(request, f'Suscripcion {tipo_plan} activada hasta {fecha_fin}.')
         except pyodbc.Error as e:
             messages.error(request, parse_sql_error(e))
 

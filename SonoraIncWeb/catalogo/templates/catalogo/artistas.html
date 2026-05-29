@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="flex justify-between items-center" style="margin-bottom:1.5rem">
-  <h1 class="page-title" style="margin:0">🎤 Artistas</h1>
+  <h1 class="page-title" style="margin:0">Artistas</h1>
   {% if request.session.is_admin %}
   <button onclick="document.getElementById('modal-nuevo').style.display='flex'"
           class="btn btn-primary">+ Nuevo artista</button>
@@ -39,7 +39,7 @@
               <button onclick="abrirEditar({{ a.idArtista }},'{{ a.nombreArtista }}','{{ a.paisOrigenArtista }}','{{ a.descripcionArtista|default:'' }}',{{ a.Productora_idProductora }})"
                       class="btn btn-secondary btn-sm">Editar</button>
               <form method="post" action="{% url 'catalogo:artista_eliminar' a.idArtista %}"
-                    onsubmit="return confirm('¿Eliminar este artista?')">
+                    onsubmit="return confirm('¿Eliminar este artista? Se borraran sus vinculos con canciones y sus seguidores.')">
                 {% csrf_token %}
                 <button type="submit" class="btn btn-sm"
                         style="background:#2a1212;color:#f5a0a0;border:1px solid #e74c3c">

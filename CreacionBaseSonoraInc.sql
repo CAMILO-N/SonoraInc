@@ -9771,18 +9771,16 @@ BEGIN
 END;
 GO
 
-CREATE PROCEDURE Procesos.sp_EliminarArtista
+CREATE OR ALTER PROCEDURE Procesos.sp_EliminarArtista
     @idArtista INT
 AS
 BEGIN
     SET NOCOUNT ON;
     IF NOT EXISTS (SELECT 1 FROM Catalogo.Artista WHERE idArtista = @idArtista)
         THROW 50104, 'El artista especificado no existe.', 1;
-    IF EXISTS (SELECT 1 FROM Interaccion.ArtistaCancion WHERE Artista_idArtista = @idArtista)
-        THROW 50105, 'No se puede eliminar: el artista tiene canciones asociadas.', 1;
-    IF EXISTS (SELECT 1 FROM Interaccion.UsuarioArtista WHERE Artista_idArtista = @idArtista)
-        THROW 50106, 'No se puede eliminar: el artista tiene seguidores.', 1;
-    DELETE FROM Catalogo.Artista WHERE idArtista = @idArtista;
+    DELETE FROM Interaccion.ArtistaCancion WHERE Artista_idArtista = @idArtista;
+    DELETE FROM Interaccion.UsuarioArtista  WHERE Artista_idArtista = @idArtista;
+    DELETE FROM Catalogo.Artista            WHERE idArtista         = @idArtista;
     SELECT 'Artista eliminado correctamente' AS Mensaje;
 END;
 GO
@@ -9890,15 +9888,14 @@ BEGIN
 END;
 GO
 
-CREATE PROCEDURE Procesos.sp_EliminarAlbum
+CREATE OR ALTER PROCEDURE Procesos.sp_EliminarAlbum
     @idAlbum INT
 AS
 BEGIN
     SET NOCOUNT ON;
     IF NOT EXISTS (SELECT 1 FROM Catalogo.Album WHERE idAlbum = @idAlbum)
         THROW 50207, 'El album especificado no existe.', 1;
-    IF EXISTS (SELECT 1 FROM Catalogo.Cancion WHERE Album_idAlbum = @idAlbum)
-        THROW 50208, 'No se puede eliminar: el album tiene canciones asociadas.', 1;
+    UPDATE Catalogo.Cancion SET Album_idAlbum = NULL WHERE Album_idAlbum = @idAlbum;
     DELETE FROM Catalogo.Album WHERE idAlbum = @idAlbum;
     SELECT 'Album eliminado correctamente' AS Mensaje;
 END;
@@ -9965,8 +9962,11 @@ BEGIN
     SET NOCOUNT ON;
     IF NOT EXISTS (SELECT 1 FROM Catalogo.Productora WHERE idProductora = @idProductora)
         THROW 50214, 'La productora especificada no existe.', 1;
-    IF EXISTS (SELECT 1 FROM Catalogo.Artista WHERE Productora_idProductora = @idProductora)
-        THROW 50215, 'No se puede eliminar: la productora tiene artistas asociados.', 1;
+    DECLARE @artistas TABLE (idArtista INT);
+    INSERT INTO @artistas SELECT idArtista FROM Catalogo.Artista WHERE Productora_idProductora = @idProductora;
+    DELETE FROM Interaccion.ArtistaCancion WHERE Artista_idArtista IN (SELECT idArtista FROM @artistas);
+    DELETE FROM Interaccion.UsuarioArtista  WHERE Artista_idArtista IN (SELECT idArtista FROM @artistas);
+    DELETE FROM Catalogo.Artista            WHERE Productora_idProductora = @idProductora;
     DELETE FROM Catalogo.Productora WHERE idProductora = @idProductora;
     SELECT 'Productora eliminada correctamente' AS Mensaje;
 END;
@@ -10050,20 +10050,19 @@ BEGIN
 END;
 GO
 
-CREATE PROCEDURE Procesos.sp_EliminarCancion
+CREATE OR ALTER PROCEDURE Procesos.sp_EliminarCancion
     @idCancion INT
 AS
 BEGIN
     SET NOCOUNT ON;
     IF NOT EXISTS (SELECT 1 FROM Catalogo.Cancion WHERE idCancion = @idCancion)
         THROW 50221, 'La cancion especificada no existe.', 1;
-    IF EXISTS (SELECT 1 FROM Interaccion.ArtistaCancion WHERE Cancion_idCancion = @idCancion)
-        THROW 50222, 'No se puede eliminar: la cancion tiene artistas asociados.', 1;
-    DELETE FROM Interaccion.CancionPlaylist  WHERE Cancion_idCancion = @idCancion;
-    DELETE FROM Interaccion.UsuarioCancion   WHERE Cancion_idCancion = @idCancion;
-    DELETE FROM Interaccion.Reproduccion     WHERE Cancion_idCancion = @idCancion;
-    DELETE FROM Finanzas.Regalia             WHERE Cancion_idCancion = @idCancion;
-    DELETE FROM Catalogo.Cancion             WHERE idCancion         = @idCancion;
+    DELETE FROM Interaccion.ArtistaCancion  WHERE Cancion_idCancion = @idCancion;
+    DELETE FROM Interaccion.CancionPlaylist WHERE Cancion_idCancion = @idCancion;
+    DELETE FROM Interaccion.UsuarioCancion  WHERE Cancion_idCancion = @idCancion;
+    DELETE FROM Interaccion.Reproduccion    WHERE Cancion_idCancion = @idCancion;
+    DELETE FROM Finanzas.Regalia            WHERE Cancion_idCancion = @idCancion;
+    DELETE FROM Catalogo.Cancion            WHERE idCancion         = @idCancion;
     SELECT 'Cancion eliminada correctamente' AS Mensaje;
 END;
 GO

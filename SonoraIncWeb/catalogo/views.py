@@ -294,24 +294,24 @@ def generos_lista(request):
 
 @admin_required
 def panel(request):
+    items = [
+        ('Canciones',  'Procesos.sp_ConsultarCanciones',  '/catalogo/canciones/'),
+        ('Artistas',   'Procesos.sp_ConsultarArtistas',   '/catalogo/artistas/'),
+        ('Albumes',    'Procesos.sp_ConsultarAlbumes',    '/catalogo/albumes/'),
+        ('Productoras','Procesos.sp_ConsultarProductoras','/catalogo/productoras/'),
+        ('Playlists',  'Procesos.sp_ConsultarPlaylists',  '/catalogo/playlists/'),
+    ]
+    panel_items = []
     try:
         with DB() as db:
-            total_canciones  = len(db.exec('Procesos.sp_ConsultarCanciones'))
-            total_artistas   = len(db.exec('Procesos.sp_ConsultarArtistas'))
-            total_albumes    = len(db.exec('Procesos.sp_ConsultarAlbumes'))
-            total_productoras= len(db.exec('Procesos.sp_ConsultarProductoras'))
-            total_playlists  = len(db.exec('Procesos.sp_ConsultarPlaylists'))
+            for label, sp, url in items:
+                total = len(db.exec(sp))
+                panel_items.append({'label': label, 'total': total, 'url': url})
     except pyodbc.Error as e:
         messages.error(request, parse_sql_error(e))
-        total_canciones = total_artistas = total_albumes = total_productoras = total_playlists = '—'
+        panel_items = [{'label': l, 'total': '—', 'url': u} for l, _, u in items]
 
-    return render(request, 'catalogo/panel.html', {
-        'total_canciones':   total_canciones,
-        'total_artistas':    total_artistas,
-        'total_albumes':     total_albumes,
-        'total_productoras': total_productoras,
-        'total_playlists':   total_playlists,
-    })
+    return render(request, 'catalogo/panel.html', {'panel_items': panel_items})
 
 
 # PRODUCTORAS
