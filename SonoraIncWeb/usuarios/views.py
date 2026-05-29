@@ -38,9 +38,8 @@ def login_view(request):
             request.session['usuario_id']     = usuario['idUsuario']
             request.session['usuario_nombre'] = usuario['nombreUsuario']
             request.session['usuario_correo'] = usuario['correoUsuario']
-            # Admin: si la BD devuelve un campo de rol se usa; si no, idUsuario == 1
             rol = str(usuario.get('rolUsuario') or usuario.get('rol') or '').lower()
-            request.session['is_admin'] = (rol == 'admin' or usuario['idUsuario'] == 1)
+            request.session['is_admin'] = (rol == 'admin')
             messages.success(request, f"Bienvenido, {usuario['nombreUsuario']}.")
             return redirect('explorar:home')
 
