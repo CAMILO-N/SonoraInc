@@ -8127,3 +8127,33 @@ GO
 
 GRANT EXECUTE ON Procesos.sp_ConsultarPlaylists TO SonoraApp;
 GO
+
+-- ============================================================
+-- SECCIÓN 11 — sp_ConsultarCancionesDePlaylist
+-- ============================================================
+-- Devuelve las canciones de una playlist con todos los campos
+-- que necesita la vista de detalle (duracion, genero, album).
+-- Reemplaza el acceso directo a Reportes.vDetallePlaylists que
+-- requería SELECT sobre la vista (permiso no otorgado a SonoraApp).
+
+CREATE OR ALTER PROCEDURE Procesos.sp_ConsultarCancionesDePlaylist
+    @idPlaylist INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SELECT c.idCancion,
+           c.tituloCancion,
+           c.duracionCancion,
+           ISNULL(g.nombreGenero, '-')  AS nombreGenero,
+           ISNULL(a.tituloAlbum,  '-') AS tituloAlbum
+    FROM   Interaccion.CancionPlaylist cp
+    INNER JOIN Catalogo.Cancion c ON cp.Cancion_idCancion = c.idCancion
+    LEFT  JOIN Catalogo.Genero  g ON c.Genero_idGenero    = g.idGenero
+    LEFT  JOIN Catalogo.Album   a ON c.Album_idAlbum      = a.idAlbum
+    WHERE  cp.Playlist_idPlaylist = @idPlaylist
+    ORDER BY c.tituloCancion;
+END;
+GO
+
+GRANT EXECUTE ON Procesos.sp_ConsultarCancionesDePlaylist TO SonoraApp;
+GO
