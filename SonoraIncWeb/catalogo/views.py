@@ -288,3 +288,109 @@ def generos_lista(request):
         generos = []
 
     return render(request, 'catalogo/generos.html', {'generos': generos})
+
+
+# PANEL ADMIN
+
+@admin_required
+def panel(request):
+    try:
+        with DB() as db:
+            total_canciones  = len(db.exec('Procesos.sp_ConsultarCanciones'))
+            total_artistas   = len(db.exec('Procesos.sp_ConsultarArtistas'))
+            total_albumes    = len(db.exec('Procesos.sp_ConsultarAlbumes'))
+            total_productoras= len(db.exec('Procesos.sp_ConsultarProductoras'))
+            total_playlists  = len(db.exec('Procesos.sp_ConsultarPlaylists'))
+    except pyodbc.Error as e:
+        messages.error(request, parse_sql_error(e))
+        total_canciones = total_artistas = total_albumes = total_productoras = total_playlists = '—'
+
+    return render(request, 'catalogo/panel.html', {
+        'total_canciones':   total_canciones,
+        'total_artistas':    total_artistas,
+        'total_albumes':     total_albumes,
+        'total_productoras': total_productoras,
+        'total_playlists':   total_playlists,
+    })
+
+
+# PRODUCTORAS
+
+@admin_required
+def productoras_lista(request):
+    try:
+        with DB() as db:
+            productoras = db.exec('Procesos.sp_ConsultarProductoras')
+    except pyodbc.Error as e:
+        messages.error(request, parse_sql_error(e))
+        productoras = []
+
+    return render(request, 'catalogo/productoras.html', {'productoras': productoras})
+
+
+@admin_required
+def productora_nueva(request):
+    if request.method == 'POST':
+        nombre = request.POST.get('nombre', '').strip()
+        pais   = request.POST.get('pais', '').strip()
+        correo = request.POST.get('correo', '').strip()
+
+        if not all([nombre, pais, correo]):
+            messages.error(request, 'Todos los campos son obligatorios.')
+            return redirect('catalogo:productoras')
+
+        try:
+            with DB() as db:
+                db.exec_noreturn('Procesos.sp_InsertarProductora', nombre, pais, correo)
+            messages.success(request, f'Productora "{nombre}" creada correctamente.')
+        except pyodbc.Error as e:
+            messages.error(request, parse_sql_error(e))
+
+    return redirect('catalogo:productoras')
+
+
+@admin_required
+def productora_editar(request, id):
+    if request.method == 'POST':
+        nombre = request.POST.get('nombre', '').strip()
+        pais   = request.POST.get('pais', '').strip()
+        correo = request.POST.get('correo', '').strip()
+
+        if not all([nombre, pais, correo]):
+            messages.error(request, 'Todos los campos son obligatorios.')
+            return redirect('catalogo:productoras')
+
+        try:
+            with DB() as db:
+                db.exec_noreturn('Procesos.sp_ActualizarProductora', id, nombre, pais, correo)
+            messages.success(request, 'Productora actualizada correctamente.')
+        except pyodbc.Error as e:
+            messages.error(request, parse_sql_error(e))
+
+    return redirect('catalogo:productoras')
+
+
+@admin_required
+def productora_eliminar(request, id):
+    if request.method == 'POST':
+        try:
+            with DB() as db:
+                db.exec_noreturn('Procesos.sp_EliminarProductora', id)
+            messages.success(request, 'Productora eliminada correctamente.')
+        except pyodbc.Error as e:
+            messages.error(request, parse_sql_error(e))
+    return redirect('catalogo:productoras')
+
+
+# PLAYLISTS (vista admin — todas las playlists de todos los usuarios)
+
+@admin_required
+def playlists_admin(request):
+    try:
+        with DB() as db:
+            playlists = db.exec('Procesos.sp_ConsultarPlaylists')
+    except pyodbc.Error as e:
+        messages.error(request, parse_sql_error(e))
+        playlists = []
+
+    return render(request, 'catalogo/playlists_admin.html', {'playlists': playlists})

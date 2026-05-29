@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block title %}Productoras — SonoraInc{% endblock %}
+
+{% block content %}
+<div class="flex justify-between items-center" style="margin-bottom:1.5rem">
+  <div>
+    <a href="{% url 'catalogo:panel' %}" class="btn btn-secondary btn-sm" style="margin-bottom:.75rem">&larr; Panel</a>
+    <h1 class="page-title" style="margin:0">Productoras</h1>
+  </div>
+  <button onclick="document.getElementById('modal-nuevo').style.display='flex'"
+          class="btn btn-primary">+ Nueva productora</button>
+</div>
+
+<div class="card">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Nombre</th><th>País</th><th>Correo</th><th>Acciones</th></tr>
+      </thead>
+      <tbody>
+        {% for p in productoras %}
+        <tr>
+          <td class="text-muted">{{ p.idProductora }}</td>
+          <td><strong>{{ p.nombreProductora }}</strong></td>
+          <td>{{ p.paisProductora }}</td>
+          <td>{{ p.correoProductora }}</td>
+          <td>
+            <div class="flex gap-1">
+              <button onclick="abrirEditar({{ p.idProductora }},'{{ p.nombreProductora }}','{{ p.paisProductora }}','{{ p.correoProductora }}')"
+                      class="btn btn-secondary btn-sm">Editar</button>
+              <form method="post" action="{% url 'catalogo:productora_eliminar' p.idProductora %}"
+                    onsubmit="return confirm('¿Eliminar esta productora?')">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-sm"
+                        style="background:#2a1212;color:#f5a0a0;border:1px solid #e74c3c">
+                  Eliminar
+                </button>
+              </form>
+            </div>
+          </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="5" class="text-muted" style="text-align:center;padding:2rem">
+          No hay productoras registradas.
+        </td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div id="modal-nuevo" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;align-items:center;justify-content:center">
+  <div class="card" style="width:460px">
+    <div class="flex justify-between items-center" style="margin-bottom:1.25rem">
+      <h2 class="card-title" style="margin:0">Nueva productora</h2>
+      <button onclick="document.getElementById('modal-nuevo').style.display='none'"
+              style="background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer">✕</button>
+    </div>
+    <form method="post" action="{% url 'catalogo:productora_nueva' %}">
+      {% csrf_token %}
+      <div class="form-group">
+        <label>Nombre *</label>
+        <input type="text" name="nombre" placeholder="Nombre de la productora" required>
+      </div>
+      <div class="form-group">
+        <label>País *</label>
+        <input type="text" name="pais" placeholder="ej: Colombia" required>
+      </div>
+      <div class="form-group">
+        <label>Correo *</label>
+        <input type="email" name="correo" placeholder="contacto@productora.com" required>
+      </div>
+      <div class="flex gap-1 mt-2">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="button" onclick="document.getElementById('modal-nuevo').style.display='none'"
+                class="btn btn-secondary">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="modal-editar" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;align-items:center;justify-content:center">
+  <div class="card" style="width:460px">
+    <div class="flex justify-between items-center" style="margin-bottom:1.25rem">
+      <h2 class="card-title" style="margin:0">Editar productora</h2>
+      <button onclick="document.getElementById('modal-editar').style.display='none'"
+              style="background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer">✕</button>
+    </div>
+    <form method="post" id="form-editar" action="">
+      {% csrf_token %}
+      <div class="form-group">
+        <label>Nombre *</label>
+        <input type="text" name="nombre" id="edit-nombre" required>
+      </div>
+      <div class="form-group">
+        <label>País *</label>
+        <input type="text" name="pais" id="edit-pais" required>
+      </div>
+      <div class="form-group">
+        <label>Correo *</label>
+        <input type="email" name="correo" id="edit-correo" required>
+      </div>
+      <div class="flex gap-1 mt-2">
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <button type="button" onclick="document.getElementById('modal-editar').style.display='none'"
+                class="btn btn-secondary">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function abrirEditar(id, nombre, pais, correo) {
+  document.getElementById('form-editar').action = '/catalogo/productoras/' + id + '/editar/';
+  document.getElementById('edit-nombre').value  = nombre;
+  document.getElementById('edit-pais').value    = pais;
+  document.getElementById('edit-correo').value  = correo;
+  document.getElementById('modal-editar').style.display = 'flex';
+}
+</script>
+{% endblock %}
