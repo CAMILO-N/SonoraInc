@@ -7966,10 +7966,7 @@ WHERE s.name = 'Procesos';
 GO
 
 
--- ============================================================
--- Stored procedure: canciones de un artista específico
--- Ejecutar en SQL Server Management Studio conectado a SonoraInc
--- ============================================================
+-- sp_ConsultarCancionesArtista - devuelve canciones de un artista via ArtistaCancion
 
 USE SonoraInc;
 GO
@@ -7994,20 +7991,15 @@ BEGIN
 END;
 GO
 
--- Dar permiso de ejecución al usuario de la app
 GRANT EXECUTE ON Procesos.sp_ConsultarCancionesArtista TO SonoraApp;
 GO
 
 
-/* ============================================================
-   SECCION 9 — Sistema de roles y SP de likes por usuario
-   Ejecutar sobre la BD SonoraInc ya creada y poblada.
-   ============================================================ */
+-- agrega columna rolUsuario a Seguridad.Usuario y actualiza sp_IniciarSesion para devolverla
 
 USE SonoraInc;
 GO
 
--- 9a. Agregar columna rolUsuario (solo si no existe)
 IF NOT EXISTS (
     SELECT 1 FROM sys.columns
     WHERE object_id = OBJECT_ID('Seguridad.Usuario')
@@ -8019,7 +8011,6 @@ BEGIN
 END;
 GO
 
--- 9b. Restriccion de valores validos
 IF NOT EXISTS (
     SELECT 1 FROM sys.check_constraints
     WHERE parent_object_id = OBJECT_ID('Seguridad.Usuario')
@@ -8032,16 +8023,15 @@ BEGIN
 END;
 GO
 
--- 9c. Usuario 1 es admin
 UPDATE Seguridad.Usuario
 SET rolUsuario = 'admin'
 WHERE idUsuario = 1;
 GO
 
--- 9d. Actualizar sp_IniciarSesion para devolver rolUsuario
 DROP PROCEDURE IF EXISTS Procesos.sp_IniciarSesion;
 GO
 
+-- sp_IniciarSesion - valida credenciales y devuelve datos del usuario incluyendo rol
 CREATE PROCEDURE Procesos.sp_IniciarSesion
     @correoUsuario  VARCHAR(50),
     @passwordHash   VARCHAR(255)
@@ -8074,7 +8064,7 @@ BEGIN
 END;
 GO
 
--- 9e. Canciones con like del usuario (para pagina "Me gusta")
+-- sp_ConsultarLikesUsuario - devuelve canciones con like de un usuario
 CREATE OR ALTER PROCEDURE Procesos.sp_ConsultarLikesUsuario
     @Usuario_idUsuario INT
 AS
@@ -8095,18 +8085,11 @@ BEGIN
 END;
 GO
 
--- 9f. Permisos
 GRANT EXECUTE ON Procesos.sp_IniciarSesion         TO SonoraApp;
 GRANT EXECUTE ON Procesos.sp_ConsultarLikesUsuario TO SonoraApp;
 GO
 
--- ============================================================
--- SECCIÓN 10 — Fix sp_ConsultarPlaylists: filtrar por usuario
--- ============================================================
--- El SP original filtraba por idPlaylist; la vista Django pasa
--- usuario_id, por lo que nunca devolvía las playlists del usuario.
--- Se cambia el parámetro a @Usuario_idUsuario para filtrar correctamente.
-
+-- sp_ConsultarPlaylists - devuelve playlists filtrando por Usuario_idUsuario
 CREATE OR ALTER PROCEDURE Procesos.sp_ConsultarPlaylists
     @Usuario_idUsuario INT = NULL
 AS
@@ -8128,14 +8111,7 @@ GO
 GRANT EXECUTE ON Procesos.sp_ConsultarPlaylists TO SonoraApp;
 GO
 
--- ============================================================
--- SECCIÓN 11 — sp_ConsultarCancionesDePlaylist
--- ============================================================
--- Devuelve las canciones de una playlist con todos los campos
--- que necesita la vista de detalle (duracion, genero, album).
--- Reemplaza el acceso directo a Reportes.vDetallePlaylists que
--- requería SELECT sobre la vista (permiso no otorgado a SonoraApp).
-
+-- sp_ConsultarCancionesDePlaylist - devuelve canciones de una playlist con genero y album
 CREATE OR ALTER PROCEDURE Procesos.sp_ConsultarCancionesDePlaylist
     @idPlaylist INT
 AS
@@ -8144,7 +8120,7 @@ BEGIN
     SELECT c.idCancion,
            c.tituloCancion,
            c.duracionCancion,
-           ISNULL(g.nombreGenero, '-')  AS nombreGenero,
+           ISNULL(g.nombreGenero, '-') AS nombreGenero,
            ISNULL(a.tituloAlbum,  '-') AS tituloAlbum
     FROM   Interaccion.CancionPlaylist cp
     INNER JOIN Catalogo.Cancion c ON cp.Cancion_idCancion = c.idCancion
@@ -8158,13 +8134,7 @@ GO
 GRANT EXECUTE ON Procesos.sp_ConsultarCancionesDePlaylist TO SonoraApp;
 GO
 
--- ============================================================
--- SECCIÓN 12 — sp_ToggleLikeCancion + fix buscar con playlists
--- ============================================================
--- Agrega o quita el like según el estado actual del usuario.
--- Devuelve accion='dar' o accion='quitar' para que Django
--- muestre el mensaje correcto.
-
+-- sp_ToggleLikeCancion - agrega o quita like; devuelve accion='dar'/'quitar'
 CREATE OR ALTER PROCEDURE Procesos.sp_ToggleLikeCancion
     @Usuario_idUsuario INT,
     @Cancion_idCancion INT
@@ -8193,4 +8163,176 @@ END;
 GO
 
 GRANT EXECUTE ON Procesos.sp_ToggleLikeCancion TO SonoraApp;
+GO
+
+-- sp_ToggleSeguirArtista - sigue o deja de seguir; devuelve accion='seguir'/'dejar'
+CREATE OR ALTER PROCEDURE Procesos.sp_ToggleSeguirArtista
+    @Usuario_idUsuario INT,
+    @Artista_idArtista INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    IF EXISTS (
+        SELECT 1 FROM Interaccion.UsuarioArtista
+        WHERE Usuario_idUsuario = @Usuario_idUsuario
+          AND Artista_idArtista = @Artista_idArtista
+    )
+    BEGIN
+        DELETE FROM Interaccion.UsuarioArtista
+        WHERE Usuario_idUsuario = @Usuario_idUsuario
+          AND Artista_idArtista = @Artista_idArtista;
+        SELECT 'dejar' AS accion;
+    END
+    ELSE
+    BEGIN
+        INSERT INTO Interaccion.UsuarioArtista (Usuario_idUsuario, Artista_idArtista)
+        VALUES (@Usuario_idUsuario, @Artista_idArtista);
+        SELECT 'seguir' AS accion;
+    END;
+END;
+GO
+
+GRANT EXECUTE ON Procesos.sp_ToggleSeguirArtista TO SonoraApp;
+GO
+
+-- sp_CambiarContrasenaUsuario - verifica hash actual y actualiza si coincide
+CREATE OR ALTER PROCEDURE Procesos.sp_CambiarContrasenaUsuario
+    @idUsuario       INT,
+    @passwordActual  VARCHAR(255),
+    @passwordNueva   VARCHAR(255)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    IF NOT EXISTS (
+        SELECT 1 FROM Seguridad.Usuario
+        WHERE idUsuario = @idUsuario AND passwordHash = @passwordActual
+    )
+        THROW 50301, 'La contraseña actual es incorrecta.', 1;
+    UPDATE Seguridad.Usuario
+    SET passwordHash = @passwordNueva
+    WHERE idUsuario = @idUsuario;
+    SELECT 'Contraseña actualizada correctamente' AS Mensaje;
+END;
+GO
+
+GRANT EXECUTE ON Procesos.sp_CambiarContrasenaUsuario TO SonoraApp;
+GO
+
+-- sp_ConsultarSuscripciones - filtra por Usuario_idUsuario (no por idSuscripcion)
+CREATE OR ALTER PROCEDURE Procesos.sp_ConsultarSuscripciones
+    @Usuario_idUsuario INT = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SELECT s.idSuscripcion, s.tipoPlanSuscripcion,
+           s.fechaInicioSuscripcion, s.fechaFinSuscripcion,
+           ISNULL(s.estadoSuscripcion, '-') AS estadoSuscripcion,
+           u.nombreUsuario, u.apellidoUsuario
+    FROM Finanzas.Suscripcion s
+    INNER JOIN Seguridad.Usuario u ON s.Usuario_idUsuario = u.idUsuario
+    WHERE (@Usuario_idUsuario IS NULL OR s.Usuario_idUsuario = @Usuario_idUsuario);
+END;
+GO
+
+GRANT EXECUTE ON Procesos.sp_ConsultarSuscripciones TO SonoraApp;
+GO
+
+-- sp_RegistrarSuscripcion - cancela activa previa antes de insertar la nueva
+CREATE OR ALTER PROCEDURE Procesos.sp_RegistrarSuscripcion
+    @Usuario_idUsuario      INT,
+    @tipoPlanSuscripcion    VARCHAR(50),
+    @fechaInicioSuscripcion DATE,
+    @fechaFinSuscripcion    DATE        = NULL,
+    @estadoSuscripcion      VARCHAR(50) = 'Activa'
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF NOT EXISTS (SELECT 1 FROM Seguridad.Usuario WHERE idUsuario = @Usuario_idUsuario)
+        THROW 50018, 'El usuario no existe.', 1;
+    IF @tipoPlanSuscripcion NOT IN ('Gratis', 'Premium')
+        THROW 50019, 'El tipo de plan debe ser Gratis o Premium.', 1;
+    IF @estadoSuscripcion NOT IN ('Activa', 'Cancelada', 'Vencida')
+        THROW 50020, 'El estado de suscripcion no es valido.', 1;
+
+    -- cancela activa previa para evitar duplicados
+    UPDATE Finanzas.Suscripcion
+    SET estadoSuscripcion = 'Cancelada'
+    WHERE Usuario_idUsuario = @Usuario_idUsuario
+      AND estadoSuscripcion = 'Activa';
+
+    DECLARE @idSuscripcion INT = NEXT VALUE FOR dbo.seq_Suscripcion;
+
+    INSERT INTO Finanzas.Suscripcion
+        (idSuscripcion, tipoPlanSuscripcion, fechaInicioSuscripcion,
+         fechaFinSuscripcion, estadoSuscripcion, Usuario_idUsuario)
+    VALUES
+        (@idSuscripcion, @tipoPlanSuscripcion, @fechaInicioSuscripcion,
+         @fechaFinSuscripcion, @estadoSuscripcion, @Usuario_idUsuario);
+
+    SELECT 'Suscripcion registrada correctamente' AS Mensaje,
+           @idSuscripcion AS idSuscripcion;
+END;
+GO
+
+-- limpieza puntual: cancela duplicados activos dejando solo el mas reciente por usuario
+WITH duplicados AS (
+    SELECT idSuscripcion,
+           ROW_NUMBER() OVER (
+               PARTITION BY Usuario_idUsuario, estadoSuscripcion
+               ORDER BY idSuscripcion DESC
+           ) AS rn
+    FROM Finanzas.Suscripcion
+    WHERE estadoSuscripcion = 'Activa'
+)
+UPDATE Finanzas.Suscripcion
+SET estadoSuscripcion = 'Cancelada'
+WHERE idSuscripcion IN (
+    SELECT idSuscripcion FROM duplicados WHERE rn > 1
+);
+GO
+
+GRANT EXECUTE ON Procesos.sp_ActualizarSuscripcionesVencidas TO SonoraApp;
+GO
+
+-- sp_ConsultarAlbumesPorArtista - albumes de un artista via ArtistaCancion → Cancion → Album
+CREATE OR ALTER PROCEDURE Procesos.sp_ConsultarAlbumesPorArtista
+    @Artista_idArtista INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SELECT DISTINCT al.idAlbum, al.tituloAlbum, al.fechaLanzamientoAlbum
+    FROM Catalogo.Album al
+    JOIN Catalogo.Cancion c            ON al.idAlbum  = c.Album_idAlbum
+    JOIN Interaccion.ArtistaCancion ac ON c.idCancion = ac.Cancion_idCancion
+    WHERE ac.Artista_idArtista = @Artista_idArtista
+    ORDER BY al.fechaLanzamientoAlbum DESC;
+END;
+GO
+
+GRANT EXECUTE ON Procesos.sp_ConsultarAlbumesPorArtista TO SonoraApp;
+GO
+
+-- sp_ConsultarCancionesAlbum - devuelve canciones de un album con genero e idioma
+CREATE OR ALTER PROCEDURE Procesos.sp_ConsultarCancionesAlbum
+    @idAlbum INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SELECT
+        c.idCancion,
+        c.tituloCancion,
+        c.duracionCancion,
+        ISNULL(c.idiomaCancion, '-') AS idiomaCancion,
+        g.nombreGenero,
+        al.idAlbum,
+        al.tituloAlbum
+    FROM Catalogo.Cancion c
+    LEFT JOIN Catalogo.Genero g ON c.Genero_idGenero = g.idGenero
+    LEFT JOIN Catalogo.Album  al ON c.Album_idAlbum  = al.idAlbum
+    WHERE c.Album_idAlbum = @idAlbum;
+END;
+GO
+
+GRANT EXECUTE ON Procesos.sp_ConsultarCancionesAlbum TO SonoraApp;
 GO

@@ -77,10 +77,17 @@
     <a href="/catalogo/canciones/">Catálogo</a>
     {% endif %}
     <a href="/interaccion/playlists/">Playlists</a>
+    {% if request.session.is_admin %}
     <a href="/finanzas/suscripciones/">Finanzas</a>
     <a href="/reportes/">Reportes</a>
+    {% else %}
+    <a href="/finanzas/suscripciones/">Mi plan</a>
+    {% endif %}
   </div>
-  <a href="/usuarios/logout/" class="btn-logout">Cerrar sesión</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <a href="/usuarios/perfil/" class="btn-logout">Mi perfil</a>
+    <a href="/usuarios/logout/" class="btn-logout">Cerrar sesión</a>
+  </div>
 </nav>
 {% endif %}
 

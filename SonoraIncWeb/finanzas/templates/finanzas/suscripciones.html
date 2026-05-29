@@ -1,15 +1,59 @@
 {% extends "base.html" %}
-{% block title %}Suscripciones — SonoraInc{% endblock %}
+{% block title %}Suscripción — SonoraInc{% endblock %}
 
 {% block content %}
 
-<div class="flex justify-between items-center" style="margin-bottom:1.5rem">
-  <h1 class="page-title" style="margin:0">Mi suscripción</h1>
+<h1 class="page-title">Mi suscripción</h1>
+
+<!-- ── Plan activo ── -->
+{% if activa %}
+<div class="card" style="margin-bottom:1.5rem;border-color:var(--accent)">
+  <div style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap">
+    <div style="width:72px;height:72px;border-radius:12px;background:var(--accent);
+                display:flex;align-items:center;justify-content:center;
+                font-size:1.6rem;font-weight:900;color:#000;flex-shrink:0">
+      {% if activa.tipoPlanSuscripcion == 'Premium' %}★{% else %}♪{% endif %}
+    </div>
+    <div style="flex:1">
+      <div style="font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;
+                  color:var(--accent);margin-bottom:.25rem">Plan activo</div>
+      <div style="font-size:1.5rem;font-weight:800">{{ activa.tipoPlanSuscripcion }}</div>
+      <div class="text-muted" style="font-size:.85rem;margin-top:.3rem">
+        Válido del {{ activa.fechaInicioSuscripcion }} al {{ activa.fechaFinSuscripcion }}
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:.5rem;flex-shrink:0">
+      <button onclick="document.getElementById('modal-activar').style.display='flex'"
+              class="btn btn-secondary btn-sm">Cambiar plan</button>
+      <form method="post"
+            action="{% url 'finanzas:suscripcion_cancelar' activa.idSuscripcion %}"
+            onsubmit="return confirm('¿Dar de baja tu suscripción {{ activa.tipoPlanSuscripcion }}?')">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger btn-sm" style="width:100%">Dar de baja</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% else %}
+<div class="card" style="margin-bottom:1.5rem;text-align:center;padding:3rem">
+  <div style="font-size:2.5rem;margin-bottom:1rem">♪</div>
+  <div style="font-size:1.1rem;font-weight:700;margin-bottom:.5rem">Sin suscripción activa</div>
+  <p class="text-muted" style="margin-bottom:1.5rem">Elige un plan para disfrutar SonoraInc.</p>
   <button onclick="document.getElementById('modal-activar').style.display='flex'"
           class="btn btn-primary">Activar suscripción</button>
 </div>
+{% endif %}
 
-<!-- Tabla de suscripciones -->
+<!-- ── Historial + botón nueva (solo si no hay activa) ── -->
+{% if suscripciones %}
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem">
+  <div style="font-size:1rem;font-weight:700">Historial</div>
+  {% if not activa %}
+  <button onclick="document.getElementById('modal-activar').style.display='flex'"
+          class="btn btn-primary btn-sm">+ Activar suscripción</button>
+  {% endif %}
+</div>
+
 <div class="card">
   <div class="table-wrap">
     <table>
@@ -18,57 +62,55 @@
       </thead>
       <tbody>
         {% for s in suscripciones %}
-        {% with plan=s.tipoPlanSuscripcion|default:s.tipoPlan|default:"—"
-                inicio=s.fechaInicioSuscripcion|default:s.fechaInicio|default:"—"
-                fin=s.fechaFinSuscripcion|default:s.fechaFin|default:"—"
-                estado=s.estadoSuscripcion|default:s.estado|default:"—" %}
         <tr>
-          <td>
-            <span style="font-weight:600;
-              {% if plan == 'Premium' %}color:var(--accent){% endif %}">
-              {{ plan }}
-            </span>
-          </td>
-          <td class="text-muted">{{ inicio }}</td>
-          <td class="text-muted">{{ fin }}</td>
+          <td><strong>{{ s.tipoPlanSuscripcion }}</strong></td>
+          <td class="text-muted">{{ s.fechaInicioSuscripcion }}</td>
+          <td class="text-muted">{{ s.fechaFinSuscripcion }}</td>
           <td>
             <span style="font-size:.78rem;padding:.2rem .6rem;border-radius:4px;
-              {% if estado == 'Activa' %}
+              {% if s.estadoSuscripcion == 'Activa' %}
                 background:#0d1e14;color:#f5e97a;border:1px solid var(--accent)
+              {% elif s.estadoSuscripcion == 'Cancelada' %}
+                background:#1e0e0e;color:#f5a0a0;border:1px solid var(--danger)
               {% else %}
                 background:#1e1e1e;color:var(--muted);border:1px solid var(--border)
               {% endif %}">
-              {{ estado }}
+              {{ s.estadoSuscripcion }}
             </span>
           </td>
           <td>
-            {% if estado == 'Activa' %}
+            {% if s.estadoSuscripcion == 'Activa' %}
             <form method="post"
                   action="{% url 'finanzas:suscripcion_cancelar' s.idSuscripcion %}"
-                  onsubmit="return confirm('¿Cancelar esta suscripción?')">
+                  onsubmit="return confirm('¿Dar de baja esta suscripción?')">
               {% csrf_token %}
-              <button type="submit" class="btn btn-sm btn-secondary">Cancelar</button>
+              <button type="submit" class="btn btn-sm btn-danger">Dar de baja</button>
             </form>
             {% else %}
-            <span class="text-muted" style="font-size:.82rem">{{ estado }}</span>
+            <form method="post"
+                  action="{% url 'finanzas:suscripcion_eliminar' s.idSuscripcion %}"
+                  onsubmit="return confirm('¿Eliminar este registro del historial?')">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-sm"
+                      style="background:#1a1a1a;color:var(--muted);border:1px solid var(--border)">
+                Eliminar registro
+              </button>
+            </form>
             {% endif %}
           </td>
         </tr>
-        {% endwith %}
-        {% empty %}
-        <tr><td colspan="5" class="text-muted" style="text-align:center;padding:2rem">
-          No tienes ninguna suscripción activa.
-        </td></tr>
         {% endfor %}
       </tbody>
     </table>
   </div>
 </div>
+{% endif %}
 
-<!-- Modal Activar Suscripcion -->
-<div id="modal-activar" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);
-     z-index:200;align-items:center;justify-content:center">
-  <div class="card" style="width:400px">
+<!-- ── Modal Activar Suscripción ── -->
+<div id="modal-activar"
+     style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);
+            z-index:200;align-items:center;justify-content:center">
+  <div class="card" style="width:420px;max-width:95vw">
     <div class="flex justify-between items-center" style="margin-bottom:1.25rem">
       <h2 class="card-title" style="margin:0">Activar suscripción</h2>
       <button onclick="document.getElementById('modal-activar').style.display='none'"
@@ -78,30 +120,18 @@
       {% csrf_token %}
       <div class="form-group">
         <label>Elige tu plan *</label>
-        <select name="tipo_plan" id="sel-plan" onchange="actualizarInfo()" required>
+        <select name="tipo_plan" required>
           <option value="Gratis">Gratis — 30 días</option>
           <option value="Premium">Premium — 30 días</option>
         </select>
       </div>
-      <p id="plan-info" style="font-size:.83rem;color:var(--muted);margin-bottom:1rem">
+      <p style="font-size:.85rem;color:var(--muted);margin-bottom:1rem;
+                padding:.6rem .9rem;background:var(--surface2);border-radius:6px">
         La suscripción se activa hoy y vence en 30 días.
       </p>
-      <div class="flex gap-1 mt-2">
-        <button type="submit" class="btn btn-primary btn-full">Activar ahora</button>
-      </div>
+      <button type="submit" class="btn btn-primary btn-full">Activar ahora</button>
     </form>
   </div>
 </div>
 
-{% endblock %}
-
-{% block extra_js %}
-<script>
-function actualizarInfo() {
-  var plan = document.getElementById('sel-plan').value;
-  var dias = plan === 'Premium' ? 30 : 30;
-  document.getElementById('plan-info').textContent =
-    'La suscripción se activa hoy y vence en ' + dias + ' días.';
-}
-</script>
 {% endblock %}

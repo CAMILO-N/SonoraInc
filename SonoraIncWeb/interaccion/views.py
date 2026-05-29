@@ -211,21 +211,30 @@ def like_toggle(request, id_cancion):
 
 @login_required
 def artistas_seguidos(request):
-    busqueda = request.GET.get('q', '').strip()
+    usuario_id = request.session['usuario_id']
+    busqueda   = request.GET.get('q', '').strip()
     try:
         with DB() as db:
             artistas = db.exec('Procesos.sp_ConsultarArtistas')
+            seguidos = db.exec('Procesos.sp_ConsultarUsuarioArtista', usuario_id)
+            seguidos_ids = {s['idArtista'] for s in seguidos}
 
         if busqueda:
             artistas = [a for a in artistas
                         if busqueda.lower() in a['nombreArtista'].lower()]
+
+        # Seguidos primero, luego el resto (ambos grupos en orden alfabético)
+        artistas.sort(key=lambda a: (0 if a['idArtista'] in seguidos_ids else 1,
+                                     a['nombreArtista']))
     except pyodbc.Error as e:
         messages.error(request, parse_sql_error(e))
-        artistas = []
+        artistas     = []
+        seguidos_ids = set()
 
     return render(request, 'interaccion/artistas_seguidos.html', {
-        'artistas': artistas,
-        'busqueda': busqueda,
+        'artistas':     artistas,
+        'busqueda':     busqueda,
+        'seguidos_ids': seguidos_ids,
     })
 
 
@@ -233,16 +242,14 @@ def artistas_seguidos(request):
 def artista_seguir(request, id):
     if request.method == 'POST':
         usuario_id = request.session['usuario_id']
-        accion     = request.POST.get('accion', 'seguir')
 
         try:
             with DB() as db:
-                if accion == 'seguir':
-                    db.exec_noreturn('Procesos.sp_SeguirArtista', usuario_id, id)
-                    messages.success(request, 'Ahora sigues a este artista.')
-                else:
-                    db.exec_noreturn('Procesos.sp_DejarSeguirArtista', usuario_id, id)
+                resultado = db.exec_one('Procesos.sp_ToggleSeguirArtista', usuario_id, id)
+                if resultado and resultado.get('accion') == 'dejar':
                     messages.success(request, 'Dejaste de seguir a este artista.')
+                else:
+                    messages.success(request, 'Ahora sigues a este artista.')
         except pyodbc.Error as e:
             messages.error(request, parse_sql_error(e))
 
