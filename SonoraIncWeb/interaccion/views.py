@@ -101,10 +101,7 @@ def playlist_eliminar(request, id):
 def playlist_canciones(request, id):
     try:
         with DB() as db:
-            # vDetallePlaylists contiene las canciones de cada playlist
-            canciones       = db.query(
-                'SELECT * FROM Reportes.vDetallePlaylists WHERE idPlaylist = ?', id
-            )
+            canciones       = db.exec('Procesos.sp_ConsultarCancionesDePlaylist', id)
             todas_canciones = db.exec('Procesos.sp_ConsultarCanciones')
             playlists       = db.exec('Procesos.sp_ConsultarPlaylists', request.session['usuario_id'])
     except pyodbc.Error as e:
