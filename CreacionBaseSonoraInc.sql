@@ -8099,3 +8099,31 @@ GO
 GRANT EXECUTE ON Procesos.sp_IniciarSesion         TO SonoraApp;
 GRANT EXECUTE ON Procesos.sp_ConsultarLikesUsuario TO SonoraApp;
 GO
+
+-- ============================================================
+-- SECCIÓN 10 — Fix sp_ConsultarPlaylists: filtrar por usuario
+-- ============================================================
+-- El SP original filtraba por idPlaylist; la vista Django pasa
+-- usuario_id, por lo que nunca devolvía las playlists del usuario.
+-- Se cambia el parámetro a @Usuario_idUsuario para filtrar correctamente.
+
+CREATE OR ALTER PROCEDURE Procesos.sp_ConsultarPlaylists
+    @Usuario_idUsuario INT = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SELECT p.idPlaylist,
+           p.nombrePlaylist,
+           p.fechaCreacionPlaylist,
+           p.privacidadPlaylist,
+           ISNULL(p.descripcionPlaylist, '-') AS descripcionPlaylist,
+           u.nombreUsuario,
+           u.apellidoUsuario
+    FROM   Interaccion.Playlist  p
+    INNER JOIN Seguridad.Usuario u ON p.Usuario_idUsuario = u.idUsuario
+    WHERE  (@Usuario_idUsuario IS NULL OR p.Usuario_idUsuario = @Usuario_idUsuario);
+END;
+GO
+
+GRANT EXECUTE ON Procesos.sp_ConsultarPlaylists TO SonoraApp;
+GO
