@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="flex justify-between items-center" style="margin-bottom:1.5rem">
-  <h1 class="page-title" style="margin:0">💿 Álbumes</h1>
+  <h1 class="page-title" style="margin:0">Álbumes</h1>
   {% if request.session.is_admin %}
   <button onclick="document.getElementById('modal-nuevo').style.display='flex'"
           class="btn btn-primary">+ Nuevo álbum</button>
@@ -24,14 +24,18 @@
           <td>{{ a.fechaLanzamientoAlbum }}</td>
           <td>
             {% if request.session.is_admin %}
-            <form method="post" action="{% url 'catalogo:album_eliminar' a.idAlbum %}"
-                  onsubmit="return confirm('¿Eliminar este álbum?')">
-              {% csrf_token %}
-              <button type="submit" class="btn btn-sm"
-                      style="background:#2a1212;color:#f5a0a0;border:1px solid #e74c3c">
-                Eliminar
-              </button>
-            </form>
+            <div class="flex gap-1">
+              <button onclick="abrirEditar({{ a.idAlbum }},'{{ a.tituloAlbum }}','{{ a.fechaLanzamientoAlbum }}')"
+                      class="btn btn-secondary btn-sm">Editar</button>
+              <form method="post" action="{% url 'catalogo:album_eliminar' a.idAlbum %}"
+                    onsubmit="return confirm('¿Eliminar este álbum?')">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-sm"
+                        style="background:#2a1212;color:#f5a0a0;border:1px solid #e74c3c">
+                  Eliminar
+                </button>
+              </form>
+            </div>
             {% else %}
             <span class="text-muted" style="font-size:.8rem">—</span>
             {% endif %}
@@ -73,4 +77,42 @@
     </form>
   </div>
 </div>
+
+<!-- Modal Editar -->
+<div id="modal-editar" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;align-items:center;justify-content:center">
+  <div class="card" style="width:420px">
+    <div class="flex justify-between items-center" style="margin-bottom:1.25rem">
+      <h2 class="card-title" style="margin:0">Editar álbum</h2>
+      <button onclick="document.getElementById('modal-editar').style.display='none'"
+              style="background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer">✕</button>
+    </div>
+    <form method="post" id="form-editar" action="">
+      {% csrf_token %}
+      <div class="form-group">
+        <label>Título *</label>
+        <input type="text" name="titulo" id="edit-titulo" required>
+      </div>
+      <div class="form-group">
+        <label>Fecha de lanzamiento *</label>
+        <input type="date" name="fecha" id="edit-fecha" required>
+      </div>
+      <div class="flex gap-1 mt-2">
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <button type="button" onclick="document.getElementById('modal-editar').style.display='none'"
+                class="btn btn-secondary">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function abrirEditar(id, titulo, fecha) {
+  document.getElementById('form-editar').action = '/catalogo/albumes/' + id + '/editar/';
+  document.getElementById('edit-titulo').value = titulo;
+  document.getElementById('edit-fecha').value  = fecha;
+  document.getElementById('modal-editar').style.display = 'flex';
+}
+</script>
 {% endblock %}

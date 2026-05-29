@@ -7997,3 +7997,105 @@ GO
 -- Dar permiso de ejecución al usuario de la app
 GRANT EXECUTE ON Procesos.sp_ConsultarCancionesArtista TO SonoraApp;
 GO
+
+
+/* ============================================================
+   SECCION 9 — Sistema de roles y SP de likes por usuario
+   Ejecutar sobre la BD SonoraInc ya creada y poblada.
+   ============================================================ */
+
+USE SonoraInc;
+GO
+
+-- 9a. Agregar columna rolUsuario (solo si no existe)
+IF NOT EXISTS (
+    SELECT 1 FROM sys.columns
+    WHERE object_id = OBJECT_ID('Seguridad.Usuario')
+      AND name = 'rolUsuario'
+)
+BEGIN
+    ALTER TABLE Seguridad.Usuario
+        ADD rolUsuario VARCHAR(20) NOT NULL DEFAULT 'usuario';
+END;
+GO
+
+-- 9b. Restriccion de valores validos
+IF NOT EXISTS (
+    SELECT 1 FROM sys.check_constraints
+    WHERE parent_object_id = OBJECT_ID('Seguridad.Usuario')
+      AND name = 'CHK_rolUsuario'
+)
+BEGIN
+    ALTER TABLE Seguridad.Usuario
+        ADD CONSTRAINT CHK_rolUsuario
+            CHECK (rolUsuario IN ('admin', 'usuario'));
+END;
+GO
+
+-- 9c. Usuario 1 es admin
+UPDATE Seguridad.Usuario
+SET rolUsuario = 'admin'
+WHERE idUsuario = 1;
+GO
+
+-- 9d. Actualizar sp_IniciarSesion para devolver rolUsuario
+DROP PROCEDURE IF EXISTS Procesos.sp_IniciarSesion;
+GO
+
+CREATE PROCEDURE Procesos.sp_IniciarSesion
+    @correoUsuario  VARCHAR(50),
+    @passwordHash   VARCHAR(255)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF NOT EXISTS (
+        SELECT 1 FROM Seguridad.Usuario
+        WHERE correoUsuario = @correoUsuario
+    )
+        THROW 50002, 'Credenciales incorrectas.', 1;
+
+    IF NOT EXISTS (
+        SELECT 1 FROM Seguridad.Usuario
+        WHERE correoUsuario = @correoUsuario
+          AND passwordHash  = @passwordHash
+    )
+        THROW 50002, 'Credenciales incorrectas.', 1;
+
+    SELECT
+        idUsuario,
+        nombreUsuario,
+        apellidoUsuario,
+        correoUsuario,
+        fechaRegistroUsuario,
+        rolUsuario
+    FROM Seguridad.Usuario
+    WHERE correoUsuario = @correoUsuario;
+END;
+GO
+
+-- 9e. Canciones con like del usuario (para pagina "Me gusta")
+CREATE OR ALTER PROCEDURE Procesos.sp_ConsultarLikesUsuario
+    @Usuario_idUsuario INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SELECT
+        c.idCancion,
+        c.tituloCancion,
+        c.duracionCancion,
+        g.nombreGenero,
+        a.tituloAlbum
+    FROM   Interaccion.UsuarioCancion uc
+    INNER JOIN Catalogo.Cancion c ON uc.Cancion_idCancion = c.idCancion
+    LEFT  JOIN Catalogo.Genero  g ON c.Genero_idGenero    = g.idGenero
+    LEFT  JOIN Catalogo.Album   a ON c.Album_idAlbum      = a.idAlbum
+    WHERE  uc.Usuario_idUsuario = @Usuario_idUsuario
+    ORDER BY c.tituloCancion;
+END;
+GO
+
+-- 9f. Permisos
+GRANT EXECUTE ON Procesos.sp_IniciarSesion         TO SonoraApp;
+GRANT EXECUTE ON Procesos.sp_ConsultarLikesUsuario TO SonoraApp;
+GO

@@ -251,6 +251,26 @@ def album_nuevo(request):
 
 
 @admin_required
+def album_editar(request, id):
+    if request.method == 'POST':
+        titulo = request.POST.get('titulo', '').strip()
+        fecha  = request.POST.get('fecha', '').strip()
+
+        if not all([titulo, fecha]):
+            messages.error(request, 'Título y fecha son obligatorios.')
+            return redirect('catalogo:albumes')
+
+        try:
+            with DB() as db:
+                db.exec_noreturn('Procesos.sp_ActualizarAlbum', id, titulo, fecha)
+            messages.success(request, 'Álbum actualizado correctamente.')
+        except pyodbc.Error as e:
+            messages.error(request, parse_sql_error(e))
+
+    return redirect('catalogo:albumes')
+
+
+@admin_required
 def album_eliminar(request, id):
     if request.method == 'POST':
         try:

@@ -15,9 +15,10 @@ urlpatterns = [
     path('artistas/<int:id>/editar/',   views.artista_editar,name='artista_editar'),
     path('artistas/<int:id>/eliminar/', views.artista_eliminar,name='artista_eliminar'),
     # Álbumes
-    path('albumes/',                views.albumes_lista,     name='albumes'),
-    path('albumes/nuevo/',          views.album_nuevo,       name='album_nuevo'),
-    path('albumes/<int:id>/eliminar/', views.album_eliminar, name='album_eliminar'),
+    path('albumes/',                     views.albumes_lista,  name='albumes'),
+    path('albumes/nuevo/',               views.album_nuevo,    name='album_nuevo'),
+    path('albumes/<int:id>/editar/',     views.album_editar,   name='album_editar'),
+    path('albumes/<int:id>/eliminar/',   views.album_eliminar, name='album_eliminar'),
     # Géneros
     path('generos/',                views.generos_lista,     name='generos'),
 ]

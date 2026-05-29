@@ -164,21 +164,19 @@ def playlist_eliminar_cancion(request, id_playlist, id_cancion):
 
 @login_required
 def likes_lista(request):
-    busqueda = request.GET.get('q', '').strip()
+    usuario_id = request.session['usuario_id']
     try:
         with DB() as db:
+            likes     = db.exec('Procesos.sp_ConsultarLikesUsuario', usuario_id)
             canciones = db.exec('Procesos.sp_ConsultarCanciones')
-
-        if busqueda:
-            canciones = [c for c in canciones
-                         if busqueda.lower() in c['tituloCancion'].lower()]
     except pyodbc.Error as e:
         messages.error(request, parse_sql_error(e))
+        likes     = []
         canciones = []
 
     return render(request, 'interaccion/likes.html', {
+        'likes':     likes,
         'canciones': canciones,
-        'busqueda':  busqueda,
     })
 
 

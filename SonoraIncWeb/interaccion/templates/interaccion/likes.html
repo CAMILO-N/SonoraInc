@@ -4,22 +4,12 @@
 {% block content %}
 
 <div class="flex justify-between items-center" style="margin-bottom:1.5rem">
-  <h1 class="page-title" style="margin:0">Me gusta / Canciones</h1>
+  <h1 class="page-title" style="margin:0">Me gusta</h1>
   <button onclick="document.getElementById('modal-rep').style.display='flex'"
           class="btn btn-secondary">+ Registrar reproducción</button>
 </div>
 
-<!-- Buscador -->
-<form method="get" style="margin-bottom:1.5rem;display:flex;gap:.75rem">
-  <input type="text" name="q" value="{{ busqueda }}"
-         placeholder="Buscar canción..." style="max-width:320px">
-  <button type="submit" class="btn btn-secondary">Buscar</button>
-  {% if busqueda %}
-  <a href="{% url 'interaccion:likes' %}" class="btn btn-secondary">✕ Limpiar</a>
-  {% endif %}
-</form>
-
-<!-- Tabla de canciones con acciones de like -->
+<!-- Tabla de canciones con like -->
 <div class="card">
   <div class="table-wrap">
     <table>
@@ -29,7 +19,7 @@
         </tr>
       </thead>
       <tbody>
-        {% for c in canciones %}
+        {% for c in likes %}
         <tr>
           <td class="text-muted">{{ c.idCancion }}</td>
           <td><strong>{{ c.tituloCancion }}</strong></td>
@@ -37,30 +27,16 @@
           <td>{{ c.nombreGenero|default:"—" }}</td>
           <td>{{ c.tituloAlbum|default:"—" }}</td>
           <td>
-            <div class="flex gap-1">
-              <!-- Dar like -->
-              <form method="post" action="{% url 'interaccion:like_toggle' c.idCancion %}">
-                {% csrf_token %}
-                <input type="hidden" name="accion" value="dar">
-                <button type="submit" class="btn btn-sm"
-                        style="background:#0d1e14;color:#f5e97a;border:1px solid var(--accent)">
-                  Me gusta
-                </button>
-              </form>
-              <!-- Quitar like -->
-              <form method="post" action="{% url 'interaccion:like_toggle' c.idCancion %}">
-                {% csrf_token %}
-                <input type="hidden" name="accion" value="quitar">
-                <button type="submit" class="btn btn-sm btn-secondary">
-                  Quitar like
-                </button>
-              </form>
-            </div>
+            <form method="post" action="{% url 'interaccion:like_toggle' c.idCancion %}">
+              {% csrf_token %}
+              <input type="hidden" name="accion" value="quitar">
+              <button type="submit" class="btn btn-sm btn-secondary">Quitar like</button>
+            </form>
           </td>
         </tr>
         {% empty %}
         <tr><td colspan="6" class="text-muted" style="text-align:center;padding:2rem">
-          No se encontraron canciones.
+          No has dado me gusta a ninguna canción todavía.
         </td></tr>
         {% endfor %}
       </tbody>
