@@ -4,7 +4,7 @@ from django.contrib import messages
 from db.connection import DB, parse_sql_error
 
 
-# ── Decorador de sesión ───────────────────────────────────────────────────────
+# Decorador de sesión
 def login_required(view_func):
     def wrapper(request, *args, **kwargs):
         if not request.session.get('usuario_id'):
@@ -13,9 +13,7 @@ def login_required(view_func):
     return wrapper
 
 
-# ════════════════════════════════════════════════════════════════════════════════
 # DASHBOARD  — consulta las 7 vistas del esquema Reportes
-# ════════════════════════════════════════════════════════════════════════════════
 
 @login_required
 def dashboard(request):

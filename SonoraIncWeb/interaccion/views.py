@@ -5,7 +5,7 @@ from django.contrib import messages
 from db.connection import DB, parse_sql_error
 
 
-# ── Decorador de sesión ───────────────────────────────────────────────────────
+# Decorador de sesión
 def login_required(view_func):
     def wrapper(request, *args, **kwargs):
         if not request.session.get('usuario_id'):
@@ -14,9 +14,7 @@ def login_required(view_func):
     return wrapper
 
 
-# ════════════════════════════════════════════════════════════════════════════════
 # PLAYLISTS
-# ════════════════════════════════════════════════════════════════════════════════
 
 @login_required
 def playlists_lista(request):
@@ -93,9 +91,7 @@ def playlist_eliminar(request, id):
     return redirect('interaccion:playlists')
 
 
-# ════════════════════════════════════════════════════════════════════════════════
 # CANCIONES EN PLAYLIST
-# ════════════════════════════════════════════════════════════════════════════════
 
 @login_required
 def playlist_canciones(request, id):
@@ -155,9 +151,7 @@ def playlist_eliminar_cancion(request, id_playlist, id_cancion):
     return redirect('interaccion:playlist_canciones', id=id_playlist)
 
 
-# ════════════════════════════════════════════════════════════════════════════════
 # LIKES  (me gusta en canciones)
-# ════════════════════════════════════════════════════════════════════════════════
 
 @login_required
 def likes_lista(request):
@@ -205,9 +199,7 @@ def like_toggle(request, id_cancion):
     return redirect('interaccion:likes')
 
 
-# ════════════════════════════════════════════════════════════════════════════════
 # ARTISTAS SEGUIDOS
-# ════════════════════════════════════════════════════════════════════════════════
 
 @login_required
 def artistas_seguidos(request):
@@ -260,9 +252,7 @@ def artista_seguir(request, id):
     return redirect('interaccion:artistas_seguidos')
 
 
-# ════════════════════════════════════════════════════════════════════════════════
 # REPRODUCCIONES
-# ════════════════════════════════════════════════════════════════════════════════
 
 @login_required
 def reproduccion_registrar(request):

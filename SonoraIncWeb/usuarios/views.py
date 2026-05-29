@@ -11,7 +11,7 @@ def _hash(password: str) -> str:
     return hashlib.sha256(password.encode()).hexdigest().upper()
 
 
-# ── Login ─────────────────────────────────────────────────────────────────────
+# Login
 def login_view(request):
     if request.session.get('usuario_id'):
         return redirect('usuarios:perfil')
@@ -49,14 +49,14 @@ def login_view(request):
     return render(request, 'usuarios/login.html')
 
 
-# ── Logout ────────────────────────────────────────────────────────────────────
+# Logout
 def logout_view(request):
     request.session.flush()
     messages.success(request, 'Sesión cerrada.')
     return redirect('usuarios:login')
 
 
-# ── Registro ──────────────────────────────────────────────────────────────────
+# Registro
 def registro_view(request):
     if request.session.get('usuario_id'):
         return redirect('usuarios:perfil')
@@ -103,7 +103,7 @@ def registro_view(request):
     return render(request, 'usuarios/registro.html')
 
 
-# ── Perfil ────────────────────────────────────────────────────────────────────
+# Perfil
 def perfil_view(request):
     if not request.session.get('usuario_id'):
         return redirect('usuarios:login')
