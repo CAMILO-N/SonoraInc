@@ -2618,7 +2618,7 @@ GO
 
 /* 6. Seguridad.Usuario - 120 registros */
 INSERT INTO Seguridad.Usuario (idUsuario, nombreUsuario, apellidoUsuario, segundoNombreUsuario, segundoApellidoUsuario, correoUsuario, fechaRegistroUsuario) VALUES
-(1,'Carlos','Mendoza',NULL,NULL,'carlos.mendoza1@hotmail.com','2024-02-03'),
+(1,'Admin','Sonora',NULL,NULL,'admin@sonorainc.com','2024-02-03'),
 (2,'Maria','Fernandez',NULL,NULL,'maria.fernandez2@outlook.com','2025-03-05'),
 (3,'Luis','Paredes','Ricardo',NULL,'luis.paredes3@yahoo.com','2023-04-07'),
 (4,'Ana','Gutierrez',NULL,'Ponce','ana.gutierrez4@udla.edu.ec','2024-05-09'),
@@ -10504,6 +10504,12 @@ GO
 UPDATE Seguridad.Usuario
 SET passwordHash = CONVERT(VARCHAR(64),
         HASHBYTES('SHA2_256', 'Sonora' + CAST(idUsuario AS VARCHAR)), 2);
+GO
+
+-- Contraseña del admin: Admin123Sonora
+UPDATE Seguridad.Usuario
+SET passwordHash = CONVERT(VARCHAR(64), HASHBYTES('SHA2_256', 'Admin123Sonora'), 2)
+WHERE idUsuario = 1;
 GO
 
 -- Verificación rápida
