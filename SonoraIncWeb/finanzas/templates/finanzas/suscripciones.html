@@ -5,7 +5,11 @@
 
 {% if is_admin %}
 
-<h1 class="page-title">Suscripciones de usuarios</h1>
+<div class="flex justify-between items-center" style="margin-bottom:1.5rem">
+  <h1 class="page-title" style="margin:0">Suscripciones de usuarios</h1>
+  <button onclick="document.getElementById('modal-admin-nueva').style.display='flex'"
+          class="btn btn-primary">+ Nueva suscripcion</button>
+</div>
 
 {% if suscripciones %}
 <div class="card">
@@ -54,6 +58,39 @@
 {% else %}
 <p class="text-muted" style="margin-top:2rem">No hay suscripciones registradas.</p>
 {% endif %}
+
+<!-- Modal nueva suscripcion (admin) -->
+<div id="modal-admin-nueva"
+     style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);
+            z-index:200;align-items:center;justify-content:center">
+  <div class="card" style="width:440px;max-width:95vw">
+    <div class="flex justify-between items-center" style="margin-bottom:1.25rem">
+      <h2 class="card-title" style="margin:0">Nueva suscripcion</h2>
+      <button onclick="document.getElementById('modal-admin-nueva').style.display='none'"
+              style="background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer">✕</button>
+    </div>
+    <form method="post" action="{% url 'finanzas:suscripcion_nueva' %}">
+      {% csrf_token %}
+      <div class="form-group">
+        <label>Usuario *</label>
+        <select name="usuario_id" required>
+          <option value="">— Selecciona usuario —</option>
+          {% for u in usuarios %}
+          <option value="{{ u.idUsuario }}">{{ u.nombreUsuario }} {{ u.apellidoUsuario }} — {{ u.correoUsuario }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Plan *</label>
+        <select name="tipo_plan" required>
+          <option value="Gratis">Gratis — 30 dias</option>
+          <option value="Premium">Premium — 30 dias</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary btn-full">Activar suscripcion</button>
+    </form>
+  </div>
+</div>
 
 {% else %}
 

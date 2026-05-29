@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="flex justify-between items-center" style="margin-bottom:1.5rem">
-  <h1 class="page-title" style="margin:0">🎵 Canciones</h1>
+  <h1 class="page-title" style="margin:0">Canciones</h1>
   {% if request.session.is_admin %}
   <button onclick="document.getElementById('modal-nueva').style.display='flex'"
           class="btn btn-primary">+ Nueva canción</button>
@@ -44,7 +44,7 @@
               <button onclick="abrirEditar({{ c.idCancion }},'{{ c.tituloCancion }}',{{ c.duracionCancion }},{{ c.Genero_idGenero }},{{ c.Album_idAlbum }})"
                       class="btn btn-secondary btn-sm">Editar</button>
               <form method="post" action="{% url 'catalogo:cancion_eliminar' c.idCancion %}"
-                    onsubmit="return confirm('¿Eliminar esta canción?')">
+                    onsubmit="return confirm('¿Eliminar esta cancion? Se borraran todas sus asociaciones con artistas, playlists y reproducciones.')">
                 {% csrf_token %}
                 <button type="submit" class="btn btn-sm"
                         style="background:#2a1212;color:#f5a0a0;border:1px solid #e74c3c">
