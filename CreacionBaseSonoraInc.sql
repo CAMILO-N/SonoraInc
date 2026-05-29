@@ -8157,3 +8157,40 @@ GO
 
 GRANT EXECUTE ON Procesos.sp_ConsultarCancionesDePlaylist TO SonoraApp;
 GO
+
+-- ============================================================
+-- SECCIÓN 12 — sp_ToggleLikeCancion + fix buscar con playlists
+-- ============================================================
+-- Agrega o quita el like según el estado actual del usuario.
+-- Devuelve accion='dar' o accion='quitar' para que Django
+-- muestre el mensaje correcto.
+
+CREATE OR ALTER PROCEDURE Procesos.sp_ToggleLikeCancion
+    @Usuario_idUsuario INT,
+    @Cancion_idCancion INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF EXISTS (
+        SELECT 1 FROM Interaccion.UsuarioCancion
+        WHERE Usuario_idUsuario = @Usuario_idUsuario
+          AND Cancion_idCancion = @Cancion_idCancion
+    )
+    BEGIN
+        DELETE FROM Interaccion.UsuarioCancion
+        WHERE Usuario_idUsuario = @Usuario_idUsuario
+          AND Cancion_idCancion = @Cancion_idCancion;
+        SELECT 'quitar' AS accion;
+    END
+    ELSE
+    BEGIN
+        INSERT INTO Interaccion.UsuarioCancion (Usuario_idUsuario, Cancion_idCancion)
+        VALUES (@Usuario_idUsuario, @Cancion_idCancion);
+        SELECT 'dar' AS accion;
+    END;
+END;
+GO
+
+GRANT EXECUTE ON Procesos.sp_ToggleLikeCancion TO SonoraApp;
+GO

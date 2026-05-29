@@ -185,12 +185,16 @@ def like_toggle(request, id_cancion):
 
         try:
             with DB() as db:
-                if accion == 'dar':
-                    db.exec_noreturn('Procesos.sp_DarLikeCancion', usuario_id, id_cancion)
-                    messages.success(request, 'Me gusta registrado.')
-                else:
-                    db.exec_noreturn('Procesos.sp_QuitarLikeCancion', usuario_id, id_cancion)
+                if accion == 'quitar':
+                    db.exec_noreturn('Procesos.sp_EliminarUsuarioCancion', usuario_id, id_cancion)
                     messages.success(request, 'Me gusta quitado.')
+                else:
+                    # Toggle: el SP agrega si no existe, quita si ya existe
+                    resultado = db.exec_one('Procesos.sp_ToggleLikeCancion', usuario_id, id_cancion)
+                    if resultado and resultado.get('accion') == 'quitar':
+                        messages.success(request, 'Me gusta quitado.')
+                    else:
+                        messages.success(request, 'Me gusta registrado.')
         except pyodbc.Error as e:
             messages.error(request, parse_sql_error(e))
 
