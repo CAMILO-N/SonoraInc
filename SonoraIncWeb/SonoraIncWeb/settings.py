@@ -53,7 +53,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'SonoraIncWeb.wsgi.application'
 
-# ── Base de datos ─────────────────────────────────────────────────────────────
+# Base de datos
 # No usamos el ORM. SQLite solo para que Django no rompa al arrancar.
 # La conexión real a SQL Server vive en db/connection.py
 DATABASES = {
@@ -63,7 +63,7 @@ DATABASES = {
     }
 }
 
-# ── Sesiones en caché (no requieren migrate) ──────────────────────────────────
+# Sesiones en caché (no requieren migrate)
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 
 CACHES = {
@@ -72,18 +72,18 @@ CACHES = {
     }
 }
 
-# ── Mensajes ──────────────────────────────────────────────────────────────────
+# Mensajes
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
-# ── Internacionalización ──────────────────────────────────────────────────────
+# Internacionalización
 LANGUAGE_CODE = 'es-ec'
 TIME_ZONE     = 'America/Guayaquil'
 USE_I18N      = True
 USE_TZ        = True
 
-# ── Archivos estáticos ────────────────────────────────────────────────────────
+# Archivos estáticos
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
-# ── Redirección si no hay sesión ──────────────────────────────────────────────
+# Redirección si no hay sesión
 LOGIN_URL = '/usuarios/login/'

@@ -4,7 +4,7 @@ from django.contrib import messages
 from db.connection import DB, parse_sql_error
 
 
-# ── Decorador de sesión ───────────────────────────────────────────────────────
+# Decorador de sesión
 def login_required(view_func):
     def wrapper(request, *args, **kwargs):
         if not request.session.get('usuario_id'):
@@ -13,9 +13,7 @@ def login_required(view_func):
     return wrapper
 
 
-# ════════════════════════════════════════════════════════════════════════════════
 # HOME  — página principal del usuario autenticado
-# ════════════════════════════════════════════════════════════════════════════════
 
 @login_required
 def home(request):
@@ -38,9 +36,7 @@ def home(request):
     })
 
 
-# ════════════════════════════════════════════════════════════════════════════════
 # BÚSQUEDA  — busca artistas, álbumes y canciones
-# ════════════════════════════════════════════════════════════════════════════════
 
 @login_required
 def buscar(request):
@@ -78,9 +74,7 @@ def buscar(request):
     })
 
 
-# ════════════════════════════════════════════════════════════════════════════════
 # DETALLE DE ARTISTA  — info, canciones y seguir/dejar de seguir
-# ════════════════════════════════════════════════════════════════════════════════
 
 @login_required
 def artista_detail(request, artista_id):
@@ -115,9 +109,7 @@ def artista_detail(request, artista_id):
     })
 
 
-# ════════════════════════════════════════════════════════════════════════════════
 # DETALLE DE ÁLBUM  — info y canciones del álbum
-# ════════════════════════════════════════════════════════════════════════════════
 
 @login_required
 def album_detail(request, album_id):

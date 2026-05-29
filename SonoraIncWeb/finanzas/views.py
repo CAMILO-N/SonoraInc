@@ -5,7 +5,7 @@ from django.contrib import messages
 from db.connection import DB, parse_sql_error
 
 
-# ── Decorador de sesión ───────────────────────────────────────────────────────
+# Decorador de sesión
 def login_required(view_func):
     def wrapper(request, *args, **kwargs):
         if not request.session.get('usuario_id'):
@@ -14,9 +14,7 @@ def login_required(view_func):
     return wrapper
 
 
-# ════════════════════════════════════════════════════════════════════════════════
 # SUSCRIPCIONES
-# ════════════════════════════════════════════════════════════════════════════════
 
 @login_required
 def suscripciones(request):
@@ -96,9 +94,7 @@ def suscripcion_eliminar(request, sub_id):
     return redirect('finanzas:suscripciones')
 
 
-# ════════════════════════════════════════════════════════════════════════════════
 # PAGOS
-# ════════════════════════════════════════════════════════════════════════════════
 
 @login_required
 def pagos(request):
@@ -160,9 +156,7 @@ def pago_eliminar(request, pago_id):
     return redirect('finanzas:pagos')
 
 
-# ════════════════════════════════════════════════════════════════════════════════
 # REGALIAS
-# ════════════════════════════════════════════════════════════════════════════════
 
 @login_required
 def regalias(request):

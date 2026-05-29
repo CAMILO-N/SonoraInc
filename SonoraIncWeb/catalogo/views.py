@@ -4,7 +4,7 @@ from django.contrib import messages
 from db.connection import DB, parse_sql_error
 
 
-# ── Decoradores de sesión y rol ───────────────────────────────────────────────
+# Decoradores de sesión y rol
 def login_required(view_func):
     def wrapper(request, *args, **kwargs):
         if not request.session.get('usuario_id'):
@@ -24,9 +24,7 @@ def admin_required(view_func):
     return wrapper
 
 
-# ════════════════════════════════════════════════════════════════════════════════
 # CANCIONES
-# ════════════════════════════════════════════════════════════════════════════════
 
 @login_required
 def canciones_lista(request):
@@ -124,9 +122,7 @@ def cancion_eliminar(request, id):
     return redirect('catalogo:canciones')
 
 
-# ════════════════════════════════════════════════════════════════════════════════
 # ARTISTAS
-# ════════════════════════════════════════════════════════════════════════════════
 
 @login_required
 def artistas_lista(request):
@@ -209,9 +205,7 @@ def artista_eliminar(request, id):
     return redirect('catalogo:artistas')
 
 
-# ════════════════════════════════════════════════════════════════════════════════
 # ÁLBUMES
-# ════════════════════════════════════════════════════════════════════════════════
 
 @login_required
 def albumes_lista(request):
@@ -282,9 +276,7 @@ def album_eliminar(request, id):
     return redirect('catalogo:albumes')
 
 
-# ════════════════════════════════════════════════════════════════════════════════
 # GÉNEROS
-# ════════════════════════════════════════════════════════════════════════════════
 
 @login_required
 def generos_lista(request):

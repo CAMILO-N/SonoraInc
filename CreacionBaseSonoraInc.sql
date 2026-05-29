@@ -14,7 +14,6 @@ go
 --   type:      SQL Server 2012
 
 
-
 CREATE TABLE Album 
     (
      idAlbum INTEGER NOT NULL , 
@@ -493,7 +492,6 @@ ALTER TABLE UsuarioCancion
 GO
 
 
-
 -- Oracle SQL Developer Data Modeler Summary Report: 
 -- 
 -- CREATE TABLE                            15
@@ -524,23 +522,12 @@ GO
 -- WARNINGS                                 0
 
 
-
-/* ============================================================
-   SCRIPT 02 - IMPLEMENTACION FASE 3
-
-   Script complementario al script generado por Oracle Data Modeler.
-   Incluye organizacion por esquemas, indices, seguridad, objetos
-   programables, reportes y pruebas.
-   ============================================================ */
+-- SCRIPT 02 - IMPLEMENTACION FASE 3 | Script complementario al script generado por Oracle Data Modeler. | Incluye organizacion por esquemas, indices, seguridad, objetos | programables, reportes y pruebas.
 
 USE SonoraInc;
 GO
 
-/* ============================================================
-   SECCION 1 - CREACION DE ESQUEMAS
-   Objetivo:
-   Organizar los objetos de la base de datos segun su funcion.
-   ============================================================ */
+-- SECCION 1 - CREACION DE ESQUEMAS | Objetivo: | Organizar los objetos de la base de datos segun su funcion.
 
 	-- Creacion de esquemas
 	CREATE SCHEMA Seguridad;
@@ -587,12 +574,7 @@ GO
 	ALTER SCHEMA Finanzas TRANSFER dbo.Regalia;
 
 
-
-/* ============================================================
-   SECCION 2 - INDICES
-   Objetivo:
-   Mejorar el rendimiento de consultas frecuentes y reportes.
-   ============================================================ */
+-- SECCION 2 - INDICES | Objetivo: | Mejorar el rendimiento de consultas frecuentes y reportes.
 
 	USE SonoraInc;
 	GO
@@ -727,11 +709,7 @@ GO
 	GO
 
 
-/* ============================================================
-   SECCION 3 - SEGURIDAD, LOGIN, USUARIO Y PERMISOS
-   Objetivo:
-   Crear credenciales para conexion desde Python y asignar permisos.
-   ============================================================ */
+-- SECCION 3 - SEGURIDAD, LOGIN, USUARIO Y PERMISOS | Objetivo: | Crear credenciales para conexion desde Python y asignar permisos.
 
 	USE master;
 	GO
@@ -760,12 +738,7 @@ GO
 	GRANT EXECUTE TO userSonoraInc;
 	GO
 
-/* ============================================================
-   SECCION 4 - FUNCIONES
-   Objetivo:
-   Implementar calculos reutilizables para reportes y reglas
-   de negocio dentro de la base de datos SonoraInc.
-   ============================================================ */
+-- SECCION 4 - FUNCIONES | Objetivo: | Implementar calculos reutilizables para reportes y reglas | de negocio dentro de la base de datos SonoraInc.
 
 	USE SonoraInc;
 	GO
@@ -896,19 +869,11 @@ GO
 	GO
 
 
-/* ============================================================
-   SECCION 5 - PROCEDIMIENTOS ALMACENADOS
-   Objetivo:
-   Implementar operaciones principales del sistema.
-   ============================================================ */
+-- SECCION 5 - PROCEDIMIENTOS ALMACENADOS | Objetivo: | Implementar operaciones principales del sistema.
     USE SonoraInc;
     GO
 
-    /* ============================================================
-       SP 1 - REGISTRAR USUARIO
-       Caso de uso:
-       Registrar usuario
-       ============================================================ */
+    -- SP 1 - REGISTRAR USUARIO | Caso de uso: | Registrar usuario
 
     CREATE PROCEDURE Procesos.sp_RegistrarUsuario
         @nombreUsuario VARCHAR(50),
@@ -961,14 +926,7 @@ GO
     GO
 
 
-    /* ============================================================
-       SP 2 - INICIAR SESION
-       Caso de uso:
-       Iniciar sesion
-       Nota:
-       Como el modelo actual no almacena contrasena, se valida el
-       acceso mediante correo registrado.
-       ============================================================ */
+    -- SP 2 - INICIAR SESION | Caso de uso: | Iniciar sesion | Nota: | Como el modelo actual no almacena contrasena, se valida el | acceso mediante correo registrado.
 
     CREATE PROCEDURE Procesos.sp_IniciarSesion
         @correoUsuario VARCHAR(50)
@@ -997,11 +955,7 @@ GO
     GO
 
 
-    /* ============================================================
-       SP 3 - CREAR PLAYLIST
-       Caso de uso:
-       Crear playlist
-       ============================================================ */
+    -- SP 3 - CREAR PLAYLIST | Caso de uso: | Crear playlist
 
     CREATE PROCEDURE Procesos.sp_CrearPlaylist
         @Usuario_idUsuario INT,
@@ -1066,11 +1020,7 @@ GO
     GO
 
 
-    /* ============================================================
-       SP 4 - AGREGAR CANCION A PLAYLIST
-       Caso de uso:
-       Agregar cancion a playlist
-       ============================================================ */
+    -- SP 4 - AGREGAR CANCION A PLAYLIST | Caso de uso: | Agregar cancion a playlist
 
     CREATE PROCEDURE Procesos.sp_AgregarCancionPlaylist
         @Playlist_idPlaylist INT,
@@ -1123,11 +1073,7 @@ GO
     GO
 
 
-    /* ============================================================
-       SP 5 - REGISTRAR REPRODUCCION
-       Caso de uso:
-       Reproducir cancion
-       ============================================================ */
+    -- SP 5 - REGISTRAR REPRODUCCION | Caso de uso: | Reproducir cancion
 
     CREATE PROCEDURE Procesos.sp_RegistrarReproduccion
         @Usuario_idUsuario INT,
@@ -1188,11 +1134,7 @@ GO
     GO
 
 
-    /* ============================================================
-       SP 6 - DAR LIKE A UNA CANCION
-       Caso de uso:
-       Dar like a una cancion
-       ============================================================ */
+    -- SP 6 - DAR LIKE A UNA CANCION | Caso de uso: | Dar like a una cancion
 
     CREATE PROCEDURE Procesos.sp_DarLikeCancion
         @Usuario_idUsuario INT,
@@ -1245,11 +1187,7 @@ GO
     GO
 
 
-    /* ============================================================
-       SP 7 - SEGUIR ARTISTA
-       Caso de uso:
-       Seguir artista
-       ============================================================ */
+    -- SP 7 - SEGUIR ARTISTA | Caso de uso: | Seguir artista
 
     CREATE PROCEDURE Procesos.sp_SeguirArtista
         @Usuario_idUsuario INT,
@@ -1302,11 +1240,7 @@ GO
     GO
 
 
-    /* ============================================================
-       SP 8 - REGISTRAR SUSCRIPCION
-       Caso de uso:
-       Seleccionar suscripcion
-       ============================================================ */
+    -- SP 8 - REGISTRAR SUSCRIPCION | Caso de uso: | Seleccionar suscripcion
 
     CREATE PROCEDURE Procesos.sp_RegistrarSuscripcion
         @Usuario_idUsuario INT,
@@ -1366,11 +1300,7 @@ GO
     GO
 
 
-    /* ============================================================
-       SP 9 - REGISTRAR PAGO DE SUSCRIPCION
-       Caso de uso:
-       Registrar pago de suscripcion
-       ============================================================ */
+    -- SP 9 - REGISTRAR PAGO DE SUSCRIPCION | Caso de uso: | Registrar pago de suscripcion
 
     CREATE PROCEDURE Procesos.sp_RegistrarPago
         @Suscripcion_idSuscripcion INT,
@@ -1419,11 +1349,7 @@ GO
     GO
 
 
-    /* ============================================================
-       SP 10 - CALCULAR REGALIA
-       Caso de uso:
-       Calcular regalias
-       ============================================================ */
+    -- SP 10 - CALCULAR REGALIA | Caso de uso: | Calcular regalias
 
     CREATE PROCEDURE Procesos.sp_CalcularRegaliaCancion
         @Cancion_idCancion INT,
@@ -1485,11 +1411,7 @@ GO
     END;
     GO
 
-    /* ============================================================
-       SP 11 - CONSULTAR CANCIONES DE UN ARTISTA
-       Caso de uso:
-       Ver el catalogo de canciones de un artista en la pagina de detalle.
-       ============================================================ */
+    -- SP 11 - CONSULTAR CANCIONES DE UN ARTISTA | Caso de uso: | Ver el catalogo de canciones de un artista en la pagina de detalle.
 
     CREATE PROCEDURE Procesos.sp_ConsultarCancionesArtista
         @idArtista INT
@@ -1513,21 +1435,13 @@ GO
     GO
 
 
-/* ============================================================
-   SECCION 6 - TRIGGERS
-   Objetivo:
-   Automatizar validaciones o acciones posteriores a cambios en datos.
-   ============================================================ */
+-- SECCION 6 - TRIGGERS | Objetivo: | Automatizar validaciones o acciones posteriores a cambios en datos.
 
 
     USE SonoraInc;
     GO
 
-    /* ============================================================
-       TRIGGER 1 - VALIDAR PAGO DE SUSCRIPCION
-       Regla:
-       El monto de un pago debe ser mayor a cero.
-       ============================================================ */
+    -- TRIGGER 1 - VALIDAR PAGO DE SUSCRIPCION | Regla: | El monto de un pago debe ser mayor a cero.
 
     CREATE TRIGGER Finanzas.trg_ValidarMontoPago
     ON Finanzas.Pago
@@ -1548,11 +1462,7 @@ GO
     GO
 
 
-    /* ============================================================
-       TRIGGER 2 - VALIDAR PAGO SOLO PARA PLAN PREMIUM
-       Regla:
-       Solo las suscripciones Premium deben registrar pagos.
-       ============================================================ */
+    -- TRIGGER 2 - VALIDAR PAGO SOLO PARA PLAN PREMIUM | Regla: | Solo las suscripciones Premium deben registrar pagos.
 
     CREATE TRIGGER Finanzas.trg_ValidarPagoPremium
     ON Finanzas.Pago
@@ -1575,12 +1485,7 @@ GO
     GO
 
 
-    /* ============================================================
-       TRIGGER 3 - ACTUALIZAR SUSCRIPCION TRAS PAGO
-       Regla:
-       Cuando se registra un pago valido, la suscripcion se mantiene
-       como Activa.
-       ============================================================ */
+    -- TRIGGER 3 - ACTUALIZAR SUSCRIPCION TRAS PAGO | Regla: | Cuando se registra un pago valido, la suscripcion se mantiene | como Activa.
 
     CREATE TRIGGER Finanzas.trg_ActualizarEstadoSuscripcionPago
     ON Finanzas.Pago
@@ -1598,12 +1503,7 @@ GO
     GO
 
 
-    /* ============================================================
-       TRIGGER 4 - VALIDAR DURACION DE REPRODUCCION
-       Regla:
-       La duracion reproducida no puede ser negativa ni mayor que
-       la duracion total de la cancion.
-       ============================================================ */
+    -- TRIGGER 4 - VALIDAR DURACION DE REPRODUCCION | Regla: | La duracion reproducida no puede ser negativa ni mayor que | la duracion total de la cancion.
 
     CREATE TRIGGER Interaccion.trg_ValidarDuracionReproduccion
     ON Interaccion.Reproduccion
@@ -1627,12 +1527,7 @@ GO
     GO
 
 
-    /* ============================================================
-       TRIGGER 5 - VALIDAR REGALIA
-       Regla:
-       La cantidad de reproducciones y el monto generado por regalia
-       no pueden ser negativos.
-       ============================================================ */
+    -- TRIGGER 5 - VALIDAR REGALIA | Regla: | La cantidad de reproducciones y el monto generado por regalia | no pueden ser negativos.
 
     CREATE TRIGGER Finanzas.trg_ValidarRegalia
     ON Finanzas.Regalia
@@ -1654,12 +1549,7 @@ GO
     GO
 
 
-    /* ============================================================
-       TRIGGER 6 - VALIDAR FECHAS DE SUSCRIPCION
-       Regla:
-       La fecha fin de suscripcion no puede ser menor que la fecha
-       de inicio.
-       ============================================================ */
+    -- TRIGGER 6 - VALIDAR FECHAS DE SUSCRIPCION | Regla: | La fecha fin de suscripcion no puede ser menor que la fecha | de inicio.
 
     CREATE TRIGGER Finanzas.trg_ValidarFechasSuscripcion
     ON Finanzas.Suscripcion
@@ -1681,11 +1571,7 @@ GO
     GO
 
 
-/* ============================================================
-   SECCION 7 - CURSORES
-   Objetivo:
-   Implementar procesos secuenciales, como calculo de regalias.
-   ============================================================ */
+-- SECCION 7 - CURSORES | Objetivo: | Implementar procesos secuenciales, como calculo de regalias.
  
    CREATE PROCEDURE Procesos.sp_CalcularRegaliasGlobal
         @valorPorReproduccion DECIMAL(10,2),
@@ -1889,18 +1775,12 @@ GO
     END;
     GO
 
-/* ============================================================
-   SECCION 8 - VISTAS Y REPORTES
-   Objetivo:
-   Crear consultas reutilizables para los informes del sistema.
-   ============================================================ */
+-- SECCION 8 - VISTAS Y REPORTES | Objetivo: | Crear consultas reutilizables para los informes del sistema.
 
     USE SonoraInc;
     GO
 
-    /* ============================================================
-       VISTA 1 - CANCIONES MAS REPRODUCIDAS
-       ============================================================ */
+    -- VISTA 1 - CANCIONES MAS REPRODUCIDAS
 
     CREATE VIEW Reportes.vCancionesMasReproducidas
     AS
@@ -1917,9 +1797,7 @@ GO
     GO
 
 
-    /* ============================================================
-       VISTA 2 - USUARIOS CON MAYOR ACTIVIDAD
-       ============================================================ */
+    -- VISTA 2 - USUARIOS CON MAYOR ACTIVIDAD
 
     CREATE VIEW Reportes.vActividadUsuarios
     AS
@@ -1938,9 +1816,7 @@ GO
     GO
 
 
-    /* ============================================================
-       VISTA 3 - CANCIONES CON MAS LIKES
-       ============================================================ */
+    -- VISTA 3 - CANCIONES CON MAS LIKES
 
     CREATE VIEW Reportes.vCancionesConMasLikes
     AS
@@ -1957,9 +1833,7 @@ GO
     GO
 
 
-    /* ============================================================
-       VISTA 4 - ARTISTAS MAS SEGUIDOS
-       ============================================================ */
+    -- VISTA 4 - ARTISTAS MAS SEGUIDOS
 
     CREATE VIEW Reportes.vArtistasMasSeguidos
     AS
@@ -1976,9 +1850,7 @@ GO
     GO
 
 
-    /* ============================================================
-       VISTA 5 - HISTORIAL DE REPRODUCCIONES
-       ============================================================ */
+    -- VISTA 5 - HISTORIAL DE REPRODUCCIONES
 
     CREATE VIEW Reportes.vHistorialReproducciones
     AS
@@ -1999,9 +1871,7 @@ GO
     GO
 
 
-    /* ============================================================
-       VISTA 6 - INGRESOS POR SUSCRIPCION
-       ============================================================ */
+    -- VISTA 6 - INGRESOS POR SUSCRIPCION
 
     CREATE VIEW Reportes.vIngresosPorSuscripcion
     AS
@@ -2028,9 +1898,7 @@ GO
     GO
 
 
-    /* ============================================================
-       VISTA 7 - REGALIAS POR CANCION
-       ============================================================ */
+    -- VISTA 7 - REGALIAS POR CANCION
 
     CREATE VIEW Reportes.vRegaliasPorCancion
     AS
@@ -2048,9 +1916,7 @@ GO
     GO
 
 
-    /* ============================================================
-       VISTA 8 - CANCIONES POR GENERO
-       ============================================================ */
+    -- VISTA 8 - CANCIONES POR GENERO
 
     CREATE VIEW Reportes.vCancionesPorGenero
     AS
@@ -2067,9 +1933,7 @@ GO
     GO
 
 
-    /* ============================================================
-       VISTA 9 - PLAYLISTS POR USUARIO
-       ============================================================ */
+    -- VISTA 9 - PLAYLISTS POR USUARIO
 
     CREATE VIEW Reportes.vPlaylistsPorUsuario
     AS
@@ -2088,9 +1952,7 @@ GO
     GO
 
 
-    /* ============================================================
-       VISTA 10 - DETALLE DE PLAYLISTS
-       ============================================================ */
+    -- VISTA 10 - DETALLE DE PLAYLISTS
 
     CREATE VIEW Reportes.vDetallePlaylists
     AS
@@ -2112,25 +1974,9 @@ GO
     GO
 
 
-
-
-   /*
-   -------------------------------------------------------------------------------
-    ------------------------------------------------------------------------------
-                  CARGA MASIVA DE DATOS
-    ------------------------------------------------------------------------------
-    ------------------------------------------------------------------------------
-   */
+   -- /* ------------------------------------------------------------------------------- ------------------------------------------------------------------------------ CARGA MASIVA DE DATOS ------------------------------------------------------------------------------ ------------------------------------------------------------------------------ */
    
-    /* ============================================================
-   SCRIPT 03 - CARGA MASIVA ROBUSTA
-   Proyecto: Sonora Inc
-   Base de datos: SonoraInc
-   Descripcion:
-   Carga masiva completa con 120 registros en tablas principales
-   y volumen ampliado en tablas transaccionales y de relacion.
-   Ejecutar despues del Script 01 y Script 02 sobre base limpia.
-   ============================================================ */
+    -- SCRIPT 03 - CARGA MASIVA ROBUSTA | Proyecto: Sonora Inc | Base de datos: SonoraInc | Descripcion: | Carga masiva completa con 120 registros en tablas principales | y volumen ampliado en tablas transaccionales y de relacion. | Ejecutar despues del Script 01 y Script 02 sobre base limpia.
 
 USE SonoraInc;
 GO
@@ -6457,9 +6303,7 @@ INSERT INTO Finanzas.Regalia (idRegalia, cantidadReproduccionesRegalia, montoGen
 (120,8,0.40,'2025-12-31',120);
 GO
 
-/* ============================================================
-   VERIFICACION FINAL DE CARGA
-   ============================================================ */
+-- VERIFICACION FINAL DE CARGA
 SELECT 'Genero' AS Tabla, COUNT(*) AS Total FROM Catalogo.Genero
 UNION ALL SELECT 'Productora', COUNT(*) FROM Catalogo.Productora
 UNION ALL SELECT 'Album', COUNT(*) FROM Catalogo.Album
@@ -7144,9 +6988,7 @@ GO
 
 -- Total new songs: 1318 (IDs 437 to 1754)
 
--- ===================================================================
 -- COMPLETAR ALBUMES A MINIMO 9 CANCIONES  (IDs 437-1754)
--- ===================================================================
 
 INSERT INTO Catalogo.Cancion (idCancion, tituloCancion, duracionCancion, idiomaCancion, Genero_idGenero, Album_idAlbum) VALUES
 (437,'Camino a Casa',198.0,'Espanol',1,1),
@@ -9821,18 +9663,10 @@ INSERT INTO Interaccion.ArtistaCancion (Artista_idArtista, Cancion_idCancion) VA
 GO
 
 
-/* ============================================================
-   SECCION NUEVA - SEGURIDAD Y CRUD COMPLETO
-   Agregado para el Proyecto Integrador Python.
-   Incluye logins, usuarios, permisos y SPs CRUD para todas
-   las tablas de la base de datos SonoraInc.
-   ============================================================ */
+-- SECCION NUEVA - SEGURIDAD Y CRUD COMPLETO | Agregado para el Proyecto Integrador Python. | Incluye logins, usuarios, permisos y SPs CRUD para todas | las tablas de la base de datos SonoraInc.
 
 
-/* ============================================================
-   PASO 1 - LOGINS EN EL SERVIDOR
-   Ejecutar conectado como sa o Windows Auth (sysadmin)
-   ============================================================ */
+-- PASO 1 - LOGINS EN EL SERVIDOR | Ejecutar conectado como sa o Windows Auth (sysadmin)
 
 USE master;
 GO
@@ -9856,9 +9690,7 @@ END;
 GO
 
 
-/* ============================================================
-   PASO 2 - USUARIOS Y PERMISOS EN LA BASE DE DATOS
-   ============================================================ */
+-- PASO 2 - USUARIOS Y PERMISOS EN LA BASE DE DATOS
 
 USE SonoraInc;
 GO
@@ -9880,10 +9712,7 @@ GRANT EXECUTE ON SCHEMA::Procesos TO SonoraApp;
 GO
 
 
-/* ============================================================
-   PASO 3 - CRUD Catalogo.Artista
-   (tabla elegida para el proyecto integrador Python)
-   ============================================================ */
+-- PASO 3 - CRUD Catalogo.Artista | (tabla elegida para el proyecto integrador Python)
 
 CREATE PROCEDURE Procesos.sp_InsertarArtista
     @nombreArtista           VARCHAR(50),
@@ -9959,9 +9788,7 @@ END;
 GO
 
 
-/* ============================================================
-   PASO 4 - CRUD Catalogo.Genero
-   ============================================================ */
+-- PASO 4 - CRUD Catalogo.Genero
 
 CREATE PROCEDURE Procesos.sp_InsertarGenero
     @nombreGenero VARCHAR(50)
@@ -10017,9 +9844,7 @@ END;
 GO
 
 
-/* ============================================================
-   PASO 5 - CRUD Catalogo.Album
-   ============================================================ */
+-- PASO 5 - CRUD Catalogo.Album
 
 CREATE PROCEDURE Procesos.sp_InsertarAlbum
     @tituloAlbum           VARCHAR(50),
@@ -10080,9 +9905,7 @@ END;
 GO
 
 
-/* ============================================================
-   PASO 6 - CRUD Catalogo.Productora
-   ============================================================ */
+-- PASO 6 - CRUD Catalogo.Productora
 
 CREATE PROCEDURE Procesos.sp_InsertarProductora
     @nombreProductora VARCHAR(50),
@@ -10150,9 +9973,7 @@ END;
 GO
 
 
-/* ============================================================
-   PASO 7 - CRUD Catalogo.Cancion
-   ============================================================ */
+-- PASO 7 - CRUD Catalogo.Cancion
 
 CREATE PROCEDURE Procesos.sp_InsertarCancion
     @tituloCancion   VARCHAR(50),
@@ -10248,10 +10069,7 @@ END;
 GO
 
 
-/* ============================================================
-   PASO 8 - CRUD complementario Seguridad.Usuario
-   (sp_RegistrarUsuario e sp_IniciarSesion ya existen)
-   ============================================================ */
+-- PASO 8 - CRUD complementario Seguridad.Usuario | (sp_RegistrarUsuario e sp_IniciarSesion ya existen)
 
 CREATE PROCEDURE Procesos.sp_ConsultarUsuarios
     @idUsuario INT = NULL
@@ -10309,10 +10127,7 @@ END;
 GO
 
 
-/* ============================================================
-   PASO 9 - CRUD complementario Interaccion.Playlist
-   (sp_CrearPlaylist ya existe para INSERT)
-   ============================================================ */
+-- PASO 9 - CRUD complementario Interaccion.Playlist | (sp_CrearPlaylist ya existe para INSERT)
 
 CREATE PROCEDURE Procesos.sp_ConsultarPlaylists
     @idPlaylist INT = NULL
@@ -10362,10 +10177,7 @@ END;
 GO
 
 
-/* ============================================================
-   PASO 10 - CRUD complementario Finanzas.Suscripcion
-   (sp_RegistrarSuscripcion ya existe para INSERT)
-   ============================================================ */
+-- PASO 10 - CRUD complementario Finanzas.Suscripcion | (sp_RegistrarSuscripcion ya existe para INSERT)
 
 CREATE PROCEDURE Procesos.sp_ConsultarSuscripciones
     @idSuscripcion INT = NULL
@@ -10419,10 +10231,7 @@ END;
 GO
 
 
-/* ============================================================
-   PASO 11 - CRUD complementario Finanzas.Pago
-   (sp_RegistrarPago ya existe para INSERT)
-   ============================================================ */
+-- PASO 11 - CRUD complementario Finanzas.Pago | (sp_RegistrarPago ya existe para INSERT)
 
 CREATE PROCEDURE Procesos.sp_ConsultarPagos
     @idPago INT = NULL
@@ -10468,10 +10277,7 @@ END;
 GO
 
 
-/* ============================================================
-   PASO 12 - CRUD complementario Finanzas.Regalia
-   (sp_CalcularRegaliaCancion ya existe para INSERT)
-   ============================================================ */
+-- PASO 12 - CRUD complementario Finanzas.Regalia | (sp_CalcularRegaliaCancion ya existe para INSERT)
 
 CREATE PROCEDURE Procesos.sp_ConsultarRegalias
     @idRegalia INT = NULL
@@ -10518,10 +10324,7 @@ END;
 GO
 
 
-/* ============================================================
-   PASO 13 - CRUD complementario Interaccion.Reproduccion
-   (sp_RegistrarReproduccion ya existe para INSERT)
-   ============================================================ */
+-- PASO 13 - CRUD complementario Interaccion.Reproduccion | (sp_RegistrarReproduccion ya existe para INSERT)
 
 CREATE PROCEDURE Procesos.sp_ConsultarReproducciones
     @idReproduccion INT = NULL
@@ -10550,9 +10353,7 @@ END;
 GO
 
 
-/* ============================================================
-   PASO 14 - CRUD Interaccion.ArtistaCancion (tabla sin SPs)
-   ============================================================ */
+-- PASO 14 - CRUD Interaccion.ArtistaCancion (tabla sin SPs)
 
 CREATE PROCEDURE Procesos.sp_InsertarArtistaCancion
     @Artista_idArtista INT,
@@ -10600,11 +10401,7 @@ END;
 GO
 
 
-/* ============================================================
-   PASO 15 - SELECT y DELETE complementarios para tablas
-   junction que ya tienen INSERT via SPs existentes
-   (CancionPlaylist, UsuarioCancion, UsuarioArtista)
-   ============================================================ */
+-- PASO 15 - SELECT y DELETE complementarios para tablas | junction que ya tienen INSERT via SPs existentes | (CancionPlaylist, UsuarioCancion, UsuarioArtista)
 
 CREATE PROCEDURE Procesos.sp_ConsultarCancionPlaylist
     @Playlist_idPlaylist INT = NULL
@@ -10689,26 +10486,12 @@ GO
 GO
 
 
-
-/* -- 
-   SonoraInc — Cierre de Gaps para Interfaz Web (Fase 4)
-   Ejecutar sobre la BD SonoraInc ya creada y poblada.
-   Orden recomendado: ejecutar sección por sección.
-   --  */
+-- SonoraInc — Cierre de Gaps para Interfaz Web (Fase 4) Ejecutar sobre la BD SonoraInc ya creada y poblada. Orden recomendado: ejecutar sección por sección.
 
 USE SonoraInc;
 GO
 
-/* -- 
-   GAP 1 — Login con contraseña (passwordHash)
-   Problema : sp_IniciarSesion valida solo por correo.
-              Cualquier persona con un email registrado entra.
-   Solución : 1) Agregar columna passwordHash a Usuario.
-              2) Poblar hashes de prueba (SHA2_256 simple para BD;
-                 en producción Python envía el hash bcrypt).
-              3) Reemplazar sp_IniciarSesion para validar el hash.
-              4) Ajustar sp_RegistrarUsuario para recibir la clave.
-   --  */
+-- GAP 1 — Login con contraseña (passwordHash) Problema : sp_IniciarSesion valida solo por correo. Cualquier persona con un email registrado entra. Solución : 1) Agregar columna passwordHash a Usuario. 2) Poblar hashes de prueba (SHA2_256 simple para BD; en producción Python envía el hash bcrypt). 3) Reemplazar sp_IniciarSesion para validar el hash. 4) Ajustar sp_RegistrarUsuario para recibir la clave.
 
 -- 1a. Agregar columna (NULL al inicio para no romper datos existentes)
 ALTER TABLE Seguridad.Usuario
@@ -10834,14 +10617,7 @@ GO
 --     CONVERT(VARCHAR(64), HASHBYTES('SHA2_256','Sonora1'), 2);
 
 
-/* -- 
-   GAP 2 — sp_CalcularRegaliasGlobal duplica registros
-   Problema : El cursor inserta una nueva fila en Finanzas.Regalia
-              por cada canción, cada vez que se ejecuta.
-              Llamarlo dos veces duplica todos los registros.
-   Solución : Antes de insertar, verificar si ya existe una regalia
-              para esa canción en esa fecha; si existe, hacer UPDATE.
-   --  */
+-- GAP 2 — sp_CalcularRegaliasGlobal duplica registros Problema : El cursor inserta una nueva fila en Finanzas.Regalia por cada canción, cada vez que se ejecuta. Llamarlo dos veces duplica todos los registros. Solución : Antes de insertar, verificar si ya existe una regalia para esa canción en esa fecha; si existe, hacer UPDATE.
 
 DROP PROCEDURE IF EXISTS Procesos.sp_CalcularRegaliasGlobal;
 GO
@@ -10935,24 +10711,7 @@ GO
 -- SELECT COUNT(*) FROM Finanzas.Regalia WHERE fechaCalculoRegalia = '2026-05-22';
 
 
-/* -- 
-   GAP 3 — IDs manuales (MAX+1) con race condition
-   Problema : ISNULL(MAX(id), 0) + 1 falla bajo concurrencia:
-              dos sesiones simultáneas pueden obtener el mismo ID
-              antes de que ninguna haga el INSERT.
-   Solución : Agregar columna IDENTITY a cada tabla y reasignar
-              la generación de IDs a SQL Server.
-              Los SPs dejan de calcular el ID manualmente.
-
-   NOTA: Alterar una PK existente para hacerla IDENTITY requiere
-   recrear la tabla. En un sistema en producción esto se haría
-   con una migración planificada. Aquí el script muestra el
-   patrón para UNA tabla (Seguridad.Usuario) como ejemplo
-   demostrable; el mismo patrón aplica a las demás.
-
-   Alternativa más simple para el proyecto (recomendada):
-   Usar SEQUENCE objects — no requiere recrear tablas.
-   --  */
+-- GAP 3 — IDs manuales (MAX+1) con race condition Problema : ISNULL(MAX(id), 0) + 1 falla bajo concurrencia: dos sesiones simultáneas pueden obtener el mismo ID antes de que ninguna haga el INSERT. Solución : Agregar columna IDENTITY a cada tabla y reasignar la generación de IDs a SQL Server. Los SPs dejan de calcular el ID manualmente. NOTA: Alterar una PK existente para hacerla IDENTITY requiere recrear la tabla. En un sistema en producción esto se haría con una migración planificada. Aquí el script muestra el patrón para UNA tabla (Seguridad.Usuario) como ejemplo demostrable; el mismo patrón aplica a las demás. Alternativa más simple para el proyecto (recomendada): Usar SEQUENCE objects — no requiere recrear tablas.
 
 -- 3a. Crear SEQUENCES para las tablas principales
 --     (se sincronizan con el MAX actual para no colisionar con datos existentes)
@@ -11231,14 +10990,7 @@ END;
 GO
 
 
-/* -- 
-   GAP 4 — sp_ActualizarReproduccion faltante
-   Problema : Reproduccion no tenía SP de UPDATE, dejando el
-              CRUD incompleto (afecta rúbrica "operaciones CRUD").
-   Solución : Crear el SP. En la práctica una reproducción
-              puede necesitar corregir su duración o fecha
-              (error de registro, datos de prueba, etc.).
-   --  */
+-- GAP 4 — sp_ActualizarReproduccion faltante Problema : Reproduccion no tenía SP de UPDATE, dejando el CRUD incompleto (afecta rúbrica "operaciones CRUD"). Solución : Crear el SP. En la práctica una reproducción puede necesitar corregir su duración o fecha (error de registro, datos de prueba, etc.).
 
 CREATE PROCEDURE Procesos.sp_ActualizarReproduccion
     @idReproduccion       INT,
@@ -11273,10 +11025,7 @@ GO
 -- SELECT idReproduccion, fechaReproduccion, duracionReproduccion FROM Interaccion.Reproduccion WHERE idReproduccion = 1;
 
 
-/* -- 
-   VERIFICACIÓN FINAL — ejecutar al terminar para confirmar
-   que todo quedó en orden.
-   --  */
+-- VERIFICACIÓN FINAL — ejecutar al terminar para confirmar que todo quedó en orden.
 
 -- Columna passwordHash existe en Usuario
 SELECT
