@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Playlists — SonoraInc{% endblock %}
+
+{% block content %}
+<div style="margin-bottom:1.5rem">
+  <a href="{% url 'catalogo:panel' %}" class="btn btn-secondary btn-sm" style="margin-bottom:.75rem">&larr; Panel</a>
+  <h1 class="page-title" style="margin:0">Playlists de usuarios</h1>
+</div>
+
+<div class="card">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Nombre</th><th>Usuario</th><th>Privacidad</th><th>Descripción</th><th>Creación</th><th>Acciones</th></tr>
+      </thead>
+      <tbody>
+        {% for p in playlists %}
+        <tr>
+          <td class="text-muted">{{ p.idPlaylist }}</td>
+          <td><strong>{{ p.nombrePlaylist }}</strong></td>
+          <td>{{ p.nombreUsuario }} {{ p.apellidoUsuario }}</td>
+          <td>{{ p.privacidadPlaylist }}</td>
+          <td class="text-muted">{{ p.descripcionPlaylist|default:"—" }}</td>
+          <td class="text-muted">{{ p.fechaCreacionPlaylist }}</td>
+          <td>
+            <form method="post"
+                  action="{% url 'interaccion:playlist_eliminar' p.idPlaylist %}"
+                  onsubmit="return confirm('¿Eliminar la playlist {{ p.nombrePlaylist }}?')">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-sm"
+                      style="background:#2a1212;color:#f5a0a0;border:1px solid #e74c3c">
+                Eliminar
+              </button>
+            </form>
+          </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="7" class="text-muted" style="text-align:center;padding:2rem">
+          No hay playlists registradas.
+        </td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}

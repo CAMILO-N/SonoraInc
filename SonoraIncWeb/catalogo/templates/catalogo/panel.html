@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}Panel de administración — SonoraInc{% endblock %}
+
+{% block content %}
+
+<h1 class="page-title">Panel de administración</h1>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.25rem">
+
+  <a href="{% url 'catalogo:canciones' %}"
+     style="background:var(--surface);border:1px solid var(--border);border-radius:10px;
+            padding:1.5rem;text-decoration:none;color:var(--text);transition:border-color .18s"
+     onmouseover="this.style.borderColor='var(--accent)'"
+     onmouseout="this.style.borderColor='var(--border)'">
+    <div style="font-size:2rem;margin-bottom:.75rem">♪</div>
+    <div style="font-weight:700;font-size:1rem;margin-bottom:.25rem">Canciones</div>
+    <div style="color:var(--accent);font-size:.85rem">{{ total_canciones }} registros</div>
+  </a>
+
+  <a href="{% url 'catalogo:artistas' %}"
+     style="background:var(--surface);border:1px solid var(--border);border-radius:10px;
+            padding:1.5rem;text-decoration:none;color:var(--text);transition:border-color .18s"
+     onmouseover="this.style.borderColor='var(--accent)'"
+     onmouseout="this.style.borderColor='var(--border)'">
+    <div style="font-size:2rem;margin-bottom:.75rem">🎤</div>
+    <div style="font-weight:700;font-size:1rem;margin-bottom:.25rem">Artistas</div>
+    <div style="color:var(--accent);font-size:.85rem">{{ total_artistas }} registros</div>
+  </a>
+
+  <a href="{% url 'catalogo:albumes' %}"
+     style="background:var(--surface);border:1px solid var(--border);border-radius:10px;
+            padding:1.5rem;text-decoration:none;color:var(--text);transition:border-color .18s"
+     onmouseover="this.style.borderColor='var(--accent)'"
+     onmouseout="this.style.borderColor='var(--border)'">
+    <div style="font-size:2rem;margin-bottom:.75rem">💿</div>
+    <div style="font-weight:700;font-size:1rem;margin-bottom:.25rem">Álbumes</div>
+    <div style="color:var(--accent);font-size:.85rem">{{ total_albumes }} registros</div>
+  </a>
+
+  <a href="{% url 'catalogo:productoras' %}"
+     style="background:var(--surface);border:1px solid var(--border);border-radius:10px;
+            padding:1.5rem;text-decoration:none;color:var(--text);transition:border-color .18s"
+     onmouseover="this.style.borderColor='var(--accent)'"
+     onmouseout="this.style.borderColor='var(--border)'">
+    <div style="font-size:2rem;margin-bottom:.75rem">🏢</div>
+    <div style="font-weight:700;font-size:1rem;margin-bottom:.25rem">Productoras</div>
+    <div style="color:var(--accent);font-size:.85rem">{{ total_productoras }} registros</div>
+  </a>
+
+  <a href="{% url 'catalogo:playlists_admin' %}"
+     style="background:var(--surface);border:1px solid var(--border);border-radius:10px;
+            padding:1.5rem;text-decoration:none;color:var(--text);transition:border-color .18s"
+     onmouseover="this.style.borderColor='var(--accent)'"
+     onmouseout="this.style.borderColor='var(--border)'">
+    <div style="font-size:2rem;margin-bottom:.75rem">≡</div>
+    <div style="font-weight:700;font-size:1rem;margin-bottom:.25rem">Playlists</div>
+    <div style="color:var(--accent);font-size:.85rem">{{ total_playlists }} registros</div>
+  </a>
+
+</div>
+
+{% endblock %}

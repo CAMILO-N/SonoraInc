@@ -34,25 +34,16 @@
             </span>
           </td>
           <td>
-            <div class="flex gap-1">
-              {% if s.estadoSuscripcion == 'Activa' %}
-              <form method="post"
-                    action="{% url 'finanzas:suscripcion_cancelar' s.idSuscripcion %}"
-                    onsubmit="return confirm('¿Cancelar la suscripción de {{ s.nombreUsuario }}?')">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-sm btn-danger">Cancelar</button>
-              </form>
-              {% endif %}
-              <form method="post"
-                    action="{% url 'finanzas:suscripcion_eliminar' s.idSuscripcion %}"
-                    onsubmit="return confirm('¿Eliminar este registro?')">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-sm"
-                        style="background:#1a1a1a;color:var(--muted);border:1px solid var(--border)">
-                  Eliminar
-                </button>
-              </form>
-            </div>
+            {% if s.estadoSuscripcion == 'Activa' %}
+            <form method="post"
+                  action="{% url 'finanzas:suscripcion_cancelar' s.idSuscripcion %}"
+                  onsubmit="return confirm('¿Cancelar la suscripción de {{ s.nombreUsuario }}?')">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-sm btn-danger">Cancelar</button>
+            </form>
+            {% else %}
+            <span class="text-muted" style="font-size:.8rem">—</span>
+            {% endif %}
           </td>
         </tr>
         {% endfor %}
