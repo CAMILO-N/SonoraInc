@@ -19,11 +19,15 @@ def login_required(view_func):
 @login_required
 def suscripciones(request):
     usuario_id = request.session['usuario_id']
+    is_admin   = request.session.get('is_admin', False)
     try:
         with DB() as db:
             db.exec_noreturn('Procesos.sp_ActualizarSuscripcionesVencidas')
-            lista = db.exec('Procesos.sp_ConsultarSuscripciones', usuario_id)
-        activa = next((s for s in lista if s.get('estadoSuscripcion') == 'Activa'), None)
+            if is_admin:
+                lista = db.exec('Procesos.sp_ConsultarSuscripciones')
+            else:
+                lista = db.exec('Procesos.sp_ConsultarSuscripciones', usuario_id)
+        activa = None if is_admin else next((s for s in lista if s.get('estadoSuscripcion') == 'Activa'), None)
     except pyodbc.Error as e:
         messages.error(request, parse_sql_error(e))
         lista  = []
@@ -32,6 +36,7 @@ def suscripciones(request):
     return render(request, 'finanzas/suscripciones.html', {
         'suscripciones': lista,
         'activa':        activa,
+        'is_admin':      is_admin,
     })
 
 
