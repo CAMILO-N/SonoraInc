@@ -44,30 +44,33 @@ def home(request):
 
 @login_required
 def buscar(request):
-    q         = request.GET.get('q', '').strip()
-    artistas  = []
-    albumes   = []
-    canciones = []
+    q          = request.GET.get('q', '').strip()
+    usuario_id = request.session['usuario_id']
+    artistas   = []
+    albumes    = []
+    canciones  = []
+    playlists  = []
 
-    if q:
-        try:
-            with DB() as db:
+    try:
+        with DB() as db:
+            playlists = db.exec('Procesos.sp_ConsultarPlaylists', usuario_id)
+            if q:
                 ql = q.lower()
                 todos_artistas  = db.exec('Procesos.sp_ConsultarArtistas')
                 todos_albumes   = db.exec('Procesos.sp_ConsultarAlbumes')
                 todas_canciones = db.exec('Procesos.sp_ConsultarCanciones')
-
-            artistas  = [a for a in todos_artistas  if ql in a['nombreArtista'].lower()]
-            albumes   = [a for a in todos_albumes   if ql in a['tituloAlbum'].lower()]
-            canciones = [c for c in todas_canciones if ql in c['tituloCancion'].lower()]
-        except pyodbc.Error as e:
-            messages.error(request, parse_sql_error(e))
+                artistas  = [a for a in todos_artistas  if ql in a['nombreArtista'].lower()]
+                albumes   = [a for a in todos_albumes   if ql in a['tituloAlbum'].lower()]
+                canciones = [c for c in todas_canciones if ql in c['tituloCancion'].lower()]
+    except pyodbc.Error as e:
+        messages.error(request, parse_sql_error(e))
 
     return render(request, 'explorar/buscar.html', {
         'q':         q,
         'artistas':  artistas,
         'albumes':   albumes,
         'canciones': canciones,
+        'playlists': playlists,
     })
 
 
