@@ -75,7 +75,7 @@
         <select name="id_cancion" required>
           <option value="">— Selecciona —</option>
           {% for c in todas_canciones %}
-          <option value="{{ c.idCancion }}">{{ c.tituloCancion }}</option>
+          <option value="{{ c.idCancion }}">{{ c.tituloCancion }}{% if c.nombreArtista %} — {{ c.nombreArtista }}{% endif %}</option>
           {% endfor %}
         </select>
       </div>
