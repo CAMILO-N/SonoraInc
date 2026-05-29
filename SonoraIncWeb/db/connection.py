@@ -1,15 +1,15 @@
+import json
 import pyodbc
-import os
-from dotenv import load_dotenv
+from pathlib import Path
 
-load_dotenv()
+_cfg = json.loads((Path(__file__).parent.parent / 'config.json').read_text())['database']
 
 _CONNECTION_STRING = (
-    f"DRIVER={{{os.getenv('DB_DRIVER', 'ODBC Driver 17 for SQL Server')}}};"
-    f"SERVER={os.getenv('DB_SERVER', 'localhost')};"
-    f"DATABASE={os.getenv('DB_NAME', 'SonoraInc')};"
-    f"UID={os.getenv('DB_USER', 'SonoraApp')};"
-    f"PWD={os.getenv('DB_PASSWORD', '')};"
+    f"DRIVER={{{_cfg['driver']}}};"
+    f"SERVER={_cfg['server']};"
+    f"DATABASE={_cfg['name']};"
+    f"UID={_cfg['user']};"
+    f"PWD={_cfg['password']};"
     "TrustServerCertificate=yes;"
 )
 
