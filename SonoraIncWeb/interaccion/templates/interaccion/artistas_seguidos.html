@@ -28,29 +28,28 @@
         {% for a in artistas %}
         <tr>
           <td class="text-muted">{{ a.idArtista }}</td>
-          <td><strong>{{ a.nombreArtista }}</strong></td>
+          <td>
+            <a href="/explorar/artistas/{{ a.idArtista }}/"
+               style="color:var(--text);text-decoration:none;font-weight:600">
+              {{ a.nombreArtista }}
+            </a>
+          </td>
           <td>{{ a.paisOrigenArtista|default:"—" }}</td>
           <td>{{ a.nombreProductora|default:"—" }}</td>
           <td>
-            <div class="flex gap-1">
-              <!-- Seguir artista -->
-              <form method="post" action="{% url 'interaccion:artista_seguir' a.idArtista %}">
-                {% csrf_token %}
-                <input type="hidden" name="accion" value="seguir">
-                <button type="submit" class="btn btn-sm"
-                        style="background:#0d1e14;color:#f5e97a;border:1px solid var(--accent)">
-                  Seguir
-                </button>
-              </form>
-              <!-- Dejar de seguir -->
-              <form method="post" action="{% url 'interaccion:artista_seguir' a.idArtista %}">
-                {% csrf_token %}
-                <input type="hidden" name="accion" value="dejar">
-                <button type="submit" class="btn btn-sm btn-secondary">
-                  Dejar de seguir
-                </button>
-              </form>
-            </div>
+            <form method="post" action="{% url 'interaccion:artista_seguir' a.idArtista %}">
+              {% csrf_token %}
+              {% if a.idArtista in seguidos_ids %}
+              <button type="submit" class="btn btn-sm"
+                      style="background:#1a1a2e;color:#a0a0c0;border:1px solid #444">
+                ✓ Siguiendo
+              </button>
+              {% else %}
+              <button type="submit" class="btn btn-primary btn-sm">
+                + Seguir
+              </button>
+              {% endif %}
+            </form>
           </td>
         </tr>
         {% empty %}

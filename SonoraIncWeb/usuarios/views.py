@@ -108,14 +108,100 @@ def perfil_view(request):
     if not request.session.get('usuario_id'):
         return redirect('usuarios:login')
 
+    usuario_id  = request.session['usuario_id']
+    usuario     = None
+    suscripcion = None
     try:
         with DB() as db:
-            usuario = db.exec_one(
-                'Procesos.sp_ConsultarUsuarios',
-                request.session['usuario_id']
-            )
+            usuario = db.exec_one('Procesos.sp_ConsultarUsuarios', usuario_id)
+            subs    = db.exec('Procesos.sp_ConsultarSuscripciones', usuario_id)
+            suscripcion = next((s for s in subs if s.get('estadoSuscripcion') == 'Activa'), None)
     except pyodbc.Error as e:
         messages.error(request, parse_sql_error(e))
-        usuario = None
 
-    return render(request, 'usuarios/perfil.html', {'usuario': usuario})
+    return render(request, 'usuarios/perfil.html', {
+        'usuario':     usuario,
+        'suscripcion': suscripcion,
+    })
+
+
+def perfil_editar_view(request):
+    if not request.session.get('usuario_id'):
+        return redirect('usuarios:login')
+
+    if request.method == 'POST':
+        usuario_id   = request.session['usuario_id']
+        nombre       = request.POST.get('nombre', '').strip()
+        apellido     = request.POST.get('apellido', '').strip()
+        seg_nombre   = request.POST.get('seg_nombre', '').strip() or None
+        seg_apellido = request.POST.get('seg_apellido', '').strip() or None
+        correo       = request.POST.get('correo', '').strip()
+
+        if not all([nombre, apellido, correo]):
+            messages.error(request, 'Nombre, apellido y correo son obligatorios.')
+            return redirect('usuarios:perfil')
+
+        try:
+            with DB() as db:
+                db.exec_noreturn(
+                    'Procesos.sp_ActualizarUsuario',
+                    usuario_id, nombre, apellido, seg_nombre, seg_apellido, correo
+                )
+            request.session['usuario_nombre'] = nombre
+            request.session['usuario_correo'] = correo
+            messages.success(request, 'Perfil actualizado correctamente.')
+        except pyodbc.Error as e:
+            messages.error(request, parse_sql_error(e))
+
+    return redirect('usuarios:perfil')
+
+
+def perfil_cambiar_password_view(request):
+    if not request.session.get('usuario_id'):
+        return redirect('usuarios:login')
+
+    if request.method == 'POST':
+        usuario_id  = request.session['usuario_id']
+        actual      = request.POST.get('password_actual', '')
+        nueva       = request.POST.get('password_nueva', '')
+        nueva2      = request.POST.get('password_nueva2', '')
+
+        if not all([actual, nueva, nueva2]):
+            messages.error(request, 'Completa todos los campos.')
+            return redirect('usuarios:perfil')
+        if nueva != nueva2:
+            messages.error(request, 'Las contraseñas nuevas no coinciden.')
+            return redirect('usuarios:perfil')
+        if len(nueva) < 6:
+            messages.error(request, 'La nueva contraseña debe tener mínimo 6 caracteres.')
+            return redirect('usuarios:perfil')
+
+        try:
+            with DB() as db:
+                db.exec_noreturn(
+                    'Procesos.sp_CambiarContrasenaUsuario',
+                    usuario_id, _hash(actual), _hash(nueva)
+                )
+            messages.success(request, 'Contraseña cambiada correctamente.')
+        except pyodbc.Error as e:
+            messages.error(request, parse_sql_error(e))
+
+    return redirect('usuarios:perfil')
+
+
+def perfil_eliminar_view(request):
+    if not request.session.get('usuario_id'):
+        return redirect('usuarios:login')
+
+    if request.method == 'POST':
+        usuario_id = request.session['usuario_id']
+        try:
+            with DB() as db:
+                db.exec_noreturn('Procesos.sp_EliminarUsuario', usuario_id)
+            request.session.flush()
+            messages.success(request, 'Tu cuenta ha sido eliminada.')
+            return redirect('usuarios:login')
+        except pyodbc.Error as e:
+            messages.error(request, parse_sql_error(e))
+
+    return redirect('usuarios:perfil')

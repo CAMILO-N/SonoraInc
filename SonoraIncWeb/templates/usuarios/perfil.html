@@ -5,19 +5,185 @@
 <h1 class="page-title">Mi perfil</h1>
 
 {% if usuario %}
-<div class="card" style="max-width:600px">
-  <table>
-    <tr><th>ID</th><td>{{ usuario.idUsuario }}</td></tr>
-    <tr><th>Nombre</th><td>{{ usuario.nombreUsuario }} {{ usuario.apellidoUsuario }}</td></tr>
-    <tr><th>Correo</th><td>{{ usuario.correoUsuario }}</td></tr>
-    <tr><th>Registro</th><td>{{ usuario.fechaRegistroUsuario }}</td></tr>
-  </table>
-  <div class="mt-3">
-    <a href="{% url 'usuarios:logout' %}" class="btn btn-secondary btn-sm">
-      Cerrar sesión
+
+<!-- ── Cabecera ── -->
+<div class="card" style="margin-bottom:1.5rem">
+  <div style="display:flex;align-items:center;gap:2rem">
+    <div style="width:90px;height:90px;border-radius:50%;background:var(--accent);
+                display:flex;align-items:center;justify-content:center;
+                font-size:2.4rem;font-weight:900;color:#000;flex-shrink:0">
+      {{ usuario.nombreUsuario|first|upper }}
+    </div>
+    <div style="flex:1">
+      <div style="font-size:1.4rem;font-weight:800;margin-bottom:.2rem">
+        {{ usuario.nombreUsuario }}
+        {% if usuario.segundoNombreUsuario and usuario.segundoNombreUsuario != '-' %}
+          {{ usuario.segundoNombreUsuario }}
+        {% endif %}
+        {{ usuario.apellidoUsuario }}
+        {% if usuario.segundoApellidoUsuario and usuario.segundoApellidoUsuario != '-' %}
+          {{ usuario.segundoApellidoUsuario }}
+        {% endif %}
+      </div>
+      <div class="text-muted" style="font-size:.88rem;margin-bottom:.3rem">
+        {{ usuario.correoUsuario }}
+      </div>
+      <div class="text-muted" style="font-size:.78rem">
+        Miembro desde {{ usuario.fechaRegistroUsuario }}
+      </div>
+    </div>
+    <button onclick="document.getElementById('modal-editar').style.display='flex'"
+            class="btn btn-secondary btn-sm" style="flex-shrink:0">
+      Editar perfil
+    </button>
+  </div>
+</div>
+
+<!-- ── Suscripción ── -->
+<div class="card" style="margin-bottom:1.5rem">
+  <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap">
+    <div style="flex:1">
+      <div style="font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;
+                  color:var(--muted);margin-bottom:.3rem">Tu plan</div>
+      {% if suscripcion %}
+      <div style="font-size:1.2rem;font-weight:800;
+                  {% if suscripcion.tipoPlanSuscripcion == 'Premium' %}color:var(--accent){% endif %}">
+        {{ suscripcion.tipoPlanSuscripcion }}
+      </div>
+      <div class="text-muted" style="font-size:.82rem;margin-top:.2rem">
+        Válido hasta {{ suscripcion.fechaFinSuscripcion }}
+      </div>
+      {% else %}
+      <div style="font-size:1rem;font-weight:600;color:var(--muted)">Sin suscripción activa</div>
+      {% endif %}
+    </div>
+    <a href="/finanzas/suscripciones/" class="btn btn-secondary btn-sm" style="flex-shrink:0">
+      {% if suscripcion %}Gestionar plan{% else %}Activar plan{% endif %}
     </a>
   </div>
 </div>
+
+<!-- ── Datos ── -->
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem">
+
+  <!-- Cambiar contraseña -->
+  <div class="card">
+    <h2 class="card-title">Cambiar contraseña</h2>
+    <form method="post" action="{% url 'usuarios:perfil_password' %}">
+      {% csrf_token %}
+      <div class="form-group">
+        <label>Contraseña actual</label>
+        <input type="password" name="password_actual" required>
+      </div>
+      <div class="form-group">
+        <label>Nueva contraseña</label>
+        <input type="password" name="password_nueva" minlength="6" required>
+      </div>
+      <div class="form-group">
+        <label>Confirmar nueva contraseña</label>
+        <input type="password" name="password_nueva2" minlength="6" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-sm">Actualizar contraseña</button>
+    </form>
+  </div>
+
+  <!-- Zona de peligro -->
+  <div class="card" style="border-color:#c0392b">
+    <h2 class="card-title" style="color:#f5a0a0">Zona de peligro</h2>
+    <p class="text-muted" style="font-size:.88rem;margin-bottom:1.25rem">
+      Eliminar tu cuenta borra permanentemente todos tus datos: playlists,
+      likes y reproducciones. Esta acción no se puede deshacer.
+    </p>
+    <button onclick="document.getElementById('modal-eliminar').style.display='flex'"
+            class="btn btn-danger btn-sm">Eliminar mi cuenta</button>
+    <div style="margin-top:1.5rem;border-top:1px solid var(--border);padding-top:1.25rem">
+      <a href="{% url 'usuarios:logout' %}" class="btn btn-secondary btn-sm">
+        Cerrar sesión
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── Modal Editar perfil ── -->
+<div id="modal-editar"
+     style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);
+            z-index:300;align-items:center;justify-content:center">
+  <div class="card" style="width:480px;max-width:95vw">
+    <div class="flex justify-between items-center" style="margin-bottom:1.25rem">
+      <h2 class="card-title" style="margin:0">Editar perfil</h2>
+      <button onclick="document.getElementById('modal-editar').style.display='none'"
+              style="background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer">✕</button>
+    </div>
+    <form method="post" action="{% url 'usuarios:perfil_editar' %}">
+      {% csrf_token %}
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
+        <div class="form-group">
+          <label>Nombre *</label>
+          <input type="text" name="nombre" value="{{ usuario.nombreUsuario }}"
+                 pattern="[A-Za-záéíóúÁÉÍÓÚüÜñÑ\s\-']+"
+                 title="Solo letras, sin números" required>
+        </div>
+        <div class="form-group">
+          <label>Segundo nombre</label>
+          <input type="text" name="seg_nombre"
+                 value="{% if usuario.segundoNombreUsuario != '-' %}{{ usuario.segundoNombreUsuario }}{% endif %}"
+                 pattern="[A-Za-záéíóúÁÉÍÓÚüÜñÑ\s\-']*"
+                 title="Solo letras, sin números">
+        </div>
+        <div class="form-group">
+          <label>Apellido *</label>
+          <input type="text" name="apellido" value="{{ usuario.apellidoUsuario }}"
+                 pattern="[A-Za-záéíóúÁÉÍÓÚüÜñÑ\s\-']+"
+                 title="Solo letras, sin números" required>
+        </div>
+        <div class="form-group">
+          <label>Segundo apellido</label>
+          <input type="text" name="seg_apellido"
+                 value="{% if usuario.segundoApellidoUsuario != '-' %}{{ usuario.segundoApellidoUsuario }}{% endif %}"
+                 pattern="[A-Za-záéíóúÁÉÍÓÚüÜñÑ\s\-']*"
+                 title="Solo letras, sin números">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Correo electrónico *</label>
+        <input type="email" name="correo" value="{{ usuario.correoUsuario }}" required>
+      </div>
+      <div class="flex gap-1 mt-2">
+        <button type="submit" class="btn btn-primary">Guardar cambios</button>
+        <button type="button"
+                onclick="document.getElementById('modal-editar').style.display='none'"
+                class="btn btn-secondary">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ── Modal Eliminar cuenta ── -->
+<div id="modal-eliminar"
+     style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);
+            z-index:300;align-items:center;justify-content:center">
+  <div class="card" style="width:420px;max-width:95vw;border-color:#c0392b">
+    <div class="flex justify-between items-center" style="margin-bottom:1rem">
+      <h2 class="card-title" style="margin:0;color:#f5a0a0">Eliminar cuenta</h2>
+      <button onclick="document.getElementById('modal-eliminar').style.display='none'"
+              style="background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer">✕</button>
+    </div>
+    <p style="font-size:.9rem;margin-bottom:1.25rem;color:var(--text)">
+      ¿Estás seguro? Esta acción eliminará permanentemente tu cuenta y todos tus datos.
+    </p>
+    <form method="post" action="{% url 'usuarios:perfil_eliminar' %}">
+      {% csrf_token %}
+      <div class="flex gap-1">
+        <button type="submit" class="btn btn-danger">Sí, eliminar mi cuenta</button>
+        <button type="button"
+                onclick="document.getElementById('modal-eliminar').style.display='none'"
+                class="btn btn-secondary">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
 {% else %}
 <p class="text-muted">No se pudo cargar la información del perfil.</p>
 {% endif %}

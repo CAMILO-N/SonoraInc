@@ -23,13 +23,17 @@ def suscripciones(request):
     usuario_id = request.session['usuario_id']
     try:
         with DB() as db:
+            db.exec_noreturn('Procesos.sp_ActualizarSuscripcionesVencidas')
             lista = db.exec('Procesos.sp_ConsultarSuscripciones', usuario_id)
+        activa = next((s for s in lista if s.get('estadoSuscripcion') == 'Activa'), None)
     except pyodbc.Error as e:
         messages.error(request, parse_sql_error(e))
-        lista = []
+        lista  = []
+        activa = None
 
     return render(request, 'finanzas/suscripciones.html', {
         'suscripciones': lista,
+        'activa':        activa,
     })
 
 

@@ -51,9 +51,12 @@ def buscar(request):
     canciones  = []
     playlists  = []
 
+    liked_ids = set()
     try:
         with DB() as db:
             playlists = db.exec('Procesos.sp_ConsultarPlaylists', usuario_id)
+            likes     = db.exec('Procesos.sp_ConsultarLikesUsuario', usuario_id)
+            liked_ids = {l['idCancion'] for l in likes}
             if q:
                 ql = q.lower()
                 todos_artistas  = db.exec('Procesos.sp_ConsultarArtistas')
@@ -71,6 +74,7 @@ def buscar(request):
         'albumes':   albumes,
         'canciones': canciones,
         'playlists': playlists,
+        'liked_ids': liked_ids,
     })
 
 
@@ -83,24 +87,31 @@ def artista_detail(request, artista_id):
     usuario_id = request.session['usuario_id']
     try:
         with DB() as db:
-            todos_artistas = db.exec('Procesos.sp_ConsultarArtistas')
-            artista        = next((a for a in todos_artistas if a['idArtista'] == artista_id), None)
-
-            # Canciones del artista via SP (evita problema de permisos en tablas directas)
-            canciones = db.exec('Procesos.sp_ConsultarCancionesArtista', artista_id)
-
-            playlists = db.exec('Procesos.sp_ConsultarPlaylists', usuario_id)
-
+            todos_artistas  = db.exec('Procesos.sp_ConsultarArtistas')
+            artista         = next((a for a in todos_artistas if a['idArtista'] == artista_id), None)
+            canciones       = db.exec('Procesos.sp_ConsultarCancionesArtista', artista_id)
+            albumes_artista = db.exec('Procesos.sp_ConsultarAlbumesPorArtista', artista_id)
+            playlists       = db.exec('Procesos.sp_ConsultarPlaylists', usuario_id)
+            likes           = db.exec('Procesos.sp_ConsultarLikesUsuario', usuario_id)
+            seguidos        = db.exec('Procesos.sp_ConsultarUsuarioArtista', usuario_id)
+            liked_ids    = {l['idCancion'] for l in likes}
+            seguidos_ids = {s['idArtista'] for s in seguidos}
     except pyodbc.Error as e:
         messages.error(request, parse_sql_error(e))
-        artista   = None
-        canciones = []
-        playlists = []
+        artista         = None
+        canciones       = []
+        albumes_artista = []
+        playlists       = []
+        liked_ids       = set()
+        seguidos_ids    = set()
 
     return render(request, 'explorar/artista.html', {
-        'artista':   artista,
-        'canciones': canciones,
-        'playlists': playlists,
+        'artista':         artista,
+        'canciones':       canciones,
+        'albumes_artista': albumes_artista,
+        'playlists':       playlists,
+        'liked_ids':       liked_ids,
+        'seguidos_ids':    seguidos_ids,
     })
 
 
@@ -115,21 +126,20 @@ def album_detail(request, album_id):
         with DB() as db:
             todos_albumes = db.exec('Procesos.sp_ConsultarAlbumes')
             album         = next((a for a in todos_albumes if a['idAlbum'] == album_id), None)
-
-            # Filtrar canciones del álbum desde el SP general (evita SELECT directo a tablas)
-            todas_canciones = db.exec('Procesos.sp_ConsultarCanciones')
-            canciones = [c for c in todas_canciones if c.get('Album_idAlbum') == album_id]
-
-            playlists = db.exec('Procesos.sp_ConsultarPlaylists', usuario_id)
-
+            canciones     = db.exec('Procesos.sp_ConsultarCancionesAlbum', album_id)
+            playlists     = db.exec('Procesos.sp_ConsultarPlaylists', usuario_id)
+            likes         = db.exec('Procesos.sp_ConsultarLikesUsuario', usuario_id)
+            liked_ids     = {l['idCancion'] for l in likes}
     except pyodbc.Error as e:
         messages.error(request, parse_sql_error(e))
         album     = None
         canciones = []
         playlists = []
+        liked_ids = set()
 
     return render(request, 'explorar/album.html', {
-        'album':     album,
-        'canciones': canciones,
-        'playlists': playlists,
+        'album':      album,
+        'canciones':  canciones,
+        'playlists':  playlists,
+        'liked_ids':  liked_ids,
     })
