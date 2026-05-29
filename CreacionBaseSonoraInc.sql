@@ -10177,7 +10177,7 @@ BEGIN
 END;
 GO
 
-CREATE PROCEDURE Procesos.sp_ConsultarCanciones
+CREATE OR ALTER PROCEDURE Procesos.sp_ConsultarCanciones
     @idCancion INT = NULL
 AS
 BEGIN
@@ -10185,10 +10185,20 @@ BEGIN
     SELECT c.idCancion, c.tituloCancion, c.duracionCancion,
            ISNULL(c.idiomaCancion, '-') AS idiomaCancion,
            g.nombreGenero,
-           ISNULL(a.tituloAlbum, '-') AS tituloAlbum
+           c.Album_idAlbum,
+           a.tituloAlbum,
+           ar.idArtista,
+           ar.nombreArtista
     FROM Catalogo.Cancion c
     INNER JOIN Catalogo.Genero g ON c.Genero_idGenero = g.idGenero
     LEFT  JOIN Catalogo.Album  a ON c.Album_idAlbum   = a.idAlbum
+    OUTER APPLY (
+        SELECT TOP 1 art.idArtista, art.nombreArtista
+        FROM Interaccion.ArtistaCancion ac
+        JOIN Catalogo.Artista art ON ac.Artista_idArtista = art.idArtista
+        WHERE ac.Cancion_idCancion = c.idCancion
+        ORDER BY art.idArtista
+    ) ar
     WHERE (@idCancion IS NULL OR c.idCancion = @idCancion);
 END;
 GO
