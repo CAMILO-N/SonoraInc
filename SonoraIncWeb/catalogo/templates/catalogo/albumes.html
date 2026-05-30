@@ -25,8 +25,12 @@
           <td>
             {% if request.session.is_admin %}
             <div class="flex gap-1">
-              <button onclick="abrirEditar({{ a.idAlbum }},'{{ a.tituloAlbum }}','{{ a.fechaLanzamientoAlbum }}')"
-                      class="btn btn-secondary btn-sm">Editar</button>
+              <button
+                data-id="{{ a.idAlbum }}"
+                data-titulo="{{ a.tituloAlbum }}"
+                data-fecha="{{ a.fechaLanzamientoAlbum|date:'Y-m-d' }}"
+                onclick="abrirEditar(this)"
+                class="btn btn-secondary btn-sm">Editar</button>
               <form method="post" action="{% url 'catalogo:album_eliminar' a.idAlbum %}"
                     onsubmit="return confirm('¿Eliminar este album? Las canciones del album quedaran sin album asignado.')">
                 {% csrf_token %}
@@ -108,10 +112,11 @@
 
 {% block extra_js %}
 <script>
-function abrirEditar(id, titulo, fecha) {
-  document.getElementById('form-editar').action = '/catalogo/albumes/' + id + '/editar/';
-  document.getElementById('edit-titulo').value = titulo;
-  document.getElementById('edit-fecha').value  = fecha;
+function abrirEditar(btn) {
+  const d = btn.dataset;
+  document.getElementById('form-editar').action = '/catalogo/albumes/' + d.id + '/editar/';
+  document.getElementById('edit-titulo').value = d.titulo;
+  document.getElementById('edit-fecha').value  = d.fecha;
   document.getElementById('modal-editar').style.display = 'flex';
 }
 </script>

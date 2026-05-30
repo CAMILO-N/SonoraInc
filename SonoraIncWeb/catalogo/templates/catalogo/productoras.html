@@ -26,8 +26,13 @@
           <td>{{ p.correoProductora }}</td>
           <td>
             <div class="flex gap-1">
-              <button onclick="abrirEditar({{ p.idProductora }},'{{ p.nombreProductora }}','{{ p.paisProductora }}','{{ p.correoProductora }}')"
-                      class="btn btn-secondary btn-sm">Editar</button>
+              <button
+                data-id="{{ p.idProductora }}"
+                data-nombre="{{ p.nombreProductora }}"
+                data-pais="{{ p.paisProductora }}"
+                data-correo="{{ p.correoProductora }}"
+                onclick="abrirEditar(this)"
+                class="btn btn-secondary btn-sm">Editar</button>
               <form method="post" action="{% url 'catalogo:productora_eliminar' p.idProductora %}"
                     onsubmit="return confirm('¿Eliminar esta productora? Se borraran todos sus artistas y sus vinculos con canciones y seguidores.')">
                 {% csrf_token %}
@@ -113,11 +118,12 @@
 
 {% block extra_js %}
 <script>
-function abrirEditar(id, nombre, pais, correo) {
-  document.getElementById('form-editar').action = '/catalogo/productoras/' + id + '/editar/';
-  document.getElementById('edit-nombre').value  = nombre;
-  document.getElementById('edit-pais').value    = pais;
-  document.getElementById('edit-correo').value  = correo;
+function abrirEditar(btn) {
+  const d = btn.dataset;
+  document.getElementById('form-editar').action = '/catalogo/productoras/' + d.id + '/editar/';
+  document.getElementById('edit-nombre').value  = d.nombre;
+  document.getElementById('edit-pais').value    = d.pais;
+  document.getElementById('edit-correo').value  = d.correo;
   document.getElementById('modal-editar').style.display = 'flex';
 }
 </script>
