@@ -151,7 +151,6 @@ SonoraInc/
 
 ## Arquitectura
 
-- **Sin ORM**: Django se usa solo como framework web. Toda interaccion con la base de datos se hace mediante stored procedures en el esquema `Procesos`.
 - **Clase DB**: context manager en `db/connection.py` que abre/cierra conexion, maneja commit/rollback y convierte resultados a listas de diccionarios.
 - **Autenticacion**: sesiones Django. La contrasena se hashea con `SHA2_256` en Python antes de enviarse al SP `sp_IniciarSesion`.
 - **Roles**: columna `rolUsuario` en `Seguridad.Usuario` con valores `admin` o `usuario`. El decorador `admin_required` protege las vistas del catalogo.
