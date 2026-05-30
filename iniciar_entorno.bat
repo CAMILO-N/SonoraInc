@@ -6,7 +6,7 @@ echo ============================================================
 REM 1. Crear entorno virtual si no existe
 IF NOT EXIST "%~dp0entornoSonoraInc\Scripts\activate.bat" (
     echo Creando entorno virtual...
-    python -m venv "%~dp0entornoSonoraInc"
+    py -m venv "%~dp0entornoSonoraInc"
     IF ERRORLEVEL 1 (
         echo ERROR: No se pudo crear el entorno virtual.
         echo Asegurate de tener Python instalado y en el PATH.
