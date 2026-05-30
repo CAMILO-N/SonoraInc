@@ -6,13 +6,12 @@
 
 - **Python 3.11+** — [python.org](https://www.python.org/downloads/)
 - **SQL Server** (Express o superior)
-- **ODBC Driver 17 for SQL Server** — [descargar aquí](https://learn.microsoft.com/es-es/sql/connect/odbc/download-odbc-driver-for-sql-server)
 
 ---
 
 ## Configuración de la base de datos
 
-1. Abrir SQL Server Management Studio (SSMS) o Azure Data Studio
+1. Primero ejecutar nuestro script de creación de la base.
 2. Ejecutar el script completo: `CreacionBaseSonoraInc.sql`
 3. El script crea la base de datos, esquemas, tablas, datos de prueba y todos los stored procedures
 
@@ -22,7 +21,7 @@
 
 ### 1. Crear el entorno virtual e instalar dependencias
 
-Se utiliza un entorno virtual para aislar las dependencias del proyecto y evitar conflictos con otras instalaciones de Python en el sistema. Esto garantiza que todos los colaboradores trabajen con las mismas versiones de los paquetes.
+Utilizamos un entorno virtual para aislar las dependencias del proyecto y evitar conflictos con otras instalaciones de Python en el sistema. 
 
 ```
 python -m venv entornoSonoraInc
@@ -120,4 +119,3 @@ SonoraInc/
 | pyodbc | 5.3.0 | Conexion a SQL Server |
 | asgiref | 3.11.1 | Soporte asincrono Django |
 | sqlparse | 0.5.5 | Parser SQL (dependencia Django) |
-| tzdata | 2026.2 | Zonas horarias |
