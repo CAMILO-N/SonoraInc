@@ -20,15 +20,17 @@
 
 ## Instalación y arranque
 
-### 1. Configurar la conexión a la base de datos
-
-Copiar el archivo de ejemplo y editar las credenciales:
+### 1. Crear el entorno virtual e instalar dependencias
 
 ```
-copy SonoraIncWeb\config.example.json SonoraIncWeb\config.json
+python -m venv entornoSonoraInc
+entornoSonoraInc\Scripts\activate
+pip install -r requirements.txt
 ```
 
-Abrir `SonoraIncWeb/config.json` y ajustar los valores:
+### 2. Ajustar la conexión a la base de datos
+
+Abrir `SonoraIncWeb/config.json` y verificar o ajustar los valores:
 
 ```json
 {
@@ -44,23 +46,7 @@ Abrir `SonoraIncWeb/config.json` y ajustar los valores:
 
 > Si la instancia de SQL Server no es la default, usar el formato `servidor\instancia` en `server`. Por ejemplo: `MIPC\SQLEXPRESS`.
 
-### 2. Crear el entorno e instalar dependencias
-
-Ejecutar el archivo bat incluido — hace todo automáticamente:
-
-```
-iniciar_entorno.bat
-```
-
-El script:
-- Crea el entorno virtual `entornoSonoraInc/` si no existe
-- Instala todas las dependencias desde `requirements.txt`
-- Verifica que `config.json` esté presente
-- Deja el entorno activado
-
 ### 3. Iniciar el servidor
-
-Dentro de la terminal que abre el bat:
 
 ```
 cd SonoraIncWeb
@@ -89,11 +75,9 @@ El patrón para los 120 usuarios de prueba es `Sonora` + su `idUsuario` (del 2 a
 SonoraInc/
 ├── CreacionBaseSonoraInc.sql     Script completo de la base de datos
 ├── requirements.txt              Dependencias Python
-├── iniciar_entorno.bat           Setup y arranque del entorno virtual
 │
 └── SonoraIncWeb/                 Proyecto Django
-    ├── config.example.json       Plantilla de configuracion (copiar a config.json)
-    ├── config.json               Credenciales locales (NO se sube a git)
+    ├── config.json               Configuracion de conexion a la base de datos
     ├── manage.py
     │
     ├── db/
