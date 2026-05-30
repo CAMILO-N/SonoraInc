@@ -22,6 +22,8 @@
 
 ### 1. Crear el entorno virtual e instalar dependencias
 
+Se utiliza un entorno virtual para aislar las dependencias del proyecto y evitar conflictos con otras instalaciones de Python en el sistema. Esto garantiza que todos los colaboradores trabajen con las mismas versiones de los paquetes.
+
 ```
 python -m venv entornoSonoraInc
 entornoSonoraInc\Scripts\activate
@@ -107,14 +109,6 @@ SonoraInc/
 | `/catalogo/albumes/` | CRUD albumes | Admin |
 | `/catalogo/productoras/` | CRUD productoras | Admin |
 | `/catalogo/playlists/` | Gestion de playlists de usuarios | Admin |
-
----
-
-## Arquitectura
-
-- **Clase DB**: context manager en `db/connection.py` que abre/cierra conexion, maneja commit/rollback y convierte resultados a listas de diccionarios.
-- **Autenticacion**: sesiones Django. La contrasena se hashea con `SHA2_256` en Python antes de enviarse al SP `sp_IniciarSesion`.
-- **Roles**: columna `rolUsuario` en `Seguridad.Usuario` con valores `admin` o `usuario`. El decorador `admin_required` protege las vistas del catalogo.
 
 ---
 
