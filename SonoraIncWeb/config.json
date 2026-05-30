@@ -1,0 +1,9 @@
+{
+    "database": {
+        "driver": "ODBC Driver 17 for SQL Server",
+        "server": "localhost",
+        "name": "SonoraInc",
+        "user": "SonoraApp",
+        "password": "App@Sonora2026"
+    }
+}
