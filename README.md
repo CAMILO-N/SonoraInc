@@ -1,45 +1,34 @@
 # SonoraInc
 
-Sistema de gestión de una plataforma de música en streaming. Desarrollado con Django 6 y SQL Server, sin ORM — toda la lógica de datos se ejecuta mediante stored procedures.
-
 ---
 
 ## Requisitos previos
 
-Antes de comenzar asegúrate de tener instalado:
-
 - **Python 3.11+** — [python.org](https://www.python.org/downloads/)
-- **SQL Server** (Express o superior) con la base de datos `SonoraInc` creada
+- **SQL Server** (Express o superior)
 - **ODBC Driver 17 for SQL Server** — [descargar aquí](https://learn.microsoft.com/es-es/sql/connect/odbc/download-odbc-driver-for-sql-server)
 
 ---
 
 ## Configuración de la base de datos
 
-1. Abre SQL Server Management Studio (SSMS) o Azure Data Studio
-2. Ejecuta el script completo: `CreacionBaseSonoraInc.sql`
+1. Abrir SQL Server Management Studio (SSMS) o Azure Data Studio
+2. Ejecutar el script completo: `CreacionBaseSonoraInc.sql`
 3. El script crea la base de datos, esquemas, tablas, datos de prueba y todos los stored procedures
 
 ---
 
 ## Instalación y arranque
 
-### 1. Clonar el repositorio
+### 1. Configurar la conexión a la base de datos
 
-```
-git clone https://github.com/CAMILO-N/SonoraInc.git
-cd SonoraInc
-```
-
-### 2. Configurar la conexión a la base de datos
-
-Copia el archivo de ejemplo y edita tus credenciales:
+Copiar el archivo de ejemplo y editar las credenciales:
 
 ```
 copy SonoraIncWeb\config.example.json SonoraIncWeb\config.json
 ```
 
-Abre `SonoraIncWeb/config.json` y ajusta los valores:
+Abrir `SonoraIncWeb/config.json` y ajustar los valores:
 
 ```json
 {
@@ -53,23 +42,23 @@ Abre `SonoraIncWeb/config.json` y ajusta los valores:
 }
 ```
 
-> Si tu instancia de SQL Server no es la default, usa el formato `servidor\instancia` en `server`. Por ejemplo: `MIPC\SQLEXPRESS`.
+> Si la instancia de SQL Server no es la default, usar el formato `servidor\instancia` en `server`. Por ejemplo: `MIPC\SQLEXPRESS`.
 
-### 3. Crear el entorno e instalar dependencias
+### 2. Crear el entorno e instalar dependencias
 
-Ejecuta el archivo bat incluido — hace todo automáticamente:
+Ejecutar el archivo bat incluido — hace todo automáticamente:
 
 ```
 iniciar_entorno.bat
 ```
 
-Esto:
+El script:
 - Crea el entorno virtual `entornoSonoraInc/` si no existe
 - Instala todas las dependencias desde `requirements.txt`
 - Verifica que `config.json` esté presente
 - Deja el entorno activado
 
-### 4. Iniciar el servidor
+### 3. Iniciar el servidor
 
 Dentro de la terminal que abre el bat:
 
@@ -78,7 +67,7 @@ cd SonoraIncWeb
 python manage.py runserver
 ```
 
-Abre el navegador en `http://127.0.0.1:8000`
+Abrir el navegador en `http://127.0.0.1:8000`
 
 ---
 
