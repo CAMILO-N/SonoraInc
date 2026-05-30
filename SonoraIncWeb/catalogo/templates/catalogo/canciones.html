@@ -41,8 +41,14 @@
           <td>
             {% if request.session.is_admin %}
             <div class="flex gap-1">
-              <button onclick="abrirEditar({{ c.idCancion }},'{{ c.tituloCancion }}',{{ c.duracionCancion }},{{ c.Genero_idGenero }},{{ c.Album_idAlbum }})"
-                      class="btn btn-secondary btn-sm">Editar</button>
+              <button
+                data-id="{{ c.idCancion }}"
+                data-titulo="{{ c.tituloCancion }}"
+                data-duracion="{{ c.duracionCancion }}"
+                data-genero="{{ c.Genero_idGenero }}"
+                data-album="{{ c.Album_idAlbum }}"
+                onclick="abrirEditar(this)"
+                class="btn btn-secondary btn-sm">Editar</button>
               <form method="post" action="{% url 'catalogo:cancion_eliminar' c.idCancion %}"
                     onsubmit="return confirm('¿Eliminar esta cancion? Se borraran todas sus asociaciones con artistas, playlists y reproducciones.')">
                 {% csrf_token %}
@@ -158,12 +164,13 @@
 
 {% block extra_js %}
 <script>
-function abrirEditar(id, titulo, duracion, idGenero, idAlbum) {
-  document.getElementById('form-editar').action = '/catalogo/canciones/' + id + '/editar/';
-  document.getElementById('edit-titulo').value   = titulo;
-  document.getElementById('edit-duracion').value = duracion;
-  document.getElementById('edit-genero').value   = idGenero;
-  document.getElementById('edit-album').value    = idAlbum;
+function abrirEditar(btn) {
+  const d = btn.dataset;
+  document.getElementById('form-editar').action = '/catalogo/canciones/' + d.id + '/editar/';
+  document.getElementById('edit-titulo').value   = d.titulo;
+  document.getElementById('edit-duracion').value = d.duracion;
+  document.getElementById('edit-genero').value   = d.genero;
+  document.getElementById('edit-album').value    = d.album;
   document.getElementById('modal-editar').style.display = 'flex';
 }
 </script>

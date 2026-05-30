@@ -36,8 +36,14 @@
           <td>
             {% if request.session.is_admin %}
             <div class="flex gap-1">
-              <button onclick="abrirEditar({{ a.idArtista }},'{{ a.nombreArtista }}','{{ a.paisOrigenArtista }}','{{ a.descripcionArtista|default:'' }}',{{ a.Productora_idProductora }})"
-                      class="btn btn-secondary btn-sm">Editar</button>
+              <button
+                data-id="{{ a.idArtista }}"
+                data-nombre="{{ a.nombreArtista }}"
+                data-pais="{{ a.paisOrigenArtista }}"
+                data-desc="{{ a.descripcionArtista|default:'' }}"
+                data-productora="{{ a.Productora_idProductora }}"
+                onclick="abrirEditar(this)"
+                class="btn btn-secondary btn-sm">Editar</button>
               <form method="post" action="{% url 'catalogo:artista_eliminar' a.idArtista %}"
                     onsubmit="return confirm('¿Eliminar este artista? Se borraran sus vinculos con canciones y sus seguidores.')">
                 {% csrf_token %}
@@ -144,12 +150,13 @@
 
 {% block extra_js %}
 <script>
-function abrirEditar(id, nombre, pais, desc, idProductora) {
-  document.getElementById('form-editar').action = '/catalogo/artistas/' + id + '/editar/';
-  document.getElementById('edit-nombre').value     = nombre;
-  document.getElementById('edit-pais').value       = pais;
-  document.getElementById('edit-desc').value       = desc;
-  document.getElementById('edit-productora').value = idProductora;
+function abrirEditar(btn) {
+  const d = btn.dataset;
+  document.getElementById('form-editar').action = '/catalogo/artistas/' + d.id + '/editar/';
+  document.getElementById('edit-nombre').value     = d.nombre;
+  document.getElementById('edit-pais').value       = d.pais;
+  document.getElementById('edit-desc').value       = d.desc;
+  document.getElementById('edit-productora').value = d.productora;
   document.getElementById('modal-editar').style.display = 'flex';
 }
 </script>
