@@ -5,5 +5,3 @@ __pycache__/
 config.json
 db.sqlite3
 entornoSonoraInc/
-.claude/
-PROMPT_CLAUDE_CODE.md
