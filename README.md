@@ -30,21 +30,9 @@ pip install -r requirements.txt
 
 ### 2. Ajustar la conexión a la base de datos
 
-Abrir `SonoraIncWeb/config.json` y verificar o ajustar los valores:
+Abrir `SonoraIncWeb/config.json` y verificar que el campo `server` apunte a la instancia correcta de SQL Server.
 
-```json
-{
-    "database": {
-        "driver": "ODBC Driver 17 for SQL Server",
-        "server": "localhost",
-        "name": "SonoraInc",
-        "user": "SonoraApp",
-        "password": "App@Sonora2026"
-    }
-}
-```
-
-> Si la instancia de SQL Server no es la default, usar el formato `servidor\instancia` en `server`. Por ejemplo: `MIPC\SQLEXPRESS`.
+> Si la instancia no es la default, usar el formato `servidor\instancia`. Por ejemplo: `MIPC\SQLEXPRESS`.
 
 ### 3. Iniciar el servidor
 
