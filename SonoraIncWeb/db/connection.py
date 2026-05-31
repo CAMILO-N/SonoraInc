@@ -2,8 +2,10 @@ import json
 import pyodbc
 from pathlib import Path
 
+# config.json vive fuera del paquete db/, por eso se sube un nivel con parent.parent
 _cfg = json.loads((Path(__file__).parent.parent / 'config.json').read_text())['database']
 
+# TrustServerCertificate evita el error de certificado en instancias locales de SQL Server
 _CONNECTION_STRING = (
     f"DRIVER={{{_cfg['driver']}}};"
     f"SERVER={_cfg['server']};"
@@ -35,16 +37,19 @@ class DB:
         return self
 
     def __exit__(self, exc_type, *_):
+        # rollback automatico si ocurrio una excepcion dentro del bloque with
         if exc_type is None:
             self.conn.commit()
         else:
             self.conn.rollback()
         self.cursor.close()
         self.conn.close()
+        # False: no suprime la excepcion, la deja propagarse al llamador
         return False
 
     def exec(self, sp: str, *params) -> list[dict]:
         """Ejecuta SP y devuelve todas las filas como lista de dicts."""
+        # pyodbc espera los placeholders como una sola tupla, no como *args
         sql = f"EXEC {sp} {', '.join(['?'] * len(params))}" if params else f"EXEC {sp}"
         self.cursor.execute(sql, *params)
         return self._to_dicts()
@@ -64,6 +69,7 @@ class DB:
         sql = f"EXEC {sp} {', '.join(['?'] * len(params))}" if params else f"EXEC {sp}"
         self.cursor.execute(sql, *params)
         try:
+            # algunos SPs de escritura devuelven una fila de confirmacion; se intenta leerla
             return self._to_dicts()[0] if self.cursor.description else None
         except Exception:
             return None
@@ -71,6 +77,7 @@ class DB:
     def _to_dicts(self) -> list[dict]:
         if not self.cursor.description:
             return []
+        # c[0] es el nombre de columna segun la especificacion DB-API 2.0
         cols = [c[0] for c in self.cursor.description]
         return [dict(zip(cols, row)) for row in self.cursor.fetchall()]
 
@@ -78,11 +85,12 @@ class DB:
 def parse_sql_error(error: pyodbc.Error) -> str:
     """
     Extrae el mensaje legible de un THROW de SQL Server.
-    Ej: THROW 50001, 'El correo ya existe.', 1  →  'El correo ya existe.'
+    Ej: THROW 50001, 'El correo ya existe.', 1  ->  'El correo ya existe.'
     """
     msg = str(error)
     if "[SQL Server]" in msg:
         parte = msg.split("[SQL Server]")[-1]
+        # el numero de linea va entre parentesis al final; se descarta
         if "(" in parte:
             return parte[:parte.rfind("(")].strip()
         return parte.strip()

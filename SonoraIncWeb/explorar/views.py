@@ -4,7 +4,7 @@ from django.contrib import messages
 from db.connection import DB, parse_sql_error
 
 
-# Decorador de sesión
+# decorador propio porque no se usa django.contrib.auth; la sesion se gestiona manualmente
 def login_required(view_func):
     def wrapper(request, *args, **kwargs):
         if not request.session.get('usuario_id'):
@@ -12,9 +12,7 @@ def login_required(view_func):
         return view_func(request, *args, **kwargs)
     return wrapper
 
-
-# HOME  — página principal del usuario autenticado
-
+# pagina principal del usuario autenticado
 @login_required
 def home(request):
     usuario_id = request.session['usuario_id']
@@ -36,8 +34,6 @@ def home(request):
     })
 
 
-# BÚSQUEDA  — busca artistas, álbumes y canciones
-
 @login_required
 def buscar(request):
     q          = request.GET.get('q', '').strip()
@@ -50,10 +46,12 @@ def buscar(request):
     liked_ids = set()
     try:
         with DB() as db:
+            # likes y playlists se cargan siempre para que el template pueda marcar canciones
             playlists = db.exec('Procesos.sp_ConsultarPlaylists', usuario_id)
             likes     = db.exec('Procesos.sp_ConsultarLikesUsuario', usuario_id)
             liked_ids = {l['idCancion'] for l in likes}
             if q:
+                # el filtrado se hace en Python porque no hay SP de busqueda parametrizada
                 ql = q.lower()
                 todos_artistas  = db.exec('Procesos.sp_ConsultarArtistas')
                 todos_albumes   = db.exec('Procesos.sp_ConsultarAlbumes')
@@ -74,13 +72,12 @@ def buscar(request):
     })
 
 
-# DETALLE DE ARTISTA  — info, canciones y seguir/dejar de seguir
-
 @login_required
 def artista_detail(request, artista_id):
     usuario_id = request.session['usuario_id']
     try:
         with DB() as db:
+            # no existe sp_ConsultarArtistaPorId, se filtra desde la lista completa
             todos_artistas  = db.exec('Procesos.sp_ConsultarArtistas')
             artista         = next((a for a in todos_artistas if a['idArtista'] == artista_id), None)
             canciones       = db.exec('Procesos.sp_ConsultarCancionesArtista', artista_id)
@@ -88,6 +85,7 @@ def artista_detail(request, artista_id):
             playlists       = db.exec('Procesos.sp_ConsultarPlaylists', usuario_id)
             likes           = db.exec('Procesos.sp_ConsultarLikesUsuario', usuario_id)
             seguidos        = db.exec('Procesos.sp_ConsultarUsuarioArtista', usuario_id)
+            # sets para O(1) al marcar canciones y artistas en el template
             liked_ids    = {l['idCancion'] for l in likes}
             seguidos_ids = {s['idArtista'] for s in seguidos}
     except pyodbc.Error as e:
@@ -109,13 +107,12 @@ def artista_detail(request, artista_id):
     })
 
 
-# DETALLE DE ÁLBUM  — info y canciones del álbum
-
 @login_required
 def album_detail(request, album_id):
     usuario_id = request.session['usuario_id']
     try:
         with DB() as db:
+            # idem artista_detail: se filtra en Python por ausencia de SP especifico
             todos_albumes = db.exec('Procesos.sp_ConsultarAlbumes')
             album         = next((a for a in todos_albumes if a['idAlbum'] == album_id), None)
             canciones     = db.exec('Procesos.sp_ConsultarCancionesAlbum', album_id)

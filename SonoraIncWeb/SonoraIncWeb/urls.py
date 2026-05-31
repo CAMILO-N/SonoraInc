@@ -1,8 +1,9 @@
 from django.urls import path, include
 from django.views.generic import RedirectView
 
+# no se registra el admin de Django porque la autenticacion es propia con sesiones manuales
 urlpatterns = [
-    # Raíz → login (como cualquier web normal)
+    # la raiz redirige al login para que el navegador no muestre una pagina en blanco
     path('', RedirectView.as_view(url='/usuarios/login/'), name='home'),
     path('usuarios/',    include('usuarios.urls')),
     path('catalogo/',    include('catalogo.urls')),

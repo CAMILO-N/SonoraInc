@@ -5,16 +5,13 @@ from django.contrib import messages
 from db.connection import DB, parse_sql_error
 
 
-# Decorador de sesión
+# decorador propio porque no se usa django.contrib.auth; la sesion se gestiona manualmente
 def login_required(view_func):
     def wrapper(request, *args, **kwargs):
         if not request.session.get('usuario_id'):
             return redirect('usuarios:login')
         return view_func(request, *args, **kwargs)
     return wrapper
-
-
-# PLAYLISTS
 
 @login_required
 def playlists_lista(request):
@@ -36,6 +33,7 @@ def playlist_nueva(request):
         nombre      = request.POST.get('nombre', '').strip()
         privacidad  = request.POST.get('privacidad', 'Publica').strip()
         descripcion = request.POST.get('descripcion', '').strip() or None
+        # si el formulario no envia fecha se usa hoy como valor por defecto
         fecha       = request.POST.get('fecha', '').strip() or str(date.today())
 
         if not nombre:
@@ -106,6 +104,7 @@ def playlist_canciones(request, id):
         todas_canciones = []
         playlists = []
 
+    # se busca la playlist actual para mostrar su nombre en el encabezado de la vista
     playlist_actual = next((p for p in playlists if p.get('idPlaylist') == id), None)
 
     return render(request, 'interaccion/playlist_canciones.html', {
@@ -120,10 +119,11 @@ def playlist_canciones(request, id):
 def playlist_agregar_cancion(request, id):
     if request.method == 'POST':
         id_cancion = request.POST.get('id_cancion', '').strip()
+        # next permite volver a la pagina de origen (busqueda, album, etc.) tras agregar
         next_url   = request.POST.get('next', '').strip()
 
         if not id_cancion:
-            messages.error(request, 'Selecciona una canción.')
+            messages.error(request, 'Selecciona una cancion.')
             return redirect(next_url or ('interaccion:playlist_canciones', id))
 
         try:
@@ -183,7 +183,7 @@ def like_toggle(request, id_cancion):
                     db.exec_noreturn('Procesos.sp_EliminarUsuarioCancion', usuario_id, id_cancion)
                     messages.success(request, 'Me gusta quitado.')
                 else:
-                    # Toggle: el SP agrega si no existe, quita si ya existe
+                    # sp_ToggleLikeCancion agrega si no existe o quita si ya existe; devuelve la accion realizada
                     resultado = db.exec_one('Procesos.sp_ToggleLikeCancion', usuario_id, id_cancion)
                     if resultado and resultado.get('accion') == 'quitar':
                         messages.success(request, 'Me gusta quitado.')
@@ -215,7 +215,7 @@ def artistas_seguidos(request):
             artistas = [a for a in artistas
                         if busqueda.lower() in a['nombreArtista'].lower()]
 
-        # Seguidos primero, luego el resto (ambos grupos en orden alfabético)
+        # seguidos primero, luego el resto; dentro de cada grupo en orden alfabetico
         artistas.sort(key=lambda a: (0 if a['idArtista'] in seguidos_ids else 1,
                                      a['nombreArtista']))
     except pyodbc.Error as e:

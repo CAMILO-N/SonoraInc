@@ -6,8 +6,10 @@ SECRET_KEY = 'django-insecure-m^vtw=_qd8i51)zdyy9%*-2)oh$35pmxx6$wh1c14$+)*e&s$8
 
 DEBUG = True
 
+# en produccion restringir a los dominios reales; '*' solo es seguro en desarrollo local
 ALLOWED_HOSTS = ['*']
 
+# se omiten django.contrib.auth y django.contrib.admin porque la autenticacion es propia
 INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -59,11 +61,12 @@ DATABASES = {
     }
 }
 
-# Sesiones en caché (no requieren migrate)
+# cache en memoria local evita crear tablas de sesion en la BD (no requiere migrate)
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 
 CACHES = {
     'default': {
+        # LocMemCache es por proceso; se pierde al reiniciar el servidor
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
     }
 }
@@ -77,7 +80,7 @@ TIME_ZONE     = 'America/Guayaquil'
 USE_I18N      = True
 USE_TZ        = True
 
-# Archivos estáticos
+# STATICFILES_DIRS indica donde buscar archivos estaticos adicionales fuera de las apps
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 

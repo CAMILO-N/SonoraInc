@@ -7,12 +7,12 @@ from db.connection import DB, parse_sql_error
 
 
 def _hash(password: str) -> str:
-    """SHA2_256 en mayúsculas — igual que HASHBYTES en SQL Server."""
+    # SHA2_256 en mayusculas para que coincida con HASHBYTES de SQL Server
     return hashlib.sha256(password.encode()).hexdigest().upper()
 
 
-# Login
 def login_view(request):
+    # redirige al perfil si ya hay sesion activa para evitar doble login
     if request.session.get('usuario_id'):
         return redirect('usuarios:perfil')
 
@@ -38,6 +38,7 @@ def login_view(request):
             request.session['usuario_id']     = usuario['idUsuario']
             request.session['usuario_nombre'] = usuario['nombreUsuario']
             request.session['usuario_correo'] = usuario['correoUsuario']
+            # el SP puede devolver 'rolUsuario' o 'rol' segun la version del esquema
             rol = str(usuario.get('rolUsuario') or usuario.get('rol') or '').lower()
             request.session['is_admin'] = (rol == 'admin')
             messages.success(request, f"Bienvenido, {usuario['nombreUsuario']}.")
@@ -49,27 +50,29 @@ def login_view(request):
     return render(request, 'usuarios/login.html')
 
 
-# Logout
 def logout_view(request):
+    # flush elimina toda la sesion, no solo las claves propias de la app
     request.session.flush()
     messages.success(request, 'Sesión cerrada.')
     return redirect('usuarios:login')
 
 
-# Registro
 def registro_view(request):
+    # un usuario autenticado no deberia poder crear otra cuenta desde el mismo navegador
     if request.session.get('usuario_id'):
         return redirect('usuarios:perfil')
 
     if request.method == 'POST':
         nombre      = request.POST.get('nombre', '').strip()
+        # segundo nombre y segundo apellido son opcionales; None en lugar de cadena vacia
         seg_nombre  = request.POST.get('seg_nombre', '').strip() or None
         apellido    = request.POST.get('apellido', '').strip()
         seg_apellido= request.POST.get('seg_apellido', '').strip() or None
         correo      = request.POST.get('correo', '').strip()
         password    = request.POST.get('password', '')
         password2   = request.POST.get('password2', '')
-        fecha       = str(date.today())   # fecha automática — no se le pide al usuario
+        # fecha de registro siempre es hoy, no se expone al usuario
+        fecha       = str(date.today())
 
         errores = []
         if not all([nombre, apellido, correo, password]):
@@ -103,7 +106,6 @@ def registro_view(request):
     return render(request, 'usuarios/registro.html')
 
 
-# Perfil
 def perfil_view(request):
     if not request.session.get('usuario_id'):
         return redirect('usuarios:login')
@@ -115,6 +117,7 @@ def perfil_view(request):
         with DB() as db:
             usuario = db.exec_one('Procesos.sp_ConsultarUsuarios', usuario_id)
             subs    = db.exec('Procesos.sp_ConsultarSuscripciones', usuario_id)
+            # solo se muestra la suscripcion activa; las vencidas o canceladas se ignoran aqui
             suscripcion = next((s for s in subs if s.get('estadoSuscripcion') == 'Activa'), None)
     except pyodbc.Error as e:
         messages.error(request, parse_sql_error(e))
@@ -147,6 +150,7 @@ def perfil_editar_view(request):
                     'Procesos.sp_ActualizarUsuario',
                     usuario_id, nombre, apellido, seg_nombre, seg_apellido, correo
                 )
+            # se actualiza la sesion para que el navbar refleje los nuevos datos sin relogin
             request.session['usuario_nombre'] = nombre
             request.session['usuario_correo'] = correo
             messages.success(request, 'Perfil actualizado correctamente.')
@@ -198,6 +202,7 @@ def perfil_eliminar_view(request):
         try:
             with DB() as db:
                 db.exec_noreturn('Procesos.sp_EliminarUsuario', usuario_id)
+            # se invalida la sesion despues de borrar para que no quede un fantasma logueado
             request.session.flush()
             messages.success(request, 'Tu cuenta ha sido eliminada.')
             return redirect('usuarios:login')

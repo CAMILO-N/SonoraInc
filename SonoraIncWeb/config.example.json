@@ -3,7 +3,7 @@
         "driver": "ODBC Driver 17 for SQL Server",
         "server": "localhost",
         "name": "SonoraInc",
-        "user": "tu_usuario_sql",
-        "password": "tu_contraseña_sql"
+        "user": "SonoraApp",
+        "password": "App@Sonora2026"
     }
 }

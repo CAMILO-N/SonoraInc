@@ -4,7 +4,7 @@ from django.contrib import messages
 from db.connection import DB, parse_sql_error
 
 
-# Decoradores de sesión y rol
+# decorador propio porque no se usa django.contrib.auth; la sesion se gestiona manualmente
 def login_required(view_func):
     def wrapper(request, *args, **kwargs):
         if not request.session.get('usuario_id'):
@@ -12,13 +12,13 @@ def login_required(view_func):
         return view_func(request, *args, **kwargs)
     return wrapper
 
+# las vistas de escritura del catalogo usan este decorador; lectura solo requiere login
 def admin_required(view_func):
-    """Solo administradores pueden ejecutar operaciones de escritura en el catálogo."""
     def wrapper(request, *args, **kwargs):
         if not request.session.get('usuario_id'):
             return redirect('usuarios:login')
         if not request.session.get('is_admin'):
-            messages.error(request, 'No tienes permisos para realizar esta acción.')
+            messages.error(request, 'No tienes permisos para realizar esta accion.')
             return redirect('usuarios:perfil')
         return view_func(request, *args, **kwargs)
     return wrapper
@@ -35,7 +35,7 @@ def canciones_lista(request):
             generos   = db.exec('Procesos.sp_ConsultarGeneros')
             albumes   = db.exec('Procesos.sp_ConsultarAlbumes')
 
-        # Filtro por búsqueda en Python (simple, sin SP extra)
+        # filtro en Python porque no existe SP de busqueda parametrizada para canciones
         if busqueda:
             canciones = [c for c in canciones
                          if busqueda.lower() in c['tituloCancion'].lower()]
@@ -304,11 +304,13 @@ def panel(request):
     panel_items = []
     try:
         with DB() as db:
+            # se carga la lista completa solo para contar; no hay SP de conteo independiente
             for label, sp, url in items:
                 total = len(db.exec(sp))
                 panel_items.append({'label': label, 'total': total, 'url': url})
     except pyodbc.Error as e:
         messages.error(request, parse_sql_error(e))
+        # en caso de error se muestra el panel igualmente con totales en blanco
         panel_items = [{'label': l, 'total': '—', 'url': u} for l, _, u in items]
 
     return render(request, 'catalogo/panel.html', {'panel_items': panel_items})
@@ -382,12 +384,11 @@ def productora_eliminar(request, id):
     return redirect('catalogo:productoras')
 
 
-# PLAYLISTS (vista admin — todas las playlists de todos los usuarios)
-
 @admin_required
 def playlists_admin(request):
     try:
         with DB() as db:
+            # sin parametro usuario_id el SP devuelve todas las playlists del sistema
             playlists = db.exec('Procesos.sp_ConsultarPlaylists')
     except pyodbc.Error as e:
         messages.error(request, parse_sql_error(e))

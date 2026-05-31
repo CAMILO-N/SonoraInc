@@ -5,7 +5,7 @@ from django.contrib import messages
 from db.connection import DB, parse_sql_error
 
 
-# Decorador de sesión
+# decorador propio porque no se usa django.contrib.auth; la sesion se gestiona manualmente
 def login_required(view_func):
     def wrapper(request, *args, **kwargs):
         if not request.session.get('usuario_id'):
@@ -13,16 +13,15 @@ def login_required(view_func):
         return view_func(request, *args, **kwargs)
     return wrapper
 
-
-# SUSCRIPCIONES
-
 @login_required
 def suscripciones(request):
     usuario_id = request.session['usuario_id']
     is_admin   = request.session.get('is_admin', False)
     try:
         with DB() as db:
+            # se marcan como vencidas las suscripciones expiradas antes de mostrarlas
             db.exec_noreturn('Procesos.sp_ActualizarSuscripcionesVencidas')
+            # el admin recibe None como usuario_id para obtener todas las suscripciones
             if is_admin:
                 lista    = db.exec('Procesos.sp_ConsultarSuscripciones')
                 usuarios = db.exec('Procesos.sp_ConsultarUsuarios')
@@ -44,6 +43,7 @@ def suscripciones(request):
     })
 
 
+# duracion en dias por tipo de plan; ambos son 30 pero se mantiene el dict para escalar
 _DURACION_PLAN = {'Gratis': 30, 'Premium': 30}
 
 
@@ -57,6 +57,7 @@ def suscripcion_nueva(request):
         fecha_inicio = str(hoy)
         fecha_fin    = str(hoy + timedelta(days=_DURACION_PLAN.get(tipo_plan, 30)))
 
+        # el admin puede suscribir a cualquier usuario; el usuario comun solo a si mismo
         if is_admin:
             usuario_id = request.POST.get('usuario_id', '').strip()
             if not usuario_id:
@@ -88,6 +89,7 @@ def suscripcion_cancelar(request, sub_id):
                 subs = db.exec('Procesos.sp_ConsultarSuscripciones', usuario_id)
                 sub  = next((s for s in subs if s.get('idSuscripcion') == sub_id), None)
                 if sub:
+                    # sp_ActualizarSuscripcion requiere tipo y fecha aunque no cambien
                     tipo = sub.get('tipoPlanSuscripcion') or sub.get('tipoPlan', 'Basico')
                     fin  = str(sub.get('fechaFinSuscripcion') or sub.get('fechaFin', date.today()))
                     db.exec_noreturn('Procesos.sp_ActualizarSuscripcion', sub_id, tipo, fin, 'Cancelada')
@@ -122,6 +124,7 @@ def pagos(request):
             pagos_lista = []
             for s in subs_lista:
                 ps = db.exec('Procesos.sp_ConsultarPagos', s['idSuscripcion'])
+                # se inyectan datos de la suscripcion en cada pago para mostrarlos en tabla
                 for p in ps:
                     p['_tipoPlan']      = s.get('tipoPlanSuscripcion', s.get('tipoPlan', '—'))
                     p['_idSuscripcion'] = s['idSuscripcion']
@@ -186,6 +189,7 @@ def regalias(request):
 
     return render(request, 'finanzas/regalias.html', {
         'regalias': regalias_lista,
+        # se pasa hoy como valor por defecto para el campo fecha del formulario de calculo
         'hoy':      str(date.today()),
     })
 
