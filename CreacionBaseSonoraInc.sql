@@ -11444,3 +11444,6 @@ GO
 GRANT EXECUTE ON Procesos.sp_ConsultarCancionesAlbum TO SonoraApp;
 GO
 
+
+GRANT SELECT ON SCHEMA::Reportes TO SonoraApp;
+GO
