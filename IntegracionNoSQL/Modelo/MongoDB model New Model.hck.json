@@ -1,0 +1,967 @@
+{
+  "modelName": "New Model",
+  "collections": [
+    {
+      "collectionName": "Usuario",
+      "type": "object",
+      "properties": [
+        {
+          "name": "_id",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "numeric",
+          "error": {},
+          "primaryKey": true,
+          "code": "idUsuario",
+          "required": true,
+          "GUID": "ff07996b-6dec-4daa-9e99-b4b2a3acf4bf"
+        },
+        {
+          "name": "nombreUsuario",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "af3bd508-17d2-4b41-bbcd-e5c317c7f3c1",
+          "description": "Nombre de pila del usuario registrado en la plataforma",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "apellidoUsuario",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "5947510c-dd0d-4e26-86bd-5e11c7a3b3a5",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "segunNombreUsuario",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "9aed15d3-f921-4f3c-ba4d-46755a153826",
+          "error": {}
+        },
+        {
+          "name": "segundoApellidoUsuario",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "b3506d7b-033b-4572-bcfd-5d1487d644bc",
+          "error": {}
+        },
+        {
+          "name": "correoUsuario",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "ca85114c-553b-4b1c-9ced-f1ee02343659",
+          "required": true,
+          "primaryKey": false,
+          "format": "email",
+          "error": {}
+        },
+        {
+          "name": "fechaRegistroUsuario",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "date",
+          "primaryKey": false,
+          "GUID": "16e47ac0-5600-429c-ba5c-d5f1756dc38a",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "rolUsuario",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "54093bcb-1da6-4f66-9e7b-6fd93446fea8",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "Suscripcion",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "array",
+          "properties": [
+            {
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "string",
+              "GUID": "4101f71c-55c3-40ab-95de-f9248c44b791",
+              "arrayItem": true,
+              "displayName": "tipoPlanSuscripcion",
+              "enum": [
+                "Gratis",
+                "Premium"
+              ],
+              "error": {
+                "enum": false,
+                "enums": false
+              }
+            },
+            {
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "date",
+              "primaryKey": false,
+              "error": {},
+              "GUID": "31e9d614-8eea-412e-a4a4-54355be46756",
+              "arrayItem": true,
+              "displayName": "fechaInicioSuscripcion"
+            },
+            {
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "date",
+              "primaryKey": false,
+              "GUID": "fc52400c-5c2d-4083-99a3-13da3c199e8c",
+              "arrayItem": true,
+              "displayName": "fechaFinSuscripcion",
+              "error": {}
+            },
+            {
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "string",
+              "GUID": "2229dc96-fd67-4d30-a777-e8a043405c23",
+              "arrayItem": true,
+              "displayName": "estadoSuscripcion",
+              "enum": [
+                "Activa",
+                "Cancelada",
+                "Vencida"
+              ],
+              "error": {
+                "enum": false,
+                "enums": [
+                  false,
+                  false,
+                  false
+                ]
+              }
+            },
+            {
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "array",
+              "properties": [
+                {
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "date",
+                  "primaryKey": false,
+                  "error": {},
+                  "GUID": "37696b3a-30b9-42fb-9767-0bac5c29866e",
+                  "arrayItem": true,
+                  "displayName": "fechaPago"
+                },
+                {
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "numeric",
+                  "error": {},
+                  "GUID": "b3060bd1-88e2-48b5-8f9c-7efd4fe7a112",
+                  "arrayItem": true,
+                  "displayName": "montoPago"
+                }
+              ],
+              "additionalItems": true,
+              "error": {},
+              "GUID": "8904299b-2925-4292-8a4f-b8a65be896c3",
+              "arrayItem": true,
+              "displayName": "Pago"
+            }
+          ],
+          "additionalItems": true,
+          "error": {},
+          "required": true,
+          "GUID": "6de02b99-e116-4dfd-99ef-b6f22c2337e5"
+        },
+        {
+          "name": "idArtista",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "numeric",
+          "error": {},
+          "GUID": "8672d120-5c48-4d23-8b1b-14f8e044252e"
+        },
+        {
+          "name": "idCancion",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "numeric",
+          "error": {},
+          "GUID": "be77a185-f3e5-4c20-8067-49c9d14033ec"
+        },
+        {
+          "name": "idPlaylist",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "numeric",
+          "error": {},
+          "GUID": "7b69b208-1646-4037-afaa-296534085271"
+        }
+      ],
+      "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "21e9cd02-89e7-423f-b2b6-75ab0f696bbd"
+      },
+      "isActivated": true,
+      "additionalProperties": false,
+      "validationLevel": "Off",
+      "validationAction": "Warn",
+      "storageEngineName": "WiredTiger",
+      "sharding": {
+        "unique": true,
+        "collation": "null"
+      },
+      "GUID": "4e8cbd45-7fbe-4b19-a609-e59788e00a7a",
+      "bucketId": "bdf6bcb1-ce26-42dc-95d0-ad38f8e7f2f7",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    },
+    {
+      "collectionName": "Playlist",
+      "type": "object",
+      "properties": [
+        {
+          "name": "_id",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "numeric",
+          "error": {},
+          "primaryKey": true,
+          "required": true,
+          "GUID": "ee155172-41f4-4256-9f5b-91b1beb3d67b"
+        },
+        {
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "5cd86229-eb8c-40b1-b963-5fe235b1ed01",
+          "name": "nombrePlaylist",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "fechaCreacionPlaylist",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "date",
+          "primaryKey": false,
+          "GUID": "9c903a30-0552-4dcb-bc94-09eb3ec21f7c",
+          "required": true,
+          "error": {
+            "name": false,
+            "code": false
+          }
+        },
+        {
+          "name": "privacidadPlaylist",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "1dfa8e32-15db-423a-9d77-2a451d6e5d64",
+          "required": true,
+          "enum": [
+            "Privada",
+            "Publica"
+          ],
+          "error": {
+            "enum": false,
+            "enums": [
+              false,
+              false
+            ],
+            "name": false,
+            "code": false
+          }
+        },
+        {
+          "name": "descripcionPlaylist",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "99cee954-85f6-48d9-ace5-613ba8d751ce",
+          "error": {}
+        },
+        {
+          "name": "idUsuario",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "numeric",
+          "error": {},
+          "required": true,
+          "GUID": "ca62dc16-e09c-4975-b3ef-00127822002f"
+        },
+        {
+          "name": "idCancion",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "numeric",
+          "GUID": "23a415f6-83a2-49a3-8b62-925b69b4cd63",
+          "required": true,
+          "error": {}
+        }
+      ],
+      "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "8b585b02-6315-41bf-af8a-151498570537"
+      },
+      "isActivated": true,
+      "additionalProperties": false,
+      "validationLevel": "Off",
+      "validationAction": "Warn",
+      "storageEngineName": "WiredTiger",
+      "sharding": {
+        "unique": true,
+        "collation": "null"
+      },
+      "GUID": "7245503e-e9ba-409c-941e-5945027409e6",
+      "bucketId": "bdf6bcb1-ce26-42dc-95d0-ad38f8e7f2f7",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    },
+    {
+      "collectionName": "Cancion",
+      "type": "object",
+      "properties": [
+        {
+          "name": "_id",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "numeric",
+          "error": {},
+          "primaryKey": true,
+          "required": true,
+          "GUID": "290e44d9-4714-472c-881f-454e809ff364"
+        },
+        {
+          "name": "tituloCancion",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "219d4f3f-811a-4080-a90b-fbae4e5db368",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "duracionCancion",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "numeric",
+          "error": {},
+          "required": true,
+          "GUID": "f98e8771-8439-44fb-b9bd-f5b2ffe5cbc7"
+        },
+        {
+          "name": "idiomaCancion",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "869049c8-cc7d-4c82-aceb-2ca9497ad47e",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "Genero",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "document",
+          "properties": [
+            {
+              "name": "nombreGenero",
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "string",
+              "GUID": "bb201c34-7816-41c0-93d3-0dc020e4f464",
+              "required": true,
+              "error": {}
+            }
+          ],
+          "additionalProperties": false,
+          "GUID": "8f6ca18e-8484-4544-84ed-dce780fb864a",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "Album",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "document",
+          "properties": [
+            {
+              "name": "idAlbum",
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "numeric",
+              "GUID": "ef44da22-7113-465b-ab6d-94c2cab14fb6",
+              "required": true,
+              "error": {},
+              "foreignCollection": "8fde6c42-494a-44b0-99bb-56daa249722c"
+            },
+            {
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "string",
+              "GUID": "1432eaf8-5ac9-4866-8ffd-f21e547da395",
+              "name": "tituloAlbum",
+              "required": true,
+              "error": {}
+            },
+            {
+              "name": "fechaLanzamientoAlbum",
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "date",
+              "primaryKey": false,
+              "error": {},
+              "required": true,
+              "GUID": "3b75f6f4-0fff-414a-8eb5-6632b2ca547b"
+            }
+          ],
+          "additionalProperties": false,
+          "error": {},
+          "GUID": "0a9daa43-3670-4dcf-b64c-6a1a39666632"
+        },
+        {
+          "name": "Artista",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "array",
+          "properties": [
+            {
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "document",
+              "properties": [
+                {
+                  "name": "idArtista",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "numeric",
+                  "error": {},
+                  "GUID": "49cf123e-e475-4c64-bba2-dbb9144fbf09"
+                },
+                {
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "ec38c32f-649d-446a-a163-52b71204e088",
+                  "error": {},
+                  "name": "nombreArtista"
+                }
+              ],
+              "additionalProperties": false,
+              "error": {},
+              "GUID": "6f6e3fcb-9670-45fa-87e2-9debd8c46515",
+              "arrayItem": true
+            }
+          ],
+          "additionalItems": true,
+          "error": {},
+          "required": true,
+          "GUID": "8bf778a2-f164-4563-a080-e26b04e5c2e7",
+          "foreignCollection": "8fde6c42-494a-44b0-99bb-56daa249722c"
+        },
+        {
+          "name": "Regalia",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "array",
+          "properties": [
+            {
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "document",
+              "properties": [
+                {
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "date",
+                  "primaryKey": false,
+                  "error": {},
+                  "GUID": "9d4be8a7-9df3-4ba4-8334-c117b0959e1c",
+                  "name": "fechaCalculoRegalia"
+                },
+                {
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "numeric",
+                  "error": {},
+                  "GUID": "6a19cfb0-3b91-4d33-89ca-17b286dadaf8",
+                  "name": "cantidadReproduccionesRegalia"
+                },
+                {
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "numeric",
+                  "error": {},
+                  "GUID": "99c2c3d2-4329-4c26-9c7f-3a846999576b",
+                  "name": "montoGeneradoRegalia"
+                }
+              ],
+              "additionalProperties": false,
+              "error": {},
+              "GUID": "3fdb6cbf-87df-42df-98be-1092694165a9",
+              "arrayItem": true
+            }
+          ],
+          "additionalItems": true,
+          "error": {},
+          "required": true,
+          "GUID": "cad1f30b-5bd3-4454-9c25-750880b17be5"
+        }
+      ],
+      "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "20076f6c-c636-4d0d-a96f-384b3c33c4d9"
+      },
+      "isActivated": true,
+      "additionalProperties": false,
+      "validationLevel": "Off",
+      "validationAction": "Warn",
+      "storageEngineName": "WiredTiger",
+      "sharding": {
+        "unique": true,
+        "collation": "null"
+      },
+      "GUID": "e10854e9-1e1c-405f-8620-5e44c5b4c0bc",
+      "bucketId": "bdf6bcb1-ce26-42dc-95d0-ad38f8e7f2f7",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    },
+    {
+      "collectionName": "Reproduccion",
+      "type": "object",
+      "properties": [
+        {
+          "name": "_id",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "objectId",
+          "error": {},
+          "primaryKey": true,
+          "required": true,
+          "GUID": "93761331-43de-4bdd-8635-8d1be8a32bc3"
+        },
+        {
+          "name": "fechaReproduccion",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "date",
+          "primaryKey": false,
+          "GUID": "36f59f27-e2c9-419b-b488-cc004a69e859",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "duracionReproduccion",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "numeric",
+          "GUID": "99a9ecc4-ba6d-48f0-a5d0-52881315fd98",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "idUsuario",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "numeric",
+          "error": {},
+          "required": true,
+          "GUID": "5b1dfde3-958e-473c-9bfd-bae2882a4099"
+        },
+        {
+          "name": "idCancion",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "numeric",
+          "error": {},
+          "required": true,
+          "GUID": "12023698-4774-4052-b91e-7c91b72b0072"
+        }
+      ],
+      "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "67686d45-80be-41cd-a1cf-1e52e987b073"
+      },
+      "isActivated": true,
+      "additionalProperties": false,
+      "validationLevel": "Off",
+      "validationAction": "Warn",
+      "storageEngineName": "WiredTiger",
+      "sharding": {
+        "unique": true,
+        "collation": "null"
+      },
+      "GUID": "2ea97454-ddc9-4036-9ea9-761a3f716727",
+      "bucketId": "bdf6bcb1-ce26-42dc-95d0-ad38f8e7f2f7",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    },
+    {
+      "collectionName": "Artista",
+      "type": "object",
+      "properties": [
+        {
+          "name": "_id",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "numeric",
+          "error": {},
+          "primaryKey": true,
+          "required": true,
+          "GUID": "c96008eb-c1b2-4a66-8e36-60d4c6a0ac35"
+        },
+        {
+          "name": "nombreArtista",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "6c42c2f5-4c27-4a2e-87c5-bca340fb3e36",
+          "required": true,
+          "error": {}
+        },
+        {
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "a9bbe90d-b68a-4772-9fea-4646444139bd",
+          "name": "paisOrigenArtista",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "descripcionArtista",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "9327ec1f-01b9-475e-854f-0b5d95122575",
+          "error": {}
+        },
+        {
+          "name": "Productora",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "document",
+          "properties": [
+            {
+              "name": "nombreProductora",
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "string",
+              "GUID": "de30d3a9-b70a-474b-a147-2d8b94921a12",
+              "required": true,
+              "error": {}
+            },
+            {
+              "name": "correoProductora",
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "string",
+              "GUID": "2fa2f560-8782-4622-bee1-02dcb184b7e9",
+              "required": true,
+              "format": "email",
+              "error": {}
+            },
+            {
+              "name": "paisProductora",
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "string",
+              "GUID": "7ec1b6a4-b007-42cc-964a-c5c7597e96c2",
+              "required": true,
+              "error": {}
+            }
+          ],
+          "additionalProperties": false,
+          "GUID": "6229f035-4aea-435a-80be-d79b1826a6bc",
+          "required": true,
+          "error": {}
+        }
+      ],
+      "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "a8c31847-0f15-472b-9ba8-7305119f0247"
+      },
+      "isActivated": true,
+      "additionalProperties": false,
+      "validationLevel": "Off",
+      "validationAction": "Warn",
+      "storageEngineName": "WiredTiger",
+      "sharding": {
+        "unique": true,
+        "collation": "null"
+      },
+      "GUID": "8fde6c42-494a-44b0-99bb-56daa249722c",
+      "bucketId": "bdf6bcb1-ce26-42dc-95d0-ad38f8e7f2f7",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    }
+  ],
+  "buckets": [
+    {
+      "name": "SonoraIncDB",
+      "type": "bucket",
+      "collectionIds": [
+        "4e8cbd45-7fbe-4b19-a609-e59788e00a7a",
+        "7245503e-e9ba-409c-941e-5945027409e6",
+        "e10854e9-1e1c-405f-8620-5e44c5b4c0bc",
+        "2ea97454-ddc9-4036-9ea9-761a3f716727",
+        "8fde6c42-494a-44b0-99bb-56daa249722c"
+      ],
+      "backgroundColor": {
+        "r": 227,
+        "g": 190,
+        "b": 0,
+        "a": 1
+      },
+      "show": true,
+      "isActivated": true,
+      "GUID": "bdf6bcb1-ce26-42dc-95d0-ad38f8e7f2f7",
+      "hackoladeMeta": {},
+      "fontStyle": [
+        "bold"
+      ]
+    }
+  ],
+  "views": [],
+  "relationships": [],
+  "users": [],
+  "diagramViews": [],
+  "idToNameHashTable": {
+    "bdf6bcb1-ce26-42dc-95d0-ad38f8e7f2f7": "SonoraIncDB",
+    "4e8cbd45-7fbe-4b19-a609-e59788e00a7a": "Usuario",
+    "ee155172-41f4-4256-9f5b-91b1beb3d67b": "_id",
+    "5cd86229-eb8c-40b1-b963-5fe235b1ed01": "nombrePlaylist",
+    "9c903a30-0552-4dcb-bc94-09eb3ec21f7c": "fechaCreacionPlaylist",
+    "7245503e-e9ba-409c-941e-5945027409e6": "Playlist",
+    "290e44d9-4714-472c-881f-454e809ff364": "_id",
+    "219d4f3f-811a-4080-a90b-fbae4e5db368": "tituloCancion",
+    "f98e8771-8439-44fb-b9bd-f5b2ffe5cbc7": "duracionCancion",
+    "e10854e9-1e1c-405f-8620-5e44c5b4c0bc": "Cancion",
+    "93761331-43de-4bdd-8635-8d1be8a32bc3": "_id",
+    "36f59f27-e2c9-419b-b488-cc004a69e859": "fechaReproduccion",
+    "99a9ecc4-ba6d-48f0-a5d0-52881315fd98": "duracionReproduccion",
+    "2ea97454-ddc9-4036-9ea9-761a3f716727": "Reproduccion",
+    "c96008eb-c1b2-4a66-8e36-60d4c6a0ac35": "_id",
+    "6c42c2f5-4c27-4a2e-87c5-bca340fb3e36": "nombreArtista",
+    "a9bbe90d-b68a-4772-9fea-4646444139bd": "paisOrigenArtista",
+    "8fde6c42-494a-44b0-99bb-56daa249722c": "Artista",
+    "ff07996b-6dec-4daa-9e99-b4b2a3acf4bf": "_id",
+    "af3bd508-17d2-4b41-bbcd-e5c317c7f3c1": "nombreUsuario",
+    "5947510c-dd0d-4e26-86bd-5e11c7a3b3a5": "apellidoUsuario",
+    "9aed15d3-f921-4f3c-ba4d-46755a153826": "segunNombreUsuario",
+    "b3506d7b-033b-4572-bcfd-5d1487d644bc": "segundoApellidoUsuario",
+    "ca85114c-553b-4b1c-9ced-f1ee02343659": "correoUsuario",
+    "16e47ac0-5600-429c-ba5c-d5f1756dc38a": "fechaRegistroUsuario",
+    "54093bcb-1da6-4f66-9e7b-6fd93446fea8": "rolUsuario",
+    "6de02b99-e116-4dfd-99ef-b6f22c2337e5": "Suscripcion",
+    "f3b41f68-4633-4d01-abb5-c7534a303596": "tipoPlanSuscripcion",
+    "07090503-f85e-4183-94e7-279d1d3d9d69": "fechaInicioSuscripcion",
+    "ddcad994-8d5b-4c52-89da-8846f47f519f": "fechaFinSuscripcion",
+    "6c92896e-b870-46fb-834a-025b6409aef1": "estadoSuscripcion",
+    "8672d120-5c48-4d23-8b1b-14f8e044252e": "idArtista",
+    "be77a185-f3e5-4c20-8067-49c9d14033ec": "idCancion",
+    "7b69b208-1646-4037-afaa-296534085271": "idPlaylist",
+    "869049c8-cc7d-4c82-aceb-2ca9497ad47e": "idiomaCancion",
+    "8f6ca18e-8484-4544-84ed-dce780fb864a": "Genero",
+    "bb201c34-7816-41c0-93d3-0dc020e4f464": "nombreGenero",
+    "0a9daa43-3670-4dcf-b64c-6a1a39666632": "Album",
+    "ef44da22-7113-465b-ab6d-94c2cab14fb6": "idAlbum",
+    "1432eaf8-5ac9-4866-8ffd-f21e547da395": "tituloAlbum",
+    "3b75f6f4-0fff-414a-8eb5-6632b2ca547b": "fechaLanzamientoAlbum",
+    "8bf778a2-f164-4563-a080-e26b04e5c2e7": "Artista",
+    "471c5d2f-3f85-41ec-b7d4-d7c0bffa47a4": "idArtista",
+    "42c4d632-3f17-4bd0-8156-3bea35bfd29c": "nombreArtista",
+    "cad1f30b-5bd3-4454-9c25-750880b17be5": "Regalia",
+    "9327ec1f-01b9-475e-854f-0b5d95122575": "descripcionArtista",
+    "6229f035-4aea-435a-80be-d79b1826a6bc": "Productora",
+    "de30d3a9-b70a-474b-a147-2d8b94921a12": "nombreProductora",
+    "2fa2f560-8782-4622-bee1-02dcb184b7e9": "correoProductora",
+    "7ec1b6a4-b007-42cc-964a-c5c7597e96c2": "paisProductora",
+    "1dfa8e32-15db-423a-9d77-2a451d6e5d64": "privacidadPlaylist",
+    "99cee954-85f6-48d9-ace5-613ba8d751ce": "descripcionPlaylist",
+    "ca62dc16-e09c-4975-b3ef-00127822002f": "idUsuario",
+    "5b1dfde3-958e-473c-9bfd-bae2882a4099": "idUsuario",
+    "12023698-4774-4052-b91e-7c91b72b0072": "idCancion",
+    "49cf123e-e475-4c64-bba2-dbb9144fbf09": "idArtista",
+    "ec38c32f-649d-446a-a163-52b71204e088": "nombreArtista",
+    "9d4be8a7-9df3-4ba4-8334-c117b0959e1c": "fechaCalculoRegalia",
+    "99c2c3d2-4329-4c26-9c7f-3a846999576b": "montoGeneradoRegalia",
+    "6a19cfb0-3b91-4d33-89ca-17b286dadaf8": "cantidadReproduccionesRegalia",
+    "23a415f6-83a2-49a3-8b62-925b69b4cd63": "idCancion"
+  },
+  "definitions": {
+    "type": "definitions",
+    "properties": [],
+    "GUID": "bb241a1b-418b-400c-acea-5af0540afd3d"
+  },
+  "polyglotDefinitions": {
+    "type": "polyglotDefinitions",
+    "properties": [],
+    "GUID": "06eaead9-3093-460c-9071-457952fd7a3e"
+  },
+  "externalDefinitions": {
+    "type": "externalDefinitions",
+    "properties": [],
+    "GUID": "6f6180db-edd0-4696-8f93-b5125bf46f5d"
+  },
+  "sources": [],
+  "decorativeSymbols": [],
+  "businessGlossaries": [],
+  "businessGlossaryTerms": [],
+  "dbVersion": "v7.x",
+  "dbVendor": "MongoDB",
+  "appTarget": "MONGODB",
+  "creationTS": "2026-06-09T02:10:35.796Z",
+  "GUID": "4dc1a63f-dc8c-4c59-b883-7fc1b2ba98f6",
+  "isLineageEnabled": false,
+  "lastModifTS": "2026-06-09T21:15:30.193Z",
+  "persistenceSchemaVersion": "8",
+  "isCreatedByPlugin": true,
+  "pluginInformation": {
+    "pluginEngineVersion": "1.0.0"
+  },
+  "applicationInformation": {
+    "version": "8.11.5"
+  },
+  "settings": {
+    "centralPane": {
+      "dbLevel": {
+        "erd": [
+          {
+            "GUID": "4e8cbd45-7fbe-4b19-a609-e59788e00a7a",
+            "x": 825.8218694885379,
+            "y": 921.5432505666487,
+            "width": 321,
+            "height": 447.9347442680776,
+            "color": {
+              "hex": "#4caf50"
+            }
+          },
+          {
+            "GUID": "7245503e-e9ba-409c-941e-5945027409e6",
+            "x": 826.6895943562612,
+            "y": 1385.3456790123457,
+            "width": 271,
+            "height": 183.00000000000009,
+            "color": {
+              "hex": "#fb8c00"
+            }
+          },
+          {
+            "GUID": "e10854e9-1e1c-405f-8620-5e44c5b4c0bc",
+            "x": 1156.248677248681,
+            "y": 922.8201058201082,
+            "width": 370,
+            "height": 371.6472663139329,
+            "color": {
+              "hex": "#ce93d8"
+            }
+          },
+          {
+            "GUID": "2ea97454-ddc9-4036-9ea9-761a3f716727",
+            "x": 1160.8571428571452,
+            "y": 1297.6684303350964,
+            "width": 342.99999999999966,
+            "height": 128.66666666666663,
+            "color": {}
+          },
+          {
+            "GUID": "8fde6c42-494a-44b0-99bb-56daa249722c",
+            "x": 1204.573601939691,
+            "y": 1437.9657929704729,
+            "width": 286,
+            "height": 200.6666666666666,
+            "color": {
+              "hex": "#d32f2f"
+            }
+          }
+        ],
+        "erdDefinitions": {
+          "erd": [],
+          "rootPath": [],
+          "entities": [],
+          "decorativeSymbols": []
+        },
+        "buckets": [
+          {
+            "x": 761.8218694885379,
+            "y": 857.5432505666487,
+            "GUID": "bdf6bcb1-ce26-42dc-95d0-ad38f8e7f2f7"
+          }
+        ],
+        "collapsedNodes": [],
+        "activeRelationship": "",
+        "activeRelationshipFields": {
+          "childField": [],
+          "parentField": []
+        },
+        "selectedCollections": [],
+        "displayColorPicker": false,
+        "graphView": {
+          "erd": [],
+          "buckets": [],
+          "decorativeSymbols": [],
+          "forceLayout": true,
+          "defaultLinkLength": 300,
+          "options": []
+        },
+        "diagramViews": [],
+        "decorativeSymbols": [],
+        "nestedCollectionsLayout": "horizontal",
+        "options": [
+          {
+            "autoWidth": false,
+            "autoHeight": false,
+            "GUID": "8fde6c42-494a-44b0-99bb-56daa249722c"
+          },
+          {
+            "autoWidth": false,
+            "autoHeight": false,
+            "GUID": "7245503e-e9ba-409c-941e-5945027409e6"
+          },
+          {
+            "autoWidth": false,
+            "autoHeight": false,
+            "GUID": "2ea97454-ddc9-4036-9ea9-761a3f716727"
+          },
+          {
+            "autoWidth": false,
+            "autoHeight": false,
+            "GUID": "4e8cbd45-7fbe-4b19-a609-e59788e00a7a"
+          },
+          {
+            "autoWidth": false,
+            "autoHeight": false,
+            "GUID": "e10854e9-1e1c-405f-8620-5e44c5b4c0bc"
+          }
+        ],
+        "relationshipUpdateDisabled": false
+      },
+      "collectionLevel": {},
+      "changed": false
+    },
+    "dtDiagram": {
+      "collapsedNodes": [],
+      "shouldDistributeCollections": false
+    }
+  }
+}
