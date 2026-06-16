@@ -1,0 +1,1802 @@
+[
+  {
+    "_id": 1,
+    "nombrePlaylist": "Mis Favoritas 1",
+    "fechaCreacionPlaylist": "2024-02-05",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 1",
+    "idUsuario": 1,
+    "idCancion": [
+      4,
+      11,
+      18,
+      25,
+      32
+    ]
+  },
+  {
+    "_id": 2,
+    "nombrePlaylist": "Workout Mix 2",
+    "fechaCreacionPlaylist": "2024-03-09",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 2",
+    "idUsuario": 2,
+    "idCancion": [
+      7,
+      14,
+      21,
+      28,
+      35
+    ]
+  },
+  {
+    "_id": 3,
+    "nombrePlaylist": "Noches de Relax 3",
+    "fechaCreacionPlaylist": "2024-04-13",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 3",
+    "idUsuario": 3,
+    "idCancion": [
+      10,
+      17,
+      24,
+      31,
+      38
+    ]
+  },
+  {
+    "_id": 4,
+    "nombrePlaylist": "Top Ecuador 4",
+    "fechaCreacionPlaylist": "2024-05-17",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 4",
+    "idUsuario": 4,
+    "idCancion": [
+      13,
+      20,
+      27,
+      34,
+      41
+    ]
+  },
+  {
+    "_id": 5,
+    "nombrePlaylist": "Concentracion 5",
+    "fechaCreacionPlaylist": "2024-06-21",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 5",
+    "idUsuario": 5,
+    "idCancion": [
+      16,
+      23,
+      30,
+      37,
+      44
+    ]
+  },
+  {
+    "_id": 6,
+    "nombrePlaylist": "Fiesta Latina 6",
+    "fechaCreacionPlaylist": "2024-07-25",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 6",
+    "idUsuario": 6,
+    "idCancion": [
+      19,
+      26,
+      33,
+      40,
+      47
+    ]
+  },
+  {
+    "_id": 7,
+    "nombrePlaylist": "Rock Clasico 7",
+    "fechaCreacionPlaylist": "2024-08-02",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 7",
+    "idUsuario": 7,
+    "idCancion": [
+      22,
+      29,
+      36,
+      43,
+      50
+    ]
+  },
+  {
+    "_id": 8,
+    "nombrePlaylist": "Chill Electronico 8",
+    "fechaCreacionPlaylist": "2024-09-06",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 8",
+    "idUsuario": 8,
+    "idCancion": [
+      25,
+      32,
+      39,
+      46,
+      53
+    ]
+  },
+  {
+    "_id": 9,
+    "nombrePlaylist": "Salsa Pa Bailar 9",
+    "fechaCreacionPlaylist": "2024-10-10",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 9",
+    "idUsuario": 9,
+    "idCancion": [
+      28,
+      35,
+      42,
+      49,
+      56
+    ]
+  },
+  {
+    "_id": 10,
+    "nombrePlaylist": "Morning Vibes 10",
+    "fechaCreacionPlaylist": "2024-11-14",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 10",
+    "idUsuario": 10,
+    "idCancion": [
+      31,
+      38,
+      45,
+      52,
+      59
+    ]
+  },
+  {
+    "_id": 11,
+    "nombrePlaylist": "Reggaeton Hits 11",
+    "fechaCreacionPlaylist": "2024-12-18",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 11",
+    "idUsuario": 11,
+    "idCancion": [
+      34,
+      41,
+      48,
+      55,
+      62
+    ]
+  },
+  {
+    "_id": 12,
+    "nombrePlaylist": "Pop Global 12",
+    "fechaCreacionPlaylist": "2024-01-22",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 12",
+    "idUsuario": 12,
+    "idCancion": [
+      37,
+      44,
+      51,
+      58,
+      65
+    ]
+  },
+  {
+    "_id": 13,
+    "nombrePlaylist": "Indie Alternativo 13",
+    "fechaCreacionPlaylist": "2024-02-26",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 13",
+    "idUsuario": 13,
+    "idCancion": [
+      40,
+      47,
+      54,
+      61,
+      68
+    ]
+  },
+  {
+    "_id": 14,
+    "nombrePlaylist": "Jazz en Casa 14",
+    "fechaCreacionPlaylist": "2024-03-03",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 14",
+    "idUsuario": 14,
+    "idCancion": [
+      43,
+      50,
+      57,
+      64,
+      71
+    ]
+  },
+  {
+    "_id": 15,
+    "nombrePlaylist": "Hip-Hop Latino 15",
+    "fechaCreacionPlaylist": "2024-04-07",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 15",
+    "idUsuario": 15,
+    "idCancion": [
+      46,
+      53,
+      60,
+      67,
+      74
+    ]
+  },
+  {
+    "_id": 16,
+    "nombrePlaylist": "Electronica Andina 16",
+    "fechaCreacionPlaylist": "2024-05-11",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 16",
+    "idUsuario": 16,
+    "idCancion": [
+      49,
+      56,
+      63,
+      70,
+      77
+    ]
+  },
+  {
+    "_id": 17,
+    "nombrePlaylist": "Cumbia Clasica 17",
+    "fechaCreacionPlaylist": "2024-06-15",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 17",
+    "idUsuario": 17,
+    "idCancion": [
+      52,
+      59,
+      66,
+      73,
+      80
+    ]
+  },
+  {
+    "_id": 18,
+    "nombrePlaylist": "Para Correr 18",
+    "fechaCreacionPlaylist": "2024-07-19",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 18",
+    "idUsuario": 18,
+    "idCancion": [
+      55,
+      62,
+      69,
+      76,
+      83
+    ]
+  },
+  {
+    "_id": 19,
+    "nombrePlaylist": "Salsa Dura 19",
+    "fechaCreacionPlaylist": "2024-08-23",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 19",
+    "idUsuario": 19,
+    "idCancion": [
+      58,
+      65,
+      72,
+      79,
+      86
+    ]
+  },
+  {
+    "_id": 20,
+    "nombrePlaylist": "Rock Argentino 20",
+    "fechaCreacionPlaylist": "2024-09-27",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 20",
+    "idUsuario": 20,
+    "idCancion": [
+      61,
+      68,
+      75,
+      82,
+      89
+    ]
+  },
+  {
+    "_id": 21,
+    "nombrePlaylist": "Shakira Essentials 21",
+    "fechaCreacionPlaylist": "2024-10-04",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 21",
+    "idUsuario": 21,
+    "idCancion": [
+      64,
+      71,
+      78,
+      85,
+      92
+    ]
+  },
+  {
+    "_id": 22,
+    "nombrePlaylist": "Cantautores 22",
+    "fechaCreacionPlaylist": "2024-11-08",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 22",
+    "idUsuario": 22,
+    "idCancion": [
+      67,
+      74,
+      81,
+      88,
+      95
+    ]
+  },
+  {
+    "_id": 23,
+    "nombrePlaylist": "Trap Latino Mix 23",
+    "fechaCreacionPlaylist": "2024-12-12",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 23",
+    "idUsuario": 23,
+    "idCancion": [
+      70,
+      77,
+      84,
+      91,
+      98
+    ]
+  },
+  {
+    "_id": 24,
+    "nombrePlaylist": "Daft Punk Forever 24",
+    "fechaCreacionPlaylist": "2024-01-16",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 24",
+    "idUsuario": 24,
+    "idCancion": [
+      73,
+      80,
+      87,
+      94,
+      101
+    ]
+  },
+  {
+    "_id": 25,
+    "nombrePlaylist": "Kendrick Best Of 25",
+    "fechaCreacionPlaylist": "2024-02-20",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 25",
+    "idUsuario": 25,
+    "idCancion": [
+      76,
+      83,
+      90,
+      97,
+      104
+    ]
+  },
+  {
+    "_id": 26,
+    "nombrePlaylist": "Colombian Pride 26",
+    "fechaCreacionPlaylist": "2024-03-24",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 26",
+    "idUsuario": 26,
+    "idCancion": [
+      79,
+      86,
+      93,
+      100,
+      107
+    ]
+  },
+  {
+    "_id": 27,
+    "nombrePlaylist": "Pop Internacional 27",
+    "fechaCreacionPlaylist": "2024-04-01",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 27",
+    "idUsuario": 27,
+    "idCancion": [
+      82,
+      89,
+      96,
+      103,
+      110
+    ]
+  },
+  {
+    "_id": 28,
+    "nombrePlaylist": "Romanticas 28",
+    "fechaCreacionPlaylist": "2024-05-05",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 28",
+    "idUsuario": 28,
+    "idCancion": [
+      85,
+      92,
+      99,
+      106,
+      113
+    ]
+  },
+  {
+    "_id": 29,
+    "nombrePlaylist": "Viajar con Musica 29",
+    "fechaCreacionPlaylist": "2024-06-09",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 29",
+    "idUsuario": 29,
+    "idCancion": [
+      88,
+      95,
+      102,
+      109,
+      116
+    ]
+  },
+  {
+    "_id": 30,
+    "nombrePlaylist": "Nostalgia 30",
+    "fechaCreacionPlaylist": "2024-07-13",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 30",
+    "idUsuario": 30,
+    "idCancion": [
+      91,
+      98,
+      105,
+      112,
+      119
+    ]
+  },
+  {
+    "_id": 31,
+    "nombrePlaylist": "Para Cocinar 31",
+    "fechaCreacionPlaylist": "2024-08-17",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 31",
+    "idUsuario": 31,
+    "idCancion": [
+      2,
+      94,
+      101,
+      108,
+      115
+    ]
+  },
+  {
+    "_id": 32,
+    "nombrePlaylist": "Gym Session 32",
+    "fechaCreacionPlaylist": "2024-09-21",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 32",
+    "idUsuario": 32,
+    "idCancion": [
+      5,
+      97,
+      104,
+      111,
+      118
+    ]
+  },
+  {
+    "_id": 33,
+    "nombrePlaylist": "Lluvia y Cafe 33",
+    "fechaCreacionPlaylist": "2024-10-25",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 33",
+    "idUsuario": 33,
+    "idCancion": [
+      1,
+      8,
+      100,
+      107,
+      114
+    ]
+  },
+  {
+    "_id": 34,
+    "nombrePlaylist": "Baladas 34",
+    "fechaCreacionPlaylist": "2024-11-02",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 34",
+    "idUsuario": 34,
+    "idCancion": [
+      4,
+      11,
+      103,
+      110,
+      117
+    ]
+  },
+  {
+    "_id": 35,
+    "nombrePlaylist": "Noche de Copas 35",
+    "fechaCreacionPlaylist": "2024-12-06",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 35",
+    "idUsuario": 35,
+    "idCancion": [
+      7,
+      14,
+      106,
+      113,
+      120
+    ]
+  },
+  {
+    "_id": 36,
+    "nombrePlaylist": "Latin Grammy 36",
+    "fechaCreacionPlaylist": "2024-01-10",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 36",
+    "idUsuario": 36,
+    "idCancion": [
+      3,
+      10,
+      17,
+      109,
+      116
+    ]
+  },
+  {
+    "_id": 37,
+    "nombrePlaylist": "Indie Ecuatoriano 37",
+    "fechaCreacionPlaylist": "2024-02-14",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 37",
+    "idUsuario": 37,
+    "idCancion": [
+      6,
+      13,
+      20,
+      112,
+      119
+    ]
+  },
+  {
+    "_id": 38,
+    "nombrePlaylist": "Top Global 38",
+    "fechaCreacionPlaylist": "2024-03-18",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 38",
+    "idUsuario": 38,
+    "idCancion": [
+      2,
+      9,
+      16,
+      23,
+      115
+    ]
+  },
+  {
+    "_id": 39,
+    "nombrePlaylist": "Fiesta de Quito 39",
+    "fechaCreacionPlaylist": "2024-04-22",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 39",
+    "idUsuario": 39,
+    "idCancion": [
+      5,
+      12,
+      19,
+      26,
+      118
+    ]
+  },
+  {
+    "_id": 40,
+    "nombrePlaylist": "Soul de Medianoche 40",
+    "fechaCreacionPlaylist": "2024-05-26",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 40",
+    "idUsuario": 40,
+    "idCancion": [
+      1,
+      8,
+      15,
+      22,
+      29
+    ]
+  },
+  {
+    "_id": 41,
+    "nombrePlaylist": "Mis Favoritas 41",
+    "fechaCreacionPlaylist": "2024-06-03",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 41",
+    "idUsuario": 41,
+    "idCancion": [
+      4,
+      11,
+      18,
+      25,
+      32
+    ]
+  },
+  {
+    "_id": 42,
+    "nombrePlaylist": "Workout Mix 42",
+    "fechaCreacionPlaylist": "2024-07-07",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 42",
+    "idUsuario": 42,
+    "idCancion": [
+      7,
+      14,
+      21,
+      28,
+      35
+    ]
+  },
+  {
+    "_id": 43,
+    "nombrePlaylist": "Noches de Relax 43",
+    "fechaCreacionPlaylist": "2024-08-11",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 43",
+    "idUsuario": 43,
+    "idCancion": [
+      10,
+      17,
+      24,
+      31,
+      38
+    ]
+  },
+  {
+    "_id": 44,
+    "nombrePlaylist": "Top Ecuador 44",
+    "fechaCreacionPlaylist": "2024-09-15",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 44",
+    "idUsuario": 44,
+    "idCancion": [
+      13,
+      20,
+      27,
+      34,
+      41
+    ]
+  },
+  {
+    "_id": 45,
+    "nombrePlaylist": "Concentracion 45",
+    "fechaCreacionPlaylist": "2024-10-19",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 45",
+    "idUsuario": 45,
+    "idCancion": [
+      16,
+      23,
+      30,
+      37,
+      44
+    ]
+  },
+  {
+    "_id": 46,
+    "nombrePlaylist": "Fiesta Latina 46",
+    "fechaCreacionPlaylist": "2024-11-23",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 46",
+    "idUsuario": 46,
+    "idCancion": [
+      19,
+      26,
+      33,
+      40,
+      47
+    ]
+  },
+  {
+    "_id": 47,
+    "nombrePlaylist": "Rock Clasico 47",
+    "fechaCreacionPlaylist": "2024-12-27",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 47",
+    "idUsuario": 47,
+    "idCancion": [
+      22,
+      29,
+      36,
+      43,
+      50
+    ]
+  },
+  {
+    "_id": 48,
+    "nombrePlaylist": "Chill Electronico 48",
+    "fechaCreacionPlaylist": "2024-01-04",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 48",
+    "idUsuario": 48,
+    "idCancion": [
+      25,
+      32,
+      39,
+      46,
+      53
+    ]
+  },
+  {
+    "_id": 49,
+    "nombrePlaylist": "Salsa Pa Bailar 49",
+    "fechaCreacionPlaylist": "2024-02-08",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 49",
+    "idUsuario": 49,
+    "idCancion": [
+      28,
+      35,
+      42,
+      49,
+      56
+    ]
+  },
+  {
+    "_id": 50,
+    "nombrePlaylist": "Morning Vibes 50",
+    "fechaCreacionPlaylist": "2024-03-12",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 50",
+    "idUsuario": 50,
+    "idCancion": [
+      31,
+      38,
+      45,
+      52,
+      59
+    ]
+  },
+  {
+    "_id": 51,
+    "nombrePlaylist": "Reggaeton Hits 51",
+    "fechaCreacionPlaylist": "2024-04-16",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 51",
+    "idUsuario": 51,
+    "idCancion": [
+      34,
+      41,
+      48,
+      55,
+      62
+    ]
+  },
+  {
+    "_id": 52,
+    "nombrePlaylist": "Pop Global 52",
+    "fechaCreacionPlaylist": "2024-05-20",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 52",
+    "idUsuario": 52,
+    "idCancion": [
+      37,
+      44,
+      51,
+      58,
+      65
+    ]
+  },
+  {
+    "_id": 53,
+    "nombrePlaylist": "Indie Alternativo 53",
+    "fechaCreacionPlaylist": "2024-06-24",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 53",
+    "idUsuario": 53,
+    "idCancion": [
+      40,
+      47,
+      54,
+      61,
+      68
+    ]
+  },
+  {
+    "_id": 54,
+    "nombrePlaylist": "Jazz en Casa 54",
+    "fechaCreacionPlaylist": "2024-07-01",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 54",
+    "idUsuario": 54,
+    "idCancion": [
+      43,
+      50,
+      57,
+      64,
+      71
+    ]
+  },
+  {
+    "_id": 55,
+    "nombrePlaylist": "Hip-Hop Latino 55",
+    "fechaCreacionPlaylist": "2024-08-05",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 55",
+    "idUsuario": 55,
+    "idCancion": [
+      46,
+      53,
+      60,
+      67,
+      74
+    ]
+  },
+  {
+    "_id": 56,
+    "nombrePlaylist": "Electronica Andina 56",
+    "fechaCreacionPlaylist": "2024-09-09",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 56",
+    "idUsuario": 56,
+    "idCancion": [
+      49,
+      56,
+      63,
+      70,
+      77
+    ]
+  },
+  {
+    "_id": 57,
+    "nombrePlaylist": "Cumbia Clasica 57",
+    "fechaCreacionPlaylist": "2024-10-13",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 57",
+    "idUsuario": 57,
+    "idCancion": [
+      52,
+      59,
+      66,
+      73,
+      80
+    ]
+  },
+  {
+    "_id": 58,
+    "nombrePlaylist": "Para Correr 58",
+    "fechaCreacionPlaylist": "2024-11-17",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 58",
+    "idUsuario": 58,
+    "idCancion": [
+      55,
+      62,
+      69,
+      76,
+      83
+    ]
+  },
+  {
+    "_id": 59,
+    "nombrePlaylist": "Salsa Dura 59",
+    "fechaCreacionPlaylist": "2024-12-21",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 59",
+    "idUsuario": 59,
+    "idCancion": [
+      58,
+      65,
+      72,
+      79,
+      86
+    ]
+  },
+  {
+    "_id": 60,
+    "nombrePlaylist": "Rock Argentino 60",
+    "fechaCreacionPlaylist": "2024-01-25",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 60",
+    "idUsuario": 60,
+    "idCancion": [
+      61,
+      68,
+      75,
+      82,
+      89
+    ]
+  },
+  {
+    "_id": 61,
+    "nombrePlaylist": "Shakira Essentials 61",
+    "fechaCreacionPlaylist": "2024-02-02",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 61",
+    "idUsuario": 61,
+    "idCancion": [
+      64,
+      71,
+      78,
+      85,
+      92
+    ]
+  },
+  {
+    "_id": 62,
+    "nombrePlaylist": "Cantautores 62",
+    "fechaCreacionPlaylist": "2024-03-06",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 62",
+    "idUsuario": 62,
+    "idCancion": [
+      67,
+      74,
+      81,
+      88,
+      95
+    ]
+  },
+  {
+    "_id": 63,
+    "nombrePlaylist": "Trap Latino Mix 63",
+    "fechaCreacionPlaylist": "2024-04-10",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 63",
+    "idUsuario": 63,
+    "idCancion": [
+      70,
+      77,
+      84,
+      91,
+      98
+    ]
+  },
+  {
+    "_id": 64,
+    "nombrePlaylist": "Daft Punk Forever 64",
+    "fechaCreacionPlaylist": "2024-05-14",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 64",
+    "idUsuario": 64,
+    "idCancion": [
+      73,
+      80,
+      87,
+      94,
+      101
+    ]
+  },
+  {
+    "_id": 65,
+    "nombrePlaylist": "Kendrick Best Of 65",
+    "fechaCreacionPlaylist": "2024-06-18",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 65",
+    "idUsuario": 65,
+    "idCancion": [
+      76,
+      83,
+      90,
+      97,
+      104
+    ]
+  },
+  {
+    "_id": 66,
+    "nombrePlaylist": "Colombian Pride 66",
+    "fechaCreacionPlaylist": "2024-07-22",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 66",
+    "idUsuario": 66,
+    "idCancion": [
+      79,
+      86,
+      93,
+      100,
+      107
+    ]
+  },
+  {
+    "_id": 67,
+    "nombrePlaylist": "Pop Internacional 67",
+    "fechaCreacionPlaylist": "2024-08-26",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 67",
+    "idUsuario": 67,
+    "idCancion": [
+      82,
+      89,
+      96,
+      103,
+      110
+    ]
+  },
+  {
+    "_id": 68,
+    "nombrePlaylist": "Romanticas 68",
+    "fechaCreacionPlaylist": "2024-09-03",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 68",
+    "idUsuario": 68,
+    "idCancion": [
+      85,
+      92,
+      99,
+      106,
+      113
+    ]
+  },
+  {
+    "_id": 69,
+    "nombrePlaylist": "Viajar con Musica 69",
+    "fechaCreacionPlaylist": "2024-10-07",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 69",
+    "idUsuario": 69,
+    "idCancion": [
+      88,
+      95,
+      102,
+      109,
+      116
+    ]
+  },
+  {
+    "_id": 70,
+    "nombrePlaylist": "Nostalgia 70",
+    "fechaCreacionPlaylist": "2024-11-11",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 70",
+    "idUsuario": 70,
+    "idCancion": [
+      91,
+      98,
+      105,
+      112,
+      119
+    ]
+  },
+  {
+    "_id": 71,
+    "nombrePlaylist": "Para Cocinar 71",
+    "fechaCreacionPlaylist": "2024-12-15",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 71",
+    "idUsuario": 71,
+    "idCancion": [
+      2,
+      94,
+      101,
+      108,
+      115
+    ]
+  },
+  {
+    "_id": 72,
+    "nombrePlaylist": "Gym Session 72",
+    "fechaCreacionPlaylist": "2024-01-19",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 72",
+    "idUsuario": 72,
+    "idCancion": [
+      5,
+      97,
+      104,
+      111,
+      118
+    ]
+  },
+  {
+    "_id": 73,
+    "nombrePlaylist": "Lluvia y Cafe 73",
+    "fechaCreacionPlaylist": "2024-02-23",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 73",
+    "idUsuario": 73,
+    "idCancion": [
+      1,
+      8,
+      100,
+      107,
+      114
+    ]
+  },
+  {
+    "_id": 74,
+    "nombrePlaylist": "Baladas 74",
+    "fechaCreacionPlaylist": "2024-03-27",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 74",
+    "idUsuario": 74,
+    "idCancion": [
+      4,
+      11,
+      103,
+      110,
+      117
+    ]
+  },
+  {
+    "_id": 75,
+    "nombrePlaylist": "Noche de Copas 75",
+    "fechaCreacionPlaylist": "2024-04-04",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 75",
+    "idUsuario": 75,
+    "idCancion": [
+      7,
+      14,
+      106,
+      113,
+      120
+    ]
+  },
+  {
+    "_id": 76,
+    "nombrePlaylist": "Latin Grammy 76",
+    "fechaCreacionPlaylist": "2024-05-08",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 76",
+    "idUsuario": 76,
+    "idCancion": [
+      3,
+      10,
+      17,
+      109,
+      116
+    ]
+  },
+  {
+    "_id": 77,
+    "nombrePlaylist": "Indie Ecuatoriano 77",
+    "fechaCreacionPlaylist": "2024-06-12",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 77",
+    "idUsuario": 77,
+    "idCancion": [
+      6,
+      13,
+      20,
+      112,
+      119
+    ]
+  },
+  {
+    "_id": 78,
+    "nombrePlaylist": "Top Global 78",
+    "fechaCreacionPlaylist": "2024-07-16",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 78",
+    "idUsuario": 78,
+    "idCancion": [
+      2,
+      9,
+      16,
+      23,
+      115
+    ]
+  },
+  {
+    "_id": 79,
+    "nombrePlaylist": "Fiesta de Quito 79",
+    "fechaCreacionPlaylist": "2024-08-20",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 79",
+    "idUsuario": 79,
+    "idCancion": [
+      5,
+      12,
+      19,
+      26,
+      118
+    ]
+  },
+  {
+    "_id": 80,
+    "nombrePlaylist": "Soul de Medianoche 80",
+    "fechaCreacionPlaylist": "2024-09-24",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 80",
+    "idUsuario": 80,
+    "idCancion": [
+      1,
+      8,
+      15,
+      22,
+      29
+    ]
+  },
+  {
+    "_id": 81,
+    "nombrePlaylist": "Mis Favoritas 81",
+    "fechaCreacionPlaylist": "2024-10-01",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 81",
+    "idUsuario": 81,
+    "idCancion": [
+      4,
+      11,
+      18,
+      25,
+      32
+    ]
+  },
+  {
+    "_id": 82,
+    "nombrePlaylist": "Workout Mix 82",
+    "fechaCreacionPlaylist": "2024-11-05",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 82",
+    "idUsuario": 82,
+    "idCancion": [
+      7,
+      14,
+      21,
+      28,
+      35
+    ]
+  },
+  {
+    "_id": 83,
+    "nombrePlaylist": "Noches de Relax 83",
+    "fechaCreacionPlaylist": "2024-12-09",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 83",
+    "idUsuario": 83,
+    "idCancion": [
+      10,
+      17,
+      24,
+      31,
+      38
+    ]
+  },
+  {
+    "_id": 84,
+    "nombrePlaylist": "Top Ecuador 84",
+    "fechaCreacionPlaylist": "2024-01-13",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 84",
+    "idUsuario": 84,
+    "idCancion": [
+      13,
+      20,
+      27,
+      34,
+      41
+    ]
+  },
+  {
+    "_id": 85,
+    "nombrePlaylist": "Concentracion 85",
+    "fechaCreacionPlaylist": "2024-02-17",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 85",
+    "idUsuario": 85,
+    "idCancion": [
+      16,
+      23,
+      30,
+      37,
+      44
+    ]
+  },
+  {
+    "_id": 86,
+    "nombrePlaylist": "Fiesta Latina 86",
+    "fechaCreacionPlaylist": "2024-03-21",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 86",
+    "idUsuario": 86,
+    "idCancion": [
+      19,
+      26,
+      33,
+      40,
+      47
+    ]
+  },
+  {
+    "_id": 87,
+    "nombrePlaylist": "Rock Clasico 87",
+    "fechaCreacionPlaylist": "2024-04-25",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 87",
+    "idUsuario": 87,
+    "idCancion": [
+      22,
+      29,
+      36,
+      43,
+      50
+    ]
+  },
+  {
+    "_id": 88,
+    "nombrePlaylist": "Chill Electronico 88",
+    "fechaCreacionPlaylist": "2024-05-02",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 88",
+    "idUsuario": 88,
+    "idCancion": [
+      25,
+      32,
+      39,
+      46,
+      53
+    ]
+  },
+  {
+    "_id": 89,
+    "nombrePlaylist": "Salsa Pa Bailar 89",
+    "fechaCreacionPlaylist": "2024-06-06",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 89",
+    "idUsuario": 89,
+    "idCancion": [
+      28,
+      35,
+      42,
+      49,
+      56
+    ]
+  },
+  {
+    "_id": 90,
+    "nombrePlaylist": "Morning Vibes 90",
+    "fechaCreacionPlaylist": "2025-07-10",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 90",
+    "idUsuario": 90,
+    "idCancion": [
+      31,
+      38,
+      45,
+      52,
+      59
+    ]
+  },
+  {
+    "_id": 91,
+    "nombrePlaylist": "Reggaeton Hits 91",
+    "fechaCreacionPlaylist": "2025-08-14",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 91",
+    "idUsuario": 91,
+    "idCancion": [
+      34,
+      41,
+      48,
+      55,
+      62
+    ]
+  },
+  {
+    "_id": 92,
+    "nombrePlaylist": "Pop Global 92",
+    "fechaCreacionPlaylist": "2025-09-18",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 92",
+    "idUsuario": 92,
+    "idCancion": [
+      37,
+      44,
+      51,
+      58,
+      65
+    ]
+  },
+  {
+    "_id": 93,
+    "nombrePlaylist": "Indie Alternativo 93",
+    "fechaCreacionPlaylist": "2025-10-22",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 93",
+    "idUsuario": 93,
+    "idCancion": [
+      40,
+      47,
+      54,
+      61,
+      68
+    ]
+  },
+  {
+    "_id": 94,
+    "nombrePlaylist": "Jazz en Casa 94",
+    "fechaCreacionPlaylist": "2025-11-26",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 94",
+    "idUsuario": 94,
+    "idCancion": [
+      43,
+      50,
+      57,
+      64,
+      71
+    ]
+  },
+  {
+    "_id": 95,
+    "nombrePlaylist": "Hip-Hop Latino 95",
+    "fechaCreacionPlaylist": "2025-12-03",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 95",
+    "idUsuario": 95,
+    "idCancion": [
+      46,
+      53,
+      60,
+      67,
+      74
+    ]
+  },
+  {
+    "_id": 96,
+    "nombrePlaylist": "Electronica Andina 96",
+    "fechaCreacionPlaylist": "2025-01-07",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 96",
+    "idUsuario": 96,
+    "idCancion": [
+      49,
+      56,
+      63,
+      70,
+      77
+    ]
+  },
+  {
+    "_id": 97,
+    "nombrePlaylist": "Cumbia Clasica 97",
+    "fechaCreacionPlaylist": "2025-02-11",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 97",
+    "idUsuario": 97,
+    "idCancion": [
+      52,
+      59,
+      66,
+      73,
+      80
+    ]
+  },
+  {
+    "_id": 98,
+    "nombrePlaylist": "Para Correr 98",
+    "fechaCreacionPlaylist": "2025-03-15",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 98",
+    "idUsuario": 98,
+    "idCancion": [
+      55,
+      62,
+      69,
+      76,
+      83
+    ]
+  },
+  {
+    "_id": 99,
+    "nombrePlaylist": "Salsa Dura 99",
+    "fechaCreacionPlaylist": "2025-04-19",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 99",
+    "idUsuario": 99,
+    "idCancion": [
+      58,
+      65,
+      72,
+      79,
+      86
+    ]
+  },
+  {
+    "_id": 100,
+    "nombrePlaylist": "Rock Argentino 100",
+    "fechaCreacionPlaylist": "2025-05-23",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 100",
+    "idUsuario": 100,
+    "idCancion": [
+      61,
+      68,
+      75,
+      82,
+      89
+    ]
+  },
+  {
+    "_id": 101,
+    "nombrePlaylist": "Shakira Essentials 101",
+    "fechaCreacionPlaylist": "2025-06-27",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 101",
+    "idUsuario": 101,
+    "idCancion": [
+      64,
+      71,
+      78,
+      85,
+      92
+    ]
+  },
+  {
+    "_id": 102,
+    "nombrePlaylist": "Cantautores 102",
+    "fechaCreacionPlaylist": "2025-07-04",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 102",
+    "idUsuario": 102,
+    "idCancion": [
+      67,
+      74,
+      81,
+      88,
+      95
+    ]
+  },
+  {
+    "_id": 103,
+    "nombrePlaylist": "Trap Latino Mix 103",
+    "fechaCreacionPlaylist": "2025-08-08",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 103",
+    "idUsuario": 103,
+    "idCancion": [
+      70,
+      77,
+      84,
+      91,
+      98
+    ]
+  },
+  {
+    "_id": 104,
+    "nombrePlaylist": "Daft Punk Forever 104",
+    "fechaCreacionPlaylist": "2025-09-12",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 104",
+    "idUsuario": 104,
+    "idCancion": [
+      73,
+      80,
+      87,
+      94,
+      101
+    ]
+  },
+  {
+    "_id": 105,
+    "nombrePlaylist": "Kendrick Best Of 105",
+    "fechaCreacionPlaylist": "2025-10-16",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 105",
+    "idUsuario": 105,
+    "idCancion": [
+      76,
+      83,
+      90,
+      97,
+      104
+    ]
+  },
+  {
+    "_id": 106,
+    "nombrePlaylist": "Colombian Pride 106",
+    "fechaCreacionPlaylist": "2025-11-20",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 106",
+    "idUsuario": 106,
+    "idCancion": [
+      79,
+      86,
+      93,
+      100,
+      107
+    ]
+  },
+  {
+    "_id": 107,
+    "nombrePlaylist": "Pop Internacional 107",
+    "fechaCreacionPlaylist": "2025-12-24",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 107",
+    "idUsuario": 107,
+    "idCancion": [
+      82,
+      89,
+      96,
+      103,
+      110
+    ]
+  },
+  {
+    "_id": 108,
+    "nombrePlaylist": "Romanticas 108",
+    "fechaCreacionPlaylist": "2025-01-01",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 108",
+    "idUsuario": 108,
+    "idCancion": [
+      85,
+      92,
+      99,
+      106,
+      113
+    ]
+  },
+  {
+    "_id": 109,
+    "nombrePlaylist": "Viajar con Musica 109",
+    "fechaCreacionPlaylist": "2025-02-05",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 109",
+    "idUsuario": 109,
+    "idCancion": [
+      88,
+      95,
+      102,
+      109,
+      116
+    ]
+  },
+  {
+    "_id": 110,
+    "nombrePlaylist": "Nostalgia 110",
+    "fechaCreacionPlaylist": "2025-03-09",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 110",
+    "idUsuario": 110,
+    "idCancion": [
+      91,
+      98,
+      105,
+      112,
+      119
+    ]
+  },
+  {
+    "_id": 111,
+    "nombrePlaylist": "Para Cocinar 111",
+    "fechaCreacionPlaylist": "2025-04-13",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 111",
+    "idUsuario": 111,
+    "idCancion": [
+      2,
+      94,
+      101,
+      108,
+      115
+    ]
+  },
+  {
+    "_id": 112,
+    "nombrePlaylist": "Gym Session 112",
+    "fechaCreacionPlaylist": "2025-05-17",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 112",
+    "idUsuario": 112,
+    "idCancion": [
+      5,
+      97,
+      104,
+      111,
+      118
+    ]
+  },
+  {
+    "_id": 113,
+    "nombrePlaylist": "Lluvia y Cafe 113",
+    "fechaCreacionPlaylist": "2025-06-21",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 113",
+    "idUsuario": 113,
+    "idCancion": [
+      1,
+      8,
+      100,
+      107,
+      114
+    ]
+  },
+  {
+    "_id": 114,
+    "nombrePlaylist": "Baladas 114",
+    "fechaCreacionPlaylist": "2025-07-25",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 114",
+    "idUsuario": 114,
+    "idCancion": [
+      4,
+      11,
+      103,
+      110,
+      117
+    ]
+  },
+  {
+    "_id": 115,
+    "nombrePlaylist": "Noche de Copas 115",
+    "fechaCreacionPlaylist": "2025-08-02",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 115",
+    "idUsuario": 115,
+    "idCancion": [
+      7,
+      14,
+      106,
+      113,
+      120
+    ]
+  },
+  {
+    "_id": 116,
+    "nombrePlaylist": "Latin Grammy 116",
+    "fechaCreacionPlaylist": "2025-09-06",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 116",
+    "idUsuario": 116,
+    "idCancion": [
+      3,
+      10,
+      17,
+      109,
+      116
+    ]
+  },
+  {
+    "_id": 117,
+    "nombrePlaylist": "Indie Ecuatoriano 117",
+    "fechaCreacionPlaylist": "2025-10-10",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 117",
+    "idUsuario": 117,
+    "idCancion": [
+      6,
+      13,
+      20,
+      112,
+      119
+    ]
+  },
+  {
+    "_id": 118,
+    "nombrePlaylist": "Top Global 118",
+    "fechaCreacionPlaylist": "2025-11-14",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 118",
+    "idUsuario": 118,
+    "idCancion": [
+      2,
+      9,
+      16,
+      23,
+      115
+    ]
+  },
+  {
+    "_id": 119,
+    "nombrePlaylist": "Fiesta de Quito 119",
+    "fechaCreacionPlaylist": "2025-12-18",
+    "privacidadPlaylist": "Privada",
+    "descripcionPlaylist": "Lista generada para usuario 119",
+    "idUsuario": 119,
+    "idCancion": [
+      5,
+      12,
+      19,
+      26,
+      118
+    ]
+  },
+  {
+    "_id": 120,
+    "nombrePlaylist": "Soul de Medianoche 120",
+    "fechaCreacionPlaylist": "2025-01-22",
+    "privacidadPlaylist": "Publica",
+    "descripcionPlaylist": "Lista generada para usuario 120",
+    "idUsuario": 120,
+    "idCancion": [
+      1,
+      8,
+      15,
+      22,
+      29
+    ]
+  }
+]

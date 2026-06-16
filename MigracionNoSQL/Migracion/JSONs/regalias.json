@@ -1,0 +1,842 @@
+[
+  {
+    "_id": 1,
+    "idCancion": 1,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 2,
+    "idCancion": 2,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 3,
+    "idCancion": 3,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 4,
+    "idCancion": 4,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 5,
+    "idCancion": 5,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 6,
+    "idCancion": 6,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 7,
+    "idCancion": 7,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 8,
+    "idCancion": 8,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 9,
+    "idCancion": 9,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 10,
+    "idCancion": 10,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 11,
+    "idCancion": 11,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 12,
+    "idCancion": 12,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 13,
+    "idCancion": 13,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 14,
+    "idCancion": 14,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 15,
+    "idCancion": 15,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 16,
+    "idCancion": 16,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 17,
+    "idCancion": 17,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 18,
+    "idCancion": 18,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 19,
+    "idCancion": 19,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 20,
+    "idCancion": 20,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 21,
+    "idCancion": 21,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 22,
+    "idCancion": 22,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 23,
+    "idCancion": 23,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 24,
+    "idCancion": 24,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 25,
+    "idCancion": 25,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 26,
+    "idCancion": 26,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 27,
+    "idCancion": 27,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 28,
+    "idCancion": 28,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 29,
+    "idCancion": 29,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 30,
+    "idCancion": 30,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 31,
+    "idCancion": 31,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 32,
+    "idCancion": 32,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 33,
+    "idCancion": 33,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 34,
+    "idCancion": 34,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 35,
+    "idCancion": 35,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 36,
+    "idCancion": 36,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 37,
+    "idCancion": 37,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 38,
+    "idCancion": 38,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 39,
+    "idCancion": 39,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 40,
+    "idCancion": 40,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 41,
+    "idCancion": 41,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 42,
+    "idCancion": 42,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 43,
+    "idCancion": 43,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 44,
+    "idCancion": 44,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 45,
+    "idCancion": 45,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 46,
+    "idCancion": 46,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 47,
+    "idCancion": 47,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 48,
+    "idCancion": 48,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 49,
+    "idCancion": 49,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 50,
+    "idCancion": 50,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 51,
+    "idCancion": 51,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 52,
+    "idCancion": 52,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 53,
+    "idCancion": 53,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 54,
+    "idCancion": 54,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 55,
+    "idCancion": 55,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 56,
+    "idCancion": 56,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 57,
+    "idCancion": 57,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 58,
+    "idCancion": 58,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 59,
+    "idCancion": 59,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 60,
+    "idCancion": 60,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 61,
+    "idCancion": 61,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 62,
+    "idCancion": 62,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 63,
+    "idCancion": 63,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 64,
+    "idCancion": 64,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 65,
+    "idCancion": 65,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 66,
+    "idCancion": 66,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 67,
+    "idCancion": 67,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 68,
+    "idCancion": 68,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 69,
+    "idCancion": 69,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 70,
+    "idCancion": 70,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 71,
+    "idCancion": 71,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 72,
+    "idCancion": 72,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 73,
+    "idCancion": 73,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 74,
+    "idCancion": 74,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 75,
+    "idCancion": 75,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 76,
+    "idCancion": 76,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 77,
+    "idCancion": 77,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 78,
+    "idCancion": 78,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 79,
+    "idCancion": 79,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 80,
+    "idCancion": 80,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 81,
+    "idCancion": 81,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 82,
+    "idCancion": 82,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 83,
+    "idCancion": 83,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 84,
+    "idCancion": 84,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 85,
+    "idCancion": 85,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 86,
+    "idCancion": 86,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 87,
+    "idCancion": 87,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 88,
+    "idCancion": 88,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 89,
+    "idCancion": 89,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 90,
+    "idCancion": 90,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 91,
+    "idCancion": 91,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 92,
+    "idCancion": 92,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 93,
+    "idCancion": 93,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 94,
+    "idCancion": 94,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 95,
+    "idCancion": 95,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 96,
+    "idCancion": 96,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 97,
+    "idCancion": 97,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 98,
+    "idCancion": 98,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 99,
+    "idCancion": 99,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 100,
+    "idCancion": 100,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 101,
+    "idCancion": 101,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 102,
+    "idCancion": 102,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 103,
+    "idCancion": 103,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 104,
+    "idCancion": 104,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 105,
+    "idCancion": 105,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 106,
+    "idCancion": 106,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 107,
+    "idCancion": 107,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 108,
+    "idCancion": 108,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 109,
+    "idCancion": 109,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 110,
+    "idCancion": 110,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 111,
+    "idCancion": 111,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 112,
+    "idCancion": 112,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 113,
+    "idCancion": 113,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 9,
+    "montoGeneradoRegalia": 0.45
+  },
+  {
+    "_id": 114,
+    "idCancion": 114,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 115,
+    "idCancion": 115,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 116,
+    "idCancion": 116,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 117,
+    "idCancion": 117,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 118,
+    "idCancion": 118,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 119,
+    "idCancion": 119,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  },
+  {
+    "_id": 120,
+    "idCancion": 120,
+    "fechaCalculoRegalia": "2025-12-31",
+    "cantidadReproduccionesRegalia": 8,
+    "montoGeneradoRegalia": 0.4
+  }
+]

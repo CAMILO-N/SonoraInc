@@ -1,0 +1,4242 @@
+[
+  {
+    "_id": 1,
+    "nombreUsuario": "Admin",
+    "apellidoUsuario": "Sonora",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "admin@sonorainc.com",
+    "fechaRegistroUsuario": "2024-02-03",
+    "rolUsuario": "admin",
+    "passwordUsuario": "Admin123Sonora",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 1,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-02-04",
+        "fechaFinSuscripcion": "2025-02-04",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      4,
+      21,
+      38
+    ],
+    "idCancion": [
+      5,
+      18,
+      31,
+      79,
+      116
+    ],
+    "idPlaylist": [
+      1
+    ]
+  },
+  {
+    "_id": 2,
+    "nombreUsuario": "Maria",
+    "apellidoUsuario": "Fernandez",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "maria.fernandez2@outlook.com",
+    "fechaRegistroUsuario": "2025-03-05",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora2",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 2,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-03-07",
+        "fechaFinSuscripcion": "2025-03-07",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      8,
+      25,
+      42,
+      109
+    ],
+    "idCancion": [
+      10,
+      23,
+      36
+    ],
+    "idPlaylist": [
+      2
+    ]
+  },
+  {
+    "_id": 3,
+    "nombreUsuario": "Luis",
+    "apellidoUsuario": "Paredes",
+    "segunNombreUsuario": "Ricardo",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "luis.paredes3@yahoo.com",
+    "fechaRegistroUsuario": "2023-04-07",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora3",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 3,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-04-10",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      12,
+      29,
+      46
+    ],
+    "idCancion": [
+      15,
+      28,
+      41
+    ],
+    "idPlaylist": [
+      3
+    ]
+  },
+  {
+    "_id": 4,
+    "nombreUsuario": "Ana",
+    "apellidoUsuario": "Gutierrez",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": "Ponce",
+    "correoUsuario": "ana.gutierrez4@udla.edu.ec",
+    "fechaRegistroUsuario": "2024-05-09",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora4",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 4,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-05-13",
+        "fechaFinSuscripcion": "2025-05-13",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      11,
+      16,
+      33,
+      47,
+      50,
+      64
+    ],
+    "idCancion": [
+      19,
+      20,
+      33,
+      41,
+      46
+    ],
+    "idPlaylist": [
+      4
+    ]
+  },
+  {
+    "_id": 5,
+    "nombreUsuario": "Diego",
+    "apellidoUsuario": "Salazar",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "diego.salazar5@gmail.com",
+    "fechaRegistroUsuario": "2025-06-11",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora5",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 5,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-06-16",
+        "fechaFinSuscripcion": "2025-06-16",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      20,
+      37,
+      54
+    ],
+    "idCancion": [
+      25,
+      38,
+      51
+    ],
+    "idPlaylist": [
+      5
+    ]
+  },
+  {
+    "_id": 6,
+    "nombreUsuario": "Valeria",
+    "apellidoUsuario": "Ortiz",
+    "segunNombreUsuario": "Diana",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "valeria.ortiz6@hotmail.com",
+    "fechaRegistroUsuario": "2023-07-13",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora6",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 6,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-07-19",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      24,
+      41,
+      52,
+      58,
+      83
+    ],
+    "idCancion": [
+      30,
+      43,
+      56
+    ],
+    "idPlaylist": [
+      6
+    ]
+  },
+  {
+    "_id": 7,
+    "nombreUsuario": "Sebastian",
+    "apellidoUsuario": "Castro",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "sebastian.castro7@outlook.com",
+    "fechaRegistroUsuario": "2024-08-15",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora7",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 7,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-08-22",
+        "fechaFinSuscripcion": "2025-08-22",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      7,
+      28,
+      45,
+      62,
+      73
+    ],
+    "idCancion": [
+      35,
+      48,
+      61
+    ],
+    "idPlaylist": [
+      7
+    ]
+  },
+  {
+    "_id": 8,
+    "nombreUsuario": "Camila",
+    "apellidoUsuario": "Suarez",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": "Romero",
+    "correoUsuario": "camila.suarez8@yahoo.com",
+    "fechaRegistroUsuario": "2025-09-17",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora8",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 8,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-09-25",
+        "fechaFinSuscripcion": "2025-09-25",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      21,
+      32,
+      49,
+      66,
+      107
+    ],
+    "idCancion": [
+      40,
+      53,
+      66
+    ],
+    "idPlaylist": [
+      8
+    ]
+  },
+  {
+    "_id": 9,
+    "nombreUsuario": "Andres",
+    "apellidoUsuario": "Vega",
+    "segunNombreUsuario": "Pablo",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "andres.vega9@udla.edu.ec",
+    "fechaRegistroUsuario": "2023-10-19",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora9",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 9,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-10-01",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      36,
+      40,
+      53,
+      70
+    ],
+    "idCancion": [
+      15,
+      45,
+      58,
+      68,
+      71,
+      92
+    ],
+    "idPlaylist": [
+      9
+    ]
+  },
+  {
+    "_id": 10,
+    "nombreUsuario": "Laura",
+    "apellidoUsuario": "Reyes",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "laura.reyes10@gmail.com",
+    "fechaRegistroUsuario": "2024-11-21",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora10",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 10,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-11-04",
+        "fechaFinSuscripcion": "2025-11-04",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      17,
+      40,
+      57,
+      58,
+      74,
+      89
+    ],
+    "idCancion": [
+      50,
+      63,
+      74,
+      76,
+      86
+    ],
+    "idPlaylist": [
+      10
+    ]
+  },
+  {
+    "_id": 11,
+    "nombreUsuario": "Ricardo",
+    "apellidoUsuario": "Montoya",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "ricardo.montoya11@hotmail.com",
+    "fechaRegistroUsuario": "2025-12-23",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora11",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 11,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-12-07",
+        "fechaFinSuscripcion": "2025-12-07",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      44,
+      61,
+      78
+    ],
+    "idCancion": [
+      3,
+      55,
+      56,
+      68,
+      81
+    ],
+    "idPlaylist": [
+      11
+    ]
+  },
+  {
+    "_id": 12,
+    "nombreUsuario": "Patricia",
+    "apellidoUsuario": "Espinoza",
+    "segunNombreUsuario": "Stefania",
+    "segundoApellidoUsuario": "Endara",
+    "correoUsuario": "patricia.espinoza12@outlook.com",
+    "fechaRegistroUsuario": "2023-01-25",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora12",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 12,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-01-10",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      48,
+      51,
+      65,
+      82
+    ],
+    "idCancion": [
+      60,
+      73,
+      86
+    ],
+    "idPlaylist": [
+      12
+    ]
+  },
+  {
+    "_id": 13,
+    "nombreUsuario": "Jorge",
+    "apellidoUsuario": "Alvarado",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "jorge.alvarado13@yahoo.com",
+    "fechaRegistroUsuario": "2024-02-27",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora13",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 13,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-02-13",
+        "fechaFinSuscripcion": "2025-02-13",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      7,
+      51,
+      52,
+      69,
+      86
+    ],
+    "idCancion": [
+      65,
+      78,
+      91
+    ],
+    "idPlaylist": [
+      13
+    ]
+  },
+  {
+    "_id": 14,
+    "nombreUsuario": "Diana",
+    "apellidoUsuario": "Morales",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "diana.morales14@udla.edu.ec",
+    "fechaRegistroUsuario": "2025-03-02",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora14",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 14,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-03-16",
+        "fechaFinSuscripcion": "2025-03-16",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      56,
+      73,
+      90
+    ],
+    "idCancion": [
+      11,
+      70,
+      83,
+      96,
+      99
+    ],
+    "idPlaylist": [
+      14
+    ]
+  },
+  {
+    "_id": 15,
+    "nombreUsuario": "Esteban",
+    "apellidoUsuario": "Jimenez",
+    "segunNombreUsuario": "Fernando",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "esteban.jimenez15@gmail.com",
+    "fechaRegistroUsuario": "2023-04-04",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora15",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 15,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-04-19",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      60,
+      77,
+      94
+    ],
+    "idCancion": [
+      4,
+      75,
+      88,
+      101
+    ],
+    "idPlaylist": [
+      15
+    ]
+  },
+  {
+    "_id": 16,
+    "nombreUsuario": "Natalia",
+    "apellidoUsuario": "Ponce",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": "Jaramillo",
+    "correoUsuario": "natalia.ponce16@hotmail.com",
+    "fechaRegistroUsuario": "2024-05-06",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora16",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 16,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-05-22",
+        "fechaFinSuscripcion": "2025-05-22",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      17,
+      18,
+      64,
+      67,
+      81,
+      98
+    ],
+    "idCancion": [
+      7,
+      80,
+      93,
+      103,
+      106
+    ],
+    "idPlaylist": [
+      16
+    ]
+  },
+  {
+    "_id": 17,
+    "nombreUsuario": "Pablo",
+    "apellidoUsuario": "Crespo",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "pablo.crespo17@outlook.com",
+    "fechaRegistroUsuario": "2025-06-08",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora17",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 17,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-06-25",
+        "fechaFinSuscripcion": "2025-06-25",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      68,
+      79,
+      85,
+      98,
+      102,
+      113
+    ],
+    "idCancion": [
+      9,
+      85,
+      98,
+      111
+    ],
+    "idPlaylist": [
+      17
+    ]
+  },
+  {
+    "_id": 18,
+    "nombreUsuario": "Gabriela",
+    "apellidoUsuario": "Davila",
+    "segunNombreUsuario": "Alejandra",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "gabriela.davila18@yahoo.com",
+    "fechaRegistroUsuario": "2023-07-10",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora18",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 18,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-07-01",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      31,
+      72,
+      89,
+      106,
+      113
+    ],
+    "idCancion": [
+      5,
+      6,
+      68,
+      90,
+      98,
+      103,
+      116
+    ],
+    "idPlaylist": [
+      18
+    ]
+  },
+  {
+    "_id": 19,
+    "nombreUsuario": "Ivan",
+    "apellidoUsuario": "Coronado",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "ivan.coronado19@udla.edu.ec",
+    "fechaRegistroUsuario": "2024-08-12",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora19",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 19,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-08-04",
+        "fechaFinSuscripcion": "2025-08-04",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      76,
+      93,
+      110
+    ],
+    "idCancion": [
+      1,
+      95,
+      108
+    ],
+    "idPlaylist": [
+      19
+    ]
+  },
+  {
+    "_id": 20,
+    "nombreUsuario": "Stefania",
+    "apellidoUsuario": "Romero",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": "Hidalgo",
+    "correoUsuario": "stefania.romero20@gmail.com",
+    "fechaRegistroUsuario": "2025-09-14",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora20",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 20,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-09-07",
+        "fechaFinSuscripcion": "2025-09-07",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      22,
+      39,
+      80,
+      97,
+      114
+    ],
+    "idCancion": [
+      6,
+      100,
+      113
+    ],
+    "idPlaylist": [
+      20
+    ]
+  },
+  {
+    "_id": 21,
+    "nombreUsuario": "Miguel",
+    "apellidoUsuario": "Andrade",
+    "segunNombreUsuario": "Mateo",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "miguel.andrade21@hotmail.com",
+    "fechaRegistroUsuario": "2023-10-16",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora21",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 21,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-10-10",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      84,
+      92,
+      101,
+      105,
+      118
+    ],
+    "idCancion": [
+      11,
+      105,
+      118
+    ],
+    "idPlaylist": [
+      21
+    ]
+  },
+  {
+    "_id": 22,
+    "nombreUsuario": "Daniela",
+    "apellidoUsuario": "Villacres",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "daniela.villacres22@outlook.com",
+    "fechaRegistroUsuario": "2024-11-18",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora22",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 22,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-11-13",
+        "fechaFinSuscripcion": "2025-11-13",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      2,
+      21,
+      88,
+      105
+    ],
+    "idCancion": [
+      3,
+      16,
+      89,
+      110
+    ],
+    "idPlaylist": [
+      22
+    ]
+  },
+  {
+    "_id": 23,
+    "nombreUsuario": "Fernando",
+    "apellidoUsuario": "Zapata",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "fernando.zapata23@yahoo.com",
+    "fechaRegistroUsuario": "2025-12-20",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora23",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 23,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-12-16",
+        "fechaFinSuscripcion": "2025-12-16",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      6,
+      92,
+      102,
+      109
+    ],
+    "idCancion": [
+      8,
+      21,
+      115
+    ],
+    "idPlaylist": [
+      23
+    ]
+  },
+  {
+    "_id": 24,
+    "nombreUsuario": "Mariana",
+    "apellidoUsuario": "Endara",
+    "segunNombreUsuario": "Lucia",
+    "segundoApellidoUsuario": "Pozo",
+    "correoUsuario": "mariana.endara24@udla.edu.ec",
+    "fechaRegistroUsuario": "2023-01-22",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora24",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 24,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-01-19",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      10,
+      96,
+      113
+    ],
+    "idCancion": [
+      13,
+      26,
+      70,
+      86,
+      120
+    ],
+    "idPlaylist": [
+      24
+    ]
+  },
+  {
+    "_id": 25,
+    "nombreUsuario": "Cristobal",
+    "apellidoUsuario": "Larrea",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "cristobal.larrea25@gmail.com",
+    "fechaRegistroUsuario": "2024-02-24",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora25",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 25,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-02-22",
+        "fechaFinSuscripcion": "2025-02-22",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      14,
+      100,
+      117
+    ],
+    "idCancion": [
+      5,
+      18,
+      31,
+      37
+    ],
+    "idPlaylist": [
+      25
+    ]
+  },
+  {
+    "_id": 26,
+    "nombreUsuario": "Alejandra",
+    "apellidoUsuario": "Proano",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "alejandra.proano26@hotmail.com",
+    "fechaRegistroUsuario": "2025-03-26",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora26",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 26,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-03-25",
+        "fechaFinSuscripcion": "2025-03-25",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      1,
+      18,
+      102,
+      104
+    ],
+    "idCancion": [
+      6,
+      10,
+      23,
+      36
+    ],
+    "idPlaylist": [
+      26
+    ]
+  },
+  {
+    "_id": 27,
+    "nombreUsuario": "Nicolas",
+    "apellidoUsuario": "Cedeno",
+    "segunNombreUsuario": "Renato",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "nicolas.cedeno27@outlook.com",
+    "fechaRegistroUsuario": "2023-04-01",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora27",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 27,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-04-01",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      5,
+      22,
+      44,
+      99,
+      108
+    ],
+    "idCancion": [
+      15,
+      28,
+      41
+    ],
+    "idPlaylist": [
+      27
+    ]
+  },
+  {
+    "_id": 28,
+    "nombreUsuario": "Pamela",
+    "apellidoUsuario": "Jaramillo",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": "Ulloa",
+    "correoUsuario": "pamela.jaramillo28@yahoo.com",
+    "fechaRegistroUsuario": "2024-05-03",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora28",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 28,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-05-04",
+        "fechaFinSuscripcion": "2025-05-04",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      9,
+      26,
+      112
+    ],
+    "idCancion": [
+      20,
+      33,
+      46
+    ],
+    "idPlaylist": [
+      28
+    ]
+  },
+  {
+    "_id": 29,
+    "nombreUsuario": "Mateo",
+    "apellidoUsuario": "Carrillo",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "mateo.carrillo29@udla.edu.ec",
+    "fechaRegistroUsuario": "2025-06-05",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora29",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 29,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-06-07",
+        "fechaFinSuscripcion": "2025-06-07",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      13,
+      16,
+      30,
+      116
+    ],
+    "idCancion": [
+      25,
+      38,
+      51
+    ],
+    "idPlaylist": [
+      29
+    ]
+  },
+  {
+    "_id": 30,
+    "nombreUsuario": "Sophia",
+    "apellidoUsuario": "Burbano",
+    "segunNombreUsuario": "Melissa",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "sophia.burbano30@gmail.com",
+    "fechaRegistroUsuario": "2023-07-07",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora30",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 30,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-07-10",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      17,
+      34,
+      120
+    ],
+    "idCancion": [
+      30,
+      43,
+      56
+    ],
+    "idPlaylist": [
+      30
+    ]
+  },
+  {
+    "_id": 31,
+    "nombreUsuario": "Emilio",
+    "apellidoUsuario": "Vasquez",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "emilio.vasquez31@hotmail.com",
+    "fechaRegistroUsuario": "2024-08-09",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora31",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 31,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-08-13",
+        "fechaFinSuscripcion": "2025-08-13",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      4,
+      21,
+      28,
+      38
+    ],
+    "idCancion": [
+      35,
+      39,
+      48,
+      54,
+      61,
+      94,
+      100
+    ],
+    "idPlaylist": [
+      31
+    ]
+  },
+  {
+    "_id": 32,
+    "nombreUsuario": "Lucia",
+    "apellidoUsuario": "Hidalgo",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": "Lema",
+    "correoUsuario": "lucia.hidalgo32@outlook.com",
+    "fechaRegistroUsuario": "2025-09-11",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora32",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 32,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-09-16",
+        "fechaFinSuscripcion": "2025-09-16",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      8,
+      19,
+      25,
+      42
+    ],
+    "idCancion": [
+      40,
+      53,
+      66
+    ],
+    "idPlaylist": [
+      32
+    ]
+  },
+  {
+    "_id": 33,
+    "nombreUsuario": "Joaquin",
+    "apellidoUsuario": "Chaves",
+    "segunNombreUsuario": "Bryan",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "joaquin.chaves33@yahoo.com",
+    "fechaRegistroUsuario": "2023-10-13",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora33",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 33,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-10-19",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      12,
+      26,
+      29,
+      46
+    ],
+    "idCancion": [
+      5,
+      28,
+      45,
+      58,
+      71
+    ],
+    "idPlaylist": [
+      33
+    ]
+  },
+  {
+    "_id": 34,
+    "nombreUsuario": "Isabella",
+    "apellidoUsuario": "Pacheco",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "isabella.pacheco34@udla.edu.ec",
+    "fechaRegistroUsuario": "2024-11-15",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora34",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 34,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-11-22",
+        "fechaFinSuscripcion": "2025-11-22",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      16,
+      33,
+      50,
+      84,
+      94
+    ],
+    "idCancion": [
+      50,
+      63,
+      76,
+      91,
+      100
+    ],
+    "idPlaylist": [
+      34
+    ]
+  },
+  {
+    "_id": 35,
+    "nombreUsuario": "Renato",
+    "apellidoUsuario": "Mino",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "renato.mino35@gmail.com",
+    "fechaRegistroUsuario": "2025-12-17",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora35",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 35,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-12-25",
+        "fechaFinSuscripcion": "2025-12-25",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      20,
+      37,
+      54,
+      58
+    ],
+    "idCancion": [
+      55,
+      68,
+      81
+    ],
+    "idPlaylist": [
+      35
+    ]
+  },
+  {
+    "_id": 36,
+    "nombreUsuario": "Ximena",
+    "apellidoUsuario": "Pozo",
+    "segunNombreUsuario": "Priscila",
+    "segundoApellidoUsuario": "Naranjo",
+    "correoUsuario": "ximena.pozo36@hotmail.com",
+    "fechaRegistroUsuario": "2023-01-19",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora36",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 36,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-01-01",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      17,
+      24,
+      41,
+      58
+    ],
+    "idCancion": [
+      32,
+      60,
+      73,
+      82,
+      86
+    ],
+    "idPlaylist": [
+      36
+    ]
+  },
+  {
+    "_id": 37,
+    "nombreUsuario": "Gonzalo",
+    "apellidoUsuario": "Albuja",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "gonzalo.albuja37@outlook.com",
+    "fechaRegistroUsuario": "2024-02-21",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora37",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 37,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-02-04",
+        "fechaFinSuscripcion": "2025-02-04",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      10,
+      28,
+      45,
+      62,
+      64,
+      69
+    ],
+    "idCancion": [
+      65,
+      78,
+      91,
+      118
+    ],
+    "idPlaylist": [
+      37
+    ]
+  },
+  {
+    "_id": 38,
+    "nombreUsuario": "Melissa",
+    "apellidoUsuario": "Granja",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "melissa.granja38@yahoo.com",
+    "fechaRegistroUsuario": "2025-03-23",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora38",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 38,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-03-07",
+        "fechaFinSuscripcion": "2025-03-07",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      32,
+      49,
+      50,
+      66,
+      115
+    ],
+    "idCancion": [
+      40,
+      42,
+      55,
+      70,
+      83,
+      96
+    ],
+    "idPlaylist": [
+      38
+    ]
+  },
+  {
+    "_id": 39,
+    "nombreUsuario": "Alexis",
+    "apellidoUsuario": "Tipan",
+    "segunNombreUsuario": "Mauricio",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "alexis.tipan39@udla.edu.ec",
+    "fechaRegistroUsuario": "2023-04-25",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora39",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 39,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-04-10",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      36,
+      53,
+      59,
+      70,
+      109
+    ],
+    "idCancion": [
+      75,
+      88,
+      101
+    ],
+    "idPlaylist": [
+      39
+    ]
+  },
+  {
+    "_id": 40,
+    "nombreUsuario": "Carolina",
+    "apellidoUsuario": "Ulloa",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": "Fernandez",
+    "correoUsuario": "carolina.ulloa40@gmail.com",
+    "fechaRegistroUsuario": "2024-05-27",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora40",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 40,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-05-13",
+        "fechaFinSuscripcion": "2025-05-13",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      40,
+      57,
+      74
+    ],
+    "idCancion": [
+      66,
+      80,
+      93,
+      106
+    ],
+    "idPlaylist": [
+      40
+    ]
+  },
+  {
+    "_id": 41,
+    "nombreUsuario": "Bryan",
+    "apellidoUsuario": "Quinonez",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "bryan.quinonez41@hotmail.com",
+    "fechaRegistroUsuario": "2025-06-02",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora41",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 41,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-06-16",
+        "fechaFinSuscripcion": "2025-06-16",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      25,
+      31,
+      44,
+      61,
+      78,
+      83,
+      111
+    ],
+    "idCancion": [
+      84,
+      85,
+      98,
+      111,
+      120
+    ],
+    "idPlaylist": [
+      41
+    ]
+  },
+  {
+    "_id": 42,
+    "nombreUsuario": "Adriana",
+    "apellidoUsuario": "Borja",
+    "segunNombreUsuario": "Gabriella",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "adriana.borja42@outlook.com",
+    "fechaRegistroUsuario": "2023-07-04",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora42",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 42,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-07-19",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      48,
+      65,
+      82,
+      120
+    ],
+    "idCancion": [
+      85,
+      90,
+      103,
+      116
+    ],
+    "idPlaylist": [
+      42
+    ]
+  },
+  {
+    "_id": 43,
+    "nombreUsuario": "Kevin",
+    "apellidoUsuario": "Pillajo",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "kevin.pillajo43@yahoo.com",
+    "fechaRegistroUsuario": "2024-08-06",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora43",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 43,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-08-22",
+        "fechaFinSuscripcion": "2025-08-22",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      52,
+      69,
+      86
+    ],
+    "idCancion": [
+      1,
+      35,
+      95,
+      108
+    ],
+    "idPlaylist": [
+      43
+    ]
+  },
+  {
+    "_id": 44,
+    "nombreUsuario": "Priscila",
+    "apellidoUsuario": "Lema",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": "Ortiz",
+    "correoUsuario": "priscila.lema44@udla.edu.ec",
+    "fechaRegistroUsuario": "2025-09-08",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora44",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 44,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-09-25",
+        "fechaFinSuscripcion": "2025-09-25",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      56,
+      72,
+      73,
+      90
+    ],
+    "idCancion": [
+      6,
+      24,
+      100,
+      105,
+      113
+    ],
+    "idPlaylist": [
+      44
+    ]
+  },
+  {
+    "_id": 45,
+    "nombreUsuario": "David",
+    "apellidoUsuario": "Yugcha",
+    "segunNombreUsuario": "Ingrid",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "david.yugcha45@gmail.com",
+    "fechaRegistroUsuario": "2023-10-10",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora45",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 45,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-10-01",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      52,
+      60,
+      67,
+      77,
+      94
+    ],
+    "idCancion": [
+      11,
+      105,
+      118
+    ],
+    "idPlaylist": [
+      45
+    ]
+  },
+  {
+    "_id": 46,
+    "nombreUsuario": "Valentina",
+    "apellidoUsuario": "Acurio",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "valentina.acurio46@hotmail.com",
+    "fechaRegistroUsuario": "2024-11-12",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora46",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 46,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-11-04",
+        "fechaFinSuscripcion": "2025-11-04",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      64,
+      81,
+      98
+    ],
+    "idCancion": [
+      3,
+      16,
+      31,
+      70,
+      101,
+      110,
+      111
+    ],
+    "idPlaylist": [
+      46
+    ]
+  },
+  {
+    "_id": 47,
+    "nombreUsuario": "Mauricio",
+    "apellidoUsuario": "Zurita",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "mauricio.zurita47@outlook.com",
+    "fechaRegistroUsuario": "2025-12-14",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora47",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 47,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-12-07",
+        "fechaFinSuscripcion": "2025-12-07",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      66,
+      68,
+      71,
+      85,
+      98,
+      102
+    ],
+    "idCancion": [
+      8,
+      21,
+      50,
+      51,
+      66,
+      115
+    ],
+    "idPlaylist": [
+      47
+    ]
+  },
+  {
+    "_id": 48,
+    "nombreUsuario": "Karina",
+    "apellidoUsuario": "Naranjo",
+    "segunNombreUsuario": "Hernan",
+    "segundoApellidoUsuario": "Reyes",
+    "correoUsuario": "karina.naranjo48@yahoo.com",
+    "fechaRegistroUsuario": "2023-01-16",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora48",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 48,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-01-10",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      60,
+      66,
+      72,
+      89,
+      102,
+      106
+    ],
+    "idCancion": [
+      13,
+      26,
+      29,
+      31,
+      33,
+      48,
+      56,
+      120
+    ],
+    "idPlaylist": [
+      48
+    ]
+  },
+  {
+    "_id": 49,
+    "nombreUsuario": "Rodrigo",
+    "apellidoUsuario": "Benalcazar",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "rodrigo.benalcazar49@udla.edu.ec",
+    "fechaRegistroUsuario": "2024-02-18",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora49",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 49,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-02-13",
+        "fechaFinSuscripcion": "2025-02-13",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      76,
+      93,
+      110
+    ],
+    "idCancion": [
+      5,
+      18,
+      31
+    ],
+    "idPlaylist": [
+      49
+    ]
+  },
+  {
+    "_id": 50,
+    "nombreUsuario": "Gabriella",
+    "apellidoUsuario": "Moran",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "gabriella.moran50@gmail.com",
+    "fechaRegistroUsuario": "2025-03-20",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora50",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 50,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-03-16",
+        "fechaFinSuscripcion": "2025-03-16",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      65,
+      80,
+      97,
+      114
+    ],
+    "idCancion": [
+      10,
+      11,
+      23,
+      36,
+      112,
+      117
+    ],
+    "idPlaylist": [
+      50
+    ]
+  },
+  {
+    "_id": 51,
+    "nombreUsuario": "Alonso",
+    "apellidoUsuario": "Mendoza",
+    "segunNombreUsuario": "Alexander",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "alonso.mendoza51@hotmail.com",
+    "fechaRegistroUsuario": "2023-04-22",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora51",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 51,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-04-19",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      84,
+      92,
+      101,
+      118
+    ],
+    "idCancion": [
+      15,
+      28,
+      41,
+      65,
+      105
+    ],
+    "idPlaylist": [
+      51
+    ]
+  },
+  {
+    "_id": 52,
+    "nombreUsuario": "Camilo",
+    "apellidoUsuario": "Fernandez",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": "Morales",
+    "correoUsuario": "camilo.fernandez52@outlook.com",
+    "fechaRegistroUsuario": "2024-05-24",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora52",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 52,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-05-22",
+        "fechaFinSuscripcion": "2025-05-22",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      2,
+      47,
+      88,
+      105
+    ],
+    "idCancion": [
+      20,
+      33,
+      46
+    ],
+    "idPlaylist": [
+      52
+    ]
+  },
+  {
+    "_id": 53,
+    "nombreUsuario": "Ingrid",
+    "apellidoUsuario": "Paredes",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "ingrid.paredes53@yahoo.com",
+    "fechaRegistroUsuario": "2025-06-26",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora53",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 53,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-06-25",
+        "fechaFinSuscripcion": "2025-06-25",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      6,
+      92,
+      109
+    ],
+    "idCancion": [
+      25,
+      38,
+      51
+    ],
+    "idPlaylist": [
+      53
+    ]
+  },
+  {
+    "_id": 54,
+    "nombreUsuario": "Gustavo",
+    "apellidoUsuario": "Gutierrez",
+    "segunNombreUsuario": "Maria",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "gustavo.gutierrez54@udla.edu.ec",
+    "fechaRegistroUsuario": "2023-07-01",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora54",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 54,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-07-01",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      10,
+      32,
+      96,
+      113
+    ],
+    "idCancion": [
+      30,
+      43,
+      56
+    ],
+    "idPlaylist": [
+      54
+    ]
+  },
+  {
+    "_id": 55,
+    "nombreUsuario": "Natasha",
+    "apellidoUsuario": "Salazar",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "natasha.salazar55@gmail.com",
+    "fechaRegistroUsuario": "2024-08-03",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora55",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 55,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-08-04",
+        "fechaFinSuscripcion": "2025-08-04",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      14,
+      100,
+      117
+    ],
+    "idCancion": [
+      15,
+      35,
+      48,
+      61
+    ],
+    "idPlaylist": [
+      55
+    ]
+  },
+  {
+    "_id": 56,
+    "nombreUsuario": "Hernan",
+    "apellidoUsuario": "Ortiz",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": "Davila",
+    "correoUsuario": "hernan.ortiz56@hotmail.com",
+    "fechaRegistroUsuario": "2025-09-05",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora56",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 56,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-09-07",
+        "fechaFinSuscripcion": "2025-09-07",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      1,
+      18,
+      65,
+      104
+    ],
+    "idCancion": [
+      40,
+      53,
+      66
+    ],
+    "idPlaylist": [
+      56
+    ]
+  },
+  {
+    "_id": 57,
+    "nombreUsuario": "Lorena",
+    "apellidoUsuario": "Castro",
+    "segunNombreUsuario": "Diego",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "lorena.castro57@outlook.com",
+    "fechaRegistroUsuario": "2023-10-07",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora57",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 57,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-10-10",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      5,
+      12,
+      22,
+      54,
+      108
+    ],
+    "idCancion": [
+      5,
+      45,
+      58,
+      71,
+      98
+    ],
+    "idPlaylist": [
+      57
+    ]
+  },
+  {
+    "_id": 58,
+    "nombreUsuario": "Paulina",
+    "apellidoUsuario": "Suarez",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "paulina.suarez58@yahoo.com",
+    "fechaRegistroUsuario": "2024-11-09",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora58",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 58,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-11-13",
+        "fechaFinSuscripcion": "2025-11-13",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      9,
+      23,
+      26,
+      98,
+      112
+    ],
+    "idCancion": [
+      6,
+      28,
+      50,
+      63,
+      76,
+      78,
+      79
+    ],
+    "idPlaylist": [
+      58
+    ]
+  },
+  {
+    "_id": 59,
+    "nombreUsuario": "Alexander",
+    "apellidoUsuario": "Vega",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "alexander.vega59@udla.edu.ec",
+    "fechaRegistroUsuario": "2025-12-11",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora59",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 59,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-12-16",
+        "fechaFinSuscripcion": "2025-12-16",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      13,
+      30,
+      116
+    ],
+    "idCancion": [
+      55,
+      68,
+      81
+    ],
+    "idPlaylist": [
+      59
+    ]
+  },
+  {
+    "_id": 60,
+    "nombreUsuario": "Fernanda",
+    "apellidoUsuario": "Reyes",
+    "segunNombreUsuario": "Camila",
+    "segundoApellidoUsuario": "Villacres",
+    "correoUsuario": "fernanda.reyes60@gmail.com",
+    "fechaRegistroUsuario": "2023-01-13",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora60",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 60,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-01-19",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      16,
+      17,
+      34,
+      64,
+      88,
+      120
+    ],
+    "idCancion": [
+      60,
+      73,
+      86
+    ],
+    "idPlaylist": [
+      60
+    ]
+  },
+  {
+    "_id": 61,
+    "nombreUsuario": "Carlos",
+    "apellidoUsuario": "Montoya",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "carlos.montoya61@hotmail.com",
+    "fechaRegistroUsuario": "2024-02-15",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora61",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 61,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-02-22",
+        "fechaFinSuscripcion": "2025-02-22",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      4,
+      21,
+      38
+    ],
+    "idCancion": [
+      6,
+      65,
+      78,
+      91
+    ],
+    "idPlaylist": [
+      61
+    ]
+  },
+  {
+    "_id": 62,
+    "nombreUsuario": "Maria",
+    "apellidoUsuario": "Espinoza",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "maria.espinoza62@outlook.com",
+    "fechaRegistroUsuario": "2025-03-17",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora62",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 62,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-03-25",
+        "fechaFinSuscripcion": "2025-03-25",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      8,
+      25,
+      32,
+      42,
+      60
+    ],
+    "idCancion": [
+      70,
+      83,
+      96
+    ],
+    "idPlaylist": [
+      62
+    ]
+  },
+  {
+    "_id": 63,
+    "nombreUsuario": "Luis",
+    "apellidoUsuario": "Alvarado",
+    "segunNombreUsuario": "Ricardo",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "luis.alvarado63@yahoo.com",
+    "fechaRegistroUsuario": "2023-04-19",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora63",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 63,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-04-01",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      12,
+      29,
+      46
+    ],
+    "idCancion": [
+      26,
+      75,
+      88,
+      101
+    ],
+    "idPlaylist": [
+      63
+    ]
+  },
+  {
+    "_id": 64,
+    "nombreUsuario": "Ana",
+    "apellidoUsuario": "Morales",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": "Proano",
+    "correoUsuario": "ana.morales64@udla.edu.ec",
+    "fechaRegistroUsuario": "2024-05-21",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora64",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 64,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-05-04",
+        "fechaFinSuscripcion": "2025-05-04",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      3,
+      16,
+      33,
+      50,
+      66
+    ],
+    "idCancion": [
+      48,
+      67,
+      77,
+      80,
+      89,
+      93,
+      106
+    ],
+    "idPlaylist": [
+      64
+    ]
+  },
+  {
+    "_id": 65,
+    "nombreUsuario": "Diego",
+    "apellidoUsuario": "Jimenez",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "diego.jimenez65@gmail.com",
+    "fechaRegistroUsuario": "2025-06-23",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora65",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 65,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-06-07",
+        "fechaFinSuscripcion": "2025-06-07",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      20,
+      37,
+      54,
+      59
+    ],
+    "idCancion": [
+      85,
+      98,
+      111
+    ],
+    "idPlaylist": [
+      65
+    ]
+  },
+  {
+    "_id": 66,
+    "nombreUsuario": "Valeria",
+    "apellidoUsuario": "Ponce",
+    "segunNombreUsuario": "Diana",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "valeria.ponce66@hotmail.com",
+    "fechaRegistroUsuario": "2023-07-25",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora66",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 66,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-07-10",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      24,
+      41,
+      58
+    ],
+    "idCancion": [
+      90,
+      103,
+      116
+    ],
+    "idPlaylist": [
+      66
+    ]
+  },
+  {
+    "_id": 67,
+    "nombreUsuario": "Sebastian",
+    "apellidoUsuario": "Crespo",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "sebastian.crespo67@outlook.com",
+    "fechaRegistroUsuario": "2024-08-27",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora67",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 67,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-08-13",
+        "fechaFinSuscripcion": "2025-08-13",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      28,
+      45,
+      62
+    ],
+    "idCancion": [
+      1,
+      35,
+      95,
+      108
+    ],
+    "idPlaylist": [
+      67
+    ]
+  },
+  {
+    "_id": 68,
+    "nombreUsuario": "Camila",
+    "apellidoUsuario": "Davila",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": "Burbano",
+    "correoUsuario": "camila.davila68@yahoo.com",
+    "fechaRegistroUsuario": "2025-09-02",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora68",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 68,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-09-16",
+        "fechaFinSuscripcion": "2025-09-16",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      32,
+      49,
+      53,
+      66
+    ],
+    "idCancion": [
+      6,
+      47,
+      100,
+      113
+    ],
+    "idPlaylist": [
+      68
+    ]
+  },
+  {
+    "_id": 69,
+    "nombreUsuario": "Andres",
+    "apellidoUsuario": "Coronado",
+    "segunNombreUsuario": "Pablo",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "andres.coronado69@udla.edu.ec",
+    "fechaRegistroUsuario": "2023-10-04",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora69",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 69,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-10-19",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      36,
+      53,
+      70
+    ],
+    "idCancion": [
+      3,
+      11,
+      105,
+      118
+    ],
+    "idPlaylist": [
+      69
+    ]
+  },
+  {
+    "_id": 70,
+    "nombreUsuario": "Laura",
+    "apellidoUsuario": "Romero",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "laura.romero70@gmail.com",
+    "fechaRegistroUsuario": "2024-11-06",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora70",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 70,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-11-22",
+        "fechaFinSuscripcion": "2025-11-22",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      38,
+      40,
+      57,
+      74
+    ],
+    "idCancion": [
+      3,
+      16,
+      61,
+      65,
+      110
+    ],
+    "idPlaylist": [
+      70
+    ]
+  },
+  {
+    "_id": 71,
+    "nombreUsuario": "Ricardo",
+    "apellidoUsuario": "Andrade",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "ricardo.andrade71@hotmail.com",
+    "fechaRegistroUsuario": "2025-12-08",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora71",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 71,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-12-25",
+        "fechaFinSuscripcion": "2025-12-25",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      36,
+      44,
+      61,
+      70,
+      74,
+      78,
+      82
+    ],
+    "idCancion": [
+      3,
+      8,
+      21,
+      94,
+      115
+    ],
+    "idPlaylist": [
+      71
+    ]
+  },
+  {
+    "_id": 72,
+    "nombreUsuario": "Patricia",
+    "apellidoUsuario": "Villacres",
+    "segunNombreUsuario": "Stefania",
+    "segundoApellidoUsuario": "Pacheco",
+    "correoUsuario": "patricia.villacres72@outlook.com",
+    "fechaRegistroUsuario": "2023-01-10",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora72",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 72,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-01-01",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      14,
+      25,
+      48,
+      65,
+      82
+    ],
+    "idCancion": [
+      13,
+      16,
+      26,
+      120
+    ],
+    "idPlaylist": [
+      72
+    ]
+  },
+  {
+    "_id": 73,
+    "nombreUsuario": "Jorge",
+    "apellidoUsuario": "Zapata",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "jorge.zapata73@yahoo.com",
+    "fechaRegistroUsuario": "2024-02-12",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora73",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 73,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-02-04",
+        "fechaFinSuscripcion": "2025-02-04",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      6,
+      52,
+      69,
+      86
+    ],
+    "idCancion": [
+      5,
+      18,
+      31
+    ],
+    "idPlaylist": [
+      73
+    ]
+  },
+  {
+    "_id": 74,
+    "nombreUsuario": "Diana",
+    "apellidoUsuario": "Endara",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "diana.endara74@udla.edu.ec",
+    "fechaRegistroUsuario": "2025-03-14",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora74",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 74,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-03-07",
+        "fechaFinSuscripcion": "2025-03-07",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      54,
+      56,
+      73,
+      90,
+      93
+    ],
+    "idCancion": [
+      10,
+      23,
+      31,
+      36,
+      54
+    ],
+    "idPlaylist": [
+      74
+    ]
+  },
+  {
+    "_id": 75,
+    "nombreUsuario": "Esteban",
+    "apellidoUsuario": "Larrea",
+    "segunNombreUsuario": "Fernando",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "esteban.larrea75@gmail.com",
+    "fechaRegistroUsuario": "2023-04-16",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora75",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 75,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-04-10",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      46,
+      60,
+      77,
+      94
+    ],
+    "idCancion": [
+      15,
+      28,
+      41,
+      95
+    ],
+    "idPlaylist": [
+      75
+    ]
+  },
+  {
+    "_id": 76,
+    "nombreUsuario": "Natalia",
+    "apellidoUsuario": "Proano",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": "Granja",
+    "correoUsuario": "natalia.proano76@hotmail.com",
+    "fechaRegistroUsuario": "2024-05-18",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora76",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 76,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-05-13",
+        "fechaFinSuscripcion": "2025-05-13",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      24,
+      64,
+      75,
+      81,
+      98
+    ],
+    "idCancion": [
+      20,
+      33,
+      46
+    ],
+    "idPlaylist": [
+      76
+    ]
+  },
+  {
+    "_id": 77,
+    "nombreUsuario": "Pablo",
+    "apellidoUsuario": "Cedeno",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "pablo.cedeno77@outlook.com",
+    "fechaRegistroUsuario": "2025-06-20",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora77",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 77,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-06-16",
+        "fechaFinSuscripcion": "2025-06-16",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      68,
+      85,
+      102,
+      113
+    ],
+    "idCancion": [
+      25,
+      38,
+      51
+    ],
+    "idPlaylist": [
+      77
+    ]
+  },
+  {
+    "_id": 78,
+    "nombreUsuario": "Gabriela",
+    "apellidoUsuario": "Jaramillo",
+    "segunNombreUsuario": "Alejandra",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "gabriela.jaramillo78@yahoo.com",
+    "fechaRegistroUsuario": "2023-07-22",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora78",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 78,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-07-19",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      19,
+      44,
+      72,
+      89,
+      106
+    ],
+    "idCancion": [
+      20,
+      30,
+      43,
+      56,
+      68,
+      106
+    ],
+    "idPlaylist": [
+      78
+    ]
+  },
+  {
+    "_id": 79,
+    "nombreUsuario": "Ivan",
+    "apellidoUsuario": "Carrillo",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "ivan.carrillo79@udla.edu.ec",
+    "fechaRegistroUsuario": "2024-08-24",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora79",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 79,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-08-22",
+        "fechaFinSuscripcion": "2025-08-22",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      69,
+      76,
+      93,
+      110
+    ],
+    "idCancion": [
+      35,
+      37,
+      48,
+      56,
+      61
+    ],
+    "idPlaylist": [
+      79
+    ]
+  },
+  {
+    "_id": 80,
+    "nombreUsuario": "Stefania",
+    "apellidoUsuario": "Burbano",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": "Borja",
+    "correoUsuario": "stefania.burbano80@gmail.com",
+    "fechaRegistroUsuario": "2025-09-26",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora80",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 80,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-09-25",
+        "fechaFinSuscripcion": "2025-09-25",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      80,
+      82,
+      97,
+      114
+    ],
+    "idCancion": [
+      40,
+      53,
+      59,
+      66
+    ],
+    "idPlaylist": [
+      80
+    ]
+  },
+  {
+    "_id": 81,
+    "nombreUsuario": "Miguel",
+    "apellidoUsuario": "Vasquez",
+    "segunNombreUsuario": "Mateo",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "miguel.vasquez81@hotmail.com",
+    "fechaRegistroUsuario": "2023-10-01",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora81",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 81,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-10-01",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      39,
+      84,
+      101,
+      118
+    ],
+    "idCancion": [
+      24,
+      45,
+      58,
+      66,
+      71
+    ],
+    "idPlaylist": [
+      81
+    ]
+  },
+  {
+    "_id": 82,
+    "nombreUsuario": "Daniela",
+    "apellidoUsuario": "Hidalgo",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "daniela.hidalgo82@outlook.com",
+    "fechaRegistroUsuario": "2024-11-03",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora82",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 82,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-11-04",
+        "fechaFinSuscripcion": "2025-11-04",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      2,
+      71,
+      88,
+      105
+    ],
+    "idCancion": [
+      50,
+      52,
+      63,
+      76,
+      102
+    ],
+    "idPlaylist": [
+      82
+    ]
+  },
+  {
+    "_id": 83,
+    "nombreUsuario": "Fernando",
+    "apellidoUsuario": "Chaves",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "fernando.chaves83@yahoo.com",
+    "fechaRegistroUsuario": "2025-12-05",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora83",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 83,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-12-07",
+        "fechaFinSuscripcion": "2025-12-07",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      6,
+      22,
+      39,
+      92,
+      109
+    ],
+    "idCancion": [
+      23,
+      47,
+      55,
+      68,
+      81
+    ],
+    "idPlaylist": [
+      83
+    ]
+  },
+  {
+    "_id": 84,
+    "nombreUsuario": "Mariana",
+    "apellidoUsuario": "Pacheco",
+    "segunNombreUsuario": "Lucia",
+    "segundoApellidoUsuario": "Acurio",
+    "correoUsuario": "mariana.pacheco84@udla.edu.ec",
+    "fechaRegistroUsuario": "2023-01-07",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora84",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 84,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-01-10",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      10,
+      96,
+      113
+    ],
+    "idCancion": [
+      43,
+      60,
+      73,
+      86
+    ],
+    "idPlaylist": [
+      84
+    ]
+  },
+  {
+    "_id": 85,
+    "nombreUsuario": "Cristobal",
+    "apellidoUsuario": "Mino",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "cristobal.mino85@gmail.com",
+    "fechaRegistroUsuario": "2024-02-09",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora85",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 85,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-02-13",
+        "fechaFinSuscripcion": "2025-02-13",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      14,
+      80,
+      100,
+      117
+    ],
+    "idCancion": [
+      65,
+      78,
+      81,
+      91
+    ],
+    "idPlaylist": [
+      85
+    ]
+  },
+  {
+    "_id": 86,
+    "nombreUsuario": "Alejandra",
+    "apellidoUsuario": "Pozo",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "alejandra.pozo86@hotmail.com",
+    "fechaRegistroUsuario": "2025-03-11",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora86",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 86,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-03-16",
+        "fechaFinSuscripcion": "2025-03-16",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      1,
+      18,
+      45,
+      104
+    ],
+    "idCancion": [
+      11,
+      70,
+      83,
+      96
+    ],
+    "idPlaylist": [
+      86
+    ]
+  },
+  {
+    "_id": 87,
+    "nombreUsuario": "Nicolas",
+    "apellidoUsuario": "Albuja",
+    "segunNombreUsuario": "Renato",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "nicolas.albuja87@outlook.com",
+    "fechaRegistroUsuario": "2023-04-13",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora87",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 87,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-04-19",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      5,
+      22,
+      61,
+      108
+    ],
+    "idCancion": [
+      21,
+      58,
+      75,
+      88,
+      101
+    ],
+    "idPlaylist": [
+      87
+    ]
+  },
+  {
+    "_id": 88,
+    "nombreUsuario": "Pamela",
+    "apellidoUsuario": "Granja",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": "Moran",
+    "correoUsuario": "pamela.granja88@yahoo.com",
+    "fechaRegistroUsuario": "2024-05-15",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora88",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 88,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-05-22",
+        "fechaFinSuscripcion": "2025-05-22",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      9,
+      26,
+      52,
+      79,
+      112
+    ],
+    "idCancion": [
+      60,
+      80,
+      93,
+      106
+    ],
+    "idPlaylist": [
+      88
+    ]
+  },
+  {
+    "_id": 89,
+    "nombreUsuario": "Mateo",
+    "apellidoUsuario": "Tipan",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "mateo.tipan89@udla.edu.ec",
+    "fechaRegistroUsuario": "2025-06-17",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora89",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 89,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-06-25",
+        "fechaFinSuscripcion": "2025-06-25",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      13,
+      30,
+      116
+    ],
+    "idCancion": [
+      85,
+      98,
+      111,
+      118
+    ],
+    "idPlaylist": [
+      89
+    ]
+  },
+  {
+    "_id": 90,
+    "nombreUsuario": "Sophia",
+    "apellidoUsuario": "Ulloa",
+    "segunNombreUsuario": "Melissa",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "sophia.ulloa90@gmail.com",
+    "fechaRegistroUsuario": "2023-07-19",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora90",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 90,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-07-01",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      17,
+      34,
+      82,
+      120
+    ],
+    "idCancion": [
+      62,
+      90,
+      103,
+      107,
+      116
+    ],
+    "idPlaylist": [
+      90
+    ]
+  },
+  {
+    "_id": 91,
+    "nombreUsuario": "Emilio",
+    "apellidoUsuario": "Quinonez",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "emilio.quinonez91@hotmail.com",
+    "fechaRegistroUsuario": "2024-08-21",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora91",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 91,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-08-04",
+        "fechaFinSuscripcion": "2025-08-04",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      4,
+      9,
+      21,
+      29,
+      38,
+      119
+    ],
+    "idCancion": [
+      1,
+      61,
+      95,
+      108
+    ],
+    "idPlaylist": [
+      91
+    ]
+  },
+  {
+    "_id": 92,
+    "nombreUsuario": "Lucia",
+    "apellidoUsuario": "Borja",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": "Gutierrez",
+    "correoUsuario": "lucia.borja92@outlook.com",
+    "fechaRegistroUsuario": "2025-09-23",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora92",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 92,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-09-07",
+        "fechaFinSuscripcion": "2025-09-07",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      8,
+      25,
+      41,
+      42
+    ],
+    "idCancion": [
+      6,
+      19,
+      55,
+      100,
+      113
+    ],
+    "idPlaylist": [
+      92
+    ]
+  },
+  {
+    "_id": 93,
+    "nombreUsuario": "Joaquin",
+    "apellidoUsuario": "Pillajo",
+    "segunNombreUsuario": "Bryan",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "joaquin.pillajo93@yahoo.com",
+    "fechaRegistroUsuario": "2023-10-25",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora93",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 93,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-10-10",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      12,
+      29,
+      46,
+      62,
+      116
+    ],
+    "idCancion": [
+      11,
+      105,
+      118
+    ],
+    "idPlaylist": [
+      93
+    ]
+  },
+  {
+    "_id": 94,
+    "nombreUsuario": "Isabella",
+    "apellidoUsuario": "Lema",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "isabella.lema94@udla.edu.ec",
+    "fechaRegistroUsuario": "2024-11-27",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora94",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 94,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-11-13",
+        "fechaFinSuscripcion": "2025-11-13",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      16,
+      33,
+      50,
+      111
+    ],
+    "idCancion": [
+      3,
+      16,
+      55,
+      110,
+      112
+    ],
+    "idPlaylist": [
+      94
+    ]
+  },
+  {
+    "_id": 95,
+    "nombreUsuario": "Renato",
+    "apellidoUsuario": "Yugcha",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "renato.yugcha95@gmail.com",
+    "fechaRegistroUsuario": "2025-12-02",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora95",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 95,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-12-16",
+        "fechaFinSuscripcion": "2025-12-16",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      20,
+      37,
+      54
+    ],
+    "idCancion": [
+      8,
+      21,
+      24,
+      115
+    ],
+    "idPlaylist": [
+      95
+    ]
+  },
+  {
+    "_id": 96,
+    "nombreUsuario": "Ximena",
+    "apellidoUsuario": "Acurio",
+    "segunNombreUsuario": "Priscila",
+    "segundoApellidoUsuario": "Suarez",
+    "correoUsuario": "ximena.acurio96@hotmail.com",
+    "fechaRegistroUsuario": "2023-01-04",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora96",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 96,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-01-19",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      24,
+      41,
+      58
+    ],
+    "idCancion": [
+      3,
+      13,
+      26,
+      57,
+      120
+    ],
+    "idPlaylist": [
+      96
+    ]
+  },
+  {
+    "_id": 97,
+    "nombreUsuario": "Gonzalo",
+    "apellidoUsuario": "Zurita",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "gonzalo.zurita97@outlook.com",
+    "fechaRegistroUsuario": "2024-02-06",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora97",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 97,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-02-22",
+        "fechaFinSuscripcion": "2025-02-22",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      28,
+      45,
+      62
+    ],
+    "idCancion": [
+      5,
+      18,
+      31,
+      43,
+      83
+    ],
+    "idPlaylist": [
+      97
+    ]
+  },
+  {
+    "_id": 98,
+    "nombreUsuario": "Melissa",
+    "apellidoUsuario": "Naranjo",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "melissa.naranjo98@yahoo.com",
+    "fechaRegistroUsuario": "2025-03-08",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora98",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 98,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-03-25",
+        "fechaFinSuscripcion": "2025-03-25",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      21,
+      32,
+      49,
+      66
+    ],
+    "idCancion": [
+      10,
+      23,
+      36
+    ],
+    "idPlaylist": [
+      98
+    ]
+  },
+  {
+    "_id": 99,
+    "nombreUsuario": "Alexis",
+    "apellidoUsuario": "Benalcazar",
+    "segunNombreUsuario": "Mauricio",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "alexis.benalcazar99@udla.edu.ec",
+    "fechaRegistroUsuario": "2023-04-10",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora99",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 99,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-04-01",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      17,
+      36,
+      53,
+      70,
+      74
+    ],
+    "idCancion": [
+      15,
+      28,
+      41
+    ],
+    "idPlaylist": [
+      99
+    ]
+  },
+  {
+    "_id": 100,
+    "nombreUsuario": "Carolina",
+    "apellidoUsuario": "Moran",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": "Espinoza",
+    "correoUsuario": "carolina.moran100@gmail.com",
+    "fechaRegistroUsuario": "2024-05-12",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora100",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 100,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-05-04",
+        "fechaFinSuscripcion": "2025-05-04",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      40,
+      57,
+      74
+    ],
+    "idCancion": [
+      7,
+      20,
+      33,
+      37,
+      46,
+      59
+    ],
+    "idPlaylist": [
+      100
+    ]
+  },
+  {
+    "_id": 101,
+    "nombreUsuario": "Bryan",
+    "apellidoUsuario": "Mendoza",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "bryan.mendoza101@hotmail.com",
+    "fechaRegistroUsuario": "2025-06-14",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora101",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 101,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-06-07",
+        "fechaFinSuscripcion": "2025-06-07",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      44,
+      61,
+      78
+    ],
+    "idCancion": [
+      25,
+      38,
+      51,
+      65
+    ],
+    "idPlaylist": [
+      101
+    ]
+  },
+  {
+    "_id": 102,
+    "nombreUsuario": "Adriana",
+    "apellidoUsuario": "Fernandez",
+    "segunNombreUsuario": "Gabriella",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "adriana.fernandez102@outlook.com",
+    "fechaRegistroUsuario": "2023-07-16",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora102",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 102,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-07-10",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      48,
+      64,
+      65,
+      82
+    ],
+    "idCancion": [
+      8,
+      19,
+      26,
+      30,
+      43,
+      56
+    ],
+    "idPlaylist": [
+      102
+    ]
+  },
+  {
+    "_id": 103,
+    "nombreUsuario": "Kevin",
+    "apellidoUsuario": "Paredes",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "kevin.paredes103@yahoo.com",
+    "fechaRegistroUsuario": "2024-08-18",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora103",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 103,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-08-13",
+        "fechaFinSuscripcion": "2025-08-13",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      52,
+      69,
+      71,
+      86
+    ],
+    "idCancion": [
+      11,
+      35,
+      48,
+      61,
+      96
+    ],
+    "idPlaylist": [
+      103
+    ]
+  },
+  {
+    "_id": 104,
+    "nombreUsuario": "Priscila",
+    "apellidoUsuario": "Gutierrez",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": "Ponce",
+    "correoUsuario": "priscila.gutierrez104@udla.edu.ec",
+    "fechaRegistroUsuario": "2025-09-20",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora104",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 104,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-09-16",
+        "fechaFinSuscripcion": "2025-09-16",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      56,
+      73,
+      88,
+      90,
+      104
+    ],
+    "idCancion": [
+      18,
+      40,
+      53,
+      66
+    ],
+    "idPlaylist": [
+      104
+    ]
+  },
+  {
+    "_id": 105,
+    "nombreUsuario": "David",
+    "apellidoUsuario": "Salazar",
+    "segunNombreUsuario": "Ingrid",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "david.salazar105@gmail.com",
+    "fechaRegistroUsuario": "2023-10-22",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora105",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 105,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-10-19",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      60,
+      77,
+      94
+    ],
+    "idCancion": [
+      45,
+      58,
+      71
+    ],
+    "idPlaylist": [
+      105
+    ]
+  },
+  {
+    "_id": 106,
+    "nombreUsuario": "Valentina",
+    "apellidoUsuario": "Ortiz",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "valentina.ortiz106@hotmail.com",
+    "fechaRegistroUsuario": "2024-11-24",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora106",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 106,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-11-22",
+        "fechaFinSuscripcion": "2025-11-22",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      64,
+      74,
+      80,
+      81,
+      98,
+      111
+    ],
+    "idCancion": [
+      50,
+      63,
+      76
+    ],
+    "idPlaylist": [
+      106
+    ]
+  },
+  {
+    "_id": 107,
+    "nombreUsuario": "Mauricio",
+    "apellidoUsuario": "Castro",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "mauricio.castro107@outlook.com",
+    "fechaRegistroUsuario": "2025-12-26",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora107",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 107,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-12-25",
+        "fechaFinSuscripcion": "2025-12-25",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      68,
+      85,
+      100,
+      102
+    ],
+    "idCancion": [
+      20,
+      55,
+      61,
+      68,
+      81,
+      100
+    ],
+    "idPlaylist": [
+      107
+    ]
+  },
+  {
+    "_id": 108,
+    "nombreUsuario": "Karina",
+    "apellidoUsuario": "Suarez",
+    "segunNombreUsuario": "Hernan",
+    "segundoApellidoUsuario": "Romero",
+    "correoUsuario": "karina.suarez108@yahoo.com",
+    "fechaRegistroUsuario": "2023-01-01",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora108",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 108,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-01-01",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      72,
+      84,
+      89,
+      106,
+      119
+    ],
+    "idCancion": [
+      60,
+      73,
+      86,
+      92,
+      116
+    ],
+    "idPlaylist": [
+      108
+    ]
+  },
+  {
+    "_id": 109,
+    "nombreUsuario": "Rodrigo",
+    "apellidoUsuario": "Vega",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "rodrigo.vega109@udla.edu.ec",
+    "fechaRegistroUsuario": "2024-02-03",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora109",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 109,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-02-04",
+        "fechaFinSuscripcion": "2025-02-04",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      11,
+      41,
+      76,
+      93,
+      110
+    ],
+    "idCancion": [
+      65,
+      78,
+      91
+    ],
+    "idPlaylist": [
+      109
+    ]
+  },
+  {
+    "_id": 110,
+    "nombreUsuario": "Gabriella",
+    "apellidoUsuario": "Reyes",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "gabriella.reyes110@gmail.com",
+    "fechaRegistroUsuario": "2025-03-05",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora110",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 110,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-03-07",
+        "fechaFinSuscripcion": "2025-03-07",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      10,
+      80,
+      97,
+      114
+    ],
+    "idCancion": [
+      70,
+      83,
+      96
+    ],
+    "idPlaylist": [
+      110
+    ]
+  },
+  {
+    "_id": 111,
+    "nombreUsuario": "Alonso",
+    "apellidoUsuario": "Montoya",
+    "segunNombreUsuario": "Alexander",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "alonso.montoya111@hotmail.com",
+    "fechaRegistroUsuario": "2023-04-07",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora111",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 111,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-04-10",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      79,
+      84,
+      101,
+      116,
+      118
+    ],
+    "idCancion": [
+      75,
+      84,
+      88,
+      101
+    ],
+    "idPlaylist": [
+      111
+    ]
+  },
+  {
+    "_id": 112,
+    "nombreUsuario": "Camilo",
+    "apellidoUsuario": "Espinoza",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": "Endara",
+    "correoUsuario": "camilo.espinoza112@outlook.com",
+    "fechaRegistroUsuario": "2024-05-09",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora112",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 112,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-05-13",
+        "fechaFinSuscripcion": "2025-05-13",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      2,
+      88,
+      105
+    ],
+    "idCancion": [
+      80,
+      93,
+      106
+    ],
+    "idPlaylist": [
+      112
+    ]
+  },
+  {
+    "_id": 113,
+    "nombreUsuario": "Ingrid",
+    "apellidoUsuario": "Alvarado",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "ingrid.alvarado113@yahoo.com",
+    "fechaRegistroUsuario": "2025-06-11",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora113",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 113,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-06-16",
+        "fechaFinSuscripcion": "2025-06-16",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      6,
+      40,
+      92,
+      109
+    ],
+    "idCancion": [
+      85,
+      98,
+      111
+    ],
+    "idPlaylist": [
+      113
+    ]
+  },
+  {
+    "_id": 114,
+    "nombreUsuario": "Gustavo",
+    "apellidoUsuario": "Morales",
+    "segunNombreUsuario": "Maria",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "gustavo.morales114@udla.edu.ec",
+    "fechaRegistroUsuario": "2023-07-13",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora114",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 114,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-07-19",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      10,
+      12,
+      81,
+      96,
+      113
+    ],
+    "idCancion": [
+      6,
+      52,
+      90,
+      103,
+      116
+    ],
+    "idPlaylist": [
+      114
+    ]
+  },
+  {
+    "_id": 115,
+    "nombreUsuario": "Natasha",
+    "apellidoUsuario": "Jimenez",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "natasha.jimenez115@gmail.com",
+    "fechaRegistroUsuario": "2024-08-15",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora115",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 115,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-08-22",
+        "fechaFinSuscripcion": "2025-08-22",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      14,
+      37,
+      100,
+      117
+    ],
+    "idCancion": [
+      1,
+      50,
+      95,
+      108
+    ],
+    "idPlaylist": [
+      115
+    ]
+  },
+  {
+    "_id": 116,
+    "nombreUsuario": "Hernan",
+    "apellidoUsuario": "Ponce",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": "Jaramillo",
+    "correoUsuario": "hernan.ponce116@hotmail.com",
+    "fechaRegistroUsuario": "2025-09-17",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora116",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 116,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-09-25",
+        "fechaFinSuscripcion": "2025-09-25",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      1,
+      18,
+      92,
+      104
+    ],
+    "idCancion": [
+      6,
+      100,
+      113
+    ],
+    "idPlaylist": [
+      116
+    ]
+  },
+  {
+    "_id": 117,
+    "nombreUsuario": "Lorena",
+    "apellidoUsuario": "Crespo",
+    "segunNombreUsuario": "Diego",
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "lorena.crespo117@outlook.com",
+    "fechaRegistroUsuario": "2023-10-19",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora117",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 117,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-10-01",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      5,
+      22,
+      108,
+      112
+    ],
+    "idCancion": [
+      11,
+      46,
+      105,
+      118
+    ],
+    "idPlaylist": [
+      117
+    ]
+  },
+  {
+    "_id": 118,
+    "nombreUsuario": "Paulina",
+    "apellidoUsuario": "Davila",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "paulina.davila118@yahoo.com",
+    "fechaRegistroUsuario": "2024-11-21",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora118",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 118,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-11-04",
+        "fechaFinSuscripcion": "2025-11-04",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      9,
+      26,
+      112
+    ],
+    "idCancion": [
+      3,
+      16,
+      110
+    ],
+    "idPlaylist": [
+      118
+    ]
+  },
+  {
+    "_id": 119,
+    "nombreUsuario": "Alexander",
+    "apellidoUsuario": "Coronado",
+    "segunNombreUsuario": null,
+    "segundoApellidoUsuario": null,
+    "correoUsuario": "alexander.coronado119@udla.edu.ec",
+    "fechaRegistroUsuario": "2025-12-23",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora119",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 119,
+        "tipoPlanSuscripcion": "Premium",
+        "fechaInicioSuscripcion": "2024-12-07",
+        "fechaFinSuscripcion": "2025-12-07",
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      13,
+      30,
+      116
+    ],
+    "idCancion": [
+      8,
+      21,
+      103,
+      115
+    ],
+    "idPlaylist": [
+      119
+    ]
+  },
+  {
+    "_id": 120,
+    "nombreUsuario": "Fernanda",
+    "apellidoUsuario": "Romero",
+    "segunNombreUsuario": "Camila",
+    "segundoApellidoUsuario": "Hidalgo",
+    "correoUsuario": "fernanda.romero120@gmail.com",
+    "fechaRegistroUsuario": "2023-01-25",
+    "rolUsuario": "usuario",
+    "passwordUsuario": "Sonora120",
+    "Suscripcion": [
+      {
+        "idSuscripcion": 120,
+        "tipoPlanSuscripcion": "Gratis",
+        "fechaInicioSuscripcion": "2024-01-10",
+        "fechaFinSuscripcion": null,
+        "estadoSuscripcion": "Activa"
+      }
+    ],
+    "idArtista": [
+      17,
+      34,
+      120
+    ],
+    "idCancion": [
+      13,
+      26,
+      120
+    ],
+    "idPlaylist": [
+      120
+    ]
+  }
+]

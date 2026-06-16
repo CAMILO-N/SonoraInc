@@ -1,0 +1,1160 @@
+[
+  {
+    "_id": 1,
+    "tituloAlbum": "Horizontes",
+    "fechaLanzamientoAlbum": "2021-02-04",
+    "idArtista": 1
+  },
+  {
+    "_id": 2,
+    "tituloAlbum": "Neon Nights",
+    "fechaLanzamientoAlbum": "2022-03-07",
+    "idArtista": 2
+  },
+  {
+    "_id": 3,
+    "tituloAlbum": "Calles de Fuego",
+    "fechaLanzamientoAlbum": "2023-04-10",
+    "idArtista": 3
+  },
+  {
+    "_id": 4,
+    "tituloAlbum": "Marea Alta",
+    "fechaLanzamientoAlbum": "2024-05-13",
+    "idArtista": 4
+  },
+  {
+    "_id": 5,
+    "tituloAlbum": "Universo Paralelo",
+    "fechaLanzamientoAlbum": "2025-06-16",
+    "idArtista": 5
+  },
+  {
+    "_id": 6,
+    "tituloAlbum": "Sombras y Luz",
+    "fechaLanzamientoAlbum": "2020-07-19",
+    "idArtista": 6
+  },
+  {
+    "_id": 7,
+    "tituloAlbum": "El Ultimo Verano",
+    "fechaLanzamientoAlbum": "2021-08-22",
+    "idArtista": 7
+  },
+  {
+    "_id": 8,
+    "tituloAlbum": "Vibraciones",
+    "fechaLanzamientoAlbum": "2022-09-25",
+    "idArtista": 8
+  },
+  {
+    "_id": 9,
+    "tituloAlbum": "Raices",
+    "fechaLanzamientoAlbum": "2023-10-01",
+    "idArtista": 9
+  },
+  {
+    "_id": 10,
+    "tituloAlbum": "Destino Incierto",
+    "fechaLanzamientoAlbum": "2024-11-04",
+    "idArtista": 10
+  },
+  {
+    "_id": 11,
+    "tituloAlbum": "Caos Controlado",
+    "fechaLanzamientoAlbum": "2025-12-07",
+    "idArtista": 11
+  },
+  {
+    "_id": 12,
+    "tituloAlbum": "Promesas Rotas",
+    "fechaLanzamientoAlbum": "2020-01-10",
+    "idArtista": 12
+  },
+  {
+    "_id": 13,
+    "tituloAlbum": "Vientos del Norte",
+    "fechaLanzamientoAlbum": "2021-02-13",
+    "idArtista": 13
+  },
+  {
+    "_id": 14,
+    "tituloAlbum": "La Gran Ciudad",
+    "fechaLanzamientoAlbum": "2022-03-16",
+    "idArtista": 14
+  },
+  {
+    "_id": 15,
+    "tituloAlbum": "Acustico en Vivo",
+    "fechaLanzamientoAlbum": "2023-04-19",
+    "idArtista": 15
+  },
+  {
+    "_id": 16,
+    "tituloAlbum": "Un Verano Sin Ti",
+    "fechaLanzamientoAlbum": "2024-05-22",
+    "idArtista": 16
+  },
+  {
+    "_id": 17,
+    "tituloAlbum": "Midnights",
+    "fechaLanzamientoAlbum": "2025-06-25",
+    "idArtista": 17
+  },
+  {
+    "_id": 18,
+    "tituloAlbum": "Un Disco pa Bailar",
+    "fechaLanzamientoAlbum": "2020-07-01",
+    "idArtista": 18
+  },
+  {
+    "_id": 19,
+    "tituloAlbum": "Motomami",
+    "fechaLanzamientoAlbum": "2021-08-04",
+    "idArtista": 19
+  },
+  {
+    "_id": 20,
+    "tituloAlbum": "Mas Futuro Que Pasado",
+    "fechaLanzamientoAlbum": "2022-09-07",
+    "idArtista": 20
+  },
+  {
+    "_id": 21,
+    "tituloAlbum": "Uforia",
+    "fechaLanzamientoAlbum": "2023-10-10",
+    "idArtista": 21
+  },
+  {
+    "_id": 22,
+    "tituloAlbum": "Legendaddy",
+    "fechaLanzamientoAlbum": "2024-11-13",
+    "idArtista": 22
+  },
+  {
+    "_id": 23,
+    "tituloAlbum": "SOS",
+    "fechaLanzamientoAlbum": "2025-12-16",
+    "idArtista": 23
+  },
+  {
+    "_id": 24,
+    "tituloAlbum": "Igual de Raras",
+    "fechaLanzamientoAlbum": "2020-01-19",
+    "idArtista": 24
+  },
+  {
+    "_id": 25,
+    "tituloAlbum": "La Burbuja",
+    "fechaLanzamientoAlbum": "2021-02-22",
+    "idArtista": 25
+  },
+  {
+    "_id": 26,
+    "tituloAlbum": "Vida Cotidiana",
+    "fechaLanzamientoAlbum": "2022-03-25",
+    "idArtista": 26
+  },
+  {
+    "_id": 27,
+    "tituloAlbum": "Orquideas",
+    "fechaLanzamientoAlbum": "2023-04-01",
+    "idArtista": 27
+  },
+  {
+    "_id": 28,
+    "tituloAlbum": "Las Letras Ya No Importan",
+    "fechaLanzamientoAlbum": "2024-05-04",
+    "idArtista": 28
+  },
+  {
+    "_id": 29,
+    "tituloAlbum": "Colores",
+    "fechaLanzamientoAlbum": "2025-06-07",
+    "idArtista": 29
+  },
+  {
+    "_id": 30,
+    "tituloAlbum": "F8",
+    "fechaLanzamientoAlbum": "2020-07-10",
+    "idArtista": 30
+  },
+  {
+    "_id": 31,
+    "tituloAlbum": "Endless Summer Vacation",
+    "fechaLanzamientoAlbum": "2021-08-13",
+    "idArtista": 31
+  },
+  {
+    "_id": 32,
+    "tituloAlbum": "Guts",
+    "fechaLanzamientoAlbum": "2022-09-16",
+    "idArtista": 32
+  },
+  {
+    "_id": 33,
+    "tituloAlbum": "Nadie Sabe Lo Que Va a Pasar Manana",
+    "fechaLanzamientoAlbum": "2023-10-19",
+    "idArtista": 33
+  },
+  {
+    "_id": 34,
+    "tituloAlbum": "El Ultimo Tour Del Mundo",
+    "fechaLanzamientoAlbum": "2024-11-22",
+    "idArtista": 34
+  },
+  {
+    "_id": 35,
+    "tituloAlbum": "Jose",
+    "fechaLanzamientoAlbum": "2025-12-25",
+    "idArtista": 35
+  },
+  {
+    "_id": 36,
+    "tituloAlbum": "Parachutes",
+    "fechaLanzamientoAlbum": "2020-01-01",
+    "idArtista": 36
+  },
+  {
+    "_id": 37,
+    "tituloAlbum": "Random Access Memories",
+    "fechaLanzamientoAlbum": "2021-02-04",
+    "idArtista": 37
+  },
+  {
+    "_id": 38,
+    "tituloAlbum": "Blonde",
+    "fechaLanzamientoAlbum": "2022-03-07",
+    "idArtista": 38
+  },
+  {
+    "_id": 39,
+    "tituloAlbum": "Ctrl",
+    "fechaLanzamientoAlbum": "2023-04-10",
+    "idArtista": 39
+  },
+  {
+    "_id": 40,
+    "tituloAlbum": "Igor",
+    "fechaLanzamientoAlbum": "2024-05-13",
+    "idArtista": 40
+  },
+  {
+    "_id": 41,
+    "tituloAlbum": "Good Kid MAAD City",
+    "fechaLanzamientoAlbum": "2025-06-16",
+    "idArtista": 41
+  },
+  {
+    "_id": 42,
+    "tituloAlbum": "El Dorado",
+    "fechaLanzamientoAlbum": "2020-07-19",
+    "idArtista": 42
+  },
+  {
+    "_id": 43,
+    "tituloAlbum": "Quiero Verte Sonreir",
+    "fechaLanzamientoAlbum": "2021-08-22",
+    "idArtista": 43
+  },
+  {
+    "_id": 44,
+    "tituloAlbum": "Ladron de Fuego",
+    "fechaLanzamientoAlbum": "2022-09-25",
+    "idArtista": 44
+  },
+  {
+    "_id": 45,
+    "tituloAlbum": "Alma",
+    "fechaLanzamientoAlbum": "2023-10-01",
+    "idArtista": 45
+  },
+  {
+    "_id": 46,
+    "tituloAlbum": "Amar Amor",
+    "fechaLanzamientoAlbum": "2024-11-04",
+    "idArtista": 46
+  },
+  {
+    "_id": 47,
+    "tituloAlbum": "Folklore",
+    "fechaLanzamientoAlbum": "2025-12-07",
+    "idArtista": 47
+  },
+  {
+    "_id": 48,
+    "tituloAlbum": "After Hours",
+    "fechaLanzamientoAlbum": "2020-01-10",
+    "idArtista": 48
+  },
+  {
+    "_id": 49,
+    "tituloAlbum": "Planet Her",
+    "fechaLanzamientoAlbum": "2021-02-13",
+    "idArtista": 49
+  },
+  {
+    "_id": 50,
+    "tituloAlbum": "Happier Than Ever",
+    "fechaLanzamientoAlbum": "2022-03-16",
+    "idArtista": 50
+  },
+  {
+    "_id": 51,
+    "tituloAlbum": "Future Nostalgia",
+    "fechaLanzamientoAlbum": "2023-04-19",
+    "idArtista": 51
+  },
+  {
+    "_id": 52,
+    "tituloAlbum": "Chromatica",
+    "fechaLanzamientoAlbum": "2024-05-22",
+    "idArtista": 52
+  },
+  {
+    "_id": 53,
+    "tituloAlbum": "Justice",
+    "fechaLanzamientoAlbum": "2025-06-25",
+    "idArtista": 53
+  },
+  {
+    "_id": 54,
+    "tituloAlbum": "Donda",
+    "fechaLanzamientoAlbum": "2020-07-01",
+    "idArtista": 54
+  },
+  {
+    "_id": 55,
+    "tituloAlbum": "Mr Morale and The Big Steppers",
+    "fechaLanzamientoAlbum": "2021-08-04",
+    "idArtista": 55
+  },
+  {
+    "_id": 56,
+    "tituloAlbum": "Saturno",
+    "fechaLanzamientoAlbum": "2022-09-07",
+    "idArtista": 56
+  },
+  {
+    "_id": 57,
+    "tituloAlbum": "Cowboy Carter",
+    "fechaLanzamientoAlbum": "2023-10-10",
+    "idArtista": 57
+  },
+  {
+    "_id": 58,
+    "tituloAlbum": "Short n Sweet",
+    "fechaLanzamientoAlbum": "2024-11-13",
+    "idArtista": 58
+  },
+  {
+    "_id": 59,
+    "tituloAlbum": "Brat",
+    "fechaLanzamientoAlbum": "2025-12-16",
+    "idArtista": 59
+  },
+  {
+    "_id": 60,
+    "tituloAlbum": "The Great Impersonator",
+    "fechaLanzamientoAlbum": "2020-01-19",
+    "idArtista": 60
+  },
+  {
+    "_id": 61,
+    "tituloAlbum": "De Aqui pa Aya",
+    "fechaLanzamientoAlbum": "2021-02-22",
+    "idArtista": 61
+  },
+  {
+    "_id": 62,
+    "tituloAlbum": "Tropico",
+    "fechaLanzamientoAlbum": "2022-03-25",
+    "idArtista": 62
+  },
+  {
+    "_id": 63,
+    "tituloAlbum": "Volvere",
+    "fechaLanzamientoAlbum": "2023-04-01",
+    "idArtista": 63
+  },
+  {
+    "_id": 64,
+    "tituloAlbum": "La Nina de Fuego",
+    "fechaLanzamientoAlbum": "2024-05-04",
+    "idArtista": 64
+  },
+  {
+    "_id": 65,
+    "tituloAlbum": "Entre Colores",
+    "fechaLanzamientoAlbum": "2025-06-07",
+    "idArtista": 65
+  },
+  {
+    "_id": 66,
+    "tituloAlbum": "Selva",
+    "fechaLanzamientoAlbum": "2020-07-10",
+    "idArtista": 66
+  },
+  {
+    "_id": 67,
+    "tituloAlbum": "Tierra Adentro",
+    "fechaLanzamientoAlbum": "2021-08-13",
+    "idArtista": 67
+  },
+  {
+    "_id": 68,
+    "tituloAlbum": "Pulso",
+    "fechaLanzamientoAlbum": "2022-09-16",
+    "idArtista": 68
+  },
+  {
+    "_id": 69,
+    "tituloAlbum": "Ecos",
+    "fechaLanzamientoAlbum": "2023-10-19",
+    "idArtista": 69
+  },
+  {
+    "_id": 70,
+    "tituloAlbum": "Brillo Propio",
+    "fechaLanzamientoAlbum": "2024-11-22",
+    "idArtista": 70
+  },
+  {
+    "_id": 71,
+    "tituloAlbum": "Vuelo Libre",
+    "fechaLanzamientoAlbum": "2025-12-25",
+    "idArtista": 71
+  },
+  {
+    "_id": 72,
+    "tituloAlbum": "Sin Filtros",
+    "fechaLanzamientoAlbum": "2020-01-01",
+    "idArtista": 72
+  },
+  {
+    "_id": 73,
+    "tituloAlbum": "Mareas",
+    "fechaLanzamientoAlbum": "2021-02-04",
+    "idArtista": 73
+  },
+  {
+    "_id": 74,
+    "tituloAlbum": "Noche y Dia",
+    "fechaLanzamientoAlbum": "2022-03-07",
+    "idArtista": 74
+  },
+  {
+    "_id": 75,
+    "tituloAlbum": "Lluvia de Ideas",
+    "fechaLanzamientoAlbum": "2023-04-10",
+    "idArtista": 75
+  },
+  {
+    "_id": 76,
+    "tituloAlbum": "Espejo",
+    "fechaLanzamientoAlbum": "2024-05-13",
+    "idArtista": 76
+  },
+  {
+    "_id": 77,
+    "tituloAlbum": "Creciendo",
+    "fechaLanzamientoAlbum": "2025-06-16",
+    "idArtista": 77
+  },
+  {
+    "_id": 78,
+    "tituloAlbum": "Silencio",
+    "fechaLanzamientoAlbum": "2020-07-19",
+    "idArtista": 78
+  },
+  {
+    "_id": 79,
+    "tituloAlbum": "Memorias",
+    "fechaLanzamientoAlbum": "2021-08-22",
+    "idArtista": 79
+  },
+  {
+    "_id": 80,
+    "tituloAlbum": "Caminos Cruzados",
+    "fechaLanzamientoAlbum": "2022-09-25",
+    "idArtista": 80
+  },
+  {
+    "_id": 81,
+    "tituloAlbum": "Rebelde",
+    "fechaLanzamientoAlbum": "2023-10-01",
+    "idArtista": 81
+  },
+  {
+    "_id": 82,
+    "tituloAlbum": "Fronteras",
+    "fechaLanzamientoAlbum": "2024-11-04",
+    "idArtista": 82
+  },
+  {
+    "_id": 83,
+    "tituloAlbum": "Latidos",
+    "fechaLanzamientoAlbum": "2025-12-07",
+    "idArtista": 83
+  },
+  {
+    "_id": 84,
+    "tituloAlbum": "Amanecer",
+    "fechaLanzamientoAlbum": "2020-01-10",
+    "idArtista": 84
+  },
+  {
+    "_id": 85,
+    "tituloAlbum": "Piel de Luna",
+    "fechaLanzamientoAlbum": "2021-02-13",
+    "idArtista": 85
+  },
+  {
+    "_id": 86,
+    "tituloAlbum": "Tempestades",
+    "fechaLanzamientoAlbum": "2022-03-16",
+    "idArtista": 86
+  },
+  {
+    "_id": 87,
+    "tituloAlbum": "Cicatrices",
+    "fechaLanzamientoAlbum": "2023-04-19",
+    "idArtista": 87
+  },
+  {
+    "_id": 88,
+    "tituloAlbum": "Instantes",
+    "fechaLanzamientoAlbum": "2024-05-22",
+    "idArtista": 88
+  },
+  {
+    "_id": 89,
+    "tituloAlbum": "Cuentos de Viejos",
+    "fechaLanzamientoAlbum": "2025-06-25",
+    "idArtista": 89
+  },
+  {
+    "_id": 90,
+    "tituloAlbum": "Huellas",
+    "fechaLanzamientoAlbum": "2020-07-01",
+    "idArtista": 90
+  },
+  {
+    "_id": 91,
+    "tituloAlbum": "Raices Profundas",
+    "fechaLanzamientoAlbum": "2021-08-04",
+    "idArtista": 91
+  },
+  {
+    "_id": 92,
+    "tituloAlbum": "Vibra",
+    "fechaLanzamientoAlbum": "2022-09-07",
+    "idArtista": 92
+  },
+  {
+    "_id": 93,
+    "tituloAlbum": "Latitud Cero",
+    "fechaLanzamientoAlbum": "2023-10-10",
+    "idArtista": 93
+  },
+  {
+    "_id": 94,
+    "tituloAlbum": "El Pulso del Ecuador",
+    "fechaLanzamientoAlbum": "2024-11-13",
+    "idArtista": 94
+  },
+  {
+    "_id": 95,
+    "tituloAlbum": "Quitu",
+    "fechaLanzamientoAlbum": "2025-12-16",
+    "idArtista": 95
+  },
+  {
+    "_id": 96,
+    "tituloAlbum": "Andino",
+    "fechaLanzamientoAlbum": "2020-01-19",
+    "idArtista": 96
+  },
+  {
+    "_id": 97,
+    "tituloAlbum": "Pacifico",
+    "fechaLanzamientoAlbum": "2021-02-22",
+    "idArtista": 97
+  },
+  {
+    "_id": 98,
+    "tituloAlbum": "Galapagueno",
+    "fechaLanzamientoAlbum": "2022-03-25",
+    "idArtista": 98
+  },
+  {
+    "_id": 99,
+    "tituloAlbum": "Mitad del Mundo",
+    "fechaLanzamientoAlbum": "2023-04-01",
+    "idArtista": 99
+  },
+  {
+    "_id": 100,
+    "tituloAlbum": "Cuatro Regiones",
+    "fechaLanzamientoAlbum": "2024-05-04",
+    "idArtista": 100
+  },
+  {
+    "_id": 101,
+    "tituloAlbum": "Ritual del Sol",
+    "fechaLanzamientoAlbum": "2025-06-07",
+    "idArtista": 101
+  },
+  {
+    "_id": 102,
+    "tituloAlbum": "Luna Nueva",
+    "fechaLanzamientoAlbum": "2020-07-10",
+    "idArtista": 102
+  },
+  {
+    "_id": 103,
+    "tituloAlbum": "Costa Azul",
+    "fechaLanzamientoAlbum": "2021-08-13",
+    "idArtista": 103
+  },
+  {
+    "_id": 104,
+    "tituloAlbum": "Camino de Sal",
+    "fechaLanzamientoAlbum": "2022-09-16",
+    "idArtista": 104
+  },
+  {
+    "_id": 105,
+    "tituloAlbum": "Ciudad Invisible",
+    "fechaLanzamientoAlbum": "2023-10-19",
+    "idArtista": 105
+  },
+  {
+    "_id": 106,
+    "tituloAlbum": "Sonidos del Sur",
+    "fechaLanzamientoAlbum": "2024-11-22",
+    "idArtista": 106
+  },
+  {
+    "_id": 107,
+    "tituloAlbum": "Bajo la Lluvia",
+    "fechaLanzamientoAlbum": "2025-12-25",
+    "idArtista": 107
+  },
+  {
+    "_id": 108,
+    "tituloAlbum": "Pulso Urbano",
+    "fechaLanzamientoAlbum": "2020-01-01",
+    "idArtista": 108
+  },
+  {
+    "_id": 109,
+    "tituloAlbum": "Efecto Mariposa",
+    "fechaLanzamientoAlbum": "2021-02-04",
+    "idArtista": 109
+  },
+  {
+    "_id": 110,
+    "tituloAlbum": "Noches Claras",
+    "fechaLanzamientoAlbum": "2022-03-07",
+    "idArtista": 110
+  },
+  {
+    "_id": 111,
+    "tituloAlbum": "Ritmos del Valle",
+    "fechaLanzamientoAlbum": "2023-04-10",
+    "idArtista": 111
+  },
+  {
+    "_id": 112,
+    "tituloAlbum": "Eterno Movimiento",
+    "fechaLanzamientoAlbum": "2024-05-13",
+    "idArtista": 112
+  },
+  {
+    "_id": 113,
+    "tituloAlbum": "Altamar",
+    "fechaLanzamientoAlbum": "2025-06-16",
+    "idArtista": 113
+  },
+  {
+    "_id": 114,
+    "tituloAlbum": "Espiral",
+    "fechaLanzamientoAlbum": "2020-07-19",
+    "idArtista": 114
+  },
+  {
+    "_id": 115,
+    "tituloAlbum": "Corazon Electrico",
+    "fechaLanzamientoAlbum": "2021-08-22",
+    "idArtista": 115
+  },
+  {
+    "_id": 116,
+    "tituloAlbum": "Cosecha de Luna",
+    "fechaLanzamientoAlbum": "2022-09-25",
+    "idArtista": 116
+  },
+  {
+    "_id": 117,
+    "tituloAlbum": "Mapa Interior",
+    "fechaLanzamientoAlbum": "2023-10-01",
+    "idArtista": 117
+  },
+  {
+    "_id": 118,
+    "tituloAlbum": "Ritual Urbano",
+    "fechaLanzamientoAlbum": "2024-11-04",
+    "idArtista": 118
+  },
+  {
+    "_id": 119,
+    "tituloAlbum": "Sierra y Mar",
+    "fechaLanzamientoAlbum": "2025-12-07",
+    "idArtista": 119
+  },
+  {
+    "_id": 120,
+    "tituloAlbum": "Volcanes",
+    "fechaLanzamientoAlbum": "2020-01-10",
+    "idArtista": 120
+  },
+  {
+    "_id": 121,
+    "tituloAlbum": "YHLQMDLG",
+    "fechaLanzamientoAlbum": "2020-02-29",
+    "idArtista": 16
+  },
+  {
+    "_id": 122,
+    "tituloAlbum": "X 100PRE",
+    "fechaLanzamientoAlbum": "2018-12-24",
+    "idArtista": 16
+  },
+  {
+    "_id": 123,
+    "tituloAlbum": "Lover",
+    "fechaLanzamientoAlbum": "2019-08-23",
+    "idArtista": 17
+  },
+  {
+    "_id": 124,
+    "tituloAlbum": "1989 Taylors Version",
+    "fechaLanzamientoAlbum": "2023-10-27",
+    "idArtista": 17
+  },
+  {
+    "_id": 125,
+    "tituloAlbum": "Manana Sera Bonito",
+    "fechaLanzamientoAlbum": "2023-02-24",
+    "idArtista": 21
+  },
+  {
+    "_id": 126,
+    "tituloAlbum": "KG0516",
+    "fechaLanzamientoAlbum": "2021-04-02",
+    "idArtista": 21
+  },
+  {
+    "_id": 127,
+    "tituloAlbum": "El Mal Querer",
+    "fechaLanzamientoAlbum": "2018-11-02",
+    "idArtista": 19
+  },
+  {
+    "_id": 128,
+    "tituloAlbum": "Vibras",
+    "fechaLanzamientoAlbum": "2018-05-25",
+    "idArtista": 18
+  },
+  {
+    "_id": 129,
+    "tituloAlbum": "Energia",
+    "fechaLanzamientoAlbum": "2016-06-24",
+    "idArtista": 18
+  },
+  {
+    "_id": 130,
+    "tituloAlbum": "Plastic Hearts",
+    "fechaLanzamientoAlbum": "2020-11-27",
+    "idArtista": 41
+  },
+  {
+    "_id": 131,
+    "tituloAlbum": "Heroe",
+    "fechaLanzamientoAlbum": "2014-06-17",
+    "idArtista": 72
+  },
+  {
+    "_id": 132,
+    "tituloAlbum": "Prive",
+    "fechaLanzamientoAlbum": "2021-06-04",
+    "idArtista": 72
+  },
+  {
+    "_id": 133,
+    "tituloAlbum": "Origen",
+    "fechaLanzamientoAlbum": "2021-08-27",
+    "idArtista": 52
+  },
+  {
+    "_id": 134,
+    "tituloAlbum": "Un Dia Normal",
+    "fechaLanzamientoAlbum": "2002-03-19",
+    "idArtista": 52
+  },
+  {
+    "_id": 135,
+    "tituloAlbum": "SOUR",
+    "fechaLanzamientoAlbum": "2021-05-21",
+    "idArtista": 42
+  },
+  {
+    "_id": 136,
+    "tituloAlbum": "Formula Vol. 3",
+    "fechaLanzamientoAlbum": "2022-07-08",
+    "idArtista": 73
+  },
+  {
+    "_id": 137,
+    "tituloAlbum": "Genesis",
+    "fechaLanzamientoAlbum": "2023-07-07",
+    "idArtista": 81
+  },
+  {
+    "_id": 138,
+    "tituloAlbum": "Ah Y Que",
+    "fechaLanzamientoAlbum": "2022-12-09",
+    "idArtista": 81
+  },
+  {
+    "_id": 139,
+    "tituloAlbum": "Please Please Me",
+    "fechaLanzamientoAlbum": "1963-03-22",
+    "idArtista": 121
+  },
+  {
+    "_id": 140,
+    "tituloAlbum": "With the Beatles",
+    "fechaLanzamientoAlbum": "1963-11-22",
+    "idArtista": 121
+  },
+  {
+    "_id": 141,
+    "tituloAlbum": "A Hard Days Night",
+    "fechaLanzamientoAlbum": "1964-07-10",
+    "idArtista": 121
+  },
+  {
+    "_id": 142,
+    "tituloAlbum": "Revolver",
+    "fechaLanzamientoAlbum": "1966-08-05",
+    "idArtista": 121
+  },
+  {
+    "_id": 143,
+    "tituloAlbum": "Sgt Peppers Lonely Hearts Club Band",
+    "fechaLanzamientoAlbum": "1967-06-01",
+    "idArtista": 121
+  },
+  {
+    "_id": 144,
+    "tituloAlbum": "Abbey Road",
+    "fechaLanzamientoAlbum": "1969-09-26",
+    "idArtista": 121
+  },
+  {
+    "_id": 145,
+    "tituloAlbum": "The Dark Side of the Moon",
+    "fechaLanzamientoAlbum": "1973-03-01",
+    "idArtista": 122
+  },
+  {
+    "_id": 146,
+    "tituloAlbum": "Wish You Were Here",
+    "fechaLanzamientoAlbum": "1975-09-12",
+    "idArtista": 122
+  },
+  {
+    "_id": 147,
+    "tituloAlbum": "Animals",
+    "fechaLanzamientoAlbum": "1977-01-23",
+    "idArtista": 122
+  },
+  {
+    "_id": 148,
+    "tituloAlbum": "The Wall",
+    "fechaLanzamientoAlbum": "1979-11-30",
+    "idArtista": 122
+  },
+  {
+    "_id": 149,
+    "tituloAlbum": "Led Zeppelin",
+    "fechaLanzamientoAlbum": "1969-01-12",
+    "idArtista": 123
+  },
+  {
+    "_id": 150,
+    "tituloAlbum": "Led Zeppelin II",
+    "fechaLanzamientoAlbum": "1969-10-22",
+    "idArtista": 123
+  },
+  {
+    "_id": 151,
+    "tituloAlbum": "Led Zeppelin IV",
+    "fechaLanzamientoAlbum": "1971-11-08",
+    "idArtista": 123
+  },
+  {
+    "_id": 152,
+    "tituloAlbum": "Houses of the Holy",
+    "fechaLanzamientoAlbum": "1973-03-28",
+    "idArtista": 123
+  },
+  {
+    "_id": 153,
+    "tituloAlbum": "Physical Graffiti",
+    "fechaLanzamientoAlbum": "1975-02-24",
+    "idArtista": 123
+  },
+  {
+    "_id": 154,
+    "tituloAlbum": "Off the Wall",
+    "fechaLanzamientoAlbum": "1979-08-10",
+    "idArtista": 124
+  },
+  {
+    "_id": 155,
+    "tituloAlbum": "Thriller",
+    "fechaLanzamientoAlbum": "1982-11-30",
+    "idArtista": 124
+  },
+  {
+    "_id": 156,
+    "tituloAlbum": "Bad",
+    "fechaLanzamientoAlbum": "1987-08-31",
+    "idArtista": 124
+  },
+  {
+    "_id": 157,
+    "tituloAlbum": "Dangerous",
+    "fechaLanzamientoAlbum": "1991-11-26",
+    "idArtista": 124
+  },
+  {
+    "_id": 158,
+    "tituloAlbum": "Like a Virgin",
+    "fechaLanzamientoAlbum": "1984-11-12",
+    "idArtista": 125
+  },
+  {
+    "_id": 159,
+    "tituloAlbum": "True Blue",
+    "fechaLanzamientoAlbum": "1986-06-30",
+    "idArtista": 125
+  },
+  {
+    "_id": 160,
+    "tituloAlbum": "Like a Prayer",
+    "fechaLanzamientoAlbum": "1989-03-21",
+    "idArtista": 125
+  },
+  {
+    "_id": 161,
+    "tituloAlbum": "Ray of Light",
+    "fechaLanzamientoAlbum": "1998-02-22",
+    "idArtista": 125
+  },
+  {
+    "_id": 162,
+    "tituloAlbum": "Fearless",
+    "fechaLanzamientoAlbum": "2008-11-11",
+    "idArtista": 17
+  },
+  {
+    "_id": 163,
+    "tituloAlbum": "Speak Now",
+    "fechaLanzamientoAlbum": "2010-10-25",
+    "idArtista": 17
+  },
+  {
+    "_id": 164,
+    "tituloAlbum": "Red",
+    "fechaLanzamientoAlbum": "2012-10-22",
+    "idArtista": 17
+  },
+  {
+    "_id": 165,
+    "tituloAlbum": "Folklore - Taylor Swift",
+    "fechaLanzamientoAlbum": "2020-07-24",
+    "idArtista": 17
+  },
+  {
+    "_id": 166,
+    "tituloAlbum": "Homework",
+    "fechaLanzamientoAlbum": "1997-01-20",
+    "idArtista": 47
+  },
+  {
+    "_id": 167,
+    "tituloAlbum": "Discovery",
+    "fechaLanzamientoAlbum": "2001-03-12",
+    "idArtista": 47
+  },
+  {
+    "_id": 168,
+    "tituloAlbum": "Human After All",
+    "fechaLanzamientoAlbum": "2005-03-14",
+    "idArtista": 47
+  },
+  {
+    "_id": 169,
+    "tituloAlbum": "One Love",
+    "fechaLanzamientoAlbum": "2009-08-25",
+    "idArtista": 126
+  },
+  {
+    "_id": 170,
+    "tituloAlbum": "Nothing but the Beat",
+    "fechaLanzamientoAlbum": "2011-08-26",
+    "idArtista": 126
+  },
+  {
+    "_id": 171,
+    "tituloAlbum": "Listen",
+    "fechaLanzamientoAlbum": "2014-11-21",
+    "idArtista": 126
+  },
+  {
+    "_id": 172,
+    "tituloAlbum": "True",
+    "fechaLanzamientoAlbum": "2013-09-13",
+    "idArtista": 127
+  },
+  {
+    "_id": 173,
+    "tituloAlbum": "Stories",
+    "fechaLanzamientoAlbum": "2015-10-02",
+    "idArtista": 127
+  },
+  {
+    "_id": 174,
+    "tituloAlbum": "Tim",
+    "fechaLanzamientoAlbum": "2019-06-06",
+    "idArtista": 127
+  },
+  {
+    "_id": 175,
+    "tituloAlbum": "Kill Em All",
+    "fechaLanzamientoAlbum": "1983-07-25",
+    "idArtista": 128
+  },
+  {
+    "_id": 176,
+    "tituloAlbum": "Master of Puppets",
+    "fechaLanzamientoAlbum": "1986-03-03",
+    "idArtista": 128
+  },
+  {
+    "_id": 177,
+    "tituloAlbum": "The Black Album",
+    "fechaLanzamientoAlbum": "1991-08-12",
+    "idArtista": 128
+  },
+  {
+    "_id": 178,
+    "tituloAlbum": "Death Magnetic",
+    "fechaLanzamientoAlbum": "2008-09-12",
+    "idArtista": 128
+  },
+  {
+    "_id": 179,
+    "tituloAlbum": "72 Seasons",
+    "fechaLanzamientoAlbum": "2023-04-14",
+    "idArtista": 128
+  },
+  {
+    "_id": 180,
+    "tituloAlbum": "The Number of the Beast",
+    "fechaLanzamientoAlbum": "1982-03-22",
+    "idArtista": 129
+  },
+  {
+    "_id": 181,
+    "tituloAlbum": "Piece of Mind",
+    "fechaLanzamientoAlbum": "1983-05-16",
+    "idArtista": 129
+  },
+  {
+    "_id": 182,
+    "tituloAlbum": "Powerslave",
+    "fechaLanzamientoAlbum": "1984-09-03",
+    "idArtista": 129
+  },
+  {
+    "_id": 183,
+    "tituloAlbum": "Seventh Son of a Seventh Son",
+    "fechaLanzamientoAlbum": "1988-04-11",
+    "idArtista": 129
+  },
+  {
+    "_id": 184,
+    "tituloAlbum": "Black Sabbath",
+    "fechaLanzamientoAlbum": "1970-02-13",
+    "idArtista": 130
+  },
+  {
+    "_id": 185,
+    "tituloAlbum": "Paranoid",
+    "fechaLanzamientoAlbum": "1970-09-18",
+    "idArtista": 130
+  },
+  {
+    "_id": 186,
+    "tituloAlbum": "Master of Reality",
+    "fechaLanzamientoAlbum": "1971-07-21",
+    "idArtista": 130
+  },
+  {
+    "_id": 187,
+    "tituloAlbum": "Heaven and Hell",
+    "fechaLanzamientoAlbum": "1980-04-25",
+    "idArtista": 130
+  },
+  {
+    "_id": 188,
+    "tituloAlbum": "Obras Sinfonicas",
+    "fechaLanzamientoAlbum": "1800-01-01",
+    "idArtista": 131
+  },
+  {
+    "_id": 189,
+    "tituloAlbum": "Obras para Piano",
+    "fechaLanzamientoAlbum": "1800-01-02",
+    "idArtista": 131
+  },
+  {
+    "_id": 190,
+    "tituloAlbum": "Operas y Sinfonias",
+    "fechaLanzamientoAlbum": "1791-01-01",
+    "idArtista": 132
+  },
+  {
+    "_id": 191,
+    "tituloAlbum": "Musica de Camara",
+    "fechaLanzamientoAlbum": "1791-01-02",
+    "idArtista": 132
+  },
+  {
+    "_id": 192,
+    "tituloAlbum": "Obras para Organo",
+    "fechaLanzamientoAlbum": "1722-01-01",
+    "idArtista": 133
+  },
+  {
+    "_id": 193,
+    "tituloAlbum": "Obras Instrumentales",
+    "fechaLanzamientoAlbum": "1722-01-02",
+    "idArtista": 133
+  }
+]

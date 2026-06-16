@@ -1,0 +1,1262 @@
+[
+  {
+    "_id": 1,
+    "idUsuario": 1,
+    "idSuscripcion": 1,
+    "fechaPago": "2024-01-06",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 81,
+    "idUsuario": 1,
+    "idSuscripcion": 1,
+    "fechaPago": "2024-09-06",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 161,
+    "idUsuario": 1,
+    "idSuscripcion": 1,
+    "fechaPago": "2025-05-06",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 162,
+    "idUsuario": 2,
+    "idSuscripcion": 2,
+    "fechaPago": "2025-06-11",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 82,
+    "idUsuario": 2,
+    "idSuscripcion": 2,
+    "fechaPago": "2024-10-11",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 2,
+    "idUsuario": 2,
+    "idSuscripcion": 2,
+    "fechaPago": "2024-02-11",
+    "montoPago": 12.99
+  },
+  {
+    "_id": 3,
+    "idUsuario": 4,
+    "idSuscripcion": 4,
+    "fechaPago": "2024-03-16",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 83,
+    "idUsuario": 4,
+    "idSuscripcion": 4,
+    "fechaPago": "2024-11-16",
+    "montoPago": 12.99
+  },
+  {
+    "_id": 163,
+    "idUsuario": 4,
+    "idSuscripcion": 4,
+    "fechaPago": "2025-07-16",
+    "montoPago": 12.99
+  },
+  {
+    "_id": 164,
+    "idUsuario": 5,
+    "idSuscripcion": 5,
+    "fechaPago": "2025-08-21",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 84,
+    "idUsuario": 5,
+    "idSuscripcion": 5,
+    "fechaPago": "2024-12-21",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 4,
+    "idUsuario": 5,
+    "idSuscripcion": 5,
+    "fechaPago": "2024-04-21",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 5,
+    "idUsuario": 7,
+    "idSuscripcion": 7,
+    "fechaPago": "2024-05-01",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 85,
+    "idUsuario": 7,
+    "idSuscripcion": 7,
+    "fechaPago": "2024-01-01",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 165,
+    "idUsuario": 7,
+    "idSuscripcion": 7,
+    "fechaPago": "2025-09-01",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 166,
+    "idUsuario": 8,
+    "idSuscripcion": 8,
+    "fechaPago": "2025-10-06",
+    "montoPago": 12.99
+  },
+  {
+    "_id": 86,
+    "idUsuario": 8,
+    "idSuscripcion": 8,
+    "fechaPago": "2024-02-06",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 6,
+    "idUsuario": 8,
+    "idSuscripcion": 8,
+    "fechaPago": "2024-06-06",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 7,
+    "idUsuario": 10,
+    "idSuscripcion": 10,
+    "fechaPago": "2024-07-11",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 87,
+    "idUsuario": 10,
+    "idSuscripcion": 10,
+    "fechaPago": "2024-03-11",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 167,
+    "idUsuario": 10,
+    "idSuscripcion": 10,
+    "fechaPago": "2025-11-11",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 168,
+    "idUsuario": 11,
+    "idSuscripcion": 11,
+    "fechaPago": "2025-12-16",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 88,
+    "idUsuario": 11,
+    "idSuscripcion": 11,
+    "fechaPago": "2024-04-16",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 8,
+    "idUsuario": 11,
+    "idSuscripcion": 11,
+    "fechaPago": "2024-08-16",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 9,
+    "idUsuario": 13,
+    "idSuscripcion": 13,
+    "fechaPago": "2024-09-21",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 89,
+    "idUsuario": 13,
+    "idSuscripcion": 13,
+    "fechaPago": "2024-05-21",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 169,
+    "idUsuario": 13,
+    "idSuscripcion": 13,
+    "fechaPago": "2025-01-21",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 170,
+    "idUsuario": 14,
+    "idSuscripcion": 14,
+    "fechaPago": "2025-02-01",
+    "montoPago": 12.99
+  },
+  {
+    "_id": 90,
+    "idUsuario": 14,
+    "idSuscripcion": 14,
+    "fechaPago": "2024-06-01",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 10,
+    "idUsuario": 14,
+    "idSuscripcion": 14,
+    "fechaPago": "2024-10-01",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 11,
+    "idUsuario": 16,
+    "idSuscripcion": 16,
+    "fechaPago": "2024-11-06",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 91,
+    "idUsuario": 16,
+    "idSuscripcion": 16,
+    "fechaPago": "2024-07-06",
+    "montoPago": 12.99
+  },
+  {
+    "_id": 171,
+    "idUsuario": 16,
+    "idSuscripcion": 16,
+    "fechaPago": "2025-03-06",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 172,
+    "idUsuario": 17,
+    "idSuscripcion": 17,
+    "fechaPago": "2025-04-11",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 92,
+    "idUsuario": 17,
+    "idSuscripcion": 17,
+    "fechaPago": "2024-08-11",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 12,
+    "idUsuario": 17,
+    "idSuscripcion": 17,
+    "fechaPago": "2024-12-11",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 13,
+    "idUsuario": 19,
+    "idSuscripcion": 19,
+    "fechaPago": "2024-01-16",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 93,
+    "idUsuario": 19,
+    "idSuscripcion": 19,
+    "fechaPago": "2024-09-16",
+    "montoPago": 12.99
+  },
+  {
+    "_id": 173,
+    "idUsuario": 19,
+    "idSuscripcion": 19,
+    "fechaPago": "2025-05-16",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 174,
+    "idUsuario": 20,
+    "idSuscripcion": 20,
+    "fechaPago": "2025-06-21",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 94,
+    "idUsuario": 20,
+    "idSuscripcion": 20,
+    "fechaPago": "2024-10-21",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 14,
+    "idUsuario": 20,
+    "idSuscripcion": 20,
+    "fechaPago": "2024-02-21",
+    "montoPago": 12.99
+  },
+  {
+    "_id": 15,
+    "idUsuario": 22,
+    "idSuscripcion": 22,
+    "fechaPago": "2024-03-01",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 95,
+    "idUsuario": 22,
+    "idSuscripcion": 22,
+    "fechaPago": "2024-11-01",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 175,
+    "idUsuario": 22,
+    "idSuscripcion": 22,
+    "fechaPago": "2025-07-01",
+    "montoPago": 12.99
+  },
+  {
+    "_id": 176,
+    "idUsuario": 23,
+    "idSuscripcion": 23,
+    "fechaPago": "2025-08-06",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 96,
+    "idUsuario": 23,
+    "idSuscripcion": 23,
+    "fechaPago": "2024-12-06",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 16,
+    "idUsuario": 23,
+    "idSuscripcion": 23,
+    "fechaPago": "2024-04-06",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 17,
+    "idUsuario": 25,
+    "idSuscripcion": 25,
+    "fechaPago": "2024-05-11",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 97,
+    "idUsuario": 25,
+    "idSuscripcion": 25,
+    "fechaPago": "2024-01-11",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 177,
+    "idUsuario": 25,
+    "idSuscripcion": 25,
+    "fechaPago": "2025-09-11",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 178,
+    "idUsuario": 26,
+    "idSuscripcion": 26,
+    "fechaPago": "2025-10-16",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 98,
+    "idUsuario": 26,
+    "idSuscripcion": 26,
+    "fechaPago": "2024-02-16",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 18,
+    "idUsuario": 26,
+    "idSuscripcion": 26,
+    "fechaPago": "2024-06-16",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 19,
+    "idUsuario": 28,
+    "idSuscripcion": 28,
+    "fechaPago": "2024-07-21",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 99,
+    "idUsuario": 28,
+    "idSuscripcion": 28,
+    "fechaPago": "2024-03-21",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 179,
+    "idUsuario": 28,
+    "idSuscripcion": 28,
+    "fechaPago": "2025-11-21",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 180,
+    "idUsuario": 29,
+    "idSuscripcion": 29,
+    "fechaPago": "2025-12-01",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 100,
+    "idUsuario": 29,
+    "idSuscripcion": 29,
+    "fechaPago": "2025-04-01",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 20,
+    "idUsuario": 29,
+    "idSuscripcion": 29,
+    "fechaPago": "2024-08-01",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 21,
+    "idUsuario": 31,
+    "idSuscripcion": 31,
+    "fechaPago": "2024-09-06",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 101,
+    "idUsuario": 31,
+    "idSuscripcion": 31,
+    "fechaPago": "2025-05-06",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 102,
+    "idUsuario": 32,
+    "idSuscripcion": 32,
+    "fechaPago": "2025-06-11",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 22,
+    "idUsuario": 32,
+    "idSuscripcion": 32,
+    "fechaPago": "2024-10-11",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 23,
+    "idUsuario": 34,
+    "idSuscripcion": 34,
+    "fechaPago": "2024-11-16",
+    "montoPago": 12.99
+  },
+  {
+    "_id": 103,
+    "idUsuario": 34,
+    "idSuscripcion": 34,
+    "fechaPago": "2025-07-16",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 104,
+    "idUsuario": 35,
+    "idSuscripcion": 35,
+    "fechaPago": "2025-08-21",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 24,
+    "idUsuario": 35,
+    "idSuscripcion": 35,
+    "fechaPago": "2024-12-21",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 25,
+    "idUsuario": 37,
+    "idSuscripcion": 37,
+    "fechaPago": "2024-01-01",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 105,
+    "idUsuario": 37,
+    "idSuscripcion": 37,
+    "fechaPago": "2025-09-01",
+    "montoPago": 12.99
+  },
+  {
+    "_id": 106,
+    "idUsuario": 38,
+    "idSuscripcion": 38,
+    "fechaPago": "2025-10-06",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 26,
+    "idUsuario": 38,
+    "idSuscripcion": 38,
+    "fechaPago": "2024-02-06",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 27,
+    "idUsuario": 40,
+    "idSuscripcion": 40,
+    "fechaPago": "2024-03-11",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 107,
+    "idUsuario": 40,
+    "idSuscripcion": 40,
+    "fechaPago": "2025-11-11",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 108,
+    "idUsuario": 41,
+    "idSuscripcion": 41,
+    "fechaPago": "2025-12-16",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 28,
+    "idUsuario": 41,
+    "idSuscripcion": 41,
+    "fechaPago": "2024-04-16",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 29,
+    "idUsuario": 43,
+    "idSuscripcion": 43,
+    "fechaPago": "2024-05-21",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 109,
+    "idUsuario": 43,
+    "idSuscripcion": 43,
+    "fechaPago": "2025-01-21",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 110,
+    "idUsuario": 44,
+    "idSuscripcion": 44,
+    "fechaPago": "2025-02-01",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 30,
+    "idUsuario": 44,
+    "idSuscripcion": 44,
+    "fechaPago": "2024-06-01",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 31,
+    "idUsuario": 46,
+    "idSuscripcion": 46,
+    "fechaPago": "2024-07-06",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 111,
+    "idUsuario": 46,
+    "idSuscripcion": 46,
+    "fechaPago": "2025-03-06",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 112,
+    "idUsuario": 47,
+    "idSuscripcion": 47,
+    "fechaPago": "2025-04-11",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 32,
+    "idUsuario": 47,
+    "idSuscripcion": 47,
+    "fechaPago": "2024-08-11",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 33,
+    "idUsuario": 49,
+    "idSuscripcion": 49,
+    "fechaPago": "2024-09-16",
+    "montoPago": 12.99
+  },
+  {
+    "_id": 113,
+    "idUsuario": 49,
+    "idSuscripcion": 49,
+    "fechaPago": "2025-05-16",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 114,
+    "idUsuario": 50,
+    "idSuscripcion": 50,
+    "fechaPago": "2025-06-21",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 34,
+    "idUsuario": 50,
+    "idSuscripcion": 50,
+    "fechaPago": "2024-10-21",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 35,
+    "idUsuario": 52,
+    "idSuscripcion": 52,
+    "fechaPago": "2024-11-01",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 115,
+    "idUsuario": 52,
+    "idSuscripcion": 52,
+    "fechaPago": "2025-07-01",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 116,
+    "idUsuario": 53,
+    "idSuscripcion": 53,
+    "fechaPago": "2025-08-06",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 36,
+    "idUsuario": 53,
+    "idSuscripcion": 53,
+    "fechaPago": "2024-12-06",
+    "montoPago": 12.99
+  },
+  {
+    "_id": 37,
+    "idUsuario": 55,
+    "idSuscripcion": 55,
+    "fechaPago": "2024-01-11",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 117,
+    "idUsuario": 55,
+    "idSuscripcion": 55,
+    "fechaPago": "2025-09-11",
+    "montoPago": 12.99
+  },
+  {
+    "_id": 118,
+    "idUsuario": 56,
+    "idSuscripcion": 56,
+    "fechaPago": "2025-10-16",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 38,
+    "idUsuario": 56,
+    "idSuscripcion": 56,
+    "fechaPago": "2024-02-16",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 39,
+    "idUsuario": 58,
+    "idSuscripcion": 58,
+    "fechaPago": "2024-03-21",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 119,
+    "idUsuario": 58,
+    "idSuscripcion": 58,
+    "fechaPago": "2025-11-21",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 120,
+    "idUsuario": 59,
+    "idSuscripcion": 59,
+    "fechaPago": "2025-12-01",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 40,
+    "idUsuario": 59,
+    "idSuscripcion": 59,
+    "fechaPago": "2024-04-01",
+    "montoPago": 12.99
+  },
+  {
+    "_id": 41,
+    "idUsuario": 61,
+    "idSuscripcion": 61,
+    "fechaPago": "2024-05-06",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 121,
+    "idUsuario": 61,
+    "idSuscripcion": 61,
+    "fechaPago": "2025-01-06",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 122,
+    "idUsuario": 62,
+    "idSuscripcion": 62,
+    "fechaPago": "2025-02-11",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 42,
+    "idUsuario": 62,
+    "idSuscripcion": 62,
+    "fechaPago": "2024-06-11",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 43,
+    "idUsuario": 64,
+    "idSuscripcion": 64,
+    "fechaPago": "2024-07-16",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 123,
+    "idUsuario": 64,
+    "idSuscripcion": 64,
+    "fechaPago": "2025-03-16",
+    "montoPago": 12.99
+  },
+  {
+    "_id": 124,
+    "idUsuario": 65,
+    "idSuscripcion": 65,
+    "fechaPago": "2025-04-21",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 44,
+    "idUsuario": 65,
+    "idSuscripcion": 65,
+    "fechaPago": "2024-08-21",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 45,
+    "idUsuario": 67,
+    "idSuscripcion": 67,
+    "fechaPago": "2024-09-01",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 125,
+    "idUsuario": 67,
+    "idSuscripcion": 67,
+    "fechaPago": "2025-05-01",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 126,
+    "idUsuario": 68,
+    "idSuscripcion": 68,
+    "fechaPago": "2025-06-06",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 46,
+    "idUsuario": 68,
+    "idSuscripcion": 68,
+    "fechaPago": "2024-10-06",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 47,
+    "idUsuario": 70,
+    "idSuscripcion": 70,
+    "fechaPago": "2024-11-11",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 127,
+    "idUsuario": 70,
+    "idSuscripcion": 70,
+    "fechaPago": "2025-07-11",
+    "montoPago": 12.99
+  },
+  {
+    "_id": 128,
+    "idUsuario": 71,
+    "idSuscripcion": 71,
+    "fechaPago": "2025-08-16",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 48,
+    "idUsuario": 71,
+    "idSuscripcion": 71,
+    "fechaPago": "2024-12-16",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 49,
+    "idUsuario": 73,
+    "idSuscripcion": 73,
+    "fechaPago": "2024-01-21",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 129,
+    "idUsuario": 73,
+    "idSuscripcion": 73,
+    "fechaPago": "2025-09-21",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 130,
+    "idUsuario": 74,
+    "idSuscripcion": 74,
+    "fechaPago": "2025-10-01",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 50,
+    "idUsuario": 74,
+    "idSuscripcion": 74,
+    "fechaPago": "2024-02-01",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 51,
+    "idUsuario": 76,
+    "idSuscripcion": 76,
+    "fechaPago": "2024-03-06",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 131,
+    "idUsuario": 76,
+    "idSuscripcion": 76,
+    "fechaPago": "2025-11-06",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 132,
+    "idUsuario": 77,
+    "idSuscripcion": 77,
+    "fechaPago": "2025-12-11",
+    "montoPago": 12.99
+  },
+  {
+    "_id": 52,
+    "idUsuario": 77,
+    "idSuscripcion": 77,
+    "fechaPago": "2024-04-11",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 53,
+    "idUsuario": 79,
+    "idSuscripcion": 79,
+    "fechaPago": "2024-05-16",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 133,
+    "idUsuario": 79,
+    "idSuscripcion": 79,
+    "fechaPago": "2025-01-16",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 134,
+    "idUsuario": 80,
+    "idSuscripcion": 80,
+    "fechaPago": "2025-02-21",
+    "montoPago": 12.99
+  },
+  {
+    "_id": 54,
+    "idUsuario": 80,
+    "idSuscripcion": 80,
+    "fechaPago": "2024-06-21",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 55,
+    "idUsuario": 82,
+    "idSuscripcion": 82,
+    "fechaPago": "2024-07-01",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 135,
+    "idUsuario": 82,
+    "idSuscripcion": 82,
+    "fechaPago": "2025-03-01",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 136,
+    "idUsuario": 83,
+    "idSuscripcion": 83,
+    "fechaPago": "2025-04-06",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 56,
+    "idUsuario": 83,
+    "idSuscripcion": 83,
+    "fechaPago": "2024-08-06",
+    "montoPago": 12.99
+  },
+  {
+    "_id": 57,
+    "idUsuario": 85,
+    "idSuscripcion": 85,
+    "fechaPago": "2024-09-11",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 137,
+    "idUsuario": 85,
+    "idSuscripcion": 85,
+    "fechaPago": "2025-05-11",
+    "montoPago": 12.99
+  },
+  {
+    "_id": 138,
+    "idUsuario": 86,
+    "idSuscripcion": 86,
+    "fechaPago": "2025-06-16",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 58,
+    "idUsuario": 86,
+    "idSuscripcion": 86,
+    "fechaPago": "2024-10-16",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 59,
+    "idUsuario": 88,
+    "idSuscripcion": 88,
+    "fechaPago": "2024-11-21",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 139,
+    "idUsuario": 88,
+    "idSuscripcion": 88,
+    "fechaPago": "2025-07-21",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 140,
+    "idUsuario": 89,
+    "idSuscripcion": 89,
+    "fechaPago": "2025-08-01",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 60,
+    "idUsuario": 89,
+    "idSuscripcion": 89,
+    "fechaPago": "2024-12-01",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 61,
+    "idUsuario": 91,
+    "idSuscripcion": 91,
+    "fechaPago": "2024-01-06",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 141,
+    "idUsuario": 91,
+    "idSuscripcion": 91,
+    "fechaPago": "2025-09-06",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 142,
+    "idUsuario": 92,
+    "idSuscripcion": 92,
+    "fechaPago": "2025-10-11",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 62,
+    "idUsuario": 92,
+    "idSuscripcion": 92,
+    "fechaPago": "2024-02-11",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 63,
+    "idUsuario": 94,
+    "idSuscripcion": 94,
+    "fechaPago": "2024-03-16",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 143,
+    "idUsuario": 94,
+    "idSuscripcion": 94,
+    "fechaPago": "2025-11-16",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 144,
+    "idUsuario": 95,
+    "idSuscripcion": 95,
+    "fechaPago": "2025-12-21",
+    "montoPago": 12.99
+  },
+  {
+    "_id": 64,
+    "idUsuario": 95,
+    "idSuscripcion": 95,
+    "fechaPago": "2024-04-21",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 65,
+    "idUsuario": 97,
+    "idSuscripcion": 97,
+    "fechaPago": "2024-05-01",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 145,
+    "idUsuario": 97,
+    "idSuscripcion": 97,
+    "fechaPago": "2025-01-01",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 146,
+    "idUsuario": 98,
+    "idSuscripcion": 98,
+    "fechaPago": "2025-02-06",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 66,
+    "idUsuario": 98,
+    "idSuscripcion": 98,
+    "fechaPago": "2024-06-06",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 67,
+    "idUsuario": 100,
+    "idSuscripcion": 100,
+    "fechaPago": "2024-07-11",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 147,
+    "idUsuario": 100,
+    "idSuscripcion": 100,
+    "fechaPago": "2025-03-11",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 148,
+    "idUsuario": 101,
+    "idSuscripcion": 101,
+    "fechaPago": "2025-04-16",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 68,
+    "idUsuario": 101,
+    "idSuscripcion": 101,
+    "fechaPago": "2024-08-16",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 69,
+    "idUsuario": 103,
+    "idSuscripcion": 103,
+    "fechaPago": "2024-09-21",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 149,
+    "idUsuario": 103,
+    "idSuscripcion": 103,
+    "fechaPago": "2025-05-21",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 150,
+    "idUsuario": 104,
+    "idSuscripcion": 104,
+    "fechaPago": "2025-06-01",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 70,
+    "idUsuario": 104,
+    "idSuscripcion": 104,
+    "fechaPago": "2024-10-01",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 71,
+    "idUsuario": 106,
+    "idSuscripcion": 106,
+    "fechaPago": "2024-11-06",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 151,
+    "idUsuario": 106,
+    "idSuscripcion": 106,
+    "fechaPago": "2025-07-06",
+    "montoPago": 12.99
+  },
+  {
+    "_id": 152,
+    "idUsuario": 107,
+    "idSuscripcion": 107,
+    "fechaPago": "2025-08-11",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 72,
+    "idUsuario": 107,
+    "idSuscripcion": 107,
+    "fechaPago": "2024-12-11",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 73,
+    "idUsuario": 109,
+    "idSuscripcion": 109,
+    "fechaPago": "2024-01-16",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 153,
+    "idUsuario": 109,
+    "idSuscripcion": 109,
+    "fechaPago": "2025-09-16",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 154,
+    "idUsuario": 110,
+    "idSuscripcion": 110,
+    "fechaPago": "2025-10-21",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 74,
+    "idUsuario": 110,
+    "idSuscripcion": 110,
+    "fechaPago": "2024-02-21",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 75,
+    "idUsuario": 112,
+    "idSuscripcion": 112,
+    "fechaPago": "2024-03-01",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 155,
+    "idUsuario": 112,
+    "idSuscripcion": 112,
+    "fechaPago": "2025-11-01",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 156,
+    "idUsuario": 113,
+    "idSuscripcion": 113,
+    "fechaPago": "2025-12-06",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 76,
+    "idUsuario": 113,
+    "idSuscripcion": 113,
+    "fechaPago": "2024-04-06",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 77,
+    "idUsuario": 115,
+    "idSuscripcion": 115,
+    "fechaPago": "2024-05-11",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 157,
+    "idUsuario": 115,
+    "idSuscripcion": 115,
+    "fechaPago": "2025-01-11",
+    "montoPago": 7.99
+  },
+  {
+    "_id": 158,
+    "idUsuario": 116,
+    "idSuscripcion": 116,
+    "fechaPago": "2025-02-16",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 78,
+    "idUsuario": 116,
+    "idSuscripcion": 116,
+    "fechaPago": "2024-06-16",
+    "montoPago": 14.99
+  },
+  {
+    "_id": 79,
+    "idUsuario": 118,
+    "idSuscripcion": 118,
+    "fechaPago": "2024-07-21",
+    "montoPago": 12.99
+  },
+  {
+    "_id": 159,
+    "idUsuario": 118,
+    "idSuscripcion": 118,
+    "fechaPago": "2025-03-21",
+    "montoPago": 9.99
+  },
+  {
+    "_id": 160,
+    "idUsuario": 119,
+    "idSuscripcion": 119,
+    "fechaPago": "2025-04-01",
+    "montoPago": 5.99
+  },
+  {
+    "_id": 80,
+    "idUsuario": 119,
+    "idSuscripcion": 119,
+    "fechaPago": "2024-08-01",
+    "montoPago": 9.99
+  }
+]

@@ -1,0 +1,1465 @@
+[
+  {
+    "_id": 1,
+    "nombreArtista": "La Doble A",
+    "paisOrigenArtista": "Colombia",
+    "descripcionArtista": "Rock alternativo",
+    "Productora": {
+      "nombreProductora": "Universal Music Ecuador",
+      "correoProductora": "contacto1@universalmusicecuador.com",
+      "paisProductora": "Estados Unidos"
+    }
+  },
+  {
+    "_id": 2,
+    "nombreArtista": "Xander Reyes",
+    "paisOrigenArtista": "Mexico",
+    "descripcionArtista": "Musica urbana",
+    "Productora": {
+      "nombreProductora": "Sony Music Latino",
+      "correoProductora": "contacto2@sonymusiclatino.com",
+      "paisProductora": "Mexico"
+    }
+  },
+  {
+    "_id": 3,
+    "nombreArtista": "Banda Vortex",
+    "paisOrigenArtista": "Estados Unidos",
+    "descripcionArtista": "Electronica contemporanea",
+    "Productora": {
+      "nombreProductora": "Warner Musica",
+      "correoProductora": "contacto3@warnermusica.com",
+      "paisProductora": "Colombia"
+    }
+  },
+  {
+    "_id": 4,
+    "nombreArtista": "DJ Kronos",
+    "paisOrigenArtista": "Argentina",
+    "descripcionArtista": "Cantautor latino",
+    "Productora": {
+      "nombreProductora": "Interscope Records",
+      "correoProductora": "contacto4@interscoperecords.com",
+      "paisProductora": "Argentina"
+    }
+  },
+  {
+    "_id": 5,
+    "nombreArtista": "Sofia Lara",
+    "paisOrigenArtista": "Chile",
+    "descripcionArtista": "Salsa y tropical",
+    "Productora": {
+      "nombreProductora": "EMI Latinoamerica",
+      "correoProductora": "contacto5@emilatinoamerica.com",
+      "paisProductora": "Reino Unido"
+    }
+  },
+  {
+    "_id": 6,
+    "nombreArtista": "Los Compadres",
+    "paisOrigenArtista": "Puerto Rico",
+    "descripcionArtista": "Indie y folk",
+    "Productora": {
+      "nombreProductora": "Independiente Records",
+      "correoProductora": "contacto6@independienterecords.com",
+      "paisProductora": "Alemania"
+    }
+  },
+  {
+    "_id": 7,
+    "nombreArtista": "Marco Fiel",
+    "paisOrigenArtista": "Espana",
+    "descripcionArtista": "Hip-hop latino",
+    "Productora": {
+      "nombreProductora": "Atlantic Records Latam",
+      "correoProductora": "contacto7@atlanticrecordslatam.com",
+      "paisProductora": "Puerto Rico"
+    }
+  },
+  {
+    "_id": 8,
+    "nombreArtista": "Valentina Cruz",
+    "paisOrigenArtista": "Reino Unido",
+    "descripcionArtista": "Jazz fusion",
+    "Productora": {
+      "nombreProductora": "Capitol Music Group",
+      "correoProductora": "contacto8@capitolmusicgroup.com",
+      "paisProductora": "Chile"
+    }
+  },
+  {
+    "_id": 9,
+    "nombreArtista": "Ritmo Libre",
+    "paisOrigenArtista": "Brasil",
+    "descripcionArtista": "Musica ecuatoriana",
+    "Productora": {
+      "nombreProductora": "Def Jam Recordings",
+      "correoProductora": "contacto9@defjamrecordings.com",
+      "paisProductora": "Peru"
+    }
+  },
+  {
+    "_id": 10,
+    "nombreArtista": "The Groove Syndicate",
+    "paisOrigenArtista": "Peru",
+    "descripcionArtista": "Pop y fusion latina",
+    "Productora": {
+      "nombreProductora": "RCA Records",
+      "correoProductora": "contacto10@rcarecords.com",
+      "paisProductora": "Brasil"
+    }
+  },
+  {
+    "_id": 11,
+    "nombreArtista": "Ariel Montoya",
+    "paisOrigenArtista": "Panama",
+    "descripcionArtista": "Rock alternativo",
+    "Productora": {
+      "nombreProductora": "Rimas Entertainment",
+      "correoProductora": "contacto11@rimasentertainment.com",
+      "paisProductora": "Venezuela"
+    }
+  },
+  {
+    "_id": 12,
+    "nombreArtista": "Nadia Storm",
+    "paisOrigenArtista": "Uruguay",
+    "descripcionArtista": "Musica urbana",
+    "Productora": {
+      "nombreProductora": "Republic Records",
+      "correoProductora": "contacto12@republicrecords.com",
+      "paisProductora": "Panama"
+    }
+  },
+  {
+    "_id": 13,
+    "nombreArtista": "Trio Andino",
+    "paisOrigenArtista": "Cuba",
+    "descripcionArtista": "Electronica contemporanea",
+    "Productora": {
+      "nombreProductora": "Columbia Records",
+      "correoProductora": "contacto13@columbiarecords.com",
+      "paisProductora": "Bolivia"
+    }
+  },
+  {
+    "_id": 14,
+    "nombreArtista": "Franco D",
+    "paisOrigenArtista": "Republica Dominicana",
+    "descripcionArtista": "Cantautor latino",
+    "Productora": {
+      "nombreProductora": "Odd Future Records",
+      "correoProductora": "contacto14@oddfuturerecords.com",
+      "paisProductora": "Canada"
+    }
+  },
+  {
+    "_id": 15,
+    "nombreArtista": "Luna Ferreira",
+    "paisOrigenArtista": "Ecuador",
+    "descripcionArtista": "Salsa y tropical",
+    "Productora": {
+      "nombreProductora": "Liberato Music",
+      "correoProductora": "contacto15@liberatomusic.com",
+      "paisProductora": "Ecuador"
+    }
+  },
+  {
+    "_id": 16,
+    "nombreArtista": "Bad Bunny",
+    "paisOrigenArtista": "Colombia",
+    "descripcionArtista": "Indie y folk",
+    "Productora": {
+      "nombreProductora": "Peerless Records Mexico",
+      "correoProductora": "contacto16@peerlessrecordsmexico.com",
+      "paisProductora": "Estados Unidos"
+    }
+  },
+  {
+    "_id": 17,
+    "nombreArtista": "Taylor Swift",
+    "paisOrigenArtista": "Mexico",
+    "descripcionArtista": "Hip-hop latino",
+    "Productora": {
+      "nombreProductora": "Nacional Records",
+      "correoProductora": "contacto17@nacionalrecords.com",
+      "paisProductora": "Mexico"
+    }
+  },
+  {
+    "_id": 18,
+    "nombreArtista": "J Balvin",
+    "paisOrigenArtista": "Estados Unidos",
+    "descripcionArtista": "Jazz fusion",
+    "Productora": {
+      "nombreProductora": "Discos Fuentes",
+      "correoProductora": "contacto18@discosfuentes.com",
+      "paisProductora": "Colombia"
+    }
+  },
+  {
+    "_id": 19,
+    "nombreArtista": "Rosalia",
+    "paisOrigenArtista": "Argentina",
+    "descripcionArtista": "Musica ecuatoriana",
+    "Productora": {
+      "nombreProductora": "Virgin Music Latam",
+      "correoProductora": "contacto19@virginmusiclatam.com",
+      "paisProductora": "Argentina"
+    }
+  },
+  {
+    "_id": 20,
+    "nombreArtista": "Maluma",
+    "paisOrigenArtista": "Chile",
+    "descripcionArtista": "Pop y fusion latina",
+    "Productora": {
+      "nombreProductora": "Island Records",
+      "correoProductora": "contacto20@islandrecords.com",
+      "paisProductora": "Reino Unido"
+    }
+  },
+  {
+    "_id": 21,
+    "nombreArtista": "Karol G",
+    "paisOrigenArtista": "Puerto Rico",
+    "descripcionArtista": "Rock alternativo",
+    "Productora": {
+      "nombreProductora": "Elektra Records",
+      "correoProductora": "contacto21@elektrarecords.com",
+      "paisProductora": "Alemania"
+    }
+  },
+  {
+    "_id": 22,
+    "nombreArtista": "Daddy Yankee",
+    "paisOrigenArtista": "Espana",
+    "descripcionArtista": "Musica urbana",
+    "Productora": {
+      "nombreProductora": "Epic Records",
+      "correoProductora": "contacto22@epicrecords.com",
+      "paisProductora": "Puerto Rico"
+    }
+  },
+  {
+    "_id": 23,
+    "nombreArtista": "SZA",
+    "paisOrigenArtista": "Reino Unido",
+    "descripcionArtista": "Electronica contemporanea",
+    "Productora": {
+      "nombreProductora": "Geffen Records",
+      "correoProductora": "contacto23@geffenrecords.com",
+      "paisProductora": "Chile"
+    }
+  },
+  {
+    "_id": 24,
+    "nombreArtista": "Mon Laferte",
+    "paisOrigenArtista": "Brasil",
+    "descripcionArtista": "Cantautor latino",
+    "Productora": {
+      "nombreProductora": "Kobalt Music Group",
+      "correoProductora": "contacto24@kobaltmusicgroup.com",
+      "paisProductora": "Peru"
+    }
+  },
+  {
+    "_id": 25,
+    "nombreArtista": "Fito Paez",
+    "paisOrigenArtista": "Peru",
+    "descripcionArtista": "Salsa y tropical",
+    "Productora": {
+      "nombreProductora": "Universal Music Mexico",
+      "correoProductora": "contacto25@universalmusicmexico.com",
+      "paisProductora": "Brasil"
+    }
+  },
+  {
+    "_id": 26,
+    "nombreArtista": "Bomba Estereo",
+    "paisOrigenArtista": "Panama",
+    "descripcionArtista": "Indie y folk",
+    "Productora": {
+      "nombreProductora": "Sony Music Colombia",
+      "correoProductora": "contacto26@sonymusiccolombia.com",
+      "paisProductora": "Venezuela"
+    }
+  },
+  {
+    "_id": 27,
+    "nombreArtista": "Silvana Estrada",
+    "paisOrigenArtista": "Uruguay",
+    "descripcionArtista": "Hip-hop latino",
+    "Productora": {
+      "nombreProductora": "BMG Rights Management",
+      "correoProductora": "contacto27@bmgrightsmanagement.com",
+      "paisProductora": "Panama"
+    }
+  },
+  {
+    "_id": 28,
+    "nombreArtista": "Ivan Ferreiro",
+    "paisOrigenArtista": "Cuba",
+    "descripcionArtista": "Jazz fusion",
+    "Productora": {
+      "nombreProductora": "Concord Music Group",
+      "correoProductora": "contacto28@concordmusicgroup.com",
+      "paisProductora": "Bolivia"
+    }
+  },
+  {
+    "_id": 29,
+    "nombreArtista": "Caloncho",
+    "paisOrigenArtista": "Republica Dominicana",
+    "descripcionArtista": "Musica ecuatoriana",
+    "Productora": {
+      "nombreProductora": "Secretly Group",
+      "correoProductora": "contacto29@secretlygroup.com",
+      "paisProductora": "Canada"
+    }
+  },
+  {
+    "_id": 30,
+    "nombreArtista": "Blimes Brixton",
+    "paisOrigenArtista": "Ecuador",
+    "descripcionArtista": "Pop y fusion latina",
+    "Productora": {
+      "nombreProductora": "XL Recordings",
+      "correoProductora": "contacto30@xlrecordings.com",
+      "paisProductora": "Ecuador"
+    }
+  },
+  {
+    "_id": 31,
+    "nombreArtista": "Richard Bona",
+    "paisOrigenArtista": "Colombia",
+    "descripcionArtista": "Rock alternativo",
+    "Productora": {
+      "nombreProductora": "4AD Records",
+      "correoProductora": "contacto31@4adrecords.com",
+      "paisProductora": "Estados Unidos"
+    }
+  },
+  {
+    "_id": 32,
+    "nombreArtista": "Nicola Cruz",
+    "paisOrigenArtista": "Mexico",
+    "descripcionArtista": "Musica urbana",
+    "Productora": {
+      "nombreProductora": "Sub Pop Records",
+      "correoProductora": "contacto32@subpoprecords.com",
+      "paisProductora": "Mexico"
+    }
+  },
+  {
+    "_id": 33,
+    "nombreArtista": "Aguanta",
+    "paisOrigenArtista": "Estados Unidos",
+    "descripcionArtista": "Electronica contemporanea",
+    "Productora": {
+      "nombreProductora": "Matador Records",
+      "correoProductora": "contacto33@matadorrecords.com",
+      "paisProductora": "Colombia"
+    }
+  },
+  {
+    "_id": 34,
+    "nombreArtista": "Sal y Mileto",
+    "paisOrigenArtista": "Argentina",
+    "descripcionArtista": "Cantautor latino",
+    "Productora": {
+      "nombreProductora": "Epitaph Records",
+      "correoProductora": "contacto34@epitaphrecords.com",
+      "paisProductora": "Argentina"
+    }
+  },
+  {
+    "_id": 35,
+    "nombreArtista": "Mirella Cesa",
+    "paisOrigenArtista": "Chile",
+    "descripcionArtista": "Salsa y tropical",
+    "Productora": {
+      "nombreProductora": "Merge Records",
+      "correoProductora": "contacto35@mergerecords.com",
+      "paisProductora": "Reino Unido"
+    }
+  },
+  {
+    "_id": 36,
+    "nombreArtista": "Tercer Mundo",
+    "paisOrigenArtista": "Puerto Rico",
+    "descripcionArtista": "Indie y folk",
+    "Productora": {
+      "nombreProductora": "Parlophone Records",
+      "correoProductora": "contacto36@parlophonerecords.com",
+      "paisProductora": "Alemania"
+    }
+  },
+  {
+    "_id": 37,
+    "nombreArtista": "La Maquina Camaleon",
+    "paisOrigenArtista": "Espana",
+    "descripcionArtista": "Hip-hop latino",
+    "Productora": {
+      "nombreProductora": "Polydor Records",
+      "correoProductora": "contacto37@polydorrecords.com",
+      "paisProductora": "Puerto Rico"
+    }
+  },
+  {
+    "_id": 38,
+    "nombreArtista": "Karicia",
+    "paisOrigenArtista": "Reino Unido",
+    "descripcionArtista": "Jazz fusion",
+    "Productora": {
+      "nombreProductora": "Top Dawg Entertainment",
+      "correoProductora": "contacto38@topdawgentertainment.com",
+      "paisProductora": "Chile"
+    }
+  },
+  {
+    "_id": 39,
+    "nombreArtista": "Diamante",
+    "paisOrigenArtista": "Brasil",
+    "descripcionArtista": "Musica ecuatoriana",
+    "Productora": {
+      "nombreProductora": "EMPIRE Distribution",
+      "correoProductora": "contacto39@empiredistribution.com",
+      "paisProductora": "Peru"
+    }
+  },
+  {
+    "_id": 40,
+    "nombreArtista": "Paulo Londra",
+    "paisOrigenArtista": "Peru",
+    "descripcionArtista": "Pop y fusion latina",
+    "Productora": {
+      "nombreProductora": "Motown Records",
+      "correoProductora": "contacto40@motownrecords.com",
+      "paisProductora": "Brasil"
+    }
+  },
+  {
+    "_id": 41,
+    "nombreArtista": "Miley Cyrus",
+    "paisOrigenArtista": "Panama",
+    "descripcionArtista": "Rock alternativo",
+    "Productora": {
+      "nombreProductora": "Futura Discos",
+      "correoProductora": "contacto41@futuradiscos.com",
+      "paisProductora": "Venezuela"
+    }
+  },
+  {
+    "_id": 42,
+    "nombreArtista": "Olivia Rodrigo",
+    "paisOrigenArtista": "Uruguay",
+    "descripcionArtista": "Musica urbana",
+    "Productora": {
+      "nombreProductora": "Rondador Music",
+      "correoProductora": "contacto42@rondadormusic.com",
+      "paisProductora": "Panama"
+    }
+  },
+  {
+    "_id": 43,
+    "nombreArtista": "Bad Gyal",
+    "paisOrigenArtista": "Cuba",
+    "descripcionArtista": "Electronica contemporanea",
+    "Productora": {
+      "nombreProductora": "Circo Beat",
+      "correoProductora": "contacto43@circobeat.com",
+      "paisProductora": "Bolivia"
+    }
+  },
+  {
+    "_id": 44,
+    "nombreArtista": "Anuel AA",
+    "paisOrigenArtista": "Republica Dominicana",
+    "descripcionArtista": "Cantautor latino",
+    "Productora": {
+      "nombreProductora": "Warp Records",
+      "correoProductora": "contacto44@warprecords.com",
+      "paisProductora": "Canada"
+    }
+  },
+  {
+    "_id": 45,
+    "nombreArtista": "Ozuna",
+    "paisOrigenArtista": "Ecuador",
+    "descripcionArtista": "Salsa y tropical",
+    "Productora": {
+      "nombreProductora": "Domino Recording",
+      "correoProductora": "contacto45@dominorecording.com",
+      "paisProductora": "Ecuador"
+    }
+  },
+  {
+    "_id": 46,
+    "nombreArtista": "Coldplay",
+    "paisOrigenArtista": "Colombia",
+    "descripcionArtista": "Indie y folk",
+    "Productora": {
+      "nombreProductora": "City Slang",
+      "correoProductora": "contacto46@cityslang.com",
+      "paisProductora": "Estados Unidos"
+    }
+  },
+  {
+    "_id": 47,
+    "nombreArtista": "Daft Punk",
+    "paisOrigenArtista": "Mexico",
+    "descripcionArtista": "Hip-hop latino",
+    "Productora": {
+      "nombreProductora": "Cascine",
+      "correoProductora": "contacto47@cascine.com",
+      "paisProductora": "Mexico"
+    }
+  },
+  {
+    "_id": 48,
+    "nombreArtista": "Frank Ocean",
+    "paisOrigenArtista": "Estados Unidos",
+    "descripcionArtista": "Jazz fusion",
+    "Productora": {
+      "nombreProductora": "Secretly Canadian",
+      "correoProductora": "contacto48@secretlycanadian.com",
+      "paisProductora": "Colombia"
+    }
+  },
+  {
+    "_id": 49,
+    "nombreArtista": "Tyler the Creator",
+    "paisOrigenArtista": "Argentina",
+    "descripcionArtista": "Musica ecuatoriana",
+    "Productora": {
+      "nombreProductora": "Jagjaguwar",
+      "correoProductora": "contacto49@jagjaguwar.com",
+      "paisProductora": "Argentina"
+    }
+  },
+  {
+    "_id": 50,
+    "nombreArtista": "Kendrick Lamar",
+    "paisOrigenArtista": "Chile",
+    "descripcionArtista": "Pop y fusion latina",
+    "Productora": {
+      "nombreProductora": "Dead Oceans",
+      "correoProductora": "contacto50@deadoceans.com",
+      "paisProductora": "Reino Unido"
+    }
+  },
+  {
+    "_id": 51,
+    "nombreArtista": "Shakira",
+    "paisOrigenArtista": "Puerto Rico",
+    "descripcionArtista": "Rock alternativo",
+    "Productora": {
+      "nombreProductora": "Ghostly International",
+      "correoProductora": "contacto51@ghostlyinternational.com",
+      "paisProductora": "Alemania"
+    }
+  },
+  {
+    "_id": 52,
+    "nombreArtista": "Juanes",
+    "paisOrigenArtista": "Espana",
+    "descripcionArtista": "Musica urbana",
+    "Productora": {
+      "nombreProductora": "Ninja Tune",
+      "correoProductora": "contacto52@ninjatune.com",
+      "paisProductora": "Puerto Rico"
+    }
+  },
+  {
+    "_id": 53,
+    "nombreArtista": "Carlos Vives",
+    "paisOrigenArtista": "Reino Unido",
+    "descripcionArtista": "Electronica contemporanea",
+    "Productora": {
+      "nombreProductora": "Hyperdub",
+      "correoProductora": "contacto53@hyperdub.com",
+      "paisProductora": "Chile"
+    }
+  },
+  {
+    "_id": 54,
+    "nombreArtista": "Jorge Drexler",
+    "paisOrigenArtista": "Brasil",
+    "descripcionArtista": "Cantautor latino",
+    "Productora": {
+      "nombreProductora": "Planet Mu",
+      "correoProductora": "contacto54@planetmu.com",
+      "paisProductora": "Peru"
+    }
+  },
+  {
+    "_id": 55,
+    "nombreArtista": "Natalia Lafourcade",
+    "paisOrigenArtista": "Peru",
+    "descripcionArtista": "Salsa y tropical",
+    "Productora": {
+      "nombreProductora": "Kompakt",
+      "correoProductora": "contacto55@kompakt.com",
+      "paisProductora": "Brasil"
+    }
+  },
+  {
+    "_id": 56,
+    "nombreArtista": "Cafe Tacvba",
+    "paisOrigenArtista": "Panama",
+    "descripcionArtista": "Indie y folk",
+    "Productora": {
+      "nombreProductora": "Mute Records",
+      "correoProductora": "contacto56@muterecords.com",
+      "paisProductora": "Venezuela"
+    }
+  },
+  {
+    "_id": 57,
+    "nombreArtista": "Soda Stereo",
+    "paisOrigenArtista": "Uruguay",
+    "descripcionArtista": "Hip-hop latino",
+    "Productora": {
+      "nombreProductora": "Rough Trade Records",
+      "correoProductora": "contacto57@roughtraderecords.com",
+      "paisProductora": "Panama"
+    }
+  },
+  {
+    "_id": 58,
+    "nombreArtista": "Gustavo Cerati",
+    "paisOrigenArtista": "Cuba",
+    "descripcionArtista": "Jazz fusion",
+    "Productora": {
+      "nombreProductora": "Beggars Group",
+      "correoProductora": "contacto58@beggarsgroup.com",
+      "paisProductora": "Bolivia"
+    }
+  },
+  {
+    "_id": 59,
+    "nombreArtista": "Aterciopelados",
+    "paisOrigenArtista": "Republica Dominicana",
+    "descripcionArtista": "Musica ecuatoriana",
+    "Productora": {
+      "nombreProductora": "Drag City",
+      "correoProductora": "contacto59@dragcity.com",
+      "paisProductora": "Canada"
+    }
+  },
+  {
+    "_id": 60,
+    "nombreArtista": "Celia Cruz",
+    "paisOrigenArtista": "Ecuador",
+    "descripcionArtista": "Pop y fusion latina",
+    "Productora": {
+      "nombreProductora": "Touch and Go Records",
+      "correoProductora": "contacto60@touchandgorecords.com",
+      "paisProductora": "Ecuador"
+    }
+  },
+  {
+    "_id": 61,
+    "nombreArtista": "Willie Colon",
+    "paisOrigenArtista": "Colombia",
+    "descripcionArtista": "Rock alternativo",
+    "Productora": {
+      "nombreProductora": "Constellation Records",
+      "correoProductora": "contacto61@constellationrecords.com",
+      "paisProductora": "Estados Unidos"
+    }
+  },
+  {
+    "_id": 62,
+    "nombreArtista": "Mon Rivera",
+    "paisOrigenArtista": "Mexico",
+    "descripcionArtista": "Musica urbana",
+    "Productora": {
+      "nombreProductora": "Kranky Records",
+      "correoProductora": "contacto62@krankyrecords.com",
+      "paisProductora": "Mexico"
+    }
+  },
+  {
+    "_id": 63,
+    "nombreArtista": "Ruben Blades",
+    "paisOrigenArtista": "Estados Unidos",
+    "descripcionArtista": "Electronica contemporanea",
+    "Productora": {
+      "nombreProductora": "Important Records",
+      "correoProductora": "contacto63@importantrecords.com",
+      "paisProductora": "Colombia"
+    }
+  },
+  {
+    "_id": 64,
+    "nombreArtista": "Hector Lavoe",
+    "paisOrigenArtista": "Argentina",
+    "descripcionArtista": "Cantautor latino",
+    "Productora": {
+      "nombreProductora": "Type Records",
+      "correoProductora": "contacto64@typerecords.com",
+      "paisProductora": "Argentina"
+    }
+  },
+  {
+    "_id": 65,
+    "nombreArtista": "Ismael Rivera",
+    "paisOrigenArtista": "Chile",
+    "descripcionArtista": "Salsa y tropical",
+    "Productora": {
+      "nombreProductora": "Thrill Jockey",
+      "correoProductora": "contacto65@thrilljockey.com",
+      "paisProductora": "Reino Unido"
+    }
+  },
+  {
+    "_id": 66,
+    "nombreArtista": "Andres Cepeda",
+    "paisOrigenArtista": "Puerto Rico",
+    "descripcionArtista": "Indie y folk",
+    "Productora": {
+      "nombreProductora": "Temporary Residence",
+      "correoProductora": "contacto66@temporaryresidence.com",
+      "paisProductora": "Alemania"
+    }
+  },
+  {
+    "_id": 67,
+    "nombreArtista": "Fonseca",
+    "paisOrigenArtista": "Espana",
+    "descripcionArtista": "Hip-hop latino",
+    "Productora": {
+      "nombreProductora": "Morr Music",
+      "correoProductora": "contacto67@morrmusic.com",
+      "paisProductora": "Puerto Rico"
+    }
+  },
+  {
+    "_id": 68,
+    "nombreArtista": "Maia",
+    "paisOrigenArtista": "Reino Unido",
+    "descripcionArtista": "Jazz fusion",
+    "Productora": {
+      "nombreProductora": "Denovali Records",
+      "correoProductora": "contacto68@denovalirecords.com",
+      "paisProductora": "Chile"
+    }
+  },
+  {
+    "_id": 69,
+    "nombreArtista": "Evelin Vasquez",
+    "paisOrigenArtista": "Brasil",
+    "descripcionArtista": "Musica ecuatoriana",
+    "Productora": {
+      "nombreProductora": "Erased Tapes",
+      "correoProductora": "contacto69@erasedtapes.com",
+      "paisProductora": "Peru"
+    }
+  },
+  {
+    "_id": 70,
+    "nombreArtista": "Dani Levi",
+    "paisOrigenArtista": "Peru",
+    "descripcionArtista": "Pop y fusion latina",
+    "Productora": {
+      "nombreProductora": "Sony Music Argentina",
+      "correoProductora": "contacto70@sonymusicargentina.com",
+      "paisProductora": "Brasil"
+    }
+  },
+  {
+    "_id": 71,
+    "nombreArtista": "Miriam Cruz",
+    "paisOrigenArtista": "Panama",
+    "descripcionArtista": "Rock alternativo",
+    "Productora": {
+      "nombreProductora": "Universal Music Chile",
+      "correoProductora": "contacto71@universalmusicchile.com",
+      "paisProductora": "Venezuela"
+    }
+  },
+  {
+    "_id": 72,
+    "nombreArtista": "Juan Luis Guerra",
+    "paisOrigenArtista": "Uruguay",
+    "descripcionArtista": "Musica urbana",
+    "Productora": {
+      "nombreProductora": "Warner Music Peru",
+      "correoProductora": "contacto72@warnermusicperu.com",
+      "paisProductora": "Panama"
+    }
+  },
+  {
+    "_id": 73,
+    "nombreArtista": "Romeo Santos",
+    "paisOrigenArtista": "Cuba",
+    "descripcionArtista": "Electronica contemporanea",
+    "Productora": {
+      "nombreProductora": "Virgin Records Brasil",
+      "correoProductora": "contacto73@virginrecordsbrasil.com",
+      "paisProductora": "Bolivia"
+    }
+  },
+  {
+    "_id": 74,
+    "nombreArtista": "Prince Royce",
+    "paisOrigenArtista": "Republica Dominicana",
+    "descripcionArtista": "Cantautor latino",
+    "Productora": {
+      "nombreProductora": "Fonograff",
+      "correoProductora": "contacto74@fonograff.com",
+      "paisProductora": "Canada"
+    }
+  },
+  {
+    "_id": 75,
+    "nombreArtista": "Marc Anthony",
+    "paisOrigenArtista": "Ecuador",
+    "descripcionArtista": "Salsa y tropical",
+    "Productora": {
+      "nombreProductora": "Presto Music",
+      "correoProductora": "contacto75@prestomusic.com",
+      "paisProductora": "Ecuador"
+    }
+  },
+  {
+    "_id": 76,
+    "nombreArtista": "Victor Manuelle",
+    "paisOrigenArtista": "Colombia",
+    "descripcionArtista": "Indie y folk",
+    "Productora": {
+      "nombreProductora": "Codiscos",
+      "correoProductora": "contacto76@codiscos.com",
+      "paisProductora": "Estados Unidos"
+    }
+  },
+  {
+    "_id": 77,
+    "nombreArtista": "Gilberto Santa Rosa",
+    "paisOrigenArtista": "Mexico",
+    "descripcionArtista": "Hip-hop latino",
+    "Productora": {
+      "nombreProductora": "Orfeon Videovisa",
+      "correoProductora": "contacto77@orfeonvideovisa.com",
+      "paisProductora": "Mexico"
+    }
+  },
+  {
+    "_id": 78,
+    "nombreArtista": "Cheo Feliciano",
+    "paisOrigenArtista": "Estados Unidos",
+    "descripcionArtista": "Jazz fusion",
+    "Productora": {
+      "nombreProductora": "Balboa Records",
+      "correoProductora": "contacto78@balboarecords.com",
+      "paisProductora": "Colombia"
+    }
+  },
+  {
+    "_id": 79,
+    "nombreArtista": "Ismael Miranda",
+    "paisOrigenArtista": "Argentina",
+    "descripcionArtista": "Musica ecuatoriana",
+    "Productora": {
+      "nombreProductora": "Promusica",
+      "correoProductora": "contacto79@promusica.com",
+      "paisProductora": "Argentina"
+    }
+  },
+  {
+    "_id": 80,
+    "nombreArtista": "La India",
+    "paisOrigenArtista": "Chile",
+    "descripcionArtista": "Pop y fusion latina",
+    "Productora": {
+      "nombreProductora": "Tumi Music",
+      "correoProductora": "contacto80@tumimusic.com",
+      "paisProductora": "Reino Unido"
+    }
+  },
+  {
+    "_id": 81,
+    "nombreArtista": "Peso Pluma",
+    "paisOrigenArtista": "Puerto Rico",
+    "descripcionArtista": "Rock alternativo",
+    "Productora": {
+      "nombreProductora": "Fania Records",
+      "correoProductora": "contacto81@faniarecords.com",
+      "paisProductora": "Alemania"
+    }
+  },
+  {
+    "_id": 82,
+    "nombreArtista": "Xavi",
+    "paisOrigenArtista": "Espana",
+    "descripcionArtista": "Musica urbana",
+    "Productora": {
+      "nombreProductora": "Emusica",
+      "correoProductora": "contacto82@emusica.com",
+      "paisProductora": "Puerto Rico"
+    }
+  },
+  {
+    "_id": 83,
+    "nombreArtista": "Junior H",
+    "paisOrigenArtista": "Reino Unido",
+    "descripcionArtista": "Electronica contemporanea",
+    "Productora": {
+      "nombreProductora": "DBN Group",
+      "correoProductora": "contacto83@dbngroup.com",
+      "paisProductora": "Chile"
+    }
+  },
+  {
+    "_id": 84,
+    "nombreArtista": "Eslabon Armado",
+    "paisOrigenArtista": "Brasil",
+    "descripcionArtista": "Cantautor latino",
+    "Productora": {
+      "nombreProductora": "Zelenco",
+      "correoProductora": "contacto84@zelenco.com",
+      "paisProductora": "Peru"
+    }
+  },
+  {
+    "_id": 85,
+    "nombreArtista": "Ivan Cornejo",
+    "paisOrigenArtista": "Peru",
+    "descripcionArtista": "Salsa y tropical",
+    "Productora": {
+      "nombreProductora": "Chullpi Records",
+      "correoProductora": "contacto85@chullpirecords.com",
+      "paisProductora": "Brasil"
+    }
+  },
+  {
+    "_id": 86,
+    "nombreArtista": "Yahritza y Su Esencia",
+    "paisOrigenArtista": "Panama",
+    "descripcionArtista": "Indie y folk",
+    "Productora": {
+      "nombreProductora": "Phonorama",
+      "correoProductora": "contacto86@phonorama.com",
+      "paisProductora": "Venezuela"
+    }
+  },
+  {
+    "_id": 87,
+    "nombreArtista": "Tito Nieves",
+    "paisOrigenArtista": "Uruguay",
+    "descripcionArtista": "Hip-hop latino",
+    "Productora": {
+      "nombreProductora": "Andes Music",
+      "correoProductora": "contacto87@andesmusic.com",
+      "paisProductora": "Panama"
+    }
+  },
+  {
+    "_id": 88,
+    "nombreArtista": "Anthony Santos",
+    "paisOrigenArtista": "Cuba",
+    "descripcionArtista": "Jazz fusion",
+    "Productora": {
+      "nombreProductora": "Mitad del Mundo Records",
+      "correoProductora": "contacto88@mitaddelmundorecords.com",
+      "paisProductora": "Bolivia"
+    }
+  },
+  {
+    "_id": 89,
+    "nombreArtista": "Luis Vargas",
+    "paisOrigenArtista": "Republica Dominicana",
+    "descripcionArtista": "Musica ecuatoriana",
+    "Productora": {
+      "nombreProductora": "Quitu Records",
+      "correoProductora": "contacto89@quiturecords.com",
+      "paisProductora": "Canada"
+    }
+  },
+  {
+    "_id": 90,
+    "nombreArtista": "Raulin Rodriguez",
+    "paisOrigenArtista": "Ecuador",
+    "descripcionArtista": "Pop y fusion latina",
+    "Productora": {
+      "nombreProductora": "Tungurahua Sound",
+      "correoProductora": "contacto90@tungurahuasound.com",
+      "paisProductora": "Ecuador"
+    }
+  },
+  {
+    "_id": 91,
+    "nombreArtista": "Intocable",
+    "paisOrigenArtista": "Colombia",
+    "descripcionArtista": "Rock alternativo",
+    "Productora": {
+      "nombreProductora": "Pachamama Records",
+      "correoProductora": "contacto91@pachamamarecords.com",
+      "paisProductora": "Estados Unidos"
+    }
+  },
+  {
+    "_id": 92,
+    "nombreArtista": "Los Bukis",
+    "paisOrigenArtista": "Mexico",
+    "descripcionArtista": "Musica urbana",
+    "Productora": {
+      "nombreProductora": "Galapagos Music",
+      "correoProductora": "contacto92@galapagosmusic.com",
+      "paisProductora": "Mexico"
+    }
+  },
+  {
+    "_id": 93,
+    "nombreArtista": "Ana Gabriel",
+    "paisOrigenArtista": "Estados Unidos",
+    "descripcionArtista": "Electronica contemporanea",
+    "Productora": {
+      "nombreProductora": "Sierra Label",
+      "correoProductora": "contacto93@sierralabel.com",
+      "paisProductora": "Colombia"
+    }
+  },
+  {
+    "_id": 94,
+    "nombreArtista": "Juan Gabriel",
+    "paisOrigenArtista": "Argentina",
+    "descripcionArtista": "Cantautor latino",
+    "Productora": {
+      "nombreProductora": "Costa Sound",
+      "correoProductora": "contacto94@costasound.com",
+      "paisProductora": "Argentina"
+    }
+  },
+  {
+    "_id": 95,
+    "nombreArtista": "Rocio Durcal",
+    "paisOrigenArtista": "Chile",
+    "descripcionArtista": "Salsa y tropical",
+    "Productora": {
+      "nombreProductora": "Amazon Beats",
+      "correoProductora": "contacto95@amazonbeats.com",
+      "paisProductora": "Reino Unido"
+    }
+  },
+  {
+    "_id": 96,
+    "nombreArtista": "Vicente Fernandez",
+    "paisOrigenArtista": "Puerto Rico",
+    "descripcionArtista": "Indie y folk",
+    "Productora": {
+      "nombreProductora": "Oriente Records",
+      "correoProductora": "contacto96@orienterecords.com",
+      "paisProductora": "Alemania"
+    }
+  },
+  {
+    "_id": 97,
+    "nombreArtista": "Jose Alfredo Jimenez",
+    "paisOrigenArtista": "Espana",
+    "descripcionArtista": "Hip-hop latino",
+    "Productora": {
+      "nombreProductora": "Chimborazo Discos",
+      "correoProductora": "contacto97@chimborazodiscos.com",
+      "paisProductora": "Puerto Rico"
+    }
+  },
+  {
+    "_id": 98,
+    "nombreArtista": "Pedro Infante",
+    "paisOrigenArtista": "Reino Unido",
+    "descripcionArtista": "Jazz fusion",
+    "Productora": {
+      "nombreProductora": "Cotopaxi Music",
+      "correoProductora": "contacto98@cotopaximusic.com",
+      "paisProductora": "Chile"
+    }
+  },
+  {
+    "_id": 99,
+    "nombreArtista": "Jorge Negrete",
+    "paisOrigenArtista": "Brasil",
+    "descripcionArtista": "Musica ecuatoriana",
+    "Productora": {
+      "nombreProductora": "Pichincha Records",
+      "correoProductora": "contacto99@pichincharecords.com",
+      "paisProductora": "Peru"
+    }
+  },
+  {
+    "_id": 100,
+    "nombreArtista": "Javier Solis",
+    "paisOrigenArtista": "Peru",
+    "descripcionArtista": "Pop y fusion latina",
+    "Productora": {
+      "nombreProductora": "Guayas Music Group",
+      "correoProductora": "contacto100@guayasmusicgroup.com",
+      "paisProductora": "Brasil"
+    }
+  },
+  {
+    "_id": 101,
+    "nombreArtista": "Mar Rendon",
+    "paisOrigenArtista": "Panama",
+    "descripcionArtista": "Rock alternativo",
+    "Productora": {
+      "nombreProductora": "Manabi Records",
+      "correoProductora": "contacto101@manabirecords.com",
+      "paisProductora": "Venezuela"
+    }
+  },
+  {
+    "_id": 102,
+    "nombreArtista": "Hermanos Nunez",
+    "paisOrigenArtista": "Uruguay",
+    "descripcionArtista": "Musica urbana",
+    "Productora": {
+      "nombreProductora": "Azuay Sound",
+      "correoProductora": "contacto102@azuaysound.com",
+      "paisProductora": "Panama"
+    }
+  },
+  {
+    "_id": 103,
+    "nombreArtista": "La Toquilla",
+    "paisOrigenArtista": "Cuba",
+    "descripcionArtista": "Electronica contemporanea",
+    "Productora": {
+      "nombreProductora": "Loja Music House",
+      "correoProductora": "contacto103@lojamusichouse.com",
+      "paisProductora": "Bolivia"
+    }
+  },
+  {
+    "_id": 104,
+    "nombreArtista": "Tres Dedos",
+    "paisOrigenArtista": "Republica Dominicana",
+    "descripcionArtista": "Cantautor latino",
+    "Productora": {
+      "nombreProductora": "Esmeraldas Groove",
+      "correoProductora": "contacto104@esmeraldasgroove.com",
+      "paisProductora": "Canada"
+    }
+  },
+  {
+    "_id": 105,
+    "nombreArtista": "Daniel Paez",
+    "paisOrigenArtista": "Ecuador",
+    "descripcionArtista": "Salsa y tropical",
+    "Productora": {
+      "nombreProductora": "Cuenca Sessions",
+      "correoProductora": "contacto105@cuencasessions.com",
+      "paisProductora": "Ecuador"
+    }
+  },
+  {
+    "_id": 106,
+    "nombreArtista": "Andre Farra",
+    "paisOrigenArtista": "Colombia",
+    "descripcionArtista": "Indie y folk",
+    "Productora": {
+      "nombreProductora": "Latitud Cero Music",
+      "correoProductora": "contacto106@latitudceromusic.com",
+      "paisProductora": "Estados Unidos"
+    }
+  },
+  {
+    "_id": 107,
+    "nombreArtista": "Paola Navarrete",
+    "paisOrigenArtista": "Mexico",
+    "descripcionArtista": "Hip-hop latino",
+    "Productora": {
+      "nombreProductora": "Pacific Sound Label",
+      "correoProductora": "contacto107@pacificsoundlabel.com",
+      "paisProductora": "Mexico"
+    }
+  },
+  {
+    "_id": 108,
+    "nombreArtista": "Swing Original Monks",
+    "paisOrigenArtista": "Estados Unidos",
+    "descripcionArtista": "Jazz fusion",
+    "Productora": {
+      "nombreProductora": "Andes Urban Records",
+      "correoProductora": "contacto108@andesurbanrecords.com",
+      "paisProductora": "Colombia"
+    }
+  },
+  {
+    "_id": 109,
+    "nombreArtista": "Guardarraya",
+    "paisOrigenArtista": "Argentina",
+    "descripcionArtista": "Musica ecuatoriana",
+    "Productora": {
+      "nombreProductora": "Quito Indie Lab",
+      "correoProductora": "contacto109@quitoindielab.com",
+      "paisProductora": "Argentina"
+    }
+  },
+  {
+    "_id": 110,
+    "nombreArtista": "Can Can",
+    "paisOrigenArtista": "Chile",
+    "descripcionArtista": "Pop y fusion latina",
+    "Productora": {
+      "nombreProductora": "Guayaquil Beat Records",
+      "correoProductora": "contacto110@guayaquilbeatrecords.com",
+      "paisProductora": "Reino Unido"
+    }
+  },
+  {
+    "_id": 111,
+    "nombreArtista": "Lolabum",
+    "paisOrigenArtista": "Puerto Rico",
+    "descripcionArtista": "Rock alternativo",
+    "Productora": {
+      "nombreProductora": "Manta Music Co",
+      "correoProductora": "contacto111@mantamusicco.com",
+      "paisProductora": "Alemania"
+    }
+  },
+  {
+    "_id": 112,
+    "nombreArtista": "Munn",
+    "paisOrigenArtista": "Espana",
+    "descripcionArtista": "Musica urbana",
+    "Productora": {
+      "nombreProductora": "Ambato Records",
+      "correoProductora": "contacto112@ambatorecords.com",
+      "paisProductora": "Puerto Rico"
+    }
+  },
+  {
+    "_id": 113,
+    "nombreArtista": "Esto es Eso",
+    "paisOrigenArtista": "Reino Unido",
+    "descripcionArtista": "Electronica contemporanea",
+    "Productora": {
+      "nombreProductora": "Latam Indie Network",
+      "correoProductora": "contacto113@latamindienetwork.com",
+      "paisProductora": "Chile"
+    }
+  },
+  {
+    "_id": 114,
+    "nombreArtista": "Biorn Borg",
+    "paisOrigenArtista": "Brasil",
+    "descripcionArtista": "Cantautor latino",
+    "Productora": {
+      "nombreProductora": "Cordillera Music",
+      "correoProductora": "contacto114@cordilleramusic.com",
+      "paisProductora": "Peru"
+    }
+  },
+  {
+    "_id": 115,
+    "nombreArtista": "Da Pawn",
+    "paisOrigenArtista": "Peru",
+    "descripcionArtista": "Salsa y tropical",
+    "Productora": {
+      "nombreProductora": "Amazonia Sonora",
+      "correoProductora": "contacto115@amazoniasonora.com",
+      "paisProductora": "Brasil"
+    }
+  },
+  {
+    "_id": 116,
+    "nombreArtista": "Tripulacion de Osos",
+    "paisOrigenArtista": "Panama",
+    "descripcionArtista": "Indie y folk",
+    "Productora": {
+      "nombreProductora": "Selva Urbana Records",
+      "correoProductora": "contacto116@selvaurbanarecords.com",
+      "paisProductora": "Venezuela"
+    }
+  },
+  {
+    "_id": 117,
+    "nombreArtista": "La Madre Tirana",
+    "paisOrigenArtista": "Uruguay",
+    "descripcionArtista": "Hip-hop latino",
+    "Productora": {
+      "nombreProductora": "Volcan Music Group",
+      "correoProductora": "contacto117@volcanmusicgroup.com",
+      "paisProductora": "Panama"
+    }
+  },
+  {
+    "_id": 118,
+    "nombreArtista": "Papaya Dada",
+    "paisOrigenArtista": "Cuba",
+    "descripcionArtista": "Jazz fusion",
+    "Productora": {
+      "nombreProductora": "Pacifico Urbano",
+      "correoProductora": "contacto118@pacificourbano.com",
+      "paisProductora": "Bolivia"
+    }
+  },
+  {
+    "_id": 119,
+    "nombreArtista": "Rocola Bacalao",
+    "paisOrigenArtista": "Republica Dominicana",
+    "descripcionArtista": "Musica ecuatoriana",
+    "Productora": {
+      "nombreProductora": "Sonora Indie Label 119",
+      "correoProductora": "contacto119@sonoraindielabel119.com",
+      "paisProductora": "Canada"
+    }
+  },
+  {
+    "_id": 120,
+    "nombreArtista": "Tomback",
+    "paisOrigenArtista": "Ecuador",
+    "descripcionArtista": "Pop y fusion latina",
+    "Productora": {
+      "nombreProductora": "Sonora Indie Label 120",
+      "correoProductora": "contacto120@sonoraindielabel120.com",
+      "paisProductora": "Ecuador"
+    }
+  },
+  {
+    "_id": 121,
+    "nombreArtista": "The Beatles",
+    "paisOrigenArtista": "Reino Unido",
+    "descripcionArtista": "Rock clasico y beat",
+    "Productora": {
+      "nombreProductora": "Warner Musica",
+      "correoProductora": "contacto3@warnermusica.com",
+      "paisProductora": "Colombia"
+    }
+  },
+  {
+    "_id": 122,
+    "nombreArtista": "Pink Floyd",
+    "paisOrigenArtista": "Reino Unido",
+    "descripcionArtista": "Rock progresivo y psicodelico",
+    "Productora": {
+      "nombreProductora": "Universal Music Ecuador",
+      "correoProductora": "contacto1@universalmusicecuador.com",
+      "paisProductora": "Estados Unidos"
+    }
+  },
+  {
+    "_id": 123,
+    "nombreArtista": "Led Zeppelin",
+    "paisOrigenArtista": "Reino Unido",
+    "descripcionArtista": "Hard rock y blues rock",
+    "Productora": {
+      "nombreProductora": "Sony Music Latino",
+      "correoProductora": "contacto2@sonymusiclatino.com",
+      "paisProductora": "Mexico"
+    }
+  },
+  {
+    "_id": 124,
+    "nombreArtista": "Michael Jackson",
+    "paisOrigenArtista": "Estados Unidos",
+    "descripcionArtista": "Pop y R&B",
+    "Productora": {
+      "nombreProductora": "Sony Music Latino",
+      "correoProductora": "contacto2@sonymusiclatino.com",
+      "paisProductora": "Mexico"
+    }
+  },
+  {
+    "_id": 125,
+    "nombreArtista": "Madonna",
+    "paisOrigenArtista": "Estados Unidos",
+    "descripcionArtista": "Pop y dance",
+    "Productora": {
+      "nombreProductora": "Universal Music Ecuador",
+      "correoProductora": "contacto1@universalmusicecuador.com",
+      "paisProductora": "Estados Unidos"
+    }
+  },
+  {
+    "_id": 126,
+    "nombreArtista": "David Guetta",
+    "paisOrigenArtista": "Francia",
+    "descripcionArtista": "House y EDM",
+    "Productora": {
+      "nombreProductora": "Universal Music Ecuador",
+      "correoProductora": "contacto1@universalmusicecuador.com",
+      "paisProductora": "Estados Unidos"
+    }
+  },
+  {
+    "_id": 127,
+    "nombreArtista": "Avicii",
+    "paisOrigenArtista": "Suecia",
+    "descripcionArtista": "EDM y progressive house",
+    "Productora": {
+      "nombreProductora": "Sony Music Latino",
+      "correoProductora": "contacto2@sonymusiclatino.com",
+      "paisProductora": "Mexico"
+    }
+  },
+  {
+    "_id": 128,
+    "nombreArtista": "Metallica",
+    "paisOrigenArtista": "Estados Unidos",
+    "descripcionArtista": "Heavy metal y thrash metal",
+    "Productora": {
+      "nombreProductora": "Warner Musica",
+      "correoProductora": "contacto3@warnermusica.com",
+      "paisProductora": "Colombia"
+    }
+  },
+  {
+    "_id": 129,
+    "nombreArtista": "Iron Maiden",
+    "paisOrigenArtista": "Reino Unido",
+    "descripcionArtista": "Heavy metal y NWOBHM",
+    "Productora": {
+      "nombreProductora": "Warner Musica",
+      "correoProductora": "contacto3@warnermusica.com",
+      "paisProductora": "Colombia"
+    }
+  },
+  {
+    "_id": 130,
+    "nombreArtista": "Black Sabbath",
+    "paisOrigenArtista": "Reino Unido",
+    "descripcionArtista": "Heavy metal y doom metal",
+    "Productora": {
+      "nombreProductora": "Universal Music Ecuador",
+      "correoProductora": "contacto1@universalmusicecuador.com",
+      "paisProductora": "Estados Unidos"
+    }
+  },
+  {
+    "_id": 131,
+    "nombreArtista": "Ludwig van Beethoven",
+    "paisOrigenArtista": "Alemania",
+    "descripcionArtista": "Musica clasica romantica",
+    "Productora": {
+      "nombreProductora": "Sony Music Latino",
+      "correoProductora": "contacto2@sonymusiclatino.com",
+      "paisProductora": "Mexico"
+    }
+  },
+  {
+    "_id": 132,
+    "nombreArtista": "Wolfgang Amadeus Mozart",
+    "paisOrigenArtista": "Austria",
+    "descripcionArtista": "Musica clasica del clasicismo",
+    "Productora": {
+      "nombreProductora": "Warner Musica",
+      "correoProductora": "contacto3@warnermusica.com",
+      "paisProductora": "Colombia"
+    }
+  },
+  {
+    "_id": 133,
+    "nombreArtista": "Johann Sebastian Bach",
+    "paisOrigenArtista": "Alemania",
+    "descripcionArtista": "Musica barroca",
+    "Productora": {
+      "nombreProductora": "Universal Music Ecuador",
+      "correoProductora": "contacto1@universalmusicecuador.com",
+      "paisProductora": "Estados Unidos"
+    }
+  }
+]
