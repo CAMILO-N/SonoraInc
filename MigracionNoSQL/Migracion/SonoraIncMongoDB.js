@@ -2,10 +2,7 @@ use("SonoraIncDB");
 
 // -- Seccion 1: Creacion de Colecciones con Validadores e Indices --
 
-// Coleccion usuarios: se define el validador con $jsonSchema para garantizar
-// la integridad de los documentos. Suscripcion se embebe como array porque
-// siempre se consulta junto al usuario y tiene un tamano controlado.
-// idArtista, idCancion e idPlaylist se almacenan como arrays de referencias.
+
 
 db.createCollection("usuarios", {
   validator: {
@@ -231,63 +228,93 @@ db.pagos.createIndex({ fechaPago: 1 });
 
 // -- Seccion 2: Consultas Avanzadas con Find --
 
-// Consulta 2.1 - Playlists con mas de 10 canciones ordenadas por nombre
-// Identificamos las playlists mas completas de la plataforma verificando
-// que el indice 10 exista dentro del array idCancion.
+// Consulta 2.1 - Playlists publicas con al menos 3 canciones
+// Obtenemos playlists publicas que tienen al menos 3 canciones verificando
+// que el indice 2 exista dentro del array idCancion.
 
 db.playlists.find(
-  { "idCancion.10": { $exists: true } },
+  {
+    privacidadPlaylist: "Publica",
+    "idCancion.2": { $exists: true }
+  },
   { nombrePlaylist: 1, idUsuario: 1, privacidadPlaylist: 1, _id: 0 }
 ).sort({ nombrePlaylist: 1 });
 
-// Consulta 2.2 - Regalias con monto mayor a 500 en el ultimo ano
-// Identificamos las canciones mas rentables de la plataforma filtrando
-// por monto generado y rango de fechas del ultimo periodo anual.
-
-db.regalias.find(
-  {
-    fechaCalculoRegalia: { $gte: new Date("2024-01-01"), $lte: new Date("2024-12-31") },
-    montoGeneradoRegalia: { $gt: 500 }
-  },
-  { idCancion: 1, fechaCalculoRegalia: 1, cantidadReproduccionesRegalia: 1, montoGeneradoRegalia: 1, _id: 0 }
-).sort({ montoGeneradoRegalia: -1 });
-
-// Consulta 2.3 - Canciones con mas de 3 artistas interpretes
-// Obtenemos canciones colaborativas verificando que el indice 3
-// exista dentro del array idArtista de cada cancion.
+// Consulta 2.2 - Canciones de generos especificos con duracion mayor a 180 segundos
+// Usamos $in para filtrar por multiples generos y $gt para obtener
+// solo las canciones cuya duracion supera los 180 segundos.
 
 db.canciones.find(
-  { "idArtista.3": { $exists: true } },
-  { tituloCancion: 1, "Genero.nombreGenero": 1, idArtista: 1, idAlbum: 1, _id: 0 }
-).sort({ tituloCancion: 1 });
+  {
+    "Genero.nombreGenero": { $in: ["Electronica", "Pop", "Rock"] },
+    duracionCancion: { $gt: 180 }
+  },
+  { tituloCancion: 1, "Genero.nombreGenero": 1, duracionCancion: 1, _id: 0 }
+).sort({ duracionCancion: -1 });
 
-// Consulta 2.4 - Albums lanzados desde 2022 de artistas especificos
-// Obtenemos el catalogo reciente de un conjunto de artistas usando $in
-// sobre idArtista y un rango de fechas sobre fechaLanzamientoAlbum.
+// Consulta 2.3 - Albums de artistas especificos lanzados despues del 2021
+// Usamos $in para buscar en multiples artistas y $gte para filtrar
+// por fecha de lanzamiento como string.
 
 db.albums.find(
   {
-    idArtista: { $in: [1, 2, 3, 4, 5] },
-    fechaLanzamientoAlbum: { $gte: new Date("2022-01-01") }
+    idArtista: { $in: [2, 3, 4, 5] },
+    fechaLanzamientoAlbum: { $gte: "2021-01-01" }
   },
   { tituloAlbum: 1, fechaLanzamientoAlbum: 1, idArtista: 1, _id: 0 }
 ).sort({ fechaLanzamientoAlbum: -1 });
 
-// Consulta 2.5 - Canciones de Pop o Reggaeton con duracion entre 3 y 5 minutos
-// Obtenemos las canciones de los generos mas populares cuya duracion se encuentra
-// entre 180 y 300 segundos usando $in sobre el campo embebido Genero.nombreGenero.
+// Consulta 2.4 - Canciones que le gustan a un usuario con duracion menor a 300 segundos
+// Usamos findOne para obtener los ids del usuario y luego $in junto con $lt
+// para filtrar las canciones referenciadas por duracion.
 
+const u = db.usuarios.findOne({ _id: 7 }, { idCancion: 1, _id: 0 });
 db.canciones.find(
   {
-    "Genero.nombreGenero": { $in: ["Pop", "Reggaeton"] },
-    duracionCancion: { $gte: 180, $lte: 300 }
+    _id: { $in: u.idCancion },
+    duracionCancion: { $lt: 300 }
   },
-  { tituloCancion: 1, "Genero.nombreGenero": 1, duracionCancion: 1, idArtista: 1, _id: 0 }
-).sort({ duracionCancion: -1 });
+  { tituloCancion: 1, "Genero.nombreGenero": 1, duracionCancion: 1, _id: 0 }
+).sort({ duracionCancion: 1 });
 
-// Consulta 2.6 - Usuarios Premium activos con artistas seguidos
-// Identificamos los usuarios con plan Premium activo que ademas
-// siguen al menos un artista en la plataforma.
+// Consulta 2.5 - Reproducciones de canciones especificas con duracion mayor a 100 segundos
+// Usamos $in sobre idCancion y $gt sobre duracionReproduccion para obtener
+// las escuchas mas completas de un conjunto de canciones.
+
+db.reproducciones.find(
+  {
+    idCancion: { $in: [35, 48, 61, 5, 12, 18] },
+    duracionReproduccion: { $gt: 100 }
+  },
+  { idCancion: 1, fechaReproduccion: 1, duracionReproduccion: 1, _id: 0 }
+).sort({ duracionReproduccion: -1 });
+
+// -- Consultas adicionales --
+
+// Consulta 2.6 - Regalias con monto mayor a 0 entre 2024 y 2025
+// Obtenemos regalias con monto generado mayor a cero
+// en un rango de fechas especifico.
+
+db.regalias.find(
+  {
+    fechaCalculoRegalia: { $gte: new Date("2024-01-01"), $lte: new Date("2025-12-31") },
+    montoGeneradoRegalia: { $gt: 0 }
+  },
+  { idCancion: 1, fechaCalculoRegalia: 1, cantidadReproduccionesRegalia: 1, montoGeneradoRegalia: 1, _id: 0 }
+).sort({ montoGeneradoRegalia: -1 });
+
+// Consulta 2.7 - Canciones con mas de 1 artista interprete
+// Obtenemos canciones con multiples artistas verificando
+// que el indice 1 exista en el array idArtista.
+
+db.canciones.find(
+  { "idArtista.1": { $exists: true } },
+  { tituloCancion: 1, "Genero.nombreGenero": 1, idArtista: 1, idAlbum: 1, _id: 0 }
+).sort({ tituloCancion: 1 });
+
+// Consulta 2.8 - Usuarios Premium activos con artistas seguidos
+// Obtenemos usuarios con suscripcion Premium activa que ademas
+// tienen al menos un artista en su array idArtista.
 
 db.usuarios.find(
   {
@@ -298,67 +325,67 @@ db.usuarios.find(
   { nombreUsuario: 1, apellidoUsuario: 1, correoUsuario: 1, idArtista: 1, _id: 0 }
 ).sort({ nombreUsuario: 1 });
 
-// Consulta 2.7 - Usuarios con mas de 5 playlists creadas
-// Identificamos los usuarios mas activos en creacion de contenido
-// verificando que el indice 5 exista dentro del array idPlaylist.
+// Consulta 2.9 - Usuarios con al menos una playlist
+// Obtenemos usuarios que tienen al menos una playlist
+// verificando que el indice 0 exista en el array idPlaylist.
 
 db.usuarios.find(
-  { "idPlaylist.5": { $exists: true } },
+  { "idPlaylist.0": { $exists: true } },
   { nombreUsuario: 1, apellidoUsuario: 1, correoUsuario: 1, idPlaylist: 1, _id: 0 }
 ).sort({ nombreUsuario: 1 });
 
-// Consulta 2.8 - Usuarios con mas de 10 canciones con me gusta
-// Identificamos los usuarios mas comprometidos con el catalogo musical
-// verificando que el indice 10 exista dentro del array idCancion.
+// Consulta 2.10 - Usuarios con al menos 3 canciones con me gusta
+// Obtenemos usuarios que tienen al menos 3 canciones en su array idCancion
+// verificando que el indice 2 exista.
 
 db.usuarios.find(
-  { "idCancion.10": { $exists: true } },
+  { "idCancion.2": { $exists: true } },
   { nombreUsuario: 1, apellidoUsuario: 1, correoUsuario: 1, _id: 0 }
 ).sort({ nombreUsuario: 1 });
 
-// Consulta 2.9 - Artistas de Colombia cuya productora opera en otro pais
-// Detectamos artistas internacionalizados cuya productora tiene sede
-// en un pais diferente al de origen del artista.
+// Consulta 2.11 - Artistas de Mexico cuya productora opera en otro pais
+// Obtenemos artistas de Mexico cuya productora no es de Mexico
+// usando $ne sobre el campo embebido Productora.paisProductora.
 
 db.artistas.find(
-  { paisOrigenArtista: "Colombia", "Productora.paisProductora": { $ne: "Colombia" } },
+  { paisOrigenArtista: "Mexico", "Productora.paisProductora": { $ne: "Mexico" } },
   { nombreArtista: 1, paisOrigenArtista: 1, "Productora.nombreProductora": 1, "Productora.paisProductora": 1, _id: 0 }
 ).sort({ nombreArtista: 1 });
 
-// Consulta 2.10 - Reproducciones de un usuario en 2024 con duracion mayor a 2 minutos
-// Obtenemos el historial de escucha completa de un usuario filtrando
-// por rango de fechas y duracion minima de reproduccion.
+// Consulta 2.12 - Reproducciones del usuario 7 en 2024 con duracion mayor a 120 segundos
+// Obtenemos reproducciones de un usuario filtrando por rango de fechas
+// y duracion minima de escucha.
 
 db.reproducciones.find(
   {
-    idUsuario: 1,
+    idUsuario: 7,
     fechaReproduccion: { $gte: new Date("2024-01-01"), $lte: new Date("2024-12-31") },
     duracionReproduccion: { $gt: 120 }
   },
   { fechaReproduccion: 1, duracionReproduccion: 1, idCancion: 1, _id: 0 }
 ).sort({ fechaReproduccion: -1 });
 
-// Consulta 2.11 - Canciones en espanol de duracion menor a 3 minutos
-// Obtenemos canciones cortas en idioma espanol ideales para listas
-// de reproduccion rapida o contenido de redes sociales.
+// Consulta 2.13 - Canciones en espanol con duracion menor a 180 segundos
+// Obtenemos canciones en idioma espanol cuya duracion
+// es menor a 3 minutos ordenadas de menor a mayor.
 
 db.canciones.find(
   { idiomaCancion: "Espanol", duracionCancion: { $lt: 180 } },
   { tituloCancion: 1, duracionCancion: 1, "Genero.nombreGenero": 1, idArtista: 1, _id: 0 }
 ).sort({ duracionCancion: 1 });
 
-// Consulta 2.12 - Pagos realizados en el primer trimestre de 2025
-// Obtenemos todos los cobros registrados en el primer trimestre del ano
-// para analizar el comportamiento de facturacion en ese periodo.
+// Consulta 2.14 - Pagos realizados en 2024
+// Obtenemos todos los pagos registrados entre enero y
+// diciembre de 2024 ordenados por fecha descendente.
 
 db.pagos.find(
-  { fechaPago: { $gte: new Date("2025-01-01"), $lte: new Date("2025-03-31") } },
+  { fechaPago: { $gte: new Date("2024-01-01"), $lte: new Date("2024-12-31") } },
   { idUsuario: 1, fechaPago: 1, montoPago: 1, idSuscripcion: 1, _id: 0 }
 ).sort({ fechaPago: -1 });
 
-// Consulta 2.13 - Playlists publicas creadas en el ultimo ano
-// Obtenemos el contenido publico mas reciente de la plataforma
-// para identificar tendencias en creacion de playlists.
+// Consulta 2.15 - Playlists publicas creadas desde 2024
+// Obtenemos playlists con privacidad Publica cuya fecha
+// de creacion es mayor o igual al inicio de 2024.
 
 db.playlists.find(
   {
@@ -368,68 +395,93 @@ db.playlists.find(
   { nombrePlaylist: 1, idUsuario: 1, fechaCreacionPlaylist: 1, _id: 0 }
 ).sort({ fechaCreacionPlaylist: -1 });
 
-// Consulta 2.14 - Artistas de Mexico o Argentina con productora propia
-// Obtenemos artistas latinoamericanos de estos paises cuya productora
-// tambien opera en el mismo pais usando $in y condicion sobre campo embebido.
+// Consulta 2.16 - Artistas de Mexico o Argentina
+// Obtenemos artistas de esos paises usando $in
+// sobre el campo paisOrigenArtista.
 
 db.artistas.find(
-  {
-    paisOrigenArtista: { $in: ["Mexico", "Argentina"] },
-    "Productora.paisProductora": { $in: ["Mexico", "Argentina"] }
-  },
+  { paisOrigenArtista: { $in: ["Mexico", "Argentina"] } },
   { nombreArtista: 1, paisOrigenArtista: 1, "Productora.nombreProductora": 1, _id: 0 }
 ).sort({ paisOrigenArtista: 1, nombreArtista: 1 });
 
-// Consulta 2.15 - Canciones de Rock con mas de 2 artistas interpretes
-// Identificamos colaboraciones dentro del genero Rock verificando
-// que el indice 2 exista en el array idArtista y filtrando por genero.
-
-db.canciones.find(
-  { "Genero.nombreGenero": "Rock", "idArtista.2": { $exists: true } },
-  { tituloCancion: 1, idArtista: 1, duracionCancion: 1, _id: 0 }
-).sort({ tituloCancion: 1 });
-
-// Consulta 2.16 - Albums lanzados antes del 2020 ordenados por fecha
-// Obtenemos el catalogo clasico de la plataforma para identificar
-// el contenido de mayor antiguedad disponible en SonoraInc.
-
-db.albums.find(
-  { fechaLanzamientoAlbum: { $lt: new Date("2020-01-01") } },
-  { tituloAlbum: 1, fechaLanzamientoAlbum: 1, idArtista: 1, _id: 0 }
-).sort({ fechaLanzamientoAlbum: 1 });
-
-// Consulta 2.17 - Usuarios con suscripcion cancelada o vencida
-// Identificamos usuarios inactivos cuya suscripcion ya no esta vigente
-// para campanas de reactivacion o analisis de churn de la plataforma.
+// Consulta 2.17 - Usuarios con suscripcion activa y plan Gratis
+// Obtenemos usuarios cuya suscripcion activa es de tipo Gratis
+// usando filtros combinados sobre el array embebido Suscripcion.
 
 db.usuarios.find(
-  { "Suscripcion.estadoSuscripcion": { $in: ["Cancelada", "Vencida"] } },
+  { "Suscripcion.tipoPlanSuscripcion": "Gratis", "Suscripcion.estadoSuscripcion": "Activa" },
   { nombreUsuario: 1, apellidoUsuario: 1, correoUsuario: 1, _id: 0 }
 ).sort({ apellidoUsuario: 1 });
 
-// Consulta 2.18 - Reproducciones de canciones especificas en cualquier usuario
-// Obtenemos todas las reproducciones de un conjunto de canciones para
-// analizar el alcance de esas canciones en la base de usuarios.
+// Consulta 2.18 - Reproducciones de canciones especificas
+// Obtenemos reproducciones de un conjunto de canciones usando $in
+// ordenadas por cancion y fecha descendente.
 
 db.reproducciones.find(
-  { idCancion: { $in: [1, 2, 3, 4, 5] } },
+  { idCancion: { $in: [35, 48, 61] } },
   { idUsuario: 1, idCancion: 1, fechaReproduccion: 1, duracionReproduccion: 1, _id: 0 }
 ).sort({ idCancion: 1, fechaReproduccion: -1 });
 
-// Consulta 2.19 - Regalias con mas de 10000 reproducciones en el periodo
-// Identificamos las canciones con mayor volumen de escuchas en un periodo
-// de calculo para detectar los hits mas importantes de la plataforma.
+// Consulta 2.19 - Regalias con mas de 5 reproducciones
+// Obtenemos regalias cuya cantidad de reproducciones supera 5
+// ordenadas de mayor a menor cantidad.
 
 db.regalias.find(
-  { cantidadReproduccionesRegalia: { $gt: 10000 } },
+  { cantidadReproduccionesRegalia: { $gt: 5 } },
   { idCancion: 1, fechaCalculoRegalia: 1, cantidadReproduccionesRegalia: 1, montoGeneradoRegalia: 1, _id: 0 }
 ).sort({ cantidadReproduccionesRegalia: -1 });
 
-// Consulta 2.20 - Pagos con monto mayor a 9.99 realizados por usuarios especificos
-// Obtenemos los cobros de plan Premium de un conjunto de usuarios para
-// analizar el historial de facturacion de los clientes mas valiosos.
+// Consulta 2.20 - Pagos de usuarios especificos con monto mayor a 5
+// Obtenemos pagos de un conjunto de usuarios usando $in sobre idUsuario
+// filtrando por monto mayor a 5.
 
 db.pagos.find(
-  { idUsuario: { $in: [1, 2, 3, 4, 5] }, montoPago: { $gt: 9.99 } },
+  { idUsuario: { $in: [7, 28, 45, 62, 73] }, montoPago: { $gt: 5 } },
   { idUsuario: 1, fechaPago: 1, montoPago: 1, idSuscripcion: 1, _id: 0 }
 ).sort({ idUsuario: 1, fechaPago: -1 });
+
+// Consulta 2.21 - Canciones que le gustan a un usuario especifico
+// Obtenemos las canciones cuyos ids estan en el array idCancion del usuario
+// usando findOne y luego $in sobre el campo _id de canciones.
+
+const usuario7 = db.usuarios.findOne({ _id: 7 }, { idCancion: 1, _id: 0 });
+db.canciones.find(
+  { _id: { $in: usuario7.idCancion } },
+  { tituloCancion: 1, "Genero.nombreGenero": 1, duracionCancion: 1, _id: 0 }
+).sort({ tituloCancion: 1 });
+
+// Consulta 2.22 - Canciones de un album especifico
+// Obtenemos todas las canciones que pertenecen a un album
+// filtrando por idAlbum y ordenando por titulo.
+
+db.canciones.find(
+  { idAlbum: 3 },
+  { tituloCancion: 1, "Genero.nombreGenero": 1, duracionCancion: 1, idArtista: 1, _id: 0 }
+).sort({ tituloCancion: 1 });
+
+// Consulta 2.23 - Playlists de un usuario especifico
+// Obtenemos todas las playlists creadas por un usuario
+// filtrando por idUsuario y ordenando por fecha de creacion.
+
+db.playlists.find(
+  { idUsuario: 7 },
+  { nombrePlaylist: 1, privacidadPlaylist: 1, fechaCreacionPlaylist: 1, idCancion: 1, _id: 0 }
+).sort({ fechaCreacionPlaylist: -1 });
+
+// Consulta 2.24 - Canciones de un artista especifico
+// Obtenemos todas las canciones donde el artista aparece
+// en el array idArtista usando $in sobre ese campo.
+
+db.canciones.find(
+  { idArtista: { $in: [2] } },
+  { tituloCancion: 1, "Genero.nombreGenero": 1, duracionCancion: 1, idAlbum: 1, _id: 0 }
+).sort({ tituloCancion: 1 });
+
+// Consulta 2.25 - Albums de un artista especifico
+// Obtenemos todos los albums asociados a un artista
+// filtrando por idArtista y ordenando por fecha de lanzamiento.
+
+db.albums.find(
+  { idArtista: 2 },
+  { tituloAlbum: 1, fechaLanzamientoAlbum: 1, _id: 0 }
+).sort({ fechaLanzamientoAlbum: -1 });
